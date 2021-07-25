@@ -1,8 +1,6 @@
-@torkelo is the main/default maintainer, some parts of the codebase have other maintainers:
+## Maintainers
 
-- Backend:
-  - @bergquist
-- Plugins:
-  - @ryantxu
-- UX/UI:
-  - @davkal
+| Maintainer | GitHub ID | Affiliation |
+| --------------- | --------- | ----------- |
+| roc | [ifelseend](https://github.com/ifelseend) |  |
+

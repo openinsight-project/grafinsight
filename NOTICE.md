@@ -1,3 +1,5 @@
+GrafInsight
+Copyright 2021 GrafInsight Contributors
 
 Copyright 2014-2021 Grafana Labs
 
