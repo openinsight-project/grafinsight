@@ -5,9 +5,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/services/annotations"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/openinsight-project/grafinsight/pkg/infra/log"
+	"github.com/openinsight-project/grafinsight/pkg/services/annotations"
+	"github.com/openinsight-project/grafinsight/pkg/setting"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

@@ -7,9 +7,9 @@ import (
 	"time"
 
 	"github.com/gosimple/slug"
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/setting"
-	"github.com/grafana/grafana/pkg/util"
+	"github.com/openinsight-project/grafinsight/pkg/components/simplejson"
+	"github.com/openinsight-project/grafinsight/pkg/setting"
+	"github.com/openinsight-project/grafinsight/pkg/util"
 )
 
 const RootFolderName = "General"

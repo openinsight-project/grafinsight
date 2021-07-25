@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/grafana/grafana/pkg/registry"
-	"github.com/grafana/grafana/pkg/tsdb"
+	"github.com/openinsight-project/grafinsight/pkg/registry"
+	"github.com/openinsight-project/grafinsight/pkg/tsdb"
 )
 
 func init() {

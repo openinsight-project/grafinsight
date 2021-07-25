@@ -9,7 +9,7 @@ import (
 
 	. "github.com/smartystreets/goconvey/convey"
 
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/openinsight-project/grafinsight/pkg/models"
 )
 
 var ErrProvokedError = errors.New("testing error")

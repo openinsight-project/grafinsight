@@ -6,9 +6,9 @@ import (
 	"sync"
 
 	"github.com/grafana/grafana-plugin-sdk-go/backend"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/plugins/backendplugin"
 	"github.com/hashicorp/go-plugin"
+	"github.com/openinsight-project/grafinsight/pkg/infra/log"
+	"github.com/openinsight-project/grafinsight/pkg/plugins/backendplugin"
 )
 
 type pluginClient interface {

@@ -1,6 +1,6 @@
 package migrations
 
-import . "github.com/grafana/grafana/pkg/services/sqlstore/migrator"
+import . "github.com/openinsight-project/grafinsight/pkg/services/sqlstore/migrator"
 
 func addUserAuthMigrations(mg *Migrator) {
 	userAuthV1 := Table{

@@ -5,7 +5,7 @@ import (
 	"path"
 	"path/filepath"
 
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/openinsight-project/grafinsight/pkg/setting"
 )
 
 type LocalUploader struct {

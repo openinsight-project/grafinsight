@@ -7,13 +7,13 @@ import (
 	"strings"
 	"time"
 
-	"github.com/grafana/grafana/pkg/components/null"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/tsdb"
 	"github.com/grafana/loki/pkg/logcli/client"
 	"github.com/grafana/loki/pkg/loghttp"
 	"github.com/grafana/loki/pkg/logproto"
+	"github.com/openinsight-project/grafinsight/pkg/components/null"
+	"github.com/openinsight-project/grafinsight/pkg/infra/log"
+	"github.com/openinsight-project/grafinsight/pkg/models"
+	"github.com/openinsight-project/grafinsight/pkg/tsdb"
 	"github.com/opentracing/opentracing-go"
 	"github.com/prometheus/common/model"
 )

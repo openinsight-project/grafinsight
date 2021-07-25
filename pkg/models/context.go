@@ -3,8 +3,8 @@ package models
 import (
 	"strings"
 
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/openinsight-project/grafinsight/pkg/infra/log"
+	"github.com/openinsight-project/grafinsight/pkg/setting"
 	"github.com/prometheus/client_golang/prometheus"
 	"gopkg.in/macaron.v1"
 )

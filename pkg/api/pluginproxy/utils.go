@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"text/template"
 
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/plugins"
+	"github.com/openinsight-project/grafinsight/pkg/models"
+	"github.com/openinsight-project/grafinsight/pkg/plugins"
 )
 
 // interpolateString accepts template data and return a string with substitutions

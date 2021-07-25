@@ -10,9 +10,9 @@ import (
 	"github.com/google/go-cmp/cmp"
 	"github.com/grafana/grafana-plugin-sdk-go/backend"
 	"github.com/grafana/grafana-plugin-sdk-go/data"
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/tsdb"
+	"github.com/openinsight-project/grafinsight/pkg/bus"
+	"github.com/openinsight-project/grafinsight/pkg/models"
+	"github.com/openinsight-project/grafinsight/pkg/tsdb"
 	"github.com/stretchr/testify/require"
 )
 

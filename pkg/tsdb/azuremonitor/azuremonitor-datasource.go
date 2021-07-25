@@ -14,15 +14,15 @@ import (
 	"time"
 
 	"github.com/grafana/grafana-plugin-sdk-go/data"
-	"github.com/grafana/grafana/pkg/api/pluginproxy"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/plugins"
-	"github.com/grafana/grafana/pkg/setting"
-	"github.com/grafana/grafana/pkg/util/errutil"
+	"github.com/openinsight-project/grafinsight/pkg/api/pluginproxy"
+	"github.com/openinsight-project/grafinsight/pkg/models"
+	"github.com/openinsight-project/grafinsight/pkg/plugins"
+	"github.com/openinsight-project/grafinsight/pkg/setting"
+	"github.com/openinsight-project/grafinsight/pkg/util/errutil"
 	opentracing "github.com/opentracing/opentracing-go"
 	"golang.org/x/net/context/ctxhttp"
 
-	"github.com/grafana/grafana/pkg/tsdb"
+	"github.com/openinsight-project/grafinsight/pkg/tsdb"
 )
 
 // AzureMonitorDatasource calls the Azure Monitor API - one of the four API's supported
@@ -410,7 +410,7 @@ func formatAzureMonitorLegendKey(alias string, resourceName string, metricName s
 // Map values from:
 //   https://docs.microsoft.com/en-us/rest/api/monitor/metrics/list#unit
 // to
-//   https://github.com/grafana/grafana/blob/master/packages/grafana-data/src/valueFormats/categories.ts#L24
+//   https://github.com/openinsight-project/grafinsight/blob/master/packages/grafana-data/src/valueFormats/categories.ts#L24
 func toGrafanaUnit(unit string) string {
 	switch unit {
 	case "BitsPerSecond":

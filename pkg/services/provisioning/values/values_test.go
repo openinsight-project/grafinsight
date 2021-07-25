@@ -7,7 +7,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/openinsight-project/grafinsight/pkg/setting"
 	"gopkg.in/ini.v1"
 
 	"github.com/stretchr/testify/assert"

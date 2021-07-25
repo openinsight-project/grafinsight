@@ -4,7 +4,7 @@ import (
 	"context"
 	"strings"
 
-	"github.com/grafana/grafana/pkg/tsdb"
+	"github.com/openinsight-project/grafinsight/pkg/tsdb"
 )
 
 func (e *CloudMonitoringExecutor) executeAnnotationQuery(ctx context.Context, tsdbQuery *tsdb.TsdbQuery) (*tsdb.Response, error) {

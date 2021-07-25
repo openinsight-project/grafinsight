@@ -9,9 +9,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/rendering"
-	"github.com/grafana/grafana/pkg/util"
+	"github.com/openinsight-project/grafinsight/pkg/models"
+	"github.com/openinsight-project/grafinsight/pkg/services/rendering"
+	"github.com/openinsight-project/grafinsight/pkg/util"
 )
 
 func (hs *HTTPServer) RenderToPng(c *models.ReqContext) {

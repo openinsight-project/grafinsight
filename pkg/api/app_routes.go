@@ -6,12 +6,12 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/grafana/grafana/pkg/api/pluginproxy"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/middleware"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/plugins"
-	"github.com/grafana/grafana/pkg/util"
+	"github.com/openinsight-project/grafinsight/pkg/api/pluginproxy"
+	"github.com/openinsight-project/grafinsight/pkg/infra/log"
+	"github.com/openinsight-project/grafinsight/pkg/middleware"
+	"github.com/openinsight-project/grafinsight/pkg/models"
+	"github.com/openinsight-project/grafinsight/pkg/plugins"
+	"github.com/openinsight-project/grafinsight/pkg/util"
 	macaron "gopkg.in/macaron.v1"
 )
 

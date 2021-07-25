@@ -12,9 +12,9 @@ import (
 
 	"github.com/grafana/grafana-plugin-sdk-go/backend"
 	"github.com/grafana/grafana-plugin-sdk-go/data"
-	"github.com/grafana/grafana/pkg/components/null"
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/util/errutil"
+	"github.com/openinsight-project/grafinsight/pkg/components/null"
+	"github.com/openinsight-project/grafinsight/pkg/components/simplejson"
+	"github.com/openinsight-project/grafinsight/pkg/util/errutil"
 )
 
 const (

@@ -5,11 +5,11 @@ import (
 
 	"github.com/go-macaron/binding"
 
-	"github.com/grafana/grafana/pkg/api/response"
-	"github.com/grafana/grafana/pkg/api/routing"
-	"github.com/grafana/grafana/pkg/middleware"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/util"
+	"github.com/openinsight-project/grafinsight/pkg/api/response"
+	"github.com/openinsight-project/grafinsight/pkg/api/routing"
+	"github.com/openinsight-project/grafinsight/pkg/middleware"
+	"github.com/openinsight-project/grafinsight/pkg/models"
+	"github.com/openinsight-project/grafinsight/pkg/util"
 )
 
 func (lps *LibraryPanelService) registerAPIEndpoints() {

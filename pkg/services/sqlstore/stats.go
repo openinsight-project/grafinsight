@@ -5,8 +5,8 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/openinsight-project/grafinsight/pkg/bus"
+	"github.com/openinsight-project/grafinsight/pkg/models"
 )
 
 func init() {

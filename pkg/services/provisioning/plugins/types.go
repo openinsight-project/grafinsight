@@ -1,6 +1,6 @@
 package plugins
 
-import "github.com/grafana/grafana/pkg/services/provisioning/values"
+import "github.com/openinsight-project/grafinsight/pkg/services/provisioning/values"
 
 // pluginsAsConfig is a normalized data object for plugins config data. Any config version should be mappable.
 // to this type.

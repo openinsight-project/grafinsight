@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/grafana/grafana/pkg/cmd/grafana-cli/services"
-	"github.com/grafana/grafana/pkg/cmd/grafana-cli/utils"
+	"github.com/openinsight-project/grafinsight/pkg/cmd/grafana-cli/services"
+	"github.com/openinsight-project/grafinsight/pkg/cmd/grafana-cli/utils"
 )
 
 var removePlugin func(pluginPath, id string) error = services.RemoveInstalledPlugin

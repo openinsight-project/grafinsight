@@ -11,21 +11,21 @@ import (
 	"testing"
 	"time"
 
-	"github.com/grafana/grafana/pkg/api/datasource"
-	"github.com/grafana/grafana/pkg/components/securejsondata"
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/openinsight-project/grafinsight/pkg/api/datasource"
+	"github.com/openinsight-project/grafinsight/pkg/components/securejsondata"
+	"github.com/openinsight-project/grafinsight/pkg/models"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
 	"golang.org/x/oauth2"
 	macaron "gopkg.in/macaron.v1"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/login/social"
-	"github.com/grafana/grafana/pkg/plugins"
-	"github.com/grafana/grafana/pkg/setting"
-	"github.com/grafana/grafana/pkg/util"
+	"github.com/openinsight-project/grafinsight/pkg/bus"
+	"github.com/openinsight-project/grafinsight/pkg/components/simplejson"
+	"github.com/openinsight-project/grafinsight/pkg/login/social"
+	"github.com/openinsight-project/grafinsight/pkg/plugins"
+	"github.com/openinsight-project/grafinsight/pkg/setting"
+	"github.com/openinsight-project/grafinsight/pkg/util"
 )
 
 func TestDataSourceProxy_routeRule(t *testing.T) {

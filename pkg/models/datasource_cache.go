@@ -12,8 +12,8 @@ import (
 
 	"github.com/grafana/grafana-aws-sdk/pkg/sigv4"
 
-	"github.com/grafana/grafana/pkg/infra/metrics/metricutil"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/openinsight-project/grafinsight/pkg/infra/metrics/metricutil"
+	"github.com/openinsight-project/grafinsight/pkg/setting"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 )

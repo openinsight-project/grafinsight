@@ -4,13 +4,13 @@ import (
 	"encoding/json"
 	"path/filepath"
 
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/plugins/backendplugin"
-	"github.com/grafana/grafana/pkg/plugins/backendplugin/grpcplugin"
-	"github.com/grafana/grafana/pkg/plugins/datasource/wrapper"
-	"github.com/grafana/grafana/pkg/tsdb"
-	"github.com/grafana/grafana/pkg/util/errutil"
+	"github.com/openinsight-project/grafinsight/pkg/infra/log"
+	"github.com/openinsight-project/grafinsight/pkg/models"
+	"github.com/openinsight-project/grafinsight/pkg/plugins/backendplugin"
+	"github.com/openinsight-project/grafinsight/pkg/plugins/backendplugin/grpcplugin"
+	"github.com/openinsight-project/grafinsight/pkg/plugins/datasource/wrapper"
+	"github.com/openinsight-project/grafinsight/pkg/tsdb"
+	"github.com/openinsight-project/grafinsight/pkg/util/errutil"
 )
 
 // DataSourcePlugin contains all metadata about a datasource plugin

@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/grafana/grafana/pkg/infra/localcache"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/registry"
-	"github.com/grafana/grafana/pkg/services/sqlstore"
+	"github.com/openinsight-project/grafinsight/pkg/infra/localcache"
+	"github.com/openinsight-project/grafinsight/pkg/models"
+	"github.com/openinsight-project/grafinsight/pkg/registry"
+	"github.com/openinsight-project/grafinsight/pkg/services/sqlstore"
 )
 
 type CacheService interface {

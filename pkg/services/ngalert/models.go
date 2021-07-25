@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/grafana/grafana/pkg/services/ngalert/eval"
+	"github.com/openinsight-project/grafinsight/pkg/services/ngalert/eval"
 )
 
 var errAlertDefinitionFailedGenerateUniqueUID = errors.New("failed to generate alert definition UID")

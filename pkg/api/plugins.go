@@ -9,15 +9,15 @@ import (
 
 	"github.com/grafana/grafana-plugin-sdk-go/backend"
 
-	"github.com/grafana/grafana/pkg/api/dtos"
-	"github.com/grafana/grafana/pkg/api/response"
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/plugins"
-	"github.com/grafana/grafana/pkg/plugins/backendplugin"
-	"github.com/grafana/grafana/pkg/plugins/datasource/wrapper"
-	"github.com/grafana/grafana/pkg/setting"
-	"github.com/grafana/grafana/pkg/util/errutil"
+	"github.com/openinsight-project/grafinsight/pkg/api/dtos"
+	"github.com/openinsight-project/grafinsight/pkg/api/response"
+	"github.com/openinsight-project/grafinsight/pkg/bus"
+	"github.com/openinsight-project/grafinsight/pkg/models"
+	"github.com/openinsight-project/grafinsight/pkg/plugins"
+	"github.com/openinsight-project/grafinsight/pkg/plugins/backendplugin"
+	"github.com/openinsight-project/grafinsight/pkg/plugins/datasource/wrapper"
+	"github.com/openinsight-project/grafinsight/pkg/setting"
+	"github.com/openinsight-project/grafinsight/pkg/util/errutil"
 )
 
 // ErrPluginNotFound is returned when an requested plugin is not installed.

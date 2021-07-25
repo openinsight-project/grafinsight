@@ -1,9 +1,9 @@
 package hooks
 
 import (
-	"github.com/grafana/grafana/pkg/api/dtos"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/registry"
+	"github.com/openinsight-project/grafinsight/pkg/api/dtos"
+	"github.com/openinsight-project/grafinsight/pkg/models"
+	"github.com/openinsight-project/grafinsight/pkg/registry"
 )
 
 type IndexDataHook func(indexData *dtos.IndexViewData, req *models.ReqContext)

@@ -3,8 +3,8 @@ package imguploader
 import (
 	"testing"
 
-	"github.com/grafana/grafana/pkg/components/imguploader/gcs"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/openinsight-project/grafinsight/pkg/components/imguploader/gcs"
+	"github.com/openinsight-project/grafinsight/pkg/setting"
 
 	. "github.com/smartystreets/goconvey/convey"
 )

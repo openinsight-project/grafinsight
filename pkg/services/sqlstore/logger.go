@@ -3,7 +3,7 @@ package sqlstore
 import (
 	"fmt"
 
-	glog "github.com/grafana/grafana/pkg/infra/log"
+	glog "github.com/openinsight-project/grafinsight/pkg/infra/log"
 
 	"xorm.io/core"
 )

@@ -3,11 +3,11 @@ package dashboards
 import (
 	"testing"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/openinsight-project/grafinsight/pkg/bus"
+	"github.com/openinsight-project/grafinsight/pkg/models"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/grafana/grafana/pkg/services/guardian"
+	"github.com/openinsight-project/grafinsight/pkg/services/guardian"
 
 	. "github.com/smartystreets/goconvey/convey"
 )

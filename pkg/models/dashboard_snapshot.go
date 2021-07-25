@@ -3,8 +3,8 @@ package models
 import (
 	"time"
 
-	"github.com/grafana/grafana/pkg/components/securedata"
-	"github.com/grafana/grafana/pkg/components/simplejson"
+	"github.com/openinsight-project/grafinsight/pkg/components/securedata"
+	"github.com/openinsight-project/grafinsight/pkg/components/simplejson"
 )
 
 // DashboardSnapshot model

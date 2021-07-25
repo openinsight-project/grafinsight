@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/grafana/grafana/pkg/services/sqlstore/migrator"
+	"github.com/openinsight-project/grafinsight/pkg/services/sqlstore/migrator"
 )
 
 // FilterWhere limits the set of dashboard IDs to the dashboards for

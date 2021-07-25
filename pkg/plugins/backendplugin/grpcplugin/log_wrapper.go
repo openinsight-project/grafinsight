@@ -6,8 +6,8 @@ import (
 	"io/ioutil"
 	"log"
 
-	glog "github.com/grafana/grafana/pkg/infra/log"
 	"github.com/hashicorp/go-hclog"
+	glog "github.com/openinsight-project/grafinsight/pkg/infra/log"
 )
 
 type logWrapper struct {

@@ -5,13 +5,13 @@ import (
 	"time"
 
 	"github.com/go-macaron/binding"
-	"github.com/grafana/grafana/pkg/api/avatar"
-	"github.com/grafana/grafana/pkg/api/dtos"
-	"github.com/grafana/grafana/pkg/api/frontendlogging"
-	"github.com/grafana/grafana/pkg/api/routing"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/middleware"
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/openinsight-project/grafinsight/pkg/api/avatar"
+	"github.com/openinsight-project/grafinsight/pkg/api/dtos"
+	"github.com/openinsight-project/grafinsight/pkg/api/frontendlogging"
+	"github.com/openinsight-project/grafinsight/pkg/api/routing"
+	"github.com/openinsight-project/grafinsight/pkg/infra/log"
+	"github.com/openinsight-project/grafinsight/pkg/middleware"
+	"github.com/openinsight-project/grafinsight/pkg/models"
 )
 
 var plog = log.New("api")

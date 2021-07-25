@@ -1,5 +1,4 @@
-module github.com/grafana/grafana
-
+module github.com/openinsight-project/grafinsight
 go 1.15
 
 // Override xorm's outdated go-mssqldb dependency, since we can't upgrade to current xorm (due to breaking changes).

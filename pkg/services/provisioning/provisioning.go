@@ -5,14 +5,14 @@ import (
 	"path/filepath"
 	"sync"
 
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/registry"
-	"github.com/grafana/grafana/pkg/services/provisioning/dashboards"
-	"github.com/grafana/grafana/pkg/services/provisioning/datasources"
-	"github.com/grafana/grafana/pkg/services/provisioning/notifiers"
-	"github.com/grafana/grafana/pkg/services/provisioning/plugins"
-	"github.com/grafana/grafana/pkg/setting"
-	"github.com/grafana/grafana/pkg/util/errutil"
+	"github.com/openinsight-project/grafinsight/pkg/infra/log"
+	"github.com/openinsight-project/grafinsight/pkg/registry"
+	"github.com/openinsight-project/grafinsight/pkg/services/provisioning/dashboards"
+	"github.com/openinsight-project/grafinsight/pkg/services/provisioning/datasources"
+	"github.com/openinsight-project/grafinsight/pkg/services/provisioning/notifiers"
+	"github.com/openinsight-project/grafinsight/pkg/services/provisioning/plugins"
+	"github.com/openinsight-project/grafinsight/pkg/setting"
+	"github.com/openinsight-project/grafinsight/pkg/util/errutil"
 )
 
 type ProvisioningService interface {

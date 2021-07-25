@@ -3,14 +3,14 @@ package librarypanels
 import (
 	"fmt"
 
-	"github.com/grafana/grafana/pkg/api/routing"
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/registry"
-	"github.com/grafana/grafana/pkg/services/sqlstore"
-	"github.com/grafana/grafana/pkg/services/sqlstore/migrator"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/openinsight-project/grafinsight/pkg/api/routing"
+	"github.com/openinsight-project/grafinsight/pkg/components/simplejson"
+	"github.com/openinsight-project/grafinsight/pkg/infra/log"
+	"github.com/openinsight-project/grafinsight/pkg/models"
+	"github.com/openinsight-project/grafinsight/pkg/registry"
+	"github.com/openinsight-project/grafinsight/pkg/services/sqlstore"
+	"github.com/openinsight-project/grafinsight/pkg/services/sqlstore/migrator"
+	"github.com/openinsight-project/grafinsight/pkg/setting"
 )
 
 // LibraryPanelService is the service for the Panel Library feature.

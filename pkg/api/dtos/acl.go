@@ -1,6 +1,6 @@
 package dtos
 
-import "github.com/grafana/grafana/pkg/models"
+import "github.com/openinsight-project/grafinsight/pkg/models"
 
 type UpdateDashboardAclCommand struct {
 	Items []DashboardAclUpdateItem `json:"items"`

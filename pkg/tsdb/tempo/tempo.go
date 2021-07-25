@@ -8,9 +8,9 @@ import (
 	"net/http"
 
 	"github.com/grafana/grafana-plugin-sdk-go/data"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/tsdb"
+	"github.com/openinsight-project/grafinsight/pkg/infra/log"
+	"github.com/openinsight-project/grafinsight/pkg/models"
+	"github.com/openinsight-project/grafinsight/pkg/tsdb"
 
 	jaeger "github.com/jaegertracing/jaeger/model"
 	jaeger_json "github.com/jaegertracing/jaeger/model/converter/json"

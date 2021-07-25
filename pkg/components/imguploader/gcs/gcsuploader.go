@@ -12,9 +12,9 @@ import (
 	"time"
 
 	"cloud.google.com/go/storage"
-	"github.com/grafana/grafana/pkg/ifaces/gcsifaces"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/util"
+	"github.com/openinsight-project/grafinsight/pkg/ifaces/gcsifaces"
+	"github.com/openinsight-project/grafinsight/pkg/infra/log"
+	"github.com/openinsight-project/grafinsight/pkg/util"
 	"golang.org/x/oauth2/google"
 	"golang.org/x/oauth2/jwt"
 	"google.golang.org/api/option"

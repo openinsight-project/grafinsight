@@ -3,8 +3,8 @@ package permissions
 import (
 	"strings"
 
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/sqlstore/migrator"
+	"github.com/openinsight-project/grafinsight/pkg/models"
+	"github.com/openinsight-project/grafinsight/pkg/services/sqlstore/migrator"
 )
 
 type DashboardPermissionFilter struct {

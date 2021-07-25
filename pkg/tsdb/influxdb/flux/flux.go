@@ -5,11 +5,11 @@ import (
 	"fmt"
 
 	"github.com/grafana/grafana-plugin-sdk-go/backend"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/tsdb"
 	influxdb2 "github.com/influxdata/influxdb-client-go/v2"
 	"github.com/influxdata/influxdb-client-go/v2/api"
+	"github.com/openinsight-project/grafinsight/pkg/infra/log"
+	"github.com/openinsight-project/grafinsight/pkg/models"
+	"github.com/openinsight-project/grafinsight/pkg/tsdb"
 )
 
 var (
@@ -96,7 +96,7 @@ func runnerFromDataSource(dsInfo *models.DataSource) (*runner, error) {
 
 // backendDataResponseToTSDBResponse takes the SDK's style response and changes it into a
 // tsdb.QueryResult. This is a wrapper so less of existing code needs to be changed. This should
-// be able to be removed in the near future https://github.com/grafana/grafana/pull/25472.
+// be able to be removed in the near future https://github.com/openinsight-project/grafinsight/pull/25472.
 func backendDataResponseToTSDBResponse(dr *backend.DataResponse, refID string) *tsdb.QueryResult {
 	qr := &tsdb.QueryResult{RefId: refID}
 

@@ -5,12 +5,12 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/grafana/grafana/pkg/services/validations"
+	"github.com/openinsight-project/grafinsight/pkg/services/validations"
 
-	"github.com/grafana/grafana/pkg/services/alerting"
+	"github.com/openinsight-project/grafinsight/pkg/services/alerting"
 
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/openinsight-project/grafinsight/pkg/components/simplejson"
+	"github.com/openinsight-project/grafinsight/pkg/models"
 	. "github.com/smartystreets/goconvey/convey"
 )
 

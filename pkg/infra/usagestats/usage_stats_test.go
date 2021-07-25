@@ -10,19 +10,19 @@ import (
 	"testing"
 	"time"
 
-	"github.com/grafana/grafana/pkg/services/alerting"
-	"github.com/grafana/grafana/pkg/services/licensing"
+	"github.com/openinsight-project/grafinsight/pkg/services/alerting"
+	"github.com/openinsight-project/grafinsight/pkg/services/licensing"
 	"github.com/stretchr/testify/require"
 
 	"net/http"
 	"net/http/httptest"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/plugins"
-	"github.com/grafana/grafana/pkg/services/sqlstore"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/openinsight-project/grafinsight/pkg/bus"
+	"github.com/openinsight-project/grafinsight/pkg/components/simplejson"
+	"github.com/openinsight-project/grafinsight/pkg/models"
+	"github.com/openinsight-project/grafinsight/pkg/plugins"
+	"github.com/openinsight-project/grafinsight/pkg/services/sqlstore"
+	"github.com/openinsight-project/grafinsight/pkg/setting"
 	"github.com/stretchr/testify/assert"
 )
 

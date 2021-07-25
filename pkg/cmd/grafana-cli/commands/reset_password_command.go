@@ -6,13 +6,13 @@ import (
 	"os"
 
 	"github.com/fatih/color"
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/cmd/grafana-cli/logger"
-	"github.com/grafana/grafana/pkg/cmd/grafana-cli/utils"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/sqlstore"
-	"github.com/grafana/grafana/pkg/util"
-	"github.com/grafana/grafana/pkg/util/errutil"
+	"github.com/openinsight-project/grafinsight/pkg/bus"
+	"github.com/openinsight-project/grafinsight/pkg/cmd/grafana-cli/logger"
+	"github.com/openinsight-project/grafinsight/pkg/cmd/grafana-cli/utils"
+	"github.com/openinsight-project/grafinsight/pkg/models"
+	"github.com/openinsight-project/grafinsight/pkg/services/sqlstore"
+	"github.com/openinsight-project/grafinsight/pkg/util"
+	"github.com/openinsight-project/grafinsight/pkg/util/errutil"
 )
 
 const AdminUserId = 1

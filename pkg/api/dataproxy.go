@@ -6,11 +6,11 @@ import (
 	"net/http"
 	"regexp"
 
-	"github.com/grafana/grafana/pkg/api/datasource"
-	"github.com/grafana/grafana/pkg/api/pluginproxy"
-	"github.com/grafana/grafana/pkg/infra/metrics"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/plugins"
+	"github.com/openinsight-project/grafinsight/pkg/api/datasource"
+	"github.com/openinsight-project/grafinsight/pkg/api/pluginproxy"
+	"github.com/openinsight-project/grafinsight/pkg/infra/metrics"
+	"github.com/openinsight-project/grafinsight/pkg/models"
+	"github.com/openinsight-project/grafinsight/pkg/plugins"
 )
 
 // ProxyDataSourceRequest proxies datasource requests

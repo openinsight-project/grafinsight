@@ -6,11 +6,11 @@ import (
 	"path/filepath"
 
 	pluginModel "github.com/grafana/grafana-plugin-model/go/renderer"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/plugins/backendplugin"
-	"github.com/grafana/grafana/pkg/plugins/backendplugin/grpcplugin"
-	"github.com/grafana/grafana/pkg/plugins/backendplugin/pluginextensionv2"
-	"github.com/grafana/grafana/pkg/util/errutil"
+	"github.com/openinsight-project/grafinsight/pkg/infra/log"
+	"github.com/openinsight-project/grafinsight/pkg/plugins/backendplugin"
+	"github.com/openinsight-project/grafinsight/pkg/plugins/backendplugin/grpcplugin"
+	"github.com/openinsight-project/grafinsight/pkg/plugins/backendplugin/pluginextensionv2"
+	"github.com/openinsight-project/grafinsight/pkg/util/errutil"
 )
 
 type RendererPlugin struct {

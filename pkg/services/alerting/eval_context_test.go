@@ -6,11 +6,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/grafana/grafana/pkg/services/validations"
+	"github.com/openinsight-project/grafinsight/pkg/services/validations"
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/openinsight-project/grafinsight/pkg/models"
 	"github.com/stretchr/testify/assert"
 )
 

@@ -5,7 +5,7 @@ import (
 	"net/url"
 	"time"
 
-	"github.com/grafana/grafana/pkg/tsdb"
+	"github.com/openinsight-project/grafinsight/pkg/tsdb"
 )
 
 type (

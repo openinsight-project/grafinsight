@@ -1,8 +1,8 @@
 package notifiers
 
 import (
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/services/provisioning/values"
+	"github.com/openinsight-project/grafinsight/pkg/components/simplejson"
+	"github.com/openinsight-project/grafinsight/pkg/services/provisioning/values"
 )
 
 // notificationsAsConfig is normalized data object for notifications config data. Any config version should be mappable

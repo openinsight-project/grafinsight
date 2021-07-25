@@ -5,10 +5,10 @@ import (
 	"testing"
 	"time"
 
-	es "github.com/grafana/grafana/pkg/tsdb/elasticsearch/client"
+	es "github.com/openinsight-project/grafinsight/pkg/tsdb/elasticsearch/client"
 
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/tsdb"
+	"github.com/openinsight-project/grafinsight/pkg/components/simplejson"
+	"github.com/openinsight-project/grafinsight/pkg/tsdb"
 	. "github.com/smartystreets/goconvey/convey"
 )
 

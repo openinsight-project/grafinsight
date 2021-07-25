@@ -1,8 +1,8 @@
 package notifications
 
 import (
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/openinsight-project/grafinsight/pkg/models"
+	"github.com/openinsight-project/grafinsight/pkg/setting"
 )
 
 // AttachedFile struct represents email attached files.

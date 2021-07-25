@@ -3,10 +3,10 @@ package alerting
 import (
 	"sync"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/infra/metrics"
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/openinsight-project/grafinsight/pkg/bus"
+	"github.com/openinsight-project/grafinsight/pkg/infra/log"
+	"github.com/openinsight-project/grafinsight/pkg/infra/metrics"
+	"github.com/openinsight-project/grafinsight/pkg/models"
 )
 
 type ruleReader interface {

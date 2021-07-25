@@ -9,12 +9,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/dashboards"
-	"github.com/grafana/grafana/pkg/util"
+	"github.com/openinsight-project/grafinsight/pkg/bus"
+	"github.com/openinsight-project/grafinsight/pkg/models"
+	"github.com/openinsight-project/grafinsight/pkg/services/dashboards"
+	"github.com/openinsight-project/grafinsight/pkg/util"
 
-	"github.com/grafana/grafana/pkg/infra/log"
+	"github.com/openinsight-project/grafinsight/pkg/infra/log"
 	. "github.com/smartystreets/goconvey/convey"
 )
 

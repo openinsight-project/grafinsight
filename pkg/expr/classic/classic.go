@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/grafana/grafana/pkg/expr/mathexp"
+	"github.com/openinsight-project/grafinsight/pkg/expr/mathexp"
 )
 
 // ConditionsCmd is command for the classic conditions

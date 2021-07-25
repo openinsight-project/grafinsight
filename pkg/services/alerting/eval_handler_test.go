@@ -4,7 +4,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/grafana/grafana/pkg/services/validations"
+	"github.com/openinsight-project/grafinsight/pkg/services/validations"
 
 	. "github.com/smartystreets/goconvey/convey"
 )

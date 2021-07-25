@@ -6,8 +6,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/grafana/grafana/pkg/infra/metrics"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/openinsight-project/grafinsight/pkg/infra/metrics"
+	"github.com/openinsight-project/grafinsight/pkg/setting"
 	"github.com/prometheus/client_golang/prometheus"
 	cw "github.com/weaveworks/common/middleware"
 	"gopkg.in/macaron.v1"

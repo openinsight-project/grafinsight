@@ -3,8 +3,8 @@ package migrations
 import (
 	"testing"
 
-	. "github.com/grafana/grafana/pkg/services/sqlstore/migrator"
-	"github.com/grafana/grafana/pkg/services/sqlstore/sqlutil"
+	. "github.com/openinsight-project/grafinsight/pkg/services/sqlstore/migrator"
+	"github.com/openinsight-project/grafinsight/pkg/services/sqlstore/sqlutil"
 	"github.com/stretchr/testify/require"
 	"xorm.io/xorm"
 )

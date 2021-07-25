@@ -5,9 +5,9 @@ import (
 	"regexp"
 	"strconv"
 
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/tsdb"
-	es "github.com/grafana/grafana/pkg/tsdb/elasticsearch/client"
+	"github.com/openinsight-project/grafinsight/pkg/components/simplejson"
+	"github.com/openinsight-project/grafinsight/pkg/tsdb"
+	es "github.com/openinsight-project/grafinsight/pkg/tsdb/elasticsearch/client"
 )
 
 type timeSeriesQuery struct {

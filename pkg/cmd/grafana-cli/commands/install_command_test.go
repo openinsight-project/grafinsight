@@ -8,8 +8,8 @@ import (
 	"runtime"
 	"testing"
 
-	"github.com/grafana/grafana/pkg/cmd/grafana-cli/commands/commandstest"
-	"github.com/grafana/grafana/pkg/cmd/grafana-cli/models"
+	"github.com/openinsight-project/grafinsight/pkg/cmd/grafana-cli/commands/commandstest"
+	"github.com/openinsight-project/grafinsight/pkg/cmd/grafana-cli/models"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

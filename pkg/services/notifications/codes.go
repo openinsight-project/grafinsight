@@ -8,8 +8,8 @@ import (
 
 	"github.com/unknwon/com"
 
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/openinsight-project/grafinsight/pkg/models"
+	"github.com/openinsight-project/grafinsight/pkg/setting"
 )
 
 const timeLimitCodeLength = 12 + 6 + 40

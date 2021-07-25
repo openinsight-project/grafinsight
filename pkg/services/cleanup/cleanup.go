@@ -7,15 +7,15 @@ import (
 	"path"
 	"time"
 
-	"github.com/grafana/grafana/pkg/services/shorturls"
+	"github.com/openinsight-project/grafinsight/pkg/services/shorturls"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/infra/serverlock"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/registry"
-	"github.com/grafana/grafana/pkg/services/annotations"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/openinsight-project/grafinsight/pkg/bus"
+	"github.com/openinsight-project/grafinsight/pkg/infra/log"
+	"github.com/openinsight-project/grafinsight/pkg/infra/serverlock"
+	"github.com/openinsight-project/grafinsight/pkg/models"
+	"github.com/openinsight-project/grafinsight/pkg/registry"
+	"github.com/openinsight-project/grafinsight/pkg/services/annotations"
+	"github.com/openinsight-project/grafinsight/pkg/setting"
 )
 
 type CleanUpService struct {

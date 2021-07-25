@@ -4,10 +4,10 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/quota"
 	log "github.com/inconshreveable/log15"
+	"github.com/openinsight-project/grafinsight/pkg/bus"
+	"github.com/openinsight-project/grafinsight/pkg/models"
+	"github.com/openinsight-project/grafinsight/pkg/services/quota"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

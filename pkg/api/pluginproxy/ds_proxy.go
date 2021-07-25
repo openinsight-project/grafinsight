@@ -13,14 +13,14 @@ import (
 	"strings"
 	"time"
 
-	"github.com/grafana/grafana/pkg/api/datasource"
-	glog "github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/plugins"
-	"github.com/grafana/grafana/pkg/services/oauthtoken"
-	"github.com/grafana/grafana/pkg/setting"
-	"github.com/grafana/grafana/pkg/util"
-	"github.com/grafana/grafana/pkg/util/proxyutil"
+	"github.com/openinsight-project/grafinsight/pkg/api/datasource"
+	glog "github.com/openinsight-project/grafinsight/pkg/infra/log"
+	"github.com/openinsight-project/grafinsight/pkg/models"
+	"github.com/openinsight-project/grafinsight/pkg/plugins"
+	"github.com/openinsight-project/grafinsight/pkg/services/oauthtoken"
+	"github.com/openinsight-project/grafinsight/pkg/setting"
+	"github.com/openinsight-project/grafinsight/pkg/util"
+	"github.com/openinsight-project/grafinsight/pkg/util/proxyutil"
 	"github.com/opentracing/opentracing-go"
 )
 

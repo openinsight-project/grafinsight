@@ -12,8 +12,8 @@ import (
 	sourcemap "github.com/go-sourcemap/sourcemap"
 
 	"github.com/getsentry/sentry-go"
-	"github.com/grafana/grafana/pkg/plugins"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/openinsight-project/grafinsight/pkg/plugins"
+	"github.com/openinsight-project/grafinsight/pkg/setting"
 )
 
 type sourceMapLocation struct {

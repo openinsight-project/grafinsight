@@ -10,7 +10,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/grafana/grafana/pkg/infra/log"
+	"github.com/openinsight-project/grafinsight/pkg/infra/log"
 
 	"github.com/grafana/grafana-plugin-sdk-go/backend/resource/httpadapter"
 )

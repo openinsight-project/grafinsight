@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/grafana/grafana-plugin-sdk-go/data"
-	"github.com/grafana/grafana/pkg/expr/mathexp/parse"
+	"github.com/openinsight-project/grafinsight/pkg/expr/mathexp/parse"
 )
 
 // Series has time.Time and ...? *float64 fields.

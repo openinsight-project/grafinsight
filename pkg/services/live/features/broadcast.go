@@ -4,7 +4,7 @@ import (
 	"time"
 
 	"github.com/centrifugal/centrifuge"
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/openinsight-project/grafinsight/pkg/models"
 )
 
 // BroadcastRunner will simply broadcast all events to `grafana/broadcast/*` channels

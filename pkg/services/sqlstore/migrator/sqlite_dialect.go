@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/grafana/grafana/pkg/util/errutil"
 	"github.com/mattn/go-sqlite3"
+	"github.com/openinsight-project/grafinsight/pkg/util/errutil"
 	"xorm.io/xorm"
 )
 

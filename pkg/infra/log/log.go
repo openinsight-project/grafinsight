@@ -11,10 +11,10 @@ import (
 	"strings"
 
 	"github.com/go-stack/stack"
-	"github.com/grafana/grafana/pkg/util"
-	"github.com/grafana/grafana/pkg/util/errutil"
 	"github.com/inconshreveable/log15"
 	isatty "github.com/mattn/go-isatty"
+	"github.com/openinsight-project/grafinsight/pkg/util"
+	"github.com/openinsight-project/grafinsight/pkg/util/errutil"
 	"gopkg.in/ini.v1"
 )
 

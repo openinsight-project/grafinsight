@@ -3,7 +3,7 @@ package models
 import (
 	"time"
 
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/openinsight-project/grafinsight/pkg/setting"
 	"golang.org/x/oauth2"
 )
 

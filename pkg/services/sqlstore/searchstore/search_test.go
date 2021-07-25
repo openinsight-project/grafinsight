@@ -9,12 +9,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/sqlstore"
-	"github.com/grafana/grafana/pkg/services/sqlstore/migrator"
-	"github.com/grafana/grafana/pkg/services/sqlstore/permissions"
-	"github.com/grafana/grafana/pkg/services/sqlstore/searchstore"
+	"github.com/openinsight-project/grafinsight/pkg/components/simplejson"
+	"github.com/openinsight-project/grafinsight/pkg/models"
+	"github.com/openinsight-project/grafinsight/pkg/services/sqlstore"
+	"github.com/openinsight-project/grafinsight/pkg/services/sqlstore/migrator"
+	"github.com/openinsight-project/grafinsight/pkg/services/sqlstore/permissions"
+	"github.com/openinsight-project/grafinsight/pkg/services/sqlstore/searchstore"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
