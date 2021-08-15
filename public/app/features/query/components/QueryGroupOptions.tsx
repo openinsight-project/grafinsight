@@ -2,10 +2,10 @@
 import React, { PureComponent, ChangeEvent, FocusEvent } from 'react';
 
 // Utils
-import { rangeUtil, PanelData, DataSourceApi } from '@grafana/data';
+import { rangeUtil, PanelData, DataSourceApi } from '@grafinsight/data';
 
 // Components
-import { Switch, Input, InlineField, InlineFormLabel, stylesFactory } from '@grafana/ui';
+import { Switch, Input, InlineField, InlineFormLabel, stylesFactory } from '@grafinsight/ui';
 
 // Types
 import { QueryOperationRow } from 'app/core/components/QueryOperationRow/QueryOperationRow';

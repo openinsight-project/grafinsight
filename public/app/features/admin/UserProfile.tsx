@@ -2,8 +2,8 @@ import React, { PureComponent, FC } from 'react';
 import { UserDTO } from 'app/types';
 import { cx, css } from 'emotion';
 import { config } from 'app/core/config';
-import { GrafanaTheme } from '@grafana/data';
-import { ConfirmButton, ConfirmModal, LegacyInputStatus, Button, stylesFactory, Input } from '@grafana/ui';
+import { GrafInsightTheme } from '@grafinsight/data';
+import { ConfirmButton, ConfirmModal, LegacyInputStatus, Button, stylesFactory, Input } from '@grafinsight/ui';
 
 interface Props {
   user: UserDTO;
@@ -161,7 +161,7 @@ export class UserProfile extends PureComponent<Props, State> {
   }
 }
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => {
+const getStyles = stylesFactory((theme: GrafInsightTheme) => {
   return {
     buttonRow: css`
       margin-top: 0.8rem;

@@ -1,6 +1,6 @@
 import React, { PropsWithChildren, useMemo } from 'react';
-import { SelectableValue } from '@grafana/data';
-import { selectors } from '@grafana/e2e-selectors';
+import { SelectableValue } from '@grafinsight/data';
+import { selectors } from '@grafinsight/e2e-selectors/src';
 import { VariableSelectField } from '../editor/VariableSelectField';
 import { VariableSort } from '../types';
 

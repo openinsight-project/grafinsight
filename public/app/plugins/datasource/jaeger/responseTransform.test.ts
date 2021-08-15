@@ -1,5 +1,5 @@
 import { createTraceFrame } from './responseTransform';
-import { ArrayVector } from '@grafana/data';
+import { ArrayVector } from '@grafinsight/data';
 import { testResponse } from './testResponse';
 
 describe('createTraceFrame', () => {

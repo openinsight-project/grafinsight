@@ -1,4 +1,4 @@
-import { applyFieldOverrides, getDefaultTimeRange, LoadingState, PanelData } from '@grafana/data';
+import { applyFieldOverrides, getDefaultTimeRange, LoadingState, PanelData } from '@grafinsight/data';
 import { config } from 'app/core/config';
 import { DashboardModel, PanelModel } from '../state';
 import { getProcessedDataFrames } from '../../query/state/runRequest';

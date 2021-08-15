@@ -1,5 +1,5 @@
-import { DataFrame, DataFrameView, dateTimeFormat, systemDateFormats, TimeZone } from '@grafana/data';
-import { EventsCanvas, usePlotContext, useTheme } from '@grafana/ui';
+import { DataFrame, DataFrameView, dateTimeFormat, systemDateFormats, TimeZone } from '@grafinsight/data';
+import { EventsCanvas, usePlotContext, useTheme } from '@grafinsight/ui';
 import React, { useCallback, useEffect, useRef } from 'react';
 import { AnnotationMarker } from './AnnotationMarker';
 

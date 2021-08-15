@@ -1,6 +1,6 @@
 import React, { useCallback, useMemo } from 'react';
-import { FieldType, PanelProps, VizOrientation } from '@grafana/data';
-import { BarChart, BarChartOptions, GraphNGLegendEvent } from '@grafana/ui';
+import { FieldType, PanelProps, VizOrientation } from '@grafinsight/data';
+import { BarChart, BarChartOptions, GraphNGLegendEvent } from '@grafinsight/ui';
 import { changeSeriesColorConfigFactory } from '../timeseries/overrides/colorSeriesConfigFactory';
 import { hideSeriesConfigFactory } from '../timeseries/overrides/hideSeriesConfigFactory';
 

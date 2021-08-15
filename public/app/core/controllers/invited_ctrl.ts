@@ -1,6 +1,6 @@
 import coreModule from '../core_module';
 import config from 'app/core/config';
-import { getBackendSrv } from '@grafana/runtime';
+import { getBackendSrv } from '@grafinsight/runtime/src';
 import { promiseToDigest } from '../utils/promiseToDigest';
 
 export class InvitedCtrl {

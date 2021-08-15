@@ -1,6 +1,6 @@
-import { ExploreQueryFieldProps } from '@grafana/data';
-import { selectors } from '@grafana/e2e-selectors';
-import { LegacyForms } from '@grafana/ui';
+import { ExploreQueryFieldProps } from '@grafinsight/data';
+import { selectors } from '@grafinsight/e2e-selectors/src';
+import { LegacyForms } from '@grafinsight/ui';
 import React from 'react';
 import { TempoDatasource, TempoQuery } from './datasource';
 

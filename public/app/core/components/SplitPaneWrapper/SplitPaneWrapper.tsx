@@ -1,8 +1,8 @@
 import React, { createRef, MutableRefObject, PureComponent, ReactNode } from 'react';
 import SplitPane from 'react-split-pane';
 import { css, cx } from 'emotion';
-import { GrafanaTheme } from '@grafana/data';
-import { stylesFactory } from '@grafana/ui';
+import { GrafInsightTheme } from '@grafinsight/data';
+import { stylesFactory } from '@grafinsight/ui';
 import { config } from 'app/core/config';
 
 enum Pane {
@@ -129,7 +129,7 @@ export class SplitPaneWrapper extends PureComponent<Props> {
   }
 }
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => {
+const getStyles = stylesFactory((theme: GrafInsightTheme) => {
   const handleColor = theme.palette.blue95;
   const paneSpacing = theme.spacing.md;
 

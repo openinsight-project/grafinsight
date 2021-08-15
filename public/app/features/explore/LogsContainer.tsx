@@ -1,9 +1,9 @@
 import React, { PureComponent } from 'react';
 import { hot } from 'react-hot-loader';
 import { connect, ConnectedProps } from 'react-redux';
-import { Collapse } from '@grafana/ui';
+import { Collapse } from '@grafinsight/ui';
 
-import { AbsoluteTimeRange, Field, LogLevel, LogRowModel, LogsDedupStrategy, RawTimeRange } from '@grafana/data';
+import { AbsoluteTimeRange, Field, LogLevel, LogRowModel, LogsDedupStrategy, RawTimeRange } from '@grafinsight/data';
 
 import { ExploreId, ExploreItemState } from 'app/types/explore';
 import { StoreState } from 'app/types';

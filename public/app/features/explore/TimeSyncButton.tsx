@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tooltip, ToolbarButton } from '@grafana/ui';
+import { Tooltip, ToolbarButton } from '@grafinsight/ui';
 
 interface TimeSyncButtonProps {
   isSynced: boolean;

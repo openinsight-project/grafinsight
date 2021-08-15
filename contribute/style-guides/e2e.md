@@ -1,6 +1,6 @@
 # End-to-End tests
 
-Grafana Labs uses a minimal [homegrown solution](../../packages/grafana-e2e) built on top of [Cypress](https://cypress.io) for its end-to-end (E2E) tests.
+Grafana Labs uses a minimal [homegrown solution](../../packages/grafinsight-e2e) built on top of [Cypress](https://cypress.io) for its end-to-end (E2E) tests.
 
 Important notes:
 
@@ -51,7 +51,7 @@ export const Login = {
 };
 ```
 
-The next step is to add the `Login` page to the `Pages` export within [_\<repo-root>/packages/grafana-e2e-selectors/src/selectors/pages.ts_](../../packages/grafana-e2e-selectors/src/selectors/pages.ts) so that it appears when we type `e2e.pages` in our IDE.
+The next step is to add the `Login` page to the `Pages` export within [_\<repo-root>/packages/grafinsight-e2e-selectors/src/selectors/pages.ts_](../../packages/grafinsight-e2e-selectors/src/selectors/pages.ts) so that it appears when we type `e2e.pages` in our IDE.
 
 ```typescript
 export const Pages = {
@@ -120,7 +120,7 @@ export const DataSources = {
 
 You might have noticed that instead of a simple `string` as the `selector`, we're using a `function` that takes a string parameter as an argument and returns a formatted string using the argument.
 
-Just as before we need to add the `DataSources` page to the exported const `Pages` in `packages/grafana-e2e-selectors/src/selectors/pages.ts`.
+Just as before we need to add the `DataSources` page to the exported const `Pages` in `packages/grafinsight-e2e-selectors/src/selectors/pages.ts`.
 
 The next step is to use the `dataSources` selector function as in our example below:
 

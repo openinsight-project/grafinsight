@@ -2,7 +2,7 @@
 import React, { PureComponent } from 'react';
 
 // Types
-import { PluginConfigPageProps, DataSourcePluginMeta, DataSourceJsonData } from '@grafana/data';
+import { PluginConfigPageProps, DataSourcePluginMeta, DataSourceJsonData } from '@grafinsight/data';
 
 interface Props extends PluginConfigPageProps<DataSourcePluginMeta<DataSourceJsonData>> {}
 

@@ -1,5 +1,5 @@
 import React, { PureComponent, ChangeEvent } from 'react';
-import { SelectableValue } from '@grafana/data';
+import { SelectableValue } from '@grafinsight/data';
 import { AzureCredentialsForm } from './AzureCredentialsForm';
 import { AzureDataSourceSettings } from '../types';
 

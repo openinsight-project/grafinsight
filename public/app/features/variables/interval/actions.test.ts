@@ -11,7 +11,7 @@ import {
 } from '../state/sharedReducer';
 import { variableAdapters } from '../adapters';
 import { createIntervalVariableAdapter } from './adapter';
-import { dateTime } from '@grafana/data';
+import { dateTime } from '@grafinsight/data';
 import { getTimeSrv, setTimeSrv, TimeSrv } from '../../dashboard/services/TimeSrv';
 import { TemplateSrv } from '../../templating/template_srv';
 import { intervalBuilder } from '../shared/testing/builders';

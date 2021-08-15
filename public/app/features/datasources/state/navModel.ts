@@ -1,4 +1,4 @@
-import { DataSourceSettings, PluginType, PluginInclude, NavModel, NavModelItem } from '@grafana/data';
+import { DataSourceSettings, PluginType, PluginInclude, NavModel, NavModelItem } from '@grafinsight/data';
 import config from 'app/core/config';
 import { GenericDataSourcePlugin } from '../settings/PluginSettings';
 

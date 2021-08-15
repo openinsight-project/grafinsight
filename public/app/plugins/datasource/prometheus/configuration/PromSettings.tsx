@@ -3,8 +3,8 @@ import {
   onUpdateDatasourceJsonDataOptionChecked,
   SelectableValue,
   updateDatasourcePluginJsonDataOption,
-} from '@grafana/data';
-import { EventsWithValidation, InlineFormLabel, LegacyForms, regexValidation } from '@grafana/ui';
+} from '@grafinsight/data';
+import { EventsWithValidation, InlineFormLabel, LegacyForms, regexValidation } from '@grafinsight/ui';
 import React, { SyntheticEvent } from 'react';
 import { PromOptions } from '../types';
 import { ExemplarsSettings } from './ExemplarsSettings';

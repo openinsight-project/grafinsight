@@ -13,8 +13,8 @@ jest.mock('app/core/core', () => {
   };
 });
 
-import { SystemJS } from '@grafana/runtime';
-import { AppPluginMeta, PluginMetaInfo, PluginType, AppPlugin } from '@grafana/data';
+import { SystemJS } from '@grafinsight/runtime/src';
+import { AppPluginMeta, PluginMetaInfo, PluginType, AppPlugin } from '@grafinsight/data';
 
 // Loaded after the `unmock` abve
 import { importAppPlugin } from './plugin_loader';

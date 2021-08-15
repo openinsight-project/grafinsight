@@ -1,7 +1,7 @@
 // Libaries
 import _ from 'lodash';
 // Constants
-import { DEFAULT_ANNOTATION_COLOR } from '@grafana/ui';
+import { DEFAULT_ANNOTATION_COLOR } from '@grafinsight/ui';
 import { GRID_CELL_HEIGHT, GRID_CELL_VMARGIN, GRID_COLUMN_COUNT, REPEAT_DIR_VERTICAL } from 'app/core/constants';
 // Utils & Services
 import { contextSrv } from 'app/core/services/context_srv';
@@ -19,7 +19,7 @@ import {
   TimeRange,
   TimeZone,
   UrlQueryValue,
-} from '@grafana/data';
+} from '@grafinsight/data';
 import { CoreEvents, DashboardMeta, KIOSK_MODE_TV } from 'app/types';
 import { GetVariables, getVariables } from 'app/features/variables/state/selectors';
 import { variableAdapters } from 'app/features/variables/adapters';

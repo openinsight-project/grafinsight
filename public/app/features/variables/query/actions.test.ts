@@ -1,4 +1,4 @@
-import { getDefaultTimeRange, LoadingState } from '@grafana/data';
+import { getDefaultTimeRange, LoadingState } from '@grafinsight/data';
 
 import { variableAdapters } from '../adapters';
 import { createQueryVariableAdapter } from './adapter';
@@ -36,7 +36,7 @@ import { notifyApp } from '../../../core/reducers/appNotification';
 import { silenceConsoleOutput } from '../../../../test/core/utils/silenceConsoleOutput';
 import { getTimeSrv, setTimeSrv, TimeSrv } from '../../dashboard/services/TimeSrv';
 import { setVariableQueryRunner, VariableQueryRunner } from './VariableQueryRunner';
-import { setDataSourceSrv } from '@grafana/runtime';
+import { setDataSourceSrv } from '@grafinsight/runtime/src';
 
 const mocks: Record<string, any> = {
   datasource: {

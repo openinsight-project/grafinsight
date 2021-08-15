@@ -1,11 +1,11 @@
 import React, { useState, FC, useEffect } from 'react';
 import EmptyListCTA from 'app/core/components/EmptyListCTA/EmptyListCTA';
 import Page from 'app/core/components/Page/Page';
-import { getBackendSrv } from '@grafana/runtime';
+import { getBackendSrv } from '@grafinsight/runtime/src';
 import { useAsyncFn } from 'react-use';
 import { appEvents } from 'app/core/core';
 import { useNavModel } from 'app/core/hooks/useNavModel';
-import { HorizontalGroup, Button, LinkButton } from '@grafana/ui';
+import { HorizontalGroup, Button, LinkButton } from '@grafinsight/ui';
 import { CoreEvents } from 'app/types';
 import { AlertNotification } from 'app/types/alerting';
 

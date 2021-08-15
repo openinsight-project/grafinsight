@@ -1,5 +1,5 @@
-import { PanelModel } from '@grafana/data';
-import { sharedSingleStatMigrationHandler } from '@grafana/ui';
+import { PanelModel } from '@grafinsight/data';
+import { sharedSingleStatMigrationHandler } from '@grafinsight/ui';
 import { BarGaugeOptions } from './types';
 
 export const barGaugePanelMigrationHandler = (panel: PanelModel<BarGaugeOptions>): Partial<BarGaugeOptions> => {

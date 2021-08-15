@@ -1,11 +1,11 @@
 import React, { FormEvent, ReactElement, useCallback } from 'react';
-import { VerticalGroup } from '@grafana/ui';
+import { VerticalGroup } from '@grafinsight/ui';
 
 import { TextBoxVariableModel } from '../types';
 import { VariableEditorProps } from '../editor/types';
 import { VariableSectionHeader } from '../editor/VariableSectionHeader';
 import { VariableTextField } from '../editor/VariableTextField';
-import { selectors } from '@grafana/e2e-selectors';
+import { selectors } from '@grafinsight/e2e-selectors/src';
 
 export interface Props extends VariableEditorProps<TextBoxVariableModel> {}
 

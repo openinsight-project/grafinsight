@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { css } from 'emotion';
-import { ThemeContext, LinkButton, CallToActionCard, Icon } from '@grafana/ui';
+import { ThemeContext, LinkButton, CallToActionCard, Icon } from '@grafinsight/ui';
 
 export const NoDataSourceCallToAction = () => {
   const theme = useContext(ThemeContext);

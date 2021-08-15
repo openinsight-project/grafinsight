@@ -11,7 +11,7 @@ import {
   LinkModelSupplier,
   ScopedVar,
   ScopedVars,
-} from '@grafana/data';
+} from '@grafinsight/data';
 import { getLinkSrv } from './link_srv';
 import { config } from 'app/core/config';
 

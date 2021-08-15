@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { css } from 'emotion';
-import { Tab, TabsBar, Icon, IconName, useStyles } from '@grafana/ui';
-import { NavModel, NavModelItem, NavModelBreadcrumb, GrafanaTheme } from '@grafana/data';
+import { Tab, TabsBar, Icon, IconName, useStyles } from '@grafinsight/ui';
+import { NavModel, NavModelItem, NavModelBreadcrumb, GrafInsightTheme } from '@grafinsight/data';
 import { PanelHeaderMenuItem } from 'app/features/dashboard/dashgrid/PanelHeader/PanelHeaderMenuItem';
 
 export interface Props {
@@ -137,7 +137,7 @@ function renderTitle(title: string, breadcrumbs: NavModelBreadcrumb[]) {
   return <h1 className="page-header__title">{breadcrumbsResult}</h1>;
 }
 
-const getStyles = (theme: GrafanaTheme) => ({
+const getStyles = (theme: GrafInsightTheme) => ({
   headerCanvas: css`
     background: ${theme.colors.bg2};
     border-bottom: 1px solid ${theme.colors.border1};

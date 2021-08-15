@@ -20,6 +20,6 @@
     "public/test/**/*.ts",
     "public/vendor/**/*.ts",
     "packages/jaeger-ui-components/typings",
-    "packages/grafana-data/typings"
+    "packages/grafinsight-data/typings"
   ]
 }

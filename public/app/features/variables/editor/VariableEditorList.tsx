@@ -1,8 +1,8 @@
 import React, { FC, MouseEvent, PureComponent } from 'react';
 import { css } from 'emotion';
-import { Icon, IconButton, useStyles } from '@grafana/ui';
-import { selectors } from '@grafana/e2e-selectors';
-import { GrafanaTheme } from '@grafana/data';
+import { Icon, IconButton, useStyles } from '@grafinsight/ui';
+import { selectors } from '@grafinsight/e2e-selectors/src';
+import { GrafInsightTheme } from '@grafinsight/data';
 
 import EmptyListCTA from '../../../core/components/EmptyListCTA/EmptyListCTA';
 import { QueryVariableModel, VariableModel } from '../types';
@@ -222,7 +222,7 @@ const VariableCheckIndicator: FC<VariableCheckIndicatorProps> = ({ passed }) => 
   );
 };
 
-const getStyles = (theme: GrafanaTheme) => ({
+const getStyles = (theme: GrafInsightTheme) => ({
   iconPassed: css`
     color: ${theme.palette.greenBase};
   `,

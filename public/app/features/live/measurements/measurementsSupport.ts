@@ -1,5 +1,5 @@
-import { LiveChannelSupport, LiveChannelConfig } from '@grafana/data';
-import { MeasurementCollector } from '@grafana/runtime';
+import { LiveChannelSupport, LiveChannelConfig } from '@grafinsight/data';
+import { MeasurementCollector } from '@grafinsight/runtime/src';
 
 interface MeasurementChannel {
   config: LiveChannelConfig;

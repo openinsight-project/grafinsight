@@ -1,6 +1,6 @@
 import memoizeOne from 'memoize-one';
-import { getBackendSrv, config } from '@grafana/runtime';
-import { AppEvents } from '@grafana/data';
+import { getBackendSrv, config } from '@grafinsight/runtime/src';
+import { AppEvents } from '@grafinsight/data';
 import appEvents from 'app/core/app_events';
 import { copyStringToClipboard } from './explore';
 

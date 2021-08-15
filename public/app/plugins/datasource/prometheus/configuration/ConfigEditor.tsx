@@ -1,6 +1,6 @@
 import React from 'react';
-import { DataSourceHttpSettings } from '@grafana/ui';
-import { DataSourcePluginOptionsEditorProps } from '@grafana/data';
+import { DataSourceHttpSettings } from '@grafinsight/ui';
+import { DataSourcePluginOptionsEditorProps } from '@grafinsight/data';
 import { PromSettings } from './PromSettings';
 import { PromOptions } from '../types';
 import { config } from 'app/core/config';

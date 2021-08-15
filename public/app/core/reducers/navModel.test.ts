@@ -1,6 +1,6 @@
 import { reducerTester } from '../../../test/core/redux/reducerTester';
 import { navIndexReducer, updateNavIndex, updateConfigurationSubtitle } from './navModel';
-import { NavIndex } from '@grafana/data';
+import { NavIndex } from '@grafinsight/data';
 
 describe('navModelReducer', () => {
   describe('when updateNavIndex is dispatched', () => {

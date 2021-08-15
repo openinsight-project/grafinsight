@@ -1,4 +1,4 @@
-import { GrafanaTheme } from '@grafana/data';
+import { GrafInsightTheme } from '@grafinsight/data';
 import {
   Button,
   Input,
@@ -7,7 +7,7 @@ import {
   stylesFactory,
   Tooltip as GrafanaTooltip,
   useTheme,
-} from '@grafana/ui';
+} from '@grafinsight/ui';
 import { ButtonProps, Elements, PopoverProps, TooltipProps } from '@jaegertracing/jaeger-ui-components';
 import cx from 'classnames';
 import { css } from 'emotion';
@@ -76,7 +76,7 @@ export const UIElements: Elements = {
   },
 };
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => {
+const getStyles = stylesFactory((theme: GrafInsightTheme) => {
   return {
     Divider: css`
       display: inline-block;

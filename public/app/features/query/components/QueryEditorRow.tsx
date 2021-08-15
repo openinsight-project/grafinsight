@@ -4,9 +4,9 @@ import classNames from 'classnames';
 import _ from 'lodash';
 // Utils & Services
 import { getDatasourceSrv } from 'app/features/plugins/datasource_srv';
-import { AngularComponent, getAngularLoader, getTemplateSrv } from '@grafana/runtime';
+import { AngularComponent, getAngularLoader, getTemplateSrv } from '@grafinsight/runtime/src';
 import { getTimeSrv } from 'app/features/dashboard/services/TimeSrv';
-import { ErrorBoundaryAlert, HorizontalGroup, InfoBox } from '@grafana/ui';
+import { ErrorBoundaryAlert, HorizontalGroup, InfoBox } from '@grafinsight/ui';
 import {
   DataQuery,
   DataSourceApi,
@@ -18,7 +18,7 @@ import {
   PanelEvents,
   TimeRange,
   toLegacyResponseData,
-} from '@grafana/data';
+} from '@grafinsight/data';
 import { QueryEditorRowTitle } from './QueryEditorRowTitle';
 import {
   QueryOperationRow,
@@ -26,7 +26,7 @@ import {
 } from 'app/core/components/QueryOperationRow/QueryOperationRow';
 import { QueryOperationAction } from 'app/core/components/QueryOperationRow/QueryOperationAction';
 import { DashboardModel } from '../../dashboard/state/DashboardModel';
-import { selectors } from '@grafana/e2e-selectors';
+import { selectors } from '@grafinsight/e2e-selectors/src';
 import { PanelModel } from 'app/features/dashboard/state';
 
 interface Props {

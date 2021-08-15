@@ -1,5 +1,5 @@
-import { MetaAnalyticsEventName, reportMetaAnalytics } from '@grafana/runtime';
-import { CoreApp, DataQueryRequest, DataSourceApi, dateTime, LoadingState, PanelData } from '@grafana/data';
+import { MetaAnalyticsEventName, reportMetaAnalytics } from '@grafinsight/runtime/src';
+import { CoreApp, DataQueryRequest, DataSourceApi, dateTime, LoadingState, PanelData } from '@grafinsight/data';
 import { emitDataRequestEvent } from './queryAnalytics';
 import { DashboardModel } from '../../dashboard/state/DashboardModel';
 
@@ -25,16 +25,16 @@ jest.mock('app/features/dashboard/services/DashboardSrv', () => ({
   },
 }));
 
-jest.mock('@grafana/runtime', () => ({
-  ...(jest.requireActual('@grafana/runtime') as any),
+jest.mock('@grafinsight/runtime', () => ({
+  ...(jest.requireActual('@grafinsight/runtime') as any),
   reportMetaAnalytics: jest.fn(),
 }));
 
 const mockGetUrlSearchParams = jest.fn(() => {
   return {};
 });
-jest.mock('@grafana/data', () => ({
-  ...(jest.requireActual('@grafana/data') as any),
+jest.mock('@grafinsight/data', () => ({
+  ...(jest.requireActual('@grafinsight/data') as any),
   urlUtil: {
     getUrlSearchParams: () => mockGetUrlSearchParams(),
   },

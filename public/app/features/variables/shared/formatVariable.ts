@@ -1,4 +1,4 @@
-import { VariableModel } from '@grafana/data';
+import { VariableModel } from '@grafinsight/data';
 import { VariableWithOptions } from '../types';
 
 export const formatVariableLabel = (variable: VariableModel) => {

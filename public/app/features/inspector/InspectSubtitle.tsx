@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { css } from 'emotion';
-import { stylesFactory, useTheme, Tab, TabsBar } from '@grafana/ui';
-import { GrafanaTheme, SelectableValue, PanelData, getValueFormat, formattedValueToString } from '@grafana/data';
+import { stylesFactory, useTheme, Tab, TabsBar } from '@grafinsight/ui';
+import { GrafInsightTheme, SelectableValue, PanelData, getValueFormat, formattedValueToString } from '@grafinsight/data';
 import { InspectTab } from '../inspector/types';
 
 interface Props {
@@ -34,7 +34,7 @@ export const InspectSubtitle: FC<Props> = ({ tab, tabs, onSelectTab, data }) => 
   );
 };
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => {
+const getStyles = stylesFactory((theme: GrafInsightTheme) => {
   return {
     tabsBar: css`
       padding-left: ${theme.spacing.md};

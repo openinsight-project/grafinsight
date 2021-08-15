@@ -1,8 +1,8 @@
-import { IconButton, IconName, stylesFactory, useTheme } from '@grafana/ui';
+import { IconButton, IconName, stylesFactory, useTheme } from '@grafinsight/ui';
 import React from 'react';
 import { css } from 'emotion';
-import { GrafanaTheme } from '@grafana/data';
-import { selectors } from '@grafana/e2e-selectors';
+import { GrafInsightTheme } from '@grafinsight/data';
+import { selectors } from '@grafinsight/e2e-selectors/src';
 
 interface QueryOperationActionProps {
   icon: IconName;
@@ -35,7 +35,7 @@ export const QueryOperationAction: React.FC<QueryOperationActionProps> = ({ icon
 
 QueryOperationAction.displayName = 'QueryOperationAction';
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => {
+const getStyles = stylesFactory((theme: GrafInsightTheme) => {
   return {
     icon: css`
       color: ${theme.colors.textWeak};

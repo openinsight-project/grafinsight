@@ -1,8 +1,8 @@
 import React, { useMemo, useCallback, FC } from 'react';
 import _ from 'lodash';
 
-import { LegacyForms } from '@grafana/ui';
-import { SelectableValue } from '@grafana/data';
+import { LegacyForms } from '@grafinsight/ui';
+import { SelectableValue } from '@grafinsight/data';
 import { Variable } from 'app/types/templates';
 const { Select } = LegacyForms;
 

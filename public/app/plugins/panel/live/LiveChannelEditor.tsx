@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { css } from 'emotion';
-import { Select, FeatureInfoBox, Label, stylesFactory } from '@grafana/ui';
+import { Select, FeatureInfoBox, Label, stylesFactory } from '@grafinsight/ui';
 import {
   LiveChannelScope,
   LiveChannelAddress,
@@ -8,8 +8,8 @@ import {
   SelectableValue,
   StandardEditorProps,
   FeatureState,
-  GrafanaTheme,
-} from '@grafana/data';
+  GrafInsightTheme,
+} from '@grafinsight/data';
 
 import { LivePanelOptions } from './types';
 import { getGrafanaLiveCentrifugeSrv } from 'app/features/live/live';
@@ -18,7 +18,7 @@ import { config } from 'app/core/config';
 type Props = StandardEditorProps<LiveChannelAddress, any, LivePanelOptions>;
 
 const scopes: Array<SelectableValue<LiveChannelScope>> = [
-  { label: 'Grafana', value: LiveChannelScope.Grafana, description: 'Core grafana live features' },
+  { label: 'Grafana', value: LiveChannelScope.GrafInsight, description: 'Core grafana live features' },
   { label: 'Data Sources', value: LiveChannelScope.DataSource, description: 'Data sources with live support' },
   { label: 'Plugins', value: LiveChannelScope.Plugin, description: 'Plugins with live support' },
 ];
@@ -165,7 +165,7 @@ function findPathOption(paths: Array<SelectableValue<string>>, path?: string): S
   return undefined;
 }
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => ({
+const getStyles = stylesFactory((theme: GrafInsightTheme) => ({
   dropWrap: css`
     margin-bottom: ${theme.spacing.sm};
   `,

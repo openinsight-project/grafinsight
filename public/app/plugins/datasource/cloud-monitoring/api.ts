@@ -1,7 +1,7 @@
 import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
-import { SelectableValue } from '@grafana/data';
-import { FetchResponse, getBackendSrv } from '@grafana/runtime';
+import { SelectableValue } from '@grafinsight/data';
+import { FetchResponse, getBackendSrv } from '@grafinsight/runtime/src';
 
 import appEvents from 'app/core/app_events';
 import { CoreEvents } from 'app/types';

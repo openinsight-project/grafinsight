@@ -18,8 +18,8 @@ import {
   GraphSeriesXY,
   LinkModel,
   Field,
-  GrafanaTheme,
-} from '@grafana/data';
+  GrafInsightTheme,
+} from '@grafinsight/data';
 import {
   LogLabels,
   RadioButtonGroup,
@@ -32,12 +32,12 @@ import {
   stylesFactory,
   Icon,
   Tooltip,
-} from '@grafana/ui';
+} from '@grafinsight/ui';
 import store from 'app/core/store';
 import { ExploreGraphPanel } from './ExploreGraphPanel';
 import { MetaInfoText } from './MetaInfoText';
-import { RowContextOptions } from '@grafana/ui/src/components/Logs/LogRowContextProvider';
-import { MAX_CHARACTERS } from '@grafana/ui/src/components/Logs/LogRowMessage';
+import { RowContextOptions } from '@grafinsight/ui/src/components/Logs/LogRowContextProvider';
+import { MAX_CHARACTERS } from '@grafinsight/ui/src/components/Logs/LogRowMessage';
 
 const SETTINGS_KEYS = {
   showLabels: 'grafana.explore.logs.showLabels',
@@ -65,7 +65,7 @@ interface Props {
   dedupedRows?: LogRowModel[];
   visibleRange?: AbsoluteTimeRange;
   width: number;
-  theme: GrafanaTheme;
+  theme: GrafInsightTheme;
   highlighterExpressions?: string[];
   loading: boolean;
   absoluteRange: AbsoluteTimeRange;
@@ -436,7 +436,7 @@ export class UnthemedLogs extends PureComponent<Props, State> {
 
 export const Logs = withTheme(UnthemedLogs);
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => {
+const getStyles = stylesFactory((theme: GrafInsightTheme) => {
   return {
     noData: css`
       > * {

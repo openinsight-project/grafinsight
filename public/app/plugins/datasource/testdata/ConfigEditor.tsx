@@ -1,7 +1,7 @@
 // Libraries
 import React, { PureComponent } from 'react';
 
-import { DataSourcePluginOptionsEditorProps } from '@grafana/data';
+import { DataSourcePluginOptionsEditorProps } from '@grafinsight/data';
 
 type Props = DataSourcePluginOptionsEditorProps<any>;
 

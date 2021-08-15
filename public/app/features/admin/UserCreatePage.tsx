@@ -1,9 +1,9 @@
 import React, { useCallback } from 'react';
 import { hot } from 'react-hot-loader';
 import { connect } from 'react-redux';
-import { Form, Button, Input, Field } from '@grafana/ui';
-import { NavModel } from '@grafana/data';
-import { getBackendSrv } from '@grafana/runtime';
+import { Form, Button, Input, Field } from '@grafinsight/ui';
+import { NavModel } from '@grafinsight/data';
+import { getBackendSrv } from '@grafinsight/runtime/src';
 import { StoreState } from '../../types';
 import { getNavModel } from '../../core/selectors/navModel';
 import Page from 'app/core/components/Page/Page';

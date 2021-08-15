@@ -1,6 +1,6 @@
 import { AnyAction } from 'redux';
-import { DataSourceSrv, getDataSourceSrv } from '@grafana/runtime';
-import { DataQuery, ExploreUrlState, serializeStateToUrlParam, TimeRange, UrlQueryMap } from '@grafana/data';
+import { DataSourceSrv, getDataSourceSrv } from '@grafinsight/runtime/src';
+import { DataQuery, ExploreUrlState, serializeStateToUrlParam, TimeRange, UrlQueryMap } from '@grafinsight/data';
 
 import { GetExploreUrlArguments, stopQueryState } from 'app/core/utils/explore';
 import { ExploreId, ExploreItemState, ExploreState } from 'app/types/explore';

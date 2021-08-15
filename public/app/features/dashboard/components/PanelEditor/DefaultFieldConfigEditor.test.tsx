@@ -7,9 +7,9 @@ import {
   PanelPlugin,
   standardEditorsRegistry,
   standardFieldConfigEditorRegistry,
-} from '@grafana/data';
+} from '@grafinsight/data';
 import { mockStandardFieldConfigOptions } from '../../../../../test/helpers/fieldConfig';
-import { selectors } from '@grafana/e2e-selectors';
+import { selectors } from '@grafinsight/e2e-selectors/src';
 
 interface FakeFieldOptions {
   a: boolean;

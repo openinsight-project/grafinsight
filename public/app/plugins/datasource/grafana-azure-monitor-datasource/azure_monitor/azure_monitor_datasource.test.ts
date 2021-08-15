@@ -1,14 +1,14 @@
 import AzureMonitorDatasource from '../datasource';
 
 import { TemplateSrv } from 'app/features/templating/template_srv';
-import { DataSourceInstanceSettings } from '@grafana/data';
+import { DataSourceInstanceSettings } from '@grafinsight/data';
 import { backendSrv } from 'app/core/services/backend_srv'; // will use the version in __mocks__
 import { AzureDataSourceJsonData } from '../types';
 
 const templateSrv = new TemplateSrv();
 
-jest.mock('@grafana/runtime', () => ({
-  ...((jest.requireActual('@grafana/runtime') as unknown) as object),
+jest.mock('@grafinsight/runtime', () => ({
+  ...((jest.requireActual('@grafinsight/runtime') as unknown) as object),
   getBackendSrv: () => backendSrv,
   getTemplateSrv: () => templateSrv,
 }));

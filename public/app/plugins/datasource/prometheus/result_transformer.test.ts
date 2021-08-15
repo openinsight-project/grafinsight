@@ -1,7 +1,7 @@
-import { DataFrame, FieldType } from '@grafana/data';
+import { DataFrame, FieldType } from '@grafinsight/data';
 import { transform } from './result_transformer';
 
-jest.mock('@grafana/runtime', () => ({
+jest.mock('@grafinsight/runtime', () => ({
   getTemplateSrv: () => ({
     replace: (str: string) => str,
   }),

@@ -11,7 +11,7 @@ import {
 import { variableAdapters } from '../adapters';
 import { AddVariable, toVariableIdentifier, toVariablePayload, VariableIdentifier } from '../state/types';
 import cloneDeep from 'lodash/cloneDeep';
-import { VariableType } from '@grafana/data';
+import { VariableType } from '@grafinsight/data';
 import { addVariable, removeVariable } from '../state/sharedReducer';
 import { updateOptions } from '../state/actions';
 import { VariableModel } from '../types';

@@ -5,8 +5,8 @@ import {
   TimeZone,
   TIME_SERIES_TIME_FIELD_NAME,
   TIME_SERIES_VALUE_FIELD_NAME,
-} from '@grafana/data';
-import { EventsCanvas, FIXED_UNIT, usePlotContext } from '@grafana/ui';
+} from '@grafinsight/data';
+import { EventsCanvas, FIXED_UNIT, usePlotContext } from '@grafinsight/ui';
 import React, { useCallback } from 'react';
 import { ExemplarMarker } from './ExemplarMarker';
 

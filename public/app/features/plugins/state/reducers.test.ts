@@ -8,7 +8,7 @@ import {
   pluginsReducer,
   setPluginsSearchQuery,
 } from './reducers';
-import { PluginMetaInfo, PluginType } from '@grafana/data';
+import { PluginMetaInfo, PluginType } from '@grafinsight/data';
 
 describe('pluginsReducer', () => {
   describe('when pluginsLoaded is dispatched', () => {

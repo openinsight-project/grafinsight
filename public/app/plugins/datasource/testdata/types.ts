@@ -1,4 +1,4 @@
-import { DataQuery } from '@grafana/data';
+import { DataQuery } from '@grafinsight/data';
 
 export interface Scenario {
   id: string;

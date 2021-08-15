@@ -1,5 +1,5 @@
 import { QueryRunners } from './queryRunners';
-import { getDefaultTimeRange, VariableSupportType } from '@grafana/data';
+import { getDefaultTimeRange, VariableSupportType } from '@grafinsight/data';
 import { VariableRefresh } from '../types';
 import { of } from 'rxjs';
 

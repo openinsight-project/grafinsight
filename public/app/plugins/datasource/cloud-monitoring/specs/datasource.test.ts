@@ -1,5 +1,5 @@
 import { of, throwError } from 'rxjs';
-import { DataSourceInstanceSettings, toUtc } from '@grafana/data';
+import { DataSourceInstanceSettings, toUtc } from '@grafinsight/data';
 
 import CloudMonitoringDataSource from '../datasource';
 import { metricDescriptors } from './testData';
@@ -11,8 +11,8 @@ import { CustomVariableModel } from '../../../../features/variables/types';
 import { initialCustomVariableModelState } from '../../../../features/variables/custom/reducer';
 import { createFetchResponse } from 'test/helpers/createFetchResponse';
 
-jest.mock('@grafana/runtime', () => ({
-  ...((jest.requireActual('@grafana/runtime') as unknown) as object),
+jest.mock('@grafinsight/runtime', () => ({
+  ...((jest.requireActual('@grafinsight/runtime') as unknown) as object),
   getBackendSrv: () => backendSrv,
 }));
 

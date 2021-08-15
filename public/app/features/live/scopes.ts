@@ -1,5 +1,5 @@
-import { LiveChannelScope, LiveChannelSupport, SelectableValue } from '@grafana/data';
-import { getDataSourceSrv } from '@grafana/runtime';
+import { LiveChannelScope, LiveChannelSupport, SelectableValue } from '@grafinsight/data';
+import { getDataSourceSrv } from '@grafinsight/runtime/src';
 import { config } from 'app/core/config';
 import { loadPlugin } from '../plugins/PluginPage';
 
@@ -28,7 +28,7 @@ class GrafanaLiveCoreScope extends GrafanaLiveScope {
   readonly namespaces: Array<SelectableValue<string>> = [];
 
   constructor() {
-    super(LiveChannelScope.Grafana);
+    super(LiveChannelScope.GrafInsight);
   }
 
   register(feature: CoreGrafanaLiveFeature) {

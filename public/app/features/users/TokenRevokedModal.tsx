@@ -1,8 +1,8 @@
 import React from 'react';
-import { Button, InfoBox, Portal, stylesFactory, useTheme } from '@grafana/ui';
-import { getModalStyles } from '@grafana/ui/src/components/Modal/getModalStyles';
+import { Button, InfoBox, Portal, stylesFactory, useTheme } from '@grafinsight/ui';
+import { getModalStyles } from '@grafinsight/ui/src/components/Modal/getModalStyles';
 import { css, cx } from 'emotion';
-import { GrafanaTheme } from '@grafana/data';
+import { GrafInsightTheme } from '@grafinsight/data';
 
 interface Props {
   maxConcurrentSessions?: number;
@@ -50,7 +50,7 @@ export const TokenRevokedModal = (props: Props) => {
   );
 };
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => {
+const getStyles = stylesFactory((theme: GrafInsightTheme) => {
   return {
     infobox: css`
       margin-bottom: 0;

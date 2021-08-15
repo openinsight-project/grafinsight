@@ -1,4 +1,4 @@
-import { LoadingState } from '@grafana/data';
+import { LoadingState } from '@grafinsight/data';
 
 import { reducerTester } from '../../../../../test/core/redux/reducerTester';
 import {

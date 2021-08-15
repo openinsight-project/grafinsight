@@ -1,5 +1,5 @@
-import { PanelData, QueryResultMetaStat, TimeZone } from '@grafana/data';
-import { selectors } from '@grafana/e2e-selectors';
+import { PanelData, QueryResultMetaStat, TimeZone } from '@grafinsight/data';
+import { selectors } from '@grafinsight/e2e-selectors/src';
 import { InspectStatsTable } from './InspectStatsTable';
 import React from 'react';
 

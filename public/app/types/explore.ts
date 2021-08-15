@@ -14,7 +14,7 @@ import {
   RawTimeRange,
   TimeRange,
   EventBusExtended,
-} from '@grafana/data';
+} from '@grafinsight/data';
 
 export enum ExploreId {
   left = 'left',

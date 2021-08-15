@@ -2,11 +2,11 @@
 import React, { PureComponent } from 'react';
 
 // Components
-import { HorizontalGroup, Select } from '@grafana/ui';
-import { DataSourceInstanceSettings, SelectableValue } from '@grafana/data';
-import { selectors } from '@grafana/e2e-selectors';
+import { HorizontalGroup, Select } from '@grafinsight/ui';
+import { DataSourceInstanceSettings, SelectableValue } from '@grafinsight/data';
+import { selectors } from '@grafinsight/e2e-selectors/src';
 import { isUnsignedPluginSignature, PluginSignatureBadge } from '../../../features/plugins/PluginSignatureBadge';
-import { getDataSourceSrv } from '@grafana/runtime';
+import { getDataSourceSrv } from '@grafinsight/runtime/src';
 
 export interface Props {
   onChange: (ds: DataSourceInstanceSettings) => void;

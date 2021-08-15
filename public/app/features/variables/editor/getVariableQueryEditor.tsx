@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
-import { DataQuery, DataSourceApi, DataSourceJsonData, QueryEditorProps, StandardVariableQuery } from '@grafana/data';
-import { getTemplateSrv } from '@grafana/runtime';
+import { DataQuery, DataSourceApi, DataSourceJsonData, QueryEditorProps, StandardVariableQuery } from '@grafinsight/data';
+import { getTemplateSrv } from '@grafinsight/runtime/src';
 
 import { LegacyVariableQueryEditor } from './LegacyVariableQueryEditor';
 import {

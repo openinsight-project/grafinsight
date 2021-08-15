@@ -1,4 +1,4 @@
-import { DataQueryError, LoadingState, PanelData } from '@grafana/data';
+import { DataQueryError, LoadingState, PanelData } from '@grafinsight/data';
 import { useEffect, useRef, useState } from 'react';
 import { PanelModel } from '../../state';
 import { Unsubscribable } from 'rxjs';

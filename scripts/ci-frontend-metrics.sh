@@ -4,8 +4,8 @@ set -e
 ERROR_COUNT="$(yarn run tsc --project tsconfig.json --noEmit --strict true | grep -oP 'Found \K(\d+)')"
 DIRECTIVES="$(grep -r -o  directive public/app/ | wc -l)"
 CONTROLLERS="$(grep -r -oP 'class .*Ctrl' public/app/ | wc -l)"
-STORIES_COUNT="$(find ./packages/grafana-ui/src/components -name "*.story.tsx" | wc -l)"
-MDX_COUNT="$(find ./packages/grafana-ui/src/components -name "*.mdx" | wc -l)"
+STORIES_COUNT="$(find ./packages/grafinsight-ui/src/components -name "*.story.tsx" | wc -l)"
+MDX_COUNT="$(find ./packages/grafinsight-ui/src/components -name "*.mdx" | wc -l)"
 LEGACY_FORMS="$(grep -r -oP 'LegacyForms;' public/app | wc -l)"
 
 STRICT_LINT_RESULTS="$(yarn run eslint --rule '@typescript-eslint/no-explicit-any: ["error"]' --format unix ./public/ || true)"

@@ -1,7 +1,7 @@
 import { DashboardAcl } from './acl';
-import { DataQuery, PanelPlugin } from '@grafana/data';
+import { DataQuery, PanelPlugin } from '@grafinsight/data';
 import { DashboardModel } from 'app/features/dashboard/state/DashboardModel';
-import { AngularComponent } from '@grafana/runtime';
+import { AngularComponent } from '@grafinsight/runtime/src';
 
 export interface DashboardDTO {
   redirectUri?: string;

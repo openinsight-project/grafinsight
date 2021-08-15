@@ -1,5 +1,5 @@
 import { Grammar } from 'prismjs';
-import { CompletionItem } from '@grafana/ui';
+import { CompletionItem } from '@grafinsight/ui';
 
 export const RATE_RANGES: CompletionItem[] = [
   { label: '$__interval', sortText: '$__interval' },

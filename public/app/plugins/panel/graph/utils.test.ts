@@ -1,4 +1,4 @@
-import { toDataFrame, FieldType } from '@grafana/data';
+import { toDataFrame, FieldType } from '@grafinsight/data';
 import { getDataTimeRange } from './utils';
 
 describe('DataFrame utility functions', () => {

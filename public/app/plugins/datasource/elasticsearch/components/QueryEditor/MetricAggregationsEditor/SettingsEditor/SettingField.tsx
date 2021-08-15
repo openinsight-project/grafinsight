@@ -1,5 +1,5 @@
 import React, { ComponentProps, useState } from 'react';
-import { InlineField, Input } from '@grafana/ui';
+import { InlineField, Input } from '@grafinsight/ui';
 import { useDispatch } from '../../../../hooks/useStatelessReducer';
 import { changeMetricSetting } from '../state/actions';
 import { ChangeMetricSettingAction } from '../state/types';

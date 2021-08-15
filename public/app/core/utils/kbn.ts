@@ -9,7 +9,7 @@ import {
   TimeRange,
   ValueFormatterIndex,
   rangeUtil,
-} from '@grafana/data';
+} from '@grafinsight/data';
 
 const kbn = {
   valueFormats: {} as ValueFormatterIndex,
@@ -28,12 +28,12 @@ const kbn = {
 
   /** @deprecated since 7.2, use grafana/data */
   roundInterval: (interval: number) => {
-    deprecationWarning('kbn.ts', 'kbn.roundInterval()', '@grafana/data');
+    deprecationWarning('kbn.ts', 'kbn.roundInterval()', '@grafinsight/data');
     return rangeUtil.roundInterval(interval);
   },
   /** @deprecated since 7.2, use grafana/data */
   secondsToHms: (s: number) => {
-    deprecationWarning('kbn.ts', 'kbn.secondsToHms()', '@grafana/data');
+    deprecationWarning('kbn.ts', 'kbn.secondsToHms()', '@grafinsight/data');
     return rangeUtil.secondsToHms(s);
   },
   secondsToHhmmss: (seconds: number) => {
@@ -56,22 +56,22 @@ const kbn = {
   },
   /** @deprecated since 7.2, use grafana/data */
   describeInterval: (str: string) => {
-    deprecationWarning('kbn.ts', 'kbn.stringToJsRegex()', '@grafana/data');
+    deprecationWarning('kbn.ts', 'kbn.stringToJsRegex()', '@grafinsight/data');
     return rangeUtil.describeInterval(str);
   },
   /** @deprecated since 7.2, use grafana/data */
   intervalToSeconds: (str: string) => {
-    deprecationWarning('kbn.ts', 'rangeUtil.intervalToSeconds()', '@grafana/data');
+    deprecationWarning('kbn.ts', 'rangeUtil.intervalToSeconds()', '@grafinsight/data');
     return rangeUtil.intervalToSeconds(str);
   },
   /** @deprecated since 7.2, use grafana/data */
   intervalToMs: (str: string) => {
-    deprecationWarning('kbn.ts', 'rangeUtil.intervalToMs()', '@grafana/data');
+    deprecationWarning('kbn.ts', 'rangeUtil.intervalToMs()', '@grafinsight/data');
     return rangeUtil.intervalToMs(str);
   },
   /** @deprecated since 7.2, use grafana/data */
   calculateInterval: (range: TimeRange, resolution: number, lowLimitInterval?: string) => {
-    deprecationWarning('kbn.ts', 'kbn.calculateInterval()', '@grafana/data');
+    deprecationWarning('kbn.ts', 'kbn.calculateInterval()', '@grafinsight/data');
     return rangeUtil.calculateInterval(range, resolution, lowLimitInterval);
   },
   queryColorDot: (color: string, diameter: string) => {
@@ -89,7 +89,7 @@ const kbn = {
   },
   /** @deprecated since 6.1, use grafana/data */
   stringToJsRegex: (str: string) => {
-    deprecationWarning('kbn.ts', 'kbn.stringToJsRegex()', '@grafana/data');
+    deprecationWarning('kbn.ts', 'kbn.stringToJsRegex()', '@grafinsight/data');
     return stringToJsRegex(str);
   },
   toFixed: (value: number | null, decimals: number) => {

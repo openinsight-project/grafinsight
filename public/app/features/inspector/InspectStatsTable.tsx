@@ -3,12 +3,12 @@ import {
   FieldType,
   formattedValueToString,
   getDisplayProcessor,
-  GrafanaTheme,
+  GrafInsightTheme,
   QueryResultMetaStat,
   TimeZone,
-} from '@grafana/data';
+} from '@grafinsight/data';
 import { config } from 'app/core/config';
-import { stylesFactory, useTheme } from '@grafana/ui';
+import { stylesFactory, useTheme } from '@grafinsight/ui';
 import { css } from 'emotion';
 
 interface InspectStatsTableProps {
@@ -56,7 +56,7 @@ function formatStat(stat: QueryResultMetaStat, timeZone?: TimeZone): string {
   return formattedValueToString(display(stat.value));
 }
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => {
+const getStyles = stylesFactory((theme: GrafInsightTheme) => {
   return {
     wrapper: css`
       padding-bottom: ${theme.spacing.md};

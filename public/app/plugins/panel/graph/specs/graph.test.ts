@@ -6,7 +6,7 @@ import config from 'app/core/config';
 import TimeSeries from 'app/core/time_series2';
 import $ from 'jquery';
 import { graphDirective, GraphElement } from '../graph';
-import { dateTime, EventBusSrv } from '@grafana/data';
+import { dateTime, EventBusSrv } from '@grafinsight/data';
 import { DashboardModel } from '../../../../features/dashboard/state';
 
 jest.mock('app/features/annotations/all', () => ({

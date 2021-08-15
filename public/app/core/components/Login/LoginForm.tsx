@@ -1,8 +1,8 @@
 import React, { FC, ReactElement } from 'react';
-import { selectors } from '@grafana/e2e-selectors';
+import { selectors } from '@grafinsight/e2e-selectors/src';
 
 import { FormModel } from './LoginCtrl';
-import { Button, Form, Input, Field } from '@grafana/ui';
+import { Button, Form, Input, Field } from '@grafinsight/ui';
 import { css } from 'emotion';
 
 interface Props {

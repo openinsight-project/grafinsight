@@ -1,4 +1,4 @@
-import { dateTime } from '@grafana/data';
+import { dateTime } from '@grafinsight/data';
 import {
   alertRulesReducer,
   initialChannelState,

@@ -3,8 +3,8 @@ import React, { FC } from 'react';
 import { css } from 'emotion';
 // @ts-ignore
 import { components } from '@torkelo/react-select';
-import { AsyncSelect, stylesFactory, useTheme, resetSelectStyles, Icon } from '@grafana/ui';
-import { escapeStringForRegex, GrafanaTheme } from '@grafana/data';
+import { AsyncSelect, stylesFactory, useTheme, resetSelectStyles, Icon } from '@grafinsight/ui';
+import { escapeStringForRegex, GrafInsightTheme } from '@grafinsight/data';
 // Components
 import { TagOption } from './TagOption';
 import { TagBadge } from './TagBadge';
@@ -106,7 +106,7 @@ export const TagFilter: FC<Props> = ({
 
 TagFilter.displayName = 'TagFilter';
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => {
+const getStyles = stylesFactory((theme: GrafInsightTheme) => {
   return {
     tagFilter: css`
       position: relative;

@@ -1,4 +1,4 @@
-import { DataFrame, FieldType, MutableDataFrame, TraceSpanRow } from '@grafana/data';
+import { DataFrame, FieldType, MutableDataFrame, TraceSpanRow } from '@grafinsight/data';
 
 import { Span, TraceProcess, TraceResponse } from './types';
 

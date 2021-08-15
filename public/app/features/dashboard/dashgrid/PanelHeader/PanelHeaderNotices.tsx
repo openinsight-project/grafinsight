@@ -1,5 +1,5 @@
 import React, { FC, useCallback } from 'react';
-import { DataFrame, QueryResultMetaNotice } from '@grafana/data';
+import { DataFrame, QueryResultMetaNotice } from '@grafinsight/data';
 import { PanelHeaderNotice } from './PanelHeaderNotice';
 import { useDispatch } from 'react-redux';
 import { updateLocation } from '../../../../core/actions';

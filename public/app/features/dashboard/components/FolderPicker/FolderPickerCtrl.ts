@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import { IScope } from 'angular';
-import { AppEvents } from '@grafana/data';
+import { AppEvents } from '@grafinsight/data';
 
 import coreModule from 'app/core/core_module';
 import appEvents from 'app/core/app_events';

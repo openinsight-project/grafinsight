@@ -7,7 +7,7 @@ import {
   LiveChannelConnectionState,
   LiveChannelPresenceStatus,
   LiveChannelAddress,
-} from '@grafana/data';
+} from '@grafinsight/data';
 import Centrifuge, {
   JoinLeaveContext,
   PublicationContext,

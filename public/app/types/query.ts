@@ -1,4 +1,4 @@
-import { DataQuery } from '@grafana/data';
+import { DataQuery } from '@grafinsight/data';
 import { ExpressionQuery } from '../features/expressions/types';
 
 export interface QueryGroupOptions {

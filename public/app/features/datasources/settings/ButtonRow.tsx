@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { selectors } from '@grafana/e2e-selectors';
+import { selectors } from '@grafinsight/e2e-selectors/src';
 
 import config from 'app/core/config';
 

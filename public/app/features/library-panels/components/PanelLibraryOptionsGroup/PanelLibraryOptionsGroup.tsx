@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { css } from 'emotion';
 import pick from 'lodash/pick';
-import { GrafanaTheme } from '@grafana/data';
-import { Button, stylesFactory, useStyles } from '@grafana/ui';
+import { GrafInsightTheme } from '@grafinsight/data';
+import { Button, stylesFactory, useStyles } from '@grafinsight/ui';
 
 import { OptionsGroup } from 'app/features/dashboard/components/PanelEditor/OptionsGroup';
 import { DashboardModel, PanelModel } from 'app/features/dashboard/state';
@@ -84,7 +84,7 @@ export const PanelLibraryOptionsGroup: React.FC<Props> = ({ panel, dashboard }) 
   );
 };
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => {
+const getStyles = stylesFactory((theme: GrafInsightTheme) => {
   return {
     panelLibraryTitle: css`
       display: flex;

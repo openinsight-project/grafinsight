@@ -6,7 +6,7 @@ on:
     - master
     paths:
     - 'docs/sources/**'
-    - 'packages/grafana-*/**'
+    - 'packages/grafinsight-*/**'
 
 jobs:
   build:

@@ -3,7 +3,7 @@ import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import Wrapper from './Wrapper';
 import { configureStore } from '../../store/configureStore';
 import { Provider } from 'react-redux';
-import { setDataSourceSrv } from '@grafana/runtime';
+import { setDataSourceSrv } from '@grafinsight/runtime/src';
 import {
   ArrayDataFrame,
   DataQueryResponse,
@@ -12,8 +12,8 @@ import {
   FieldType,
   QueryEditorProps,
   ScopedVars,
-} from '@grafana/data';
-import { selectors } from '@grafana/e2e-selectors';
+} from '@grafinsight/data';
+import { selectors } from '@grafinsight/e2e-selectors/src';
 
 import { setTimeSrv } from '../dashboard/services/TimeSrv';
 import { from, Observable } from 'rxjs';

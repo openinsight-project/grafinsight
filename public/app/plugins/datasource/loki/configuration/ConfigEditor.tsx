@@ -1,6 +1,6 @@
 import React from 'react';
-import { DataSourcePluginOptionsEditorProps, DataSourceSettings } from '@grafana/data';
-import { DataSourceHttpSettings } from '@grafana/ui';
+import { DataSourcePluginOptionsEditorProps, DataSourceSettings } from '@grafinsight/data';
+import { DataSourceHttpSettings } from '@grafinsight/ui';
 import { LokiOptions } from '../types';
 import { MaxLinesField } from './MaxLinesField';
 import { DerivedFields } from './DerivedFields';

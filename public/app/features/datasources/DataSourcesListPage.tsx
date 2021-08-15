@@ -8,8 +8,8 @@ import OrgActionBar from 'app/core/components/OrgActionBar/OrgActionBar';
 import EmptyListCTA from 'app/core/components/EmptyListCTA/EmptyListCTA';
 import DataSourcesList from './DataSourcesList';
 // Types
-import { DataSourceSettings, NavModel } from '@grafana/data';
-import { IconName } from '@grafana/ui';
+import { DataSourceSettings, NavModel } from '@grafinsight/data';
+import { IconName } from '@grafinsight/ui';
 import { StoreState } from 'app/types';
 import { LayoutMode } from 'app/core/components/LayoutSelector/LayoutSelector';
 // Actions

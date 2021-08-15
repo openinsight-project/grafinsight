@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { HorizontalGroup, LinkButton } from '@grafana/ui';
+import { HorizontalGroup, LinkButton } from '@grafinsight/ui';
 
 export interface Props {
   folderId?: number;

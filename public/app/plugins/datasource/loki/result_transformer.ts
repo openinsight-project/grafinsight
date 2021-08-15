@@ -17,9 +17,9 @@ import {
   QueryResultMeta,
   TimeSeriesValue,
   ScopedVars,
-} from '@grafana/data';
+} from '@grafinsight/data';
 
-import { getTemplateSrv, getDataSourceSrv } from '@grafana/runtime';
+import { getTemplateSrv, getDataSourceSrv } from '@grafinsight/runtime/src';
 import TableModel from 'app/core/table_model';
 import { formatQuery, getHighlighterExpressionsFromQuery } from './query_utils';
 import {

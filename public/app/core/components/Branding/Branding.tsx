@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { css, cx } from 'emotion';
-import { useTheme } from '@grafana/ui';
+import { useTheme } from '@grafinsight/ui';
 
 export interface BrandComponentProps {
   className?: string;
@@ -38,8 +38,8 @@ export class Branding {
   static LoginBackground = LoginBackground;
   static MenuLogo = MenuLogo;
   static LoginBoxBackground = LoginBoxBackground;
-  static AppTitle = 'Grafana';
-  static LoginTitle = 'Welcome to Grafana';
+  static AppTitle = 'GrafInsight';
+  static LoginTitle = 'Welcome to GrafInsight';
   static GetLoginSubTitle = () => {
     const slogans = [
       "Don't get in the way of the data",

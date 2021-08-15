@@ -4,7 +4,7 @@ import angular, { ILocationService, IScope } from 'angular';
 import { DashboardModel } from '../../state/DashboardModel';
 import { DecoratedRevisionModel } from '../DashboardSettings/VersionsSettings';
 import { CalculateDiffOptions, HistorySrv } from './HistorySrv';
-import { AppEvents, locationUtil } from '@grafana/data';
+import { AppEvents, locationUtil } from '@grafinsight/data';
 import { GrafanaRootScope } from 'app/routes/GrafanaCtrl';
 import { CoreEvents } from 'app/types';
 import { promiseToDigest } from '../../../../core/utils/promiseToDigest';

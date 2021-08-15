@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import PluginListItem from './PluginListItem';
-import { PluginMeta } from '@grafana/data';
-import { selectors } from '@grafana/e2e-selectors';
+import { PluginMeta } from '@grafinsight/data';
+import { selectors } from '@grafinsight/e2e-selectors/src';
 
 interface Props {
   plugins: PluginMeta[];

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { css, cx } from 'emotion';
-import { DataQuery, GrafanaTheme } from '@grafana/data';
-import { FieldValidationMessage, Icon, Input, stylesFactory, useTheme } from '@grafana/ui';
-import { selectors } from '@grafana/e2e-selectors';
+import { DataQuery, GrafInsightTheme } from '@grafinsight/data';
+import { FieldValidationMessage, Icon, Input, stylesFactory, useTheme } from '@grafinsight/ui';
+import { selectors } from '@grafinsight/e2e-selectors/src';
 
 export interface Props {
   query: DataQuery;
@@ -126,7 +126,7 @@ export const QueryEditorRowTitle: React.FC<Props> = ({
   );
 };
 
-const getQueryEditorRowTitleStyles = stylesFactory((theme: GrafanaTheme) => {
+const getQueryEditorRowTitleStyles = stylesFactory((theme: GrafInsightTheme) => {
   return {
     wrapper: css`
       display: flex;

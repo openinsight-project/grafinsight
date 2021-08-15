@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
-import { FieldOverrideEditorProps, SelectableValue } from '@grafana/data';
-import { HorizontalGroup, IconButton, LineStyle, RadioButtonGroup, Select } from '@grafana/ui';
+import { FieldOverrideEditorProps, SelectableValue } from '@grafinsight/data';
+import { HorizontalGroup, IconButton, LineStyle, RadioButtonGroup, Select } from '@grafinsight/ui';
 
 type LineFill = 'solid' | 'dash' | 'dot';
 

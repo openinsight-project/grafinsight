@@ -1,6 +1,6 @@
 import React, { HTMLAttributes } from 'react';
-import { Badge, BadgeProps } from '@grafana/ui';
-import { PluginErrorCode, PluginSignatureStatus } from '@grafana/data';
+import { Badge, BadgeProps } from '@grafinsight/ui';
+import { PluginErrorCode, PluginSignatureStatus } from '@grafinsight/data';
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
   status?: PluginSignatureStatus;

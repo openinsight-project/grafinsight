@@ -1,5 +1,5 @@
-import { DataQuery, DataSourceJsonData, QueryResultMeta, ScopedVars } from '@grafana/data';
-import { FetchError } from '@grafana/runtime';
+import { DataQuery, DataSourceJsonData, QueryResultMeta, ScopedVars } from '@grafinsight/data';
+import { FetchError } from '@grafinsight/runtime/src';
 
 export interface PromQuery extends DataQuery {
   expr: string;

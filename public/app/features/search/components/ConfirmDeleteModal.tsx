@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import { css } from 'emotion';
-import { GrafanaTheme } from '@grafana/data';
-import { ConfirmModal, stylesFactory, useTheme } from '@grafana/ui';
-import { getLocationSrv } from '@grafana/runtime';
+import { GrafInsightTheme } from '@grafinsight/data';
+import { ConfirmModal, stylesFactory, useTheme } from '@grafinsight/ui';
+import { getLocationSrv } from '@grafinsight/runtime/src';
 import { DashboardSection, OnDeleteItems } from '../types';
 import { getCheckedUids } from '../utils';
 import { deleteFoldersAndDashboards } from 'app/features/manage-dashboards/state/actions';
@@ -62,7 +62,7 @@ export const ConfirmDeleteModal: FC<Props> = ({ results, onDeleteItems, isOpen, 
   ) : null;
 };
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => {
+const getStyles = stylesFactory((theme: GrafInsightTheme) => {
   return {
     subtitle: css`
       font-size: ${theme.typography.size.base};

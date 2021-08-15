@@ -1,5 +1,5 @@
 import { connectWithProvider } from '../../utils/connectWithReduxStore';
-import { ModalRoot, ModalsProvider } from '@grafana/ui';
+import { ModalRoot, ModalsProvider } from '@grafinsight/ui';
 import React from 'react';
 
 /**

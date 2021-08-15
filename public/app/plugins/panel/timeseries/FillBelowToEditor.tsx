@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
-import { FieldOverrideEditorProps, FieldType, getFieldDisplayName, SelectableValue } from '@grafana/data';
-import { Select } from '@grafana/ui';
+import { FieldOverrideEditorProps, FieldType, getFieldDisplayName, SelectableValue } from '@grafinsight/data';
+import { Select } from '@grafinsight/ui';
 
 export const FillBellowToEditor: React.FC<FieldOverrideEditorProps<string, any>> = ({ value, context, onChange }) => {
   const names = useMemo(() => {

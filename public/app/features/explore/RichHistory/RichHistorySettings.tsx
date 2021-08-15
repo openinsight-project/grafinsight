@@ -1,7 +1,7 @@
 import React from 'react';
 import { css } from 'emotion';
-import { stylesFactory, useTheme, Select, Button, Switch, Field } from '@grafana/ui';
-import { GrafanaTheme, AppEvents } from '@grafana/data';
+import { stylesFactory, useTheme, Select, Button, Switch, Field } from '@grafinsight/ui';
+import { GrafInsightTheme, AppEvents } from '@grafinsight/data';
 import appEvents from 'app/core/app_events';
 import { CoreEvents } from 'app/types';
 
@@ -15,7 +15,7 @@ export interface RichHistorySettingsProps {
   deleteRichHistory: () => void;
 }
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => {
+const getStyles = stylesFactory((theme: GrafInsightTheme) => {
   return {
     container: css`
       padding-left: ${theme.spacing.sm};

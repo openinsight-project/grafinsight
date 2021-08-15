@@ -1,11 +1,11 @@
 import React from 'react';
-import { DataTransformerConfig, standardTransformersRegistry } from '@grafana/data';
+import { DataTransformerConfig, standardTransformersRegistry } from '@grafinsight/data';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { TransformationsEditor } from './TransformationsEditor';
 import { PanelModel } from '../../state';
 import { getStandardTransformers } from 'app/core/utils/standardTransformers';
-import { selectors } from '@grafana/e2e-selectors';
+import { selectors } from '@grafinsight/e2e-selectors/src';
 
 const setup = (transformations: DataTransformerConfig[] = []) => {
   const panel = new PanelModel({});

@@ -5,8 +5,8 @@ import { setStore } from 'app/store/store';
 
 const getMock = jest.fn();
 
-jest.mock('@grafana/runtime', () => {
-  const original = jest.requireActual('@grafana/runtime');
+jest.mock('@grafinsight/runtime', () => {
+  const original = jest.requireActual('@grafinsight/runtime');
   return {
     ...original,
     getBackendSrv: () => ({

@@ -1,6 +1,6 @@
 import React, { FC, MouseEvent } from 'react';
-import { GrafanaTheme } from '@grafana/data';
-import { Icon, stylesFactory, useTheme } from '@grafana/ui';
+import { GrafInsightTheme } from '@grafinsight/data';
+import { Icon, stylesFactory, useTheme } from '@grafinsight/ui';
 import { css } from 'emotion';
 import store from 'app/core/store';
 import { cardContent, cardStyle, iconStyle } from './sharedStyles';
@@ -36,7 +36,7 @@ const handleTutorialClick = (event: MouseEvent<HTMLAnchorElement>, card: Tutoria
   window.open(`${card.href}?utm_source=grafana_gettingstarted`, '_blank');
 };
 
-const getStyles = stylesFactory((theme: GrafanaTheme, complete: boolean) => {
+const getStyles = stylesFactory((theme: GrafInsightTheme, complete: boolean) => {
   const textColor = `${complete ? theme.palette.blue95 : '#FFB357'}`;
   return {
     card: css`

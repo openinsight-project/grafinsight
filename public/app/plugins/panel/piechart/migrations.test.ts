@@ -1,5 +1,5 @@
-import { FieldColorModeId, FieldConfigProperty, FieldMatcherID, PanelModel } from '@grafana/data';
-import { LegendDisplayMode, PieChartLabels } from '@grafana/ui';
+import { FieldColorModeId, FieldConfigProperty, FieldMatcherID, PanelModel } from '@grafinsight/data';
+import { LegendDisplayMode, PieChartLabels } from '@grafinsight/ui';
 import { PieChartPanelChangedHandler } from './migrations';
 
 describe('PieChart -> PieChartV2 migrations', () => {

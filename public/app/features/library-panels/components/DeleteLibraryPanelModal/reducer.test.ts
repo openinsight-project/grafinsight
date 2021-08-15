@@ -5,7 +5,7 @@ import {
   initialDeleteLibraryPanelModalState,
   searchCompleted,
 } from './reducer';
-import { LoadingState } from '@grafana/data';
+import { LoadingState } from '@grafinsight/data';
 
 describe('deleteLibraryPanelModalReducer', () => {
   describe('when created', () => {

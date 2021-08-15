@@ -1,11 +1,11 @@
 import React from 'react';
 import { OrgSwitcher } from '../components/OrgSwitcher';
 import { shallow } from 'enzyme';
-import { OrgRole } from '@grafana/data';
+import { OrgRole } from '@grafinsight/data';
 
 const postMock = jest.fn().mockImplementation(jest.fn());
 
-jest.mock('@grafana/runtime', () => ({
+jest.mock('@grafinsight/runtime', () => ({
   getBackendSrv: () => ({
     get: jest.fn().mockResolvedValue([]),
     post: postMock,

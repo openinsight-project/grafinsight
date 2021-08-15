@@ -9,10 +9,10 @@ import {
   ScopedVars,
   toDataFrame,
   TimeRange,
-} from '@grafana/data';
+} from '@grafinsight/data';
 import { isVersionGtOrEq, SemVersion } from 'app/core/utils/version';
 import gfunc from './gfunc';
-import { getBackendSrv } from '@grafana/runtime';
+import { getBackendSrv } from '@grafinsight/runtime/src';
 import { getTemplateSrv, TemplateSrv } from 'app/features/templating/template_srv';
 // Types
 import { GraphiteOptions, GraphiteQuery, GraphiteType, MetricTankRequestMeta } from './types';

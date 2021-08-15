@@ -4,8 +4,8 @@ import { SaveDashboardAsForm } from './SaveDashboardAsForm';
 import { DashboardModel } from 'app/features/dashboard/state';
 import { act } from 'react-dom/test-utils';
 
-jest.mock('@grafana/runtime', () => ({
-  ...((jest.requireActual('@grafana/runtime') as unknown) as object),
+jest.mock('@grafinsight/runtime', () => ({
+  ...((jest.requireActual('@grafinsight/runtime') as unknown) as object),
   getBackendSrv: () => ({ get: jest.fn().mockResolvedValue([]), search: jest.fn().mockResolvedValue([]) }),
 }));
 

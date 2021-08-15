@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, shallow } from 'enzyme';
 import { TableContainer } from './TableContainer';
-import { DataFrame } from '@grafana/data';
+import { DataFrame } from '@grafinsight/data';
 import { ExploreId } from 'app/types/explore';
 
 describe('TableContainer', () => {

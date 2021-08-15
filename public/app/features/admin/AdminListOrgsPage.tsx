@@ -3,8 +3,8 @@ import { getNavModel } from 'app/core/selectors/navModel';
 import Page from 'app/core/components/Page/Page';
 import { useSelector } from 'react-redux';
 import { StoreState } from 'app/types/store';
-import { LinkButton } from '@grafana/ui';
-import { getBackendSrv } from '@grafana/runtime';
+import { LinkButton } from '@grafinsight/ui';
+import { getBackendSrv } from '@grafinsight/runtime/src';
 import { AdminOrgsTable } from './AdminOrgsTable';
 import useAsyncFn from 'react-use/lib/useAsyncFn';
 

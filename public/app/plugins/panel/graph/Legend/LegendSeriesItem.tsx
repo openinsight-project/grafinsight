@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 import classNames from 'classnames';
 import { TimeSeries } from 'app/core/core';
-import { SeriesColorPicker, SeriesIcon } from '@grafana/ui';
-import { selectors } from '@grafana/e2e-selectors';
+import { SeriesColorPicker, SeriesIcon } from '@grafinsight/ui';
+import { selectors } from '@grafinsight/e2e-selectors/src';
 
 export const LEGEND_STATS = ['min', 'max', 'avg', 'current', 'total'];
 

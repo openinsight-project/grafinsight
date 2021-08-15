@@ -99,7 +99,7 @@ streaming in the future!
 
 [grafana-toolkit](https://www.npmjs.com/package/@grafana/toolkit/v/6.4.0-beta.1) is our attempt to simplify the life of plugin developers. It’s a CLI that helps them focus on the core value of their plugin rather than the ceremony around setting up the environment, configs, tests and builds. It’s available as an NPM package under `next` tag.
 
-You can read more about the grafana-toolkit [in the Readme](https://github.com/grafana/grafana/blob/master/packages/grafana-toolkit/README.md) and play with it by trying out our [react panel](https://github.com/grafana/simple-react-panel) or [angular panel](https://github.com/grafana/simple-angular-panel) templates.
+You can read more about the grafana-toolkit [in the Readme](https://github.com/grafana/grafana/blob/master/packages/grafinsight-toolkit/README.md) and play with it by trying out our [react panel](https://github.com/grafana/simple-react-panel) or [angular panel](https://github.com/grafana/simple-angular-panel) templates.
 
 ## PhantomJS deprecation
 

@@ -1,10 +1,10 @@
 import React, { PureComponent } from 'react';
 import Page from 'app/core/components/Page/Page';
 import { hot } from 'react-hot-loader';
-import { Button, LegacyForms } from '@grafana/ui';
+import { Button, LegacyForms } from '@grafinsight/ui';
 const { FormField } = LegacyForms;
-import { NavModel } from '@grafana/data';
-import { getBackendSrv } from '@grafana/runtime';
+import { NavModel } from '@grafinsight/data';
+import { getBackendSrv } from '@grafinsight/runtime/src';
 import { updateLocation } from '../../core/actions';
 import { connect } from 'react-redux';
 import { getNavModel } from 'app/core/selectors/navModel';

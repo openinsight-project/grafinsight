@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { css } from 'emotion';
-import { Icon, Tooltip, useStyles } from '@grafana/ui';
-import { GrafanaTheme } from '@grafana/data';
+import { Icon, Tooltip, useStyles } from '@grafinsight/ui';
+import { GrafInsightTheme } from '@grafinsight/data';
 import { UsagesToNetwork } from './utils';
 import { VariablesUnknownButton } from './VariablesUnknownButton';
 
@@ -53,7 +53,7 @@ export const VariablesUnknownTable: FC<Props> = ({ usages }) => {
   );
 };
 
-const getStyles = (theme: GrafanaTheme) => ({
+const getStyles = (theme: GrafInsightTheme) => ({
   container: css`
     margin-top: ${theme.spacing.xl};
     padding-top: ${theme.spacing.xl};

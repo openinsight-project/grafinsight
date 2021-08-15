@@ -1,4 +1,4 @@
-import { PanelPlugin, LogsSortOrder, LogsDedupStrategy, LogsDedupDescription } from '@grafana/data';
+import { PanelPlugin, LogsSortOrder, LogsDedupStrategy, LogsDedupDescription } from '@grafinsight/data';
 import { Options } from './types';
 import { LogsPanel } from './LogsPanel';
 

@@ -14,9 +14,9 @@ import {
   getTimeRangeFromUrl,
 } from './explore';
 import store from 'app/core/store';
-import { DataQueryError, dateTime, ExploreUrlState, LogsSortOrder } from '@grafana/data';
-import { RefreshPicker } from '@grafana/ui';
-import { serializeStateToUrlParam } from '@grafana/data/src/utils/url';
+import { DataQueryError, dateTime, ExploreUrlState, LogsSortOrder } from '@grafinsight/data';
+import { RefreshPicker } from '@grafinsight/ui';
+import { serializeStateToUrlParam } from '@grafinsight/data/src/utils/url';
 
 const DEFAULT_EXPLORE_STATE: ExploreUrlState = {
   datasource: '',

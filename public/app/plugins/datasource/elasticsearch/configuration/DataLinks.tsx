@@ -1,11 +1,11 @@
 import React from 'react';
 import { css } from 'emotion';
-import { Button, stylesFactory, useTheme } from '@grafana/ui';
-import { GrafanaTheme, VariableOrigin, DataLinkBuiltInVars } from '@grafana/data';
+import { Button, stylesFactory, useTheme } from '@grafinsight/ui';
+import { GrafInsightTheme, VariableOrigin, DataLinkBuiltInVars } from '@grafinsight/data';
 import { DataLinkConfig } from '../types';
 import { DataLink } from './DataLink';
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => ({
+const getStyles = stylesFactory((theme: GrafInsightTheme) => ({
   infoText: css`
     padding-bottom: ${theme.spacing.md};
     color: ${theme.colors.textWeak};

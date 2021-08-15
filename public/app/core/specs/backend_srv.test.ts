@@ -1,12 +1,12 @@
 import 'whatwg-fetch'; // fetch polyfill needed for PhantomJs rendering
 import { Observable, of } from 'rxjs';
 import { delay } from 'rxjs/operators';
-import { AppEvents, DataQueryErrorType, EventBusExtended } from '@grafana/data';
+import { AppEvents, DataQueryErrorType, EventBusExtended } from '@grafinsight/data';
 
 import { BackendSrv } from '../services/backend_srv';
 import { ContextSrv, User } from '../services/context_srv';
 import { describe, expect } from '../../../test/lib/common';
-import { BackendSrvRequest, FetchError } from '@grafana/runtime';
+import { BackendSrvRequest, FetchError } from '@grafinsight/runtime/src';
 import { TokenRevokedModal } from '../../features/users/TokenRevokedModal';
 import { CoreEvents } from '../../types';
 

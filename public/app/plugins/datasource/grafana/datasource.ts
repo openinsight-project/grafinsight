@@ -7,10 +7,10 @@ import {
   DataSourceApi,
   DataSourceInstanceSettings,
   LiveChannelScope,
-} from '@grafana/data';
+} from '@grafinsight/data';
 
 import { GrafanaQuery, GrafanaAnnotationQuery, GrafanaAnnotationType, GrafanaQueryType } from './types';
-import { getBackendSrv, getTemplateSrv, toDataQueryResponse, getLiveMeasurementsObserver } from '@grafana/runtime';
+import { getBackendSrv, getTemplateSrv, toDataQueryResponse, getLiveMeasurementsObserver } from '@grafinsight/runtime/src';
 import { Observable, of, merge } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 
@@ -33,7 +33,7 @@ export class GrafanaDatasource extends DataSourceApi<GrafanaQuery> {
           queries.push(
             getLiveMeasurementsObserver(
               {
-                scope: LiveChannelScope.Grafana,
+                scope: LiveChannelScope.GrafInsight,
                 namespace: 'measurements',
                 path: channel,
               },

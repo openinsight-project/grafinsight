@@ -4,7 +4,7 @@ import { act } from 'react-dom/test-utils';
 import PromExploreQueryEditor from './PromExploreQueryEditor';
 import { PrometheusDatasource } from '../datasource';
 import { PromQuery } from '../types';
-import { LoadingState, PanelData, toUtc, TimeRange } from '@grafana/data';
+import { LoadingState, PanelData, toUtc, TimeRange } from '@grafinsight/data';
 
 const setup = (renderMethod: any, propOverrides?: object) => {
   const datasourceMock: unknown = {

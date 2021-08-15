@@ -1,5 +1,5 @@
-import { FieldColorModeId, FieldType, PreferredVisualisationType } from '@grafana/data';
-import { NodeGraphDataFrameFieldNames } from '@grafana/ui';
+import { FieldColorModeId, FieldType, PreferredVisualisationType } from '@grafinsight/data';
+import { NodeGraphDataFrameFieldNames } from '@grafinsight/ui';
 
 export const nodes = {
   fields: [

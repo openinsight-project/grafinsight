@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { escapeStringForRegex, unEscapeStringFromRegex } from '@grafana/data';
-import { Input, Icon } from '@grafana/ui';
+import { escapeStringForRegex, unEscapeStringFromRegex } from '@grafinsight/data';
+import { Input, Icon } from '@grafinsight/ui';
 
 export interface Props {
   value: string | undefined;

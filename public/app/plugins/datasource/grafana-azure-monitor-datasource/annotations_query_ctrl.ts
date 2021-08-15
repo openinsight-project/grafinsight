@@ -1,4 +1,4 @@
-import { getTemplateSrv, TemplateSrv } from '@grafana/runtime';
+import { getTemplateSrv, TemplateSrv } from '@grafinsight/runtime/src';
 
 export class AzureMonitorAnnotationsQueryCtrl {
   static templateUrl = 'partials/annotations.editor.html';

@@ -7,8 +7,8 @@ import { QueryCtrl } from 'app/plugins/sdk';
 import appEvents from 'app/core/app_events';
 import { promiseToDigest } from 'app/core/utils/promiseToDigest';
 import { auto } from 'angular';
-import { TemplateSrv } from '@grafana/runtime';
-import { AppEvents } from '@grafana/data';
+import { TemplateSrv } from '@grafinsight/runtime/src';
+import { AppEvents } from '@grafinsight/data';
 
 const GRAPHITE_TAG_OPERATORS = ['=', '!=', '=~', '!=~'];
 const TAG_PREFIX = 'tag: ';

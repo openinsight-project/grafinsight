@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { LinkButton, VerticalGroup } from '@grafana/ui';
+import { LinkButton, VerticalGroup } from '@grafinsight/ui';
 import { css } from 'emotion';
 import { getConfig } from 'app/core/config';
 

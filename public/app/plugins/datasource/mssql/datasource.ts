@@ -1,8 +1,8 @@
 import _ from 'lodash';
 import { Observable, of } from 'rxjs';
 import { catchError, map, mapTo } from 'rxjs/operators';
-import { getBackendSrv } from '@grafana/runtime';
-import { ScopedVars } from '@grafana/data';
+import { getBackendSrv } from '@grafinsight/runtime/src';
+import { ScopedVars } from '@grafinsight/data';
 
 import ResponseParser, { MssqlResponse } from './response_parser';
 import { getTemplateSrv, TemplateSrv } from 'app/features/templating/template_srv';

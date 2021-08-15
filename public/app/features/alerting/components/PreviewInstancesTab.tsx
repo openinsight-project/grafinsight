@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { DataFrame } from '@grafana/data';
-import { Button, Table } from '@grafana/ui';
+import { DataFrame } from '@grafinsight/data';
+import { Button, Table } from '@grafinsight/ui';
 import { PreviewStyles } from './AlertingQueryPreview';
 
 interface Props {

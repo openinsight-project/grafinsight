@@ -19,8 +19,8 @@ import {
   AbsoluteTimeRange,
   LoadingState,
   EventBusExtended,
-} from '@grafana/data';
-import { selectors } from '@grafana/e2e-selectors';
+} from '@grafinsight/data';
+import { selectors } from '@grafinsight/e2e-selectors/src';
 
 import { ExploreItemState, ExploreId } from 'app/types/explore';
 import { highlightLogsExpressionAction } from './state/explorePane';

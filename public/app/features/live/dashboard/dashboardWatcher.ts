@@ -1,4 +1,4 @@
-import { getGrafanaLiveSrv, getLegacyAngularInjector } from '@grafana/runtime';
+import { getGrafInsightLiveSrv, getLegacyAngularInjector } from '@grafinsight/runtime/src';
 import { getDashboardSrv } from '../../dashboard/services/DashboardSrv';
 import { appEvents } from 'app/core/core';
 import {
@@ -10,7 +10,7 @@ import {
   LiveChannelConnectionState,
   isLiveChannelStatusEvent,
   isLiveChannelMessageEvent,
-} from '@grafana/data';
+} from '@grafinsight/data';
 import { CoreEvents } from 'app/types';
 import { DashboardChangedModal } from './DashboardChangedModal';
 import { DashboardEvent, DashboardEventAction } from './types';
@@ -43,14 +43,14 @@ class DashboardWatcher {
       sessionId,
       uid: this.uid!,
       action: this.editing ? DashboardEventAction.EditingStarted : DashboardEventAction.EditingCanceled,
-      message: (window as any).grafanaBootData?.user?.name,
+      message: (window as any).grafinsightBootData?.user?.name,
       timestamp: Date.now(),
     };
     this.channel!.publish!(msg);
   }
 
   watch(uid: string) {
-    const live = getGrafanaLiveSrv();
+    const live = getGrafInsightLiveSrv();
     if (!live) {
       return;
     }
@@ -59,7 +59,7 @@ class DashboardWatcher {
     if (uid !== this.uid) {
       this.leave();
       this.channel = live.getChannel({
-        scope: LiveChannelScope.Grafana,
+        scope: LiveChannelScope.GrafInsight,
         namespace: 'dashboard',
         path: `uid/${uid}`,
       });

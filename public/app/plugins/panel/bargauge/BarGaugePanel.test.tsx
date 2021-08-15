@@ -10,9 +10,9 @@ import {
   dateTime,
   FieldConfigSource,
   toDataFrame,
-} from '@grafana/data';
-import { BarGaugeDisplayMode } from '@grafana/ui';
-import { selectors } from '@grafana/e2e-selectors';
+} from '@grafinsight/data';
+import { BarGaugeDisplayMode } from '@grafinsight/ui';
+import { selectors } from '@grafinsight/e2e-selectors/src';
 
 import { BarGaugePanel } from './BarGaugePanel';
 import { BarGaugeOptions } from './types';

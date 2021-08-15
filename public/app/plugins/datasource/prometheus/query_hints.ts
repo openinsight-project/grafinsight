@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { QueryHint, QueryFix } from '@grafana/data';
+import { QueryHint, QueryFix } from '@grafinsight/data';
 import { PrometheusDatasource } from './datasource';
 
 /**

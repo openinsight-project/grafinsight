@@ -3,8 +3,8 @@ import _ from 'lodash';
 import config from 'app/core/config';
 import { DashboardModel } from '../../state/DashboardModel';
 import { PanelModel } from 'app/features/dashboard/state';
-import { PanelPluginMeta } from '@grafana/data';
-import { getDataSourceSrv } from '@grafana/runtime';
+import { PanelPluginMeta } from '@grafinsight/data';
+import { getDataSourceSrv } from '@grafinsight/runtime/src';
 import { VariableOption, VariableRefresh } from '../../../variables/types';
 import { isConstant, isQuery } from '../../../variables/guard';
 

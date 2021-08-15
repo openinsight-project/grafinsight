@@ -3,9 +3,9 @@ import React, { ChangeEvent, FormEvent, useMemo } from 'react';
 import { useAsync } from 'react-use';
 
 // Components
-import { selectors as editorSelectors } from '@grafana/e2e-selectors';
-import { Input, InlineFieldRow, InlineField, Select, TextArea, InlineSwitch } from '@grafana/ui';
-import { QueryEditorProps, SelectableValue } from '@grafana/data';
+import { selectors as editorSelectors } from '@grafinsight/e2e-selectors/src';
+import { Input, InlineFieldRow, InlineField, Select, TextArea, InlineSwitch } from '@grafinsight/ui';
+import { QueryEditorProps, SelectableValue } from '@grafinsight/data';
 import { StreamingClientEditor, ManualEntryEditor, RandomWalkEditor } from './components';
 
 // Types

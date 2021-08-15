@@ -3,32 +3,18 @@ import { getBackendSrv } from 'app/core/services/backend_srv';
 import store from 'app/core/store';
 import { SetupStep } from './types';
 
-const step1TutorialTitle = 'Grafana fundamentals';
 const step2TutorialTitle = 'Create users and teams';
 const keyPrefix = 'getting.started.';
-const step1Key = `${keyPrefix}${step1TutorialTitle.replace(' ', '-').trim().toLowerCase()}`;
 const step2Key = `${keyPrefix}${step2TutorialTitle.replace(' ', '-').trim().toLowerCase()}`;
 
 export const getSteps = (): SetupStep[] => [
   {
-    heading: 'Welcome to Grafana',
+    heading: 'Welcome to GrafInsight',
     subheading: 'The steps below will guide you to quickly finish setting up your Grafana installation.',
     title: 'Basic',
     info: 'The steps below will guide you to quickly finish setting up your Grafana installation.',
     done: false,
     cards: [
-      {
-        type: 'tutorial',
-        heading: 'Data source and dashboards',
-        title: step1TutorialTitle,
-        info:
-          'Set up and understand Grafana if you have no prior experience. This tutorial guides you through the entire process and covers the “Data source” and “Dashboards” steps to the right.',
-        href: 'https://grafana.com/tutorials/grafana-fundamentals',
-        icon: 'grafana',
-        check: () => Promise.resolve(store.get(step1Key)),
-        key: step1Key,
-        done: false,
-      },
       {
         type: 'docs',
         title: 'Add your first data source',

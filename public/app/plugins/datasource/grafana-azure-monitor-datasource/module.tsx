@@ -1,4 +1,4 @@
-import { DataSourcePlugin } from '@grafana/data';
+import { DataSourcePlugin } from '@grafinsight/data';
 import { AzureMonitorQueryCtrl } from './query_ctrl';
 import Datasource from './datasource';
 import { ConfigEditor } from './components/ConfigEditor';

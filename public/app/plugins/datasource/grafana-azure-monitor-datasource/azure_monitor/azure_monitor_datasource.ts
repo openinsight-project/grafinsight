@@ -10,8 +10,8 @@ import {
   AzureMonitorResourceGroupsResponse,
   AzureQueryType,
 } from '../types';
-import { DataSourceInstanceSettings, ScopedVars, MetricFindValue } from '@grafana/data';
-import { getBackendSrv, DataSourceWithBackend, getTemplateSrv } from '@grafana/runtime';
+import { DataSourceInstanceSettings, ScopedVars, MetricFindValue } from '@grafinsight/data';
+import { getBackendSrv, DataSourceWithBackend, getTemplateSrv } from '@grafinsight/runtime/src';
 
 const defaultDropdownValue = 'select';
 

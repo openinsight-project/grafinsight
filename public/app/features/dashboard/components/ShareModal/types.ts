@@ -1,5 +1,5 @@
 import React from 'react';
-import { PanelModel } from '@grafana/data';
+import { PanelModel } from '@grafinsight/data';
 import { DashboardModel } from 'app/features/dashboard/state';
 
 export interface ShareModalTabProps {

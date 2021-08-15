@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
-import { LegacyForms, VerticalGroup } from '@grafana/ui';
-import { DataQuery, PanelData, SelectableValue } from '@grafana/data';
+import { LegacyForms, VerticalGroup } from '@grafinsight/ui';
+import { DataQuery, PanelData, SelectableValue } from '@grafinsight/data';
 import { css } from 'emotion';
 
 import { DashboardQuery, ResultInfo, SHARED_DASHBODARD_QUERY } from './types';

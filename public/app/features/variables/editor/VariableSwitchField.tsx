@@ -1,5 +1,5 @@
 import React, { ChangeEvent, PropsWithChildren, ReactElement } from 'react';
-import { InlineField, InlineSwitch } from '@grafana/ui';
+import { InlineField, InlineSwitch } from '@grafinsight/ui';
 interface VariableSwitchFieldProps {
   value: boolean;
   name: string;

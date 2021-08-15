@@ -1,10 +1,10 @@
 import React, { ChangeEvent, FormEvent, PureComponent } from 'react';
 import { css } from 'emotion';
 import { MapDispatchToProps, MapStateToProps } from 'react-redux';
-import { InlineField, InlineFieldRow, VerticalGroup } from '@grafana/ui';
-import { selectors } from '@grafana/e2e-selectors';
-import { getTemplateSrv } from '@grafana/runtime';
-import { DataSourceInstanceSettings, LoadingState, SelectableValue } from '@grafana/data';
+import { InlineField, InlineFieldRow, VerticalGroup } from '@grafinsight/ui';
+import { selectors } from '@grafinsight/e2e-selectors/src';
+import { getTemplateSrv } from '@grafinsight/runtime/src';
+import { DataSourceInstanceSettings, LoadingState, SelectableValue } from '@grafinsight/data';
 
 import { SelectionOptionsEditor } from '../editor/SelectionOptionsEditor';
 import { QueryVariableModel, VariableRefresh, VariableSort, VariableWithMultiSupport } from '../types';

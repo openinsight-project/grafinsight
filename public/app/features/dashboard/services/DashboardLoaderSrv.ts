@@ -3,7 +3,7 @@ import moment from 'moment'; // eslint-disable-line no-restricted-imports
 import _ from 'lodash';
 import $ from 'jquery';
 import kbn from 'app/core/utils/kbn';
-import { AppEvents, dateMath, UrlQueryValue } from '@grafana/data';
+import { AppEvents, dateMath, UrlQueryValue } from '@grafinsight/data';
 import impressionSrv from 'app/core/services/impression_srv';
 import { backendSrv } from 'app/core/services/backend_srv';
 import { DashboardSrv } from './DashboardSrv';

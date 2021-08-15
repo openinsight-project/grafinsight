@@ -1,5 +1,5 @@
-import { sharedSingleStatPanelChangedHandler } from '@grafana/ui';
-import { PanelPlugin } from '@grafana/data';
+import { sharedSingleStatPanelChangedHandler } from '@grafinsight/ui';
+import { PanelPlugin } from '@grafinsight/data';
 import { BarGaugePanel } from './BarGaugePanel';
 import { BarGaugeOptions, displayModes } from './types';
 import { addStandardDataReduceOptions } from '../stat/types';

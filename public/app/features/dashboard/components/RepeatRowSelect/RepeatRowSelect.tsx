@@ -1,7 +1,7 @@
 import React, { FC, useCallback, useMemo } from 'react';
 import { useSelector } from 'react-redux';
-import { Select } from '@grafana/ui';
-import { SelectableValue } from '@grafana/data';
+import { Select } from '@grafinsight/ui';
+import { SelectableValue } from '@grafinsight/data';
 
 import { getVariables } from '../../../variables/state/selectors';
 import { StoreState } from '../../../../types';

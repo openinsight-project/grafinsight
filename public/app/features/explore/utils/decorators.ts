@@ -6,8 +6,8 @@ import {
   PanelData,
   sortLogsResult,
   standardTransformers,
-} from '@grafana/data';
-import { config } from '@grafana/runtime';
+} from '@grafinsight/data';
+import { config } from '@grafinsight/runtime/src';
 import { groupBy } from 'lodash';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';

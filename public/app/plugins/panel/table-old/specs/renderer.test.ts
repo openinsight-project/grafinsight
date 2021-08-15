@@ -1,9 +1,9 @@
 import _ from 'lodash';
 import TableModel from 'app/core/table_model';
 import { TableRenderer } from '../renderer';
-import { ScopedVars, TimeZone } from '@grafana/data';
+import { ScopedVars, TimeZone } from '@grafinsight/data';
 import { ColumnRender } from '../types';
-import { getTheme } from '@grafana/ui';
+import { getTheme } from '@grafinsight/ui';
 
 const utc: TimeZone = 'utc';
 

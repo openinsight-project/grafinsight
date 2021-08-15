@@ -1,10 +1,10 @@
 import React, { PureComponent } from 'react';
-import { Modal, stylesFactory } from '@grafana/ui';
+import { Modal, stylesFactory } from '@grafinsight/ui';
 import { css } from 'emotion';
 import { dashboardWatcher } from './dashboardWatcher';
-import { config } from '@grafana/runtime';
+import { config } from '@grafinsight/runtime/src';
 import { DashboardEvent, DashboardEventAction } from './types';
-import { GrafanaTheme } from '@grafana/data';
+import { GrafInsightTheme } from '@grafinsight/data';
 
 interface Props {
   event?: DashboardEvent;
@@ -96,7 +96,7 @@ export class DashboardChangedModal extends PureComponent<Props, State> {
   }
 }
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => {
+const getStyles = stylesFactory((theme: GrafInsightTheme) => {
   return {
     modal: css`
       width: 500px;

@@ -1,7 +1,7 @@
 import Centrifuge from 'centrifuge/dist/centrifuge.protobuf';
-import { GrafanaLiveSrv, setGrafanaLiveSrv, getGrafanaLiveSrv, config } from '@grafana/runtime';
+import { GrafInsightLiveSrv, setGrafInsightLiveSrv, getGrafInsightLiveSrv, config } from '@grafinsight/runtime/src';
 import { BehaviorSubject } from 'rxjs';
-import { LiveChannel, LiveChannelScope, LiveChannelAddress } from '@grafana/data';
+import { LiveChannel, LiveChannelScope, LiveChannelAddress } from '@grafinsight/data';
 import { CentrifugeLiveChannel, getErrorChannel } from './channel';
 import {
   GrafanaLiveScope,
@@ -12,13 +12,13 @@ import {
 import { registerLiveFeatures } from './features';
 
 export const sessionId =
-  (window as any)?.grafanaBootData?.user?.id +
+  (window as any)?.grafinsightBootData?.user?.id +
   '/' +
   Date.now().toString(16) +
   '/' +
   Math.random().toString(36).substring(2, 15);
 
-export class CentrifugeSrv implements GrafanaLiveSrv {
+export class CentrifugeSrv implements GrafInsightLiveSrv {
   readonly open = new Map<string, CentrifugeLiveChannel>();
 
   readonly centrifuge: Centrifuge;
@@ -49,7 +49,7 @@ export class CentrifugeSrv implements GrafanaLiveSrv {
     });
 
     this.scopes = {
-      [LiveChannelScope.Grafana]: grafanaLiveCoreFeatures,
+      [LiveChannelScope.GrafInsight]: grafanaLiveCoreFeatures,
       [LiveChannelScope.DataSource]: new GrafanaLiveDataSourceScope(),
       [LiveChannelScope.Plugin]: new GrafanaLivePluginScope(),
     };
@@ -151,10 +151,10 @@ export class CentrifugeSrv implements GrafanaLiveSrv {
 }
 
 export function getGrafanaLiveCentrifugeSrv() {
-  return getGrafanaLiveSrv() as CentrifugeSrv;
+  return getGrafInsightLiveSrv() as CentrifugeSrv;
 }
 
 export function initGrafanaLive() {
-  setGrafanaLiveSrv(new CentrifugeSrv());
+  setGrafInsightLiveSrv(new CentrifugeSrv());
   registerLiveFeatures();
 }

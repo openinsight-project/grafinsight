@@ -2,7 +2,7 @@ import _ from 'lodash';
 import config from 'app/core/config';
 import { DashboardExporter } from './DashboardExporter';
 import { DashboardModel } from '../../state/DashboardModel';
-import { PanelPluginMeta } from '@grafana/data';
+import { PanelPluginMeta } from '@grafinsight/data';
 import { variableAdapters } from '../../../variables/adapters';
 import { createConstantVariableAdapter } from '../../../variables/constant/adapter';
 import { createQueryVariableAdapter } from '../../../variables/query/adapter';
@@ -19,8 +19,8 @@ jest.mock('app/core/store', () => {
   };
 });
 
-jest.mock('@grafana/runtime', () => ({
-  ...((jest.requireActual('@grafana/runtime') as unknown) as object),
+jest.mock('@grafinsight/runtime', () => ({
+  ...((jest.requireActual('@grafinsight/runtime') as unknown) as object),
   getDataSourceSrv: () => ({
     get: jest.fn((arg) => getStub(arg)),
   }),

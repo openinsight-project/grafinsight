@@ -1,5 +1,5 @@
-import { PanelPlugin } from '@grafana/data';
-import { GraphFieldConfig } from '@grafana/ui';
+import { PanelPlugin } from '@grafinsight/data';
+import { GraphFieldConfig } from '@grafinsight/ui';
 import { TimeSeriesPanel } from './TimeSeriesPanel';
 import { graphPanelChangedHandler } from './migrations';
 import { Options } from './types';

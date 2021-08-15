@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { PanelData } from '@grafana/data';
+import { PanelData } from '@grafinsight/data';
 import { PromQuery } from '../types';
 import { PrometheusDatasource } from '../datasource';
 import PromLink from './PromLink';

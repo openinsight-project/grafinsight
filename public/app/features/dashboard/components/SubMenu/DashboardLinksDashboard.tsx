@@ -1,11 +1,11 @@
 import React, { useRef, useState } from 'react';
-import { Icon, Tooltip } from '@grafana/ui';
-import { sanitize, sanitizeUrl } from '@grafana/data/src/text/sanitize';
+import { Icon, Tooltip } from '@grafinsight/ui';
+import { sanitize, sanitizeUrl } from '@grafinsight/data/src/text/sanitize';
 import { getBackendSrv } from 'app/core/services/backend_srv';
 import { getLinkSrv } from '../../../panel/panellinks/link_srv';
 import { DashboardLink } from '../../state/DashboardModel';
 import { DashboardSearchHit } from 'app/features/search/types';
-import { selectors } from '@grafana/e2e-selectors';
+import { selectors } from '@grafinsight/e2e-selectors/src';
 import { useAsync } from 'react-use';
 
 interface Props {

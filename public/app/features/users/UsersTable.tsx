@@ -1,8 +1,8 @@
 import React, { FC, useState } from 'react';
 import { OrgUser } from 'app/types';
 import { OrgRolePicker } from '../admin/OrgRolePicker';
-import { Button, ConfirmModal } from '@grafana/ui';
-import { OrgRole } from '@grafana/data';
+import { Button, ConfirmModal } from '@grafinsight/ui';
+import { OrgRole } from '@grafinsight/data';
 
 export interface Props {
   users: OrgUser[];

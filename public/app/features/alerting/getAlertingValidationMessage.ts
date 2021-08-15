@@ -1,5 +1,5 @@
-import { DataQuery, DataTransformerConfig } from '@grafana/data';
-import { DataSourceSrv } from '@grafana/runtime';
+import { DataQuery, DataTransformerConfig } from '@grafinsight/data';
+import { DataSourceSrv } from '@grafinsight/runtime/src';
 
 export const getDefaultCondition = () => ({
   type: 'query',

@@ -1,5 +1,5 @@
-import { AppEvents, locationUtil } from '@grafana/data';
-import { getBackendSrv } from '@grafana/runtime';
+import { AppEvents, locationUtil } from '@grafinsight/data';
+import { getBackendSrv } from '@grafinsight/runtime/src';
 import { backendSrv } from 'app/core/services/backend_srv';
 import { FolderState, ThunkResult } from 'app/types';
 import { DashboardAcl, DashboardAclUpdateDTO, NewDashboardAclItem, PermissionLevel } from 'app/types/acl';

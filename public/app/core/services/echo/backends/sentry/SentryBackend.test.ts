@@ -1,14 +1,14 @@
 import { init as initSentry, setUser as sentrySetUser, Event as SentryEvent } from '@sentry/browser';
 import { SentryEchoBackend, SentryEchoBackendOptions } from './SentryBackend';
-import { BuildInfo } from '@grafana/data';
+import { BuildInfo } from '@grafinsight/data';
 import { FetchTransport } from '@sentry/browser/dist/transports';
 import { CustomEndpointTransport } from './transports/CustomEndpointTransport';
 import { EchoSrvTransport } from './transports/EchoSrvTransport';
 import { SentryEchoEvent } from './types';
-import { EchoBackend, EchoEventType, EchoMeta, setEchoSrv } from '@grafana/runtime';
+import { EchoBackend, EchoEventType, EchoMeta, setEchoSrv } from '@grafinsight/runtime/src';
 import { waitFor } from '@testing-library/react';
 import { Echo } from '../../Echo';
-import { GrafanaEdition } from '@grafana/data/src/types/config';
+import { GrafInsightEdition } from '@grafinsight/data/src/types/config';
 
 jest.mock('@sentry/browser');
 
@@ -20,7 +20,7 @@ describe('SentryEchoBackend', () => {
     commit: 'abcd123',
     isEnterprise: false,
     env: 'production',
-    edition: GrafanaEdition.OpenSource,
+    edition: GrafInsightEdition.OpenSource,
     latestVersion: 'ba',
     hasUpdate: false,
     hideVersion: false,

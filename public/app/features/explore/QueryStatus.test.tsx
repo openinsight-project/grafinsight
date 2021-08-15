@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { LoadingState, TimeRange, PanelData } from '@grafana/data';
+import { LoadingState, TimeRange, PanelData } from '@grafinsight/data';
 
 import QueryStatus from './QueryStatus';
 

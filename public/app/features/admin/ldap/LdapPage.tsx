@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 import { hot } from 'react-hot-loader';
 import { connect } from 'react-redux';
-import { NavModel } from '@grafana/data';
-import { Alert, LegacyForms } from '@grafana/ui';
+import { NavModel } from '@grafinsight/data';
+import { Alert, LegacyForms } from '@grafinsight/ui';
 const { FormField } = LegacyForms;
 import { getNavModel } from 'app/core/selectors/navModel';
 import config from 'app/core/config';

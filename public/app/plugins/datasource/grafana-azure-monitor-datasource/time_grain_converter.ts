@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { rangeUtil } from '@grafana/data';
+import { rangeUtil } from '@grafinsight/data';
 
 export default class TimeGrainConverter {
   static createISO8601Duration(timeGrain: string | number, timeGrainUnit: any) {

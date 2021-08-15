@@ -1,7 +1,5 @@
 const graphitePlugin = async () =>
   await import(/* webpackChunkName: "graphitePlugin" */ 'app/plugins/datasource/graphite/module');
-const cloudwatchPlugin = async () =>
-  await import(/* webpackChunkName: "cloudwatchPlugin" */ 'app/plugins/datasource/cloudwatch/module');
 const dashboardDSPlugin = async () =>
   await import(/* webpackChunkName "dashboardDSPlugin" */ 'app/plugins/datasource/dashboard/module');
 const elasticsearchPlugin = async () =>
@@ -64,7 +62,6 @@ import * as nodeGraph from 'app/plugins/panel/nodeGraph/module';
 
 const builtInPlugins: any = {
   'app/plugins/datasource/graphite/module': graphitePlugin,
-  'app/plugins/datasource/cloudwatch/module': cloudwatchPlugin,
   'app/plugins/datasource/dashboard/module': dashboardDSPlugin,
   'app/plugins/datasource/elasticsearch/module': elasticsearchPlugin,
   'app/plugins/datasource/opentsdb/module': opentsdbPlugin,

@@ -1,7 +1,7 @@
 import angular from 'angular';
 // @ts-ignore
 import baron from 'baron';
-import { PanelEvents } from '@grafana/data';
+import { PanelEvents } from '@grafinsight/data';
 import { PanelModel } from '../dashboard/state';
 import { PanelCtrl } from './panel_ctrl';
 import { Subscription } from 'rxjs';

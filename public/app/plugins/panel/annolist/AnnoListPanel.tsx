@@ -2,9 +2,9 @@
 import React, { PureComponent } from 'react';
 // Types
 import { AnnoOptions } from './types';
-import { AnnotationEvent, AppEvents, dateTime, DurationUnit, PanelProps } from '@grafana/data';
-import { getBackendSrv, getLocationSrv } from '@grafana/runtime';
-import { AbstractList } from '@grafana/ui/src/components/List/AbstractList';
+import { AnnotationEvent, AppEvents, dateTime, DurationUnit, PanelProps } from '@grafinsight/data';
+import { getBackendSrv, getLocationSrv } from '@grafinsight/runtime/src';
+import { AbstractList } from '@grafinsight/ui/src/components/List/AbstractList';
 import { getDashboardSrv } from 'app/features/dashboard/services/DashboardSrv';
 import appEvents from 'app/core/app_events';
 import { AnnotationListItem } from './AnnotationListItem';

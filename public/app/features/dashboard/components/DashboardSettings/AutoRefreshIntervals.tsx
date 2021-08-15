@@ -1,5 +1,5 @@
 import React, { FC, useCallback, useEffect, useMemo, useState } from 'react';
-import { Input, defaultIntervals, Field } from '@grafana/ui';
+import { Input, defaultIntervals, Field } from '@grafinsight/ui';
 
 import { getTimeSrv } from '../../services/TimeSrv';
 

@@ -1,5 +1,5 @@
 // Services & Utils
-import { getBackendSrv } from '@grafana/runtime';
+import { getBackendSrv } from '@grafinsight/runtime/src';
 import { createSuccessNotification } from 'app/core/copy/appNotification';
 // Actions
 import { loadPluginDashboards } from '../../plugins/state/actions';

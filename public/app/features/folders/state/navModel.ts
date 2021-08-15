@@ -1,5 +1,5 @@
 import { FolderDTO } from 'app/types';
-import { NavModelItem, NavModel } from '@grafana/data';
+import { NavModelItem, NavModel } from '@grafinsight/data';
 
 export function buildNavModel(folder: FolderDTO): NavModelItem {
   const model = {

@@ -1,4 +1,4 @@
-import { DataSourceSettings } from '@grafana/data';
+import { DataSourceSettings } from '@grafinsight/data';
 import { PromOptions } from '../types';
 import { createDatasourceSettings } from '../../../../features/datasources/mocks';
 

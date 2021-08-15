@@ -437,7 +437,7 @@ steps:
   commands:
   - printenv GCP_KEY | base64 -d > /tmp/gcpkey.json
   - gcloud auth activate-service-account --key-file=/tmp/gcpkey.json
-  - gsutil -m rsync -d -r ./packages/grafana-ui/dist/storybook gs://grafana-storybook/canary
+  - gsutil -m rsync -d -r ./packages/grafinsight-ui/dist/storybook gs://grafana-storybook/canary
   environment:
     GCP_KEY:
       from_secret: gcp_key
@@ -972,8 +972,8 @@ steps:
   commands:
   - printenv GCP_KEY | base64 -d > /tmp/gcpkey.json
   - gcloud auth activate-service-account --key-file=/tmp/gcpkey.json
-  - gsutil -m rsync -d -r ./packages/grafana-ui/dist/storybook gs://grafana-storybook/latest
-  - gsutil -m rsync -d -r ./packages/grafana-ui/dist/storybook gs://grafana-storybook/${DRONE_TAG}
+  - gsutil -m rsync -d -r ./packages/grafinsight-ui/dist/storybook gs://grafana-storybook/latest
+  - gsutil -m rsync -d -r ./packages/grafinsight-ui/dist/storybook gs://grafana-storybook/${DRONE_TAG}
   environment:
     GCP_KEY:
       from_secret: gcp_key

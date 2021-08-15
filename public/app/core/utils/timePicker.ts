@@ -1,4 +1,4 @@
-import { TimeRange, toUtc, AbsoluteTimeRange } from '@grafana/data';
+import { TimeRange, toUtc, AbsoluteTimeRange } from '@grafinsight/data';
 
 export const getShiftedTimeRange = (direction: number, origRange: TimeRange): AbsoluteTimeRange => {
   const range = {

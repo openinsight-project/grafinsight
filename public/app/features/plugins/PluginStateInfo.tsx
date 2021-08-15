@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { AlphaNotice } from '@grafana/ui';
-import { PluginState } from '@grafana/data';
+import { AlphaNotice } from '@grafinsight/ui';
+import { PluginState } from '@grafinsight/data';
 import { css } from 'emotion';
 
 interface Props {

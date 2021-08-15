@@ -1,4 +1,4 @@
-import { MetricFindValue } from '@grafana/data';
+import { MetricFindValue } from '@grafinsight/data';
 
 export interface PostgresQueryForInterpolation {
   alias?: any;

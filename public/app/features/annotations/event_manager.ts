@@ -7,10 +7,10 @@ import {
   PENDING_COLOR,
   DEFAULT_ANNOTATION_COLOR,
   REGION_FILL_ALPHA,
-} from '@grafana/ui';
+} from '@grafinsight/ui';
 
 import { MetricsPanelCtrl } from 'app/plugins/sdk';
-import { AnnotationEvent } from '@grafana/data';
+import { AnnotationEvent } from '@grafinsight/data';
 
 export class EventManager {
   event: AnnotationEvent | null;

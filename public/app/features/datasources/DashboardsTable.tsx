@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { PluginDashboard } from '../../types';
-import { Icon } from '@grafana/ui';
+import { Icon } from '@grafinsight/ui';
 
 export interface Props {
   dashboards: PluginDashboard[];

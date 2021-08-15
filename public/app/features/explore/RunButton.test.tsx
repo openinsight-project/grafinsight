@@ -1,6 +1,6 @@
 import React from 'react';
 import { RunButton, Props } from './RunButton';
-import { RefreshPicker } from '@grafana/ui';
+import { RefreshPicker } from '@grafinsight/ui';
 import { shallow } from 'enzyme';
 import { getTimeSrv, TimeSrv } from 'app/features/dashboard/services/TimeSrv';
 

@@ -4,16 +4,16 @@ import { DragDropContext, Draggable, Droppable, DropResult } from 'react-beautif
 import {
   DataFrame,
   DataTransformerID,
-  GrafanaTheme,
+  GrafInsightTheme,
   standardTransformers,
   TransformerRegistryItem,
   TransformerUIProps,
   getFieldDisplayName,
-} from '@grafana/data';
-import { stylesFactory, useTheme, Input, IconButton, Icon } from '@grafana/ui';
+} from '@grafinsight/data';
+import { stylesFactory, useTheme, Input, IconButton, Icon } from '@grafinsight/ui';
 
-import { OrganizeFieldsTransformerOptions } from '@grafana/data/src/transformations/transformers/organize';
-import { createOrderFieldsComparer } from '@grafana/data/src/transformations/transformers/order';
+import { OrganizeFieldsTransformerOptions } from '@grafinsight/data/src/transformations/transformers/organize';
+import { createOrderFieldsComparer } from '@grafinsight/data/src/transformations/transformers/order';
 
 interface OrganizeFieldsTransformerEditorProps extends TransformerUIProps<OrganizeFieldsTransformerOptions> {}
 
@@ -162,7 +162,7 @@ const DraggableFieldName: React.FC<DraggableFieldProps> = ({
 
 DraggableFieldName.displayName = 'DraggableFieldName';
 
-const getFieldNameStyles = stylesFactory((theme: GrafanaTheme) => ({
+const getFieldNameStyles = stylesFactory((theme: GrafInsightTheme) => ({
   toggle: css`
     margin: 0 8px;
     color: ${theme.colors.textWeak};

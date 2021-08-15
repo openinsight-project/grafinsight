@@ -1,4 +1,4 @@
-import { PanelPlugin } from '@grafana/data';
+import { PanelPlugin } from '@grafinsight/data';
 import { GaugePanel } from './GaugePanel';
 import { GaugeOptions } from './types';
 import { addStandardDataReduceOptions } from '../stat/types';

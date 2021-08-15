@@ -1,9 +1,9 @@
 import defaults from 'lodash/defaults';
 
 import React, { PureComponent } from 'react';
-import { InlineField, Select, FeatureInfoBox } from '@grafana/ui';
-import { QueryEditorProps, SelectableValue, LiveChannelScope, FeatureState } from '@grafana/data';
-import { getLiveMeasurements, LiveMeasurements } from '@grafana/runtime';
+import { InlineField, Select, FeatureInfoBox } from '@grafinsight/ui';
+import { QueryEditorProps, SelectableValue, LiveChannelScope, FeatureState } from '@grafinsight/data';
+import { getLiveMeasurements, LiveMeasurements } from '@grafinsight/runtime/src';
 import { GrafanaDatasource } from '../datasource';
 import { defaultQuery, GrafanaQuery, GrafanaQueryType } from '../types';
 
@@ -72,7 +72,7 @@ export class QueryEditor extends PureComponent<Props> {
     let info: LiveMeasurements | undefined = undefined;
     if (channel) {
       info = getLiveMeasurements({
-        scope: LiveChannelScope.Grafana,
+        scope: LiveChannelScope.GrafInsight,
         namespace: 'measurements',
         path: channel,
       });

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { Button, ConfirmModal, HorizontalGroup, Modal, stylesFactory, useTheme } from '@grafana/ui';
-import { GrafanaTheme } from '@grafana/data';
+import { Button, ConfirmModal, HorizontalGroup, Modal, stylesFactory, useTheme } from '@grafinsight/ui';
+import { GrafInsightTheme } from '@grafinsight/data';
 import { css } from 'emotion';
 import { DashboardModel } from 'app/features/dashboard/state';
 import { useDashboardSave } from './useDashboardSave';
@@ -118,7 +118,7 @@ const isHandledError = (errorStatus: string) => {
   }
 };
 
-const getConfirmPluginDashboardSaveModalStyles = stylesFactory((theme: GrafanaTheme) => ({
+const getConfirmPluginDashboardSaveModalStyles = stylesFactory((theme: GrafInsightTheme) => ({
   modal: css`
     width: 500px;
   `,

@@ -1,6 +1,6 @@
 import _ from 'lodash';
-import { getTemplateSrv } from '@grafana/runtime';
-import { stringToJsRegex } from '@grafana/data';
+import { getTemplateSrv } from '@grafinsight/runtime/src';
+import { stringToJsRegex } from '@grafinsight/data';
 
 import { toVariablePayload, VariableIdentifier } from '../state/types';
 import { ThunkResult } from '../../../types';

@@ -2,8 +2,8 @@ import _ from 'lodash';
 import queryPart from './query_part';
 import kbn from 'app/core/utils/kbn';
 import { InfluxQuery, InfluxQueryTag } from './types';
-import { ScopedVars } from '@grafana/data';
-import { TemplateSrv } from '@grafana/runtime';
+import { ScopedVars } from '@grafinsight/data';
+import { TemplateSrv } from '@grafinsight/runtime/src';
 
 export default class InfluxQueryModel {
   target: InfluxQuery;

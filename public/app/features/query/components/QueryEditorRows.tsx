@@ -2,7 +2,7 @@
 import React, { PureComponent } from 'react';
 
 // Types
-import { DataQuery, DataSourceInstanceSettings, PanelData } from '@grafana/data';
+import { DataQuery, DataSourceInstanceSettings, PanelData } from '@grafinsight/data';
 import { QueryEditorRow } from './QueryEditorRow';
 import { DragDropContext, Droppable, DropResult } from 'react-beautiful-dnd';
 

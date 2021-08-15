@@ -1,5 +1,5 @@
 import { defaultsDeep } from 'lodash';
-import { PanelPluginMeta, PluginMeta, PluginType, PanelPlugin, PanelProps } from '@grafana/data';
+import { PanelPluginMeta, PluginMeta, PluginType, PanelPlugin, PanelProps } from '@grafinsight/data';
 import { ComponentType } from 'enzyme';
 
 export const getMockPlugins = (amount: number): PluginMeta[] => {

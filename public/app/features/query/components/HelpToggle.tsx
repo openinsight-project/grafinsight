@@ -1,9 +1,9 @@
-import { GrafanaTheme } from '@grafana/data';
-import { Icon, InfoBox, stylesFactory, useTheme } from '@grafana/ui';
+import { GrafInsightTheme } from '@grafinsight/data';
+import { Icon, InfoBox, stylesFactory, useTheme } from '@grafinsight/ui';
 import { css, cx } from 'emotion';
 import React, { useState } from 'react';
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => ({
+const getStyles = stylesFactory((theme: GrafInsightTheme) => ({
   infoBox: css`
     margin-top: ${theme.spacing.xs};
   `,

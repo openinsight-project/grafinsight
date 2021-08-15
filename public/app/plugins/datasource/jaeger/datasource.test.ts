@@ -6,8 +6,8 @@ import {
   PluginType,
   dateTime,
   ArrayVector,
-} from '@grafana/data';
-import { BackendSrv, BackendSrvRequest, getBackendSrv, setBackendSrv } from '@grafana/runtime';
+} from '@grafinsight/data';
+import { BackendSrv, BackendSrvRequest, getBackendSrv, setBackendSrv } from '@grafinsight/runtime/src';
 import { testResponse } from './testResponse';
 
 describe('JaegerDatasource', () => {

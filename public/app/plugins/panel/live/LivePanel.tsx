@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 import { Unsubscribable, PartialObserver } from 'rxjs';
-import { FeatureInfoBox, stylesFactory, Button, JSONFormatter, CustomScrollbar, CodeEditor } from '@grafana/ui';
+import { FeatureInfoBox, stylesFactory, Button, JSONFormatter, CustomScrollbar, CodeEditor } from '@grafinsight/ui';
 import {
-  GrafanaTheme,
+  GrafInsightTheme,
   PanelProps,
   LiveChannelStatusEvent,
   isValidLiveChannelAddress,
@@ -14,10 +14,10 @@ import {
   PanelData,
   LoadingState,
   applyFieldOverrides,
-} from '@grafana/data';
+} from '@grafinsight/data';
 import { TablePanel } from '../table/TablePanel';
 import { LivePanelOptions, MessageDisplayMode } from './types';
-import { config, getGrafanaLiveSrv, MeasurementCollector } from '@grafana/runtime';
+import { config, getGrafInsightLiveSrv, MeasurementCollector } from '@grafinsight/runtime/src';
 import { css, cx } from 'emotion';
 
 interface Props extends PanelProps<LivePanelOptions> {}
@@ -38,7 +38,7 @@ export class LivePanel extends PureComponent<Props, State> {
   constructor(props: Props) {
     super(props);
 
-    this.isValid = !!getGrafanaLiveSrv();
+    this.isValid = !!getGrafInsightLiveSrv();
     this.state = { changed: 0 };
   }
 
@@ -88,7 +88,7 @@ export class LivePanel extends PureComponent<Props, State> {
       return;
     }
 
-    const channel = getGrafanaLiveSrv().getChannel(addr);
+    const channel = getGrafInsightLiveSrv().getChannel(addr);
     const changed = channel.id !== this.state.channel?.id;
     console.log('LOAD', addr, changed, channel);
     if (changed) {
@@ -301,7 +301,7 @@ export class LivePanel extends PureComponent<Props, State> {
   }
 }
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => ({
+const getStyles = stylesFactory((theme: GrafInsightTheme) => ({
   statusWrap: css`
     margin: auto;
     position: absolute;

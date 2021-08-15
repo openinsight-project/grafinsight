@@ -1,7 +1,7 @@
 import React, { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { css } from 'emotion';
-import { VariableSuggestion } from '@grafana/data';
-import { Button, LegacyForms, DataLinkInput, stylesFactory } from '@grafana/ui';
+import { VariableSuggestion } from '@grafinsight/data';
+import { Button, LegacyForms, DataLinkInput, stylesFactory } from '@grafinsight/ui';
 const { FormField, Switch } = LegacyForms;
 import { DataLinkConfig } from '../types';
 import { usePrevious } from 'react-use';

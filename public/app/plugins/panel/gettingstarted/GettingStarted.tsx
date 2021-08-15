@@ -1,8 +1,8 @@
 // Libraries
 import React, { PureComponent } from 'react';
-import { PanelProps } from '@grafana/data';
-import { Button, Spinner, stylesFactory } from '@grafana/ui';
-import { config } from '@grafana/runtime';
+import { PanelProps } from '@grafinsight/data';
+import { Button, Spinner, stylesFactory } from '@grafinsight/ui';
+import { config } from '@grafinsight/runtime/src';
 import { css, cx } from 'emotion';
 import { contextSrv } from 'app/core/core';
 import { backendSrv } from 'app/core/services/backend_srv';

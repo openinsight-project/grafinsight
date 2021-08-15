@@ -1,5 +1,5 @@
-import { sharedSingleStatPanelChangedHandler, sharedSingleStatMigrationHandler } from '@grafana/ui';
-import { PanelModel } from '@grafana/data';
+import { sharedSingleStatPanelChangedHandler, sharedSingleStatMigrationHandler } from '@grafinsight/ui';
+import { PanelModel } from '@grafinsight/data';
 import { GaugeOptions } from './types';
 
 // This is called when the panel first loads

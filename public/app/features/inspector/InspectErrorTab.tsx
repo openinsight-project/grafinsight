@@ -1,6 +1,6 @@
 import React from 'react';
-import { DataQueryError } from '@grafana/data';
-import { JSONFormatter } from '@grafana/ui';
+import { DataQueryError } from '@grafinsight/data';
+import { JSONFormatter } from '@grafinsight/ui';
 
 interface InspectErrorTabProps {
   error?: DataQueryError;

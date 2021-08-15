@@ -1,15 +1,15 @@
 import React, { FC, useState } from 'react';
-import { Form, Field, Input, Button, Legend, Container, useStyles, HorizontalGroup, LinkButton } from '@grafana/ui';
-import { getBackendSrv } from '@grafana/runtime';
+import { Form, Field, Input, Button, Legend, Container, useStyles, HorizontalGroup, LinkButton } from '@grafinsight/ui';
+import { getBackendSrv } from '@grafinsight/runtime/src';
 import { css } from 'emotion';
-import { GrafanaTheme } from '@grafana/data';
+import { GrafInsightTheme } from '@grafinsight/data';
 import config from 'app/core/config';
 
 interface EmailDTO {
   userOrEmail: string;
 }
 
-const paragraphStyles = (theme: GrafanaTheme) => css`
+const paragraphStyles = (theme: GrafInsightTheme) => css`
   color: ${theme.colors.formDescription};
   font-size: ${theme.typography.size.sm};
   font-weight: ${theme.typography.weight.regular};

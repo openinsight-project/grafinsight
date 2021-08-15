@@ -1,5 +1,5 @@
 import React from 'react';
-import { QueryEditorHelpProps, DataQuery } from '@grafana/data';
+import { QueryEditorHelpProps, DataQuery } from '@grafinsight/data';
 
 const CHEAT_SHEET_ITEMS = [
   {
