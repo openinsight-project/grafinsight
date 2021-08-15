@@ -1,6 +1,6 @@
 import React, { FC, useMemo, useState } from 'react';
-import { getFrameDisplayName, GrafanaTheme, PanelData, SelectableValue, toDataFrame } from '@grafana/data';
-import { Select, stylesFactory, Table, useTheme } from '@grafana/ui';
+import { getFrameDisplayName, GrafInsightTheme, PanelData, SelectableValue, toDataFrame } from '@grafinsight/data';
+import { Select, stylesFactory, Table, useTheme } from '@grafinsight/ui';
 import { css } from 'emotion';
 
 interface Props {
@@ -51,7 +51,7 @@ export const PreviewQueryTab: FC<Props> = ({ data, height, width }) => {
   return <Table data={data.series[0]} height={height} width={width} />;
 };
 
-const getStyles = stylesFactory((theme: GrafanaTheme, height: number) => {
+const getStyles = stylesFactory((theme: GrafInsightTheme, height: number) => {
   return {
     wrapper: css`
       height: ${height}px;

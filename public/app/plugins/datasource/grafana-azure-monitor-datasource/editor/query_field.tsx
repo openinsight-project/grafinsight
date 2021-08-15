@@ -1,5 +1,5 @@
 import PluginPrism from 'app/features/explore/slate-plugins/prism';
-import { BracesPlugin, ClearPlugin, RunnerPlugin, NewlinePlugin } from '@grafana/ui';
+import { BracesPlugin, ClearPlugin, RunnerPlugin, NewlinePlugin } from '@grafinsight/ui';
 import Typeahead from './typeahead';
 import { getKeybindingSrv, KeybindingSrv } from 'app/core/services/keybindingSrv';
 

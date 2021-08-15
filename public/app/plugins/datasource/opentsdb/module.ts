@@ -1,6 +1,6 @@
 import OpenTsDatasource from './datasource';
 import { OpenTsQueryCtrl } from './query_ctrl';
-import { DataSourcePlugin } from '@grafana/data';
+import { DataSourcePlugin } from '@grafinsight/data';
 import { ConfigEditor } from './components/ConfigEditor';
 
 class AnnotationsQueryCtrl {

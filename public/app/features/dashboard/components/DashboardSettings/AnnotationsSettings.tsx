@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { DashboardModel } from '../../state/DashboardModel';
-import { AngularComponent, getAngularLoader } from '@grafana/runtime';
+import { AngularComponent, getAngularLoader } from '@grafinsight/runtime/src';
 
 interface Props {
   dashboard: DashboardModel;

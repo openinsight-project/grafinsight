@@ -1,4 +1,4 @@
-import { TimeZone } from '@grafana/data';
+import { TimeZone } from '@grafinsight/data';
 import { OrgRole } from '.';
 
 export interface OrgUser {

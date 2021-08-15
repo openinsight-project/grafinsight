@@ -1,10 +1,10 @@
 import _ from 'lodash';
-import { PanelModel, PanelPlugin } from '@grafana/data';
+import { PanelModel, PanelPlugin } from '@grafinsight/data';
 import { DashList } from './DashList';
 import { DashListOptions } from './types';
 import { FolderPicker } from 'app/core/components/Select/FolderPicker';
 import React from 'react';
-import { TagsInput } from '@grafana/ui';
+import { TagsInput } from '@grafinsight/ui';
 
 export const plugin = new PanelPlugin<DashListOptions>(DashList)
   .setPanelOptions((builder) => {

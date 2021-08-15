@@ -10,7 +10,7 @@ import {
   BracesPlugin,
   DOMUtil,
   Icon,
-} from '@grafana/ui';
+} from '@grafinsight/ui';
 
 // Utils & Services
 // dom also includes Element polyfills
@@ -18,7 +18,7 @@ import { Plugin, Node } from 'slate';
 import { LokiLabelBrowser } from './LokiLabelBrowser';
 
 // Types
-import { ExploreQueryFieldProps, AbsoluteTimeRange } from '@grafana/data';
+import { ExploreQueryFieldProps, AbsoluteTimeRange } from '@grafinsight/data';
 import { LokiQuery, LokiOptions } from '../types';
 import { LanguageMap, languages as prismLanguages } from 'prismjs';
 import LokiLanguageProvider, { LokiHistoryItem } from '../language_provider';

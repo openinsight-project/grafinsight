@@ -1,10 +1,10 @@
-import { EchoBackend, EchoEventType } from '@grafana/runtime';
-import { SentryConfig } from '@grafana/data/src/types/config';
+import { EchoBackend, EchoEventType } from '@grafinsight/runtime/src';
+import { SentryConfig } from '@grafinsight/data/src/types/config';
 import { BrowserOptions, init as initSentry, setUser as sentrySetUser } from '@sentry/browser';
 import { FetchTransport } from '@sentry/browser/dist/transports';
 import { CustomEndpointTransport } from './transports/CustomEndpointTransport';
 import { EchoSrvTransport } from './transports/EchoSrvTransport';
-import { BuildInfo } from '@grafana/data';
+import { BuildInfo } from '@grafinsight/data';
 import { SentryEchoEvent, User, BaseTransport } from './types';
 
 export interface SentryEchoBackendOptions extends SentryConfig {

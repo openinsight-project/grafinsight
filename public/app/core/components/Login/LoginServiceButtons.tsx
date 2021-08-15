@@ -1,8 +1,8 @@
 import React from 'react';
 import config from 'app/core/config';
 import { css, cx } from 'emotion';
-import { useStyles } from '@grafana/ui';
-import { GrafanaTheme } from '@grafana/data';
+import { useStyles } from '@grafinsight/ui';
+import { GrafInsightTheme } from '@grafinsight/data';
 
 const loginServices: () => LoginServices = () => {
   const oauthEnabled = !!config.oauth;
@@ -61,7 +61,7 @@ export interface LoginServices {
   [key: string]: LoginService;
 }
 
-const getServiceStyles = (theme: GrafanaTheme) => {
+const getServiceStyles = (theme: GrafInsightTheme) => {
   return {
     container: css`
       width: 100%;

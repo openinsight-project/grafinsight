@@ -1,42 +1,6 @@
 {
   "links": [],
-  "panels": [
-    {
-      "datasource": null,
-      "gridPos": {
-        "h": 3,
-        "w": 24,
-        "x": 0,
-        "y": 0
-      },
-      "id": 1,
-      "title": "",
-      "transparent": false,
-      "type": "welcome"
-    },
-    {
-      "datasource": null,
-      "folderId": 0,
-      "gridPos": {
-        "h": 15,
-        "w": 24,
-        "x": 0,
-        "y": 4
-      },
-      "headings": true,
-      "id": 3,
-      "limit": 30,
-      "links": [],
-      "options": {},
-      "query": "",
-      "recent": true,
-      "search": false,
-      "starred": true,
-      "tags": [],
-      "title": "Dashboards",
-      "type": "dashlist"
-    }
-  ],
+  "panels": [],
   "schemaVersion": 22,
   "tags": [],
   "templating": {

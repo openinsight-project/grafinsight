@@ -12,19 +12,19 @@ import {
   withTheme,
   Input,
   IconButton,
-} from '@grafana/ui';
+} from '@grafinsight/ui';
 import {
   DataFrame,
   DataTransformerConfig,
   DocsId,
-  GrafanaTheme,
+  GrafInsightTheme,
   PanelData,
   SelectableValue,
   standardTransformersRegistry,
-} from '@grafana/data';
+} from '@grafinsight/data';
 import { Card, CardProps } from '../../../../core/components/Card/Card';
 import { css } from 'emotion';
-import { selectors } from '@grafana/e2e-selectors';
+import { selectors } from '@grafinsight/e2e-selectors/src';
 import { Unsubscribable } from 'rxjs';
 import { PanelModel } from '../../state';
 import { getDocsLink } from 'app/core/utils/docsLinks';
@@ -366,7 +366,7 @@ const TransformationCard: React.FC<CardProps> = (props) => {
   return <Card {...props} className={styles.card} />;
 };
 
-const getTransformationCardStyles = stylesFactory((theme: GrafanaTheme) => {
+const getTransformationCardStyles = stylesFactory((theme: GrafInsightTheme) => {
   return {
     card: css`
       background: ${theme.colors.bg2};

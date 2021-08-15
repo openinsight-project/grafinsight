@@ -8,7 +8,7 @@ import {
   InterpolateFunction,
   LinkModel,
   TimeRange,
-} from '@grafana/data';
+} from '@grafinsight/data';
 import { setLinkSrv } from '../../panel/panellinks/link_srv';
 
 describe('getFieldLinksForExplore', () => {

@@ -1,6 +1,6 @@
 import React, { useCallback, useMemo } from 'react';
-import { Button, TooltipPlugin, GraphNG, GraphNGLegendEvent } from '@grafana/ui';
-import { PanelProps } from '@grafana/data';
+import { Button, TooltipPlugin, GraphNG, GraphNGLegendEvent } from '@grafinsight/ui';
+import { PanelProps } from '@grafinsight/data';
 import { Options } from './types';
 import { hideSeriesConfigFactory } from '../timeseries/overrides/hideSeriesConfigFactory';
 import { getXYDimensions } from './dims';

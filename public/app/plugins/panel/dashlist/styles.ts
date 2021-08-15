@@ -1,9 +1,9 @@
 import { css } from 'emotion';
 
-import { GrafanaTheme } from '@grafana/data';
-import { styleMixins, stylesFactory } from '@grafana/ui';
+import { GrafInsightTheme } from '@grafinsight/data';
+import { styleMixins, stylesFactory } from '@grafinsight/ui';
 
-export const getStyles = stylesFactory((theme: GrafanaTheme) => ({
+export const getStyles = stylesFactory((theme: GrafInsightTheme) => ({
   dashlistSectionHeader: css`
     margin-bottom: ${theme.spacing.d};
     color: ${theme.colors.textWeak};

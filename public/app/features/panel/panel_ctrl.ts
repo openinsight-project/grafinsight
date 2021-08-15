@@ -9,7 +9,7 @@ import {
   AngularPanelMenuItem,
   EventBusExtended,
   EventBusSrv,
-} from '@grafana/data';
+} from '@grafinsight/data';
 import { DashboardModel } from '../dashboard/state';
 
 export class PanelCtrl {

@@ -1,11 +1,11 @@
 import React, { ChangeEvent } from 'react';
-import { Button, HorizontalGroup, Input, Label, LoadingPlaceholder, stylesFactory, withTheme } from '@grafana/ui';
+import { Button, HorizontalGroup, Input, Label, LoadingPlaceholder, stylesFactory, withTheme } from '@grafinsight/ui';
 import LokiLanguageProvider from '../language_provider';
 import { css, cx } from 'emotion';
 import store from 'app/core/store';
 import { FixedSizeList } from 'react-window';
 
-import { GrafanaTheme } from '@grafana/data';
+import { GrafInsightTheme } from '@grafinsight/data';
 import { LokiLabel } from './LokiLabel';
 
 // Hard limit on labels to render
@@ -18,7 +18,7 @@ export const LAST_USED_LABELS_KEY = 'grafana.datasources.loki.browser.labels';
 export interface BrowserProps {
   languageProvider: LokiLanguageProvider;
   onChange: (selector: string) => void;
-  theme: GrafanaTheme;
+  theme: GrafInsightTheme;
   autoSelect?: number;
   hide?: () => void;
 }
@@ -88,7 +88,7 @@ export function facetLabels(
   });
 }
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => ({
+const getStyles = stylesFactory((theme: GrafInsightTheme) => ({
   wrapper: css`
     background-color: ${theme.colors.bg2};
     padding: ${theme.spacing.md};

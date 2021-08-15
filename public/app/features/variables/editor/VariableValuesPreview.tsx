@@ -1,8 +1,8 @@
 import React, { MouseEvent, useCallback, useEffect, useState } from 'react';
 import { VariableOption, VariableWithOptions } from '../types';
-import { selectors } from '@grafana/e2e-selectors';
-import { Button, InlineFieldRow, InlineLabel, useStyles, VerticalGroup } from '@grafana/ui';
-import { GrafanaTheme } from '@grafana/data';
+import { selectors } from '@grafinsight/e2e-selectors/src';
+import { Button, InlineFieldRow, InlineLabel, useStyles, VerticalGroup } from '@grafinsight/ui';
+import { GrafInsightTheme } from '@grafinsight/data';
 import { css } from 'emotion';
 
 export interface VariableValuesPreviewProps {
@@ -57,7 +57,7 @@ export const VariableValuesPreview: React.FunctionComponent<VariableValuesPrevie
 };
 VariableValuesPreview.displayName = 'VariableValuesPreview';
 
-function getStyles(theme: GrafanaTheme) {
+function getStyles(theme: GrafInsightTheme) {
   return {
     optionContainer: css`
       margin-left: ${theme.spacing.xs};

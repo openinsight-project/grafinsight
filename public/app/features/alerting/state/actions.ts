@@ -5,8 +5,8 @@ import {
   base64StringToArrowTable,
   DataSourceApi,
   dateMath,
-} from '@grafana/data';
-import { config, getBackendSrv, getDataSourceSrv } from '@grafana/runtime';
+} from '@grafinsight/data';
+import { config, getBackendSrv, getDataSourceSrv } from '@grafinsight/runtime/src';
 import { appEvents } from 'app/core/core';
 import { updateLocation } from 'app/core/actions';
 import store from 'app/core/store';

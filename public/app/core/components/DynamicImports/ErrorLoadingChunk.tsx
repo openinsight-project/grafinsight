@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { Button, stylesFactory } from '@grafana/ui';
+import { Button, stylesFactory } from '@grafinsight/ui';
 import { css } from 'emotion';
 
 const getStyles = stylesFactory(() => {

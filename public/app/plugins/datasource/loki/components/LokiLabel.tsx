@@ -1,7 +1,7 @@
 import React, { forwardRef, HTMLAttributes } from 'react';
 import { cx, css } from 'emotion';
-import { GrafanaTheme } from '@grafana/data';
-import { useTheme } from '@grafana/ui';
+import { GrafInsightTheme } from '@grafinsight/data';
+import { useTheme } from '@grafinsight/ui';
 // @ts-ignore
 import Highlighter from 'react-highlight-words';
 
@@ -64,7 +64,7 @@ export const LokiLabel = forwardRef<HTMLElement, Props>(
 
 LokiLabel.displayName = 'LokiLabel';
 
-const getLabelStyles = (theme: GrafanaTheme) => ({
+const getLabelStyles = (theme: GrafInsightTheme) => ({
   base: css`
     cursor: pointer;
     font-size: ${theme.typography.size.sm};

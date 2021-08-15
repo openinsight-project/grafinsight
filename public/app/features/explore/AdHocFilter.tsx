@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
-import { LegacyForms, ThemeContext } from '@grafana/ui';
+import { LegacyForms, ThemeContext } from '@grafinsight/ui';
 const { Select } = LegacyForms;
 import { css, cx } from 'emotion';
-import { GrafanaTheme, SelectableValue } from '@grafana/data';
+import { GrafInsightTheme, SelectableValue } from '@grafinsight/data';
 
-const getStyles = (theme: GrafanaTheme) => ({
+const getStyles = (theme: GrafInsightTheme) => ({
   keyValueContainer: css`
     label: key-value-container;
     display: flex;

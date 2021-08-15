@@ -1,6 +1,6 @@
 import React, { ChangeEvent, PureComponent } from 'react';
-import { SelectableValue } from '@grafana/data';
-import { InlineFormLabel, LegacyForms, Button } from '@grafana/ui';
+import { SelectableValue } from '@grafinsight/data';
+import { InlineFormLabel, LegacyForms, Button } from '@grafinsight/ui';
 const { Select, Input } = LegacyForms;
 
 export interface Props {

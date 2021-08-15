@@ -1,4 +1,4 @@
-import { ValueMatcherID } from '@grafana/data';
+import { ValueMatcherID } from '@grafinsight/data';
 import React from 'react';
 import { ValueMatcherUIProps, ValueMatcherUIRegistryItem } from './types';
 

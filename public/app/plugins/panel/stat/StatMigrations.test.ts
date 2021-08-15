@@ -1,7 +1,7 @@
-import { PanelModel } from '@grafana/data';
+import { PanelModel } from '@grafinsight/data';
 import { statPanelChangedHandler } from './StatMigrations';
-import { BigValueGraphMode, BigValueColorMode } from '@grafana/ui';
-import { BigValueTextMode } from '@grafana/ui/src/components/BigValue/BigValue';
+import { BigValueGraphMode, BigValueColorMode } from '@grafinsight/ui';
+import { BigValueTextMode } from '@grafinsight/ui/src/components/BigValue/BigValue';
 
 describe('Stat Panel Migrations', () => {
   it('change from angular singlestat sparkline disabled', () => {

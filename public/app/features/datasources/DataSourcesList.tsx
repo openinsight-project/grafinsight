@@ -2,9 +2,9 @@
 import React, { FC } from 'react';
 
 // Types
-import { DataSourceSettings } from '@grafana/data';
+import { DataSourceSettings } from '@grafinsight/data';
 import { LayoutMode } from '../../core/components/LayoutSelector/LayoutSelector';
-import { Card, Tag, useStyles } from '@grafana/ui';
+import { Card, Tag, useStyles } from '@grafinsight/ui';
 import { css } from 'emotion';
 
 export interface Props {

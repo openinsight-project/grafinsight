@@ -1,5 +1,5 @@
-import { DataSourceSrv } from '@grafana/runtime';
-import { DataSourceApi, PluginMeta, DataTransformerConfig, DataSourceInstanceSettings } from '@grafana/data';
+import { DataSourceSrv } from '@grafinsight/runtime/src';
+import { DataSourceApi, PluginMeta, DataTransformerConfig, DataSourceInstanceSettings } from '@grafinsight/data';
 
 import { ElasticsearchQuery } from '../../plugins/datasource/elasticsearch/types';
 import { getAlertingValidationMessage } from './getAlertingValidationMessage';

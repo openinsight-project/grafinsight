@@ -1,4 +1,4 @@
-import { DocsId } from '@grafana/data';
+import { DocsId } from '@grafinsight/data';
 
 // TODO: Documentation links
 const DOCS_LINKS: Record<DocsId, string> = {

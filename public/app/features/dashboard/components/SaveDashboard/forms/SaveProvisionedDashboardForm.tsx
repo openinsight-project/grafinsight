@@ -1,10 +1,10 @@
 import React, { useCallback, useState } from 'react';
 import { css } from 'emotion';
 import { saveAs } from 'file-saver';
-import { Button, HorizontalGroup, stylesFactory, TextArea, useTheme, VerticalGroup } from '@grafana/ui';
+import { Button, HorizontalGroup, stylesFactory, TextArea, useTheme, VerticalGroup } from '@grafinsight/ui';
 import { CopyToClipboard } from 'app/core/components/CopyToClipboard/CopyToClipboard';
 import { SaveDashboardFormProps } from '../types';
-import { AppEvents, GrafanaTheme } from '@grafana/data';
+import { AppEvents, GrafInsightTheme } from '@grafinsight/data';
 import appEvents from '../../../../../core/app_events';
 
 export const SaveProvisionedDashboardForm: React.FC<SaveDashboardFormProps> = ({ dashboard, onCancel }) => {
@@ -72,7 +72,7 @@ export const SaveProvisionedDashboardForm: React.FC<SaveDashboardFormProps> = ({
   );
 };
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => {
+const getStyles = stylesFactory((theme: GrafInsightTheme) => {
   return {
     json: css`
       height: 400px;

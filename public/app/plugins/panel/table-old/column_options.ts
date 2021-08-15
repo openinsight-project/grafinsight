@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { getValueFormats } from '@grafana/data';
+import { getValueFormats } from '@grafinsight/data';
 
 export class ColumnOptionsCtrl {
   panel: any;

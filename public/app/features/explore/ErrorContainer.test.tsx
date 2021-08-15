@@ -1,5 +1,5 @@
 import React from 'react';
-import { DataQueryError } from '@grafana/data';
+import { DataQueryError } from '@grafinsight/data';
 import { shallow } from 'enzyme';
 import { ErrorContainer } from './ErrorContainer';
 

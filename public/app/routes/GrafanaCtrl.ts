@@ -5,7 +5,7 @@ import $ from 'jquery';
 import Drop from 'tether-drop';
 
 // Utils and servies
-import { colors } from '@grafana/ui';
+import { colors } from '@grafinsight/ui';
 import {
   getTemplateSrv,
   setBackendSrv,
@@ -13,7 +13,7 @@ import {
   setLegacyAngularInjector,
   LocationUpdate,
   setLocationSrv,
-} from '@grafana/runtime';
+} from '@grafinsight/runtime/src';
 import config from 'app/core/config';
 import coreModule from 'app/core/core_module';
 import { profiler } from 'app/core/profiler';
@@ -35,7 +35,7 @@ import { BridgeSrv } from 'app/core/services/bridge_srv';
 import { PlaylistSrv } from 'app/features/playlist/playlist_srv';
 import { DashboardSrv, setDashboardSrv } from 'app/features/dashboard/services/DashboardSrv';
 import { ILocationService, ITimeoutService, IRootScopeService, IAngularEvent, auto } from 'angular';
-import { AppEvent, AppEvents, locationUtil } from '@grafana/data';
+import { AppEvent, AppEvents, locationUtil } from '@grafinsight/data';
 import { backendSrv } from 'app/core/services/backend_srv';
 import { initGrafanaLive } from 'app/features/live/live';
 

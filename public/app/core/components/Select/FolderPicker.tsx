@@ -1,9 +1,9 @@
 import React, { PureComponent } from 'react';
 import { debounce } from 'lodash';
-import { AsyncSelect } from '@grafana/ui';
-import { AppEvents, SelectableValue } from '@grafana/data';
-import { getBackendSrv } from '@grafana/runtime';
-import { selectors } from '@grafana/e2e-selectors';
+import { AsyncSelect } from '@grafinsight/ui';
+import { AppEvents, SelectableValue } from '@grafinsight/data';
+import { getBackendSrv } from '@grafinsight/runtime/src';
+import { selectors } from '@grafinsight/e2e-selectors/src';
 
 import appEvents from '../../app_events';
 import { contextSrv } from 'app/core/services/context_srv';

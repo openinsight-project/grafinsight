@@ -6,12 +6,15 @@
   ],
   "rules": {
     "no-only-tests/no-only-tests": "error",
-    "react/prop-types": "off"
+    "react/prop-types": "off",
+    "prettier/prettier": 0,
+    "react-hooks/rules-of-hooks": "off",
+    "react-hooks/exhaustive-deps": "off"
   },
   "overrides": [
     {
       "files": [
-        "packages/grafana-ui/src/components/uPlot/**/*.{ts,tsx}",
+        "packages/grafinsight-ui/src/components/uPlot/**/*.{ts,tsx}",
         "public/app/**/*.{ts,tsx}"
       ],
       "rules": {

@@ -1,5 +1,5 @@
-import { PanelPlugin } from '@grafana/data';
-import { DrawStyle, GraphFieldConfig } from '@grafana/ui';
+import { PanelPlugin } from '@grafinsight/data';
+import { DrawStyle, GraphFieldConfig } from '@grafinsight/ui';
 import { XYChartPanel } from './XYChartPanel';
 import { Options } from './types';
 import { XYDimsEditor } from './XYDimsEditor';

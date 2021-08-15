@@ -1,7 +1,6 @@
 import { react2AngularDirective } from 'app/core/utils/react2angular';
 import { QueryEditor as CloudMonitoringQueryEditor } from 'app/plugins/datasource/cloud-monitoring/components/QueryEditor';
 import { AnnotationQueryEditor as CloudMonitoringAnnotationQueryEditor } from 'app/plugins/datasource/cloud-monitoring/components/AnnotationQueryEditor';
-import { AnnotationQueryEditor as CloudWatchAnnotationQueryEditor } from 'app/plugins/datasource/cloudwatch/components/AnnotationQueryEditor';
 import PageHeader from './components/PageHeader/PageHeader';
 import EmptyListCTA from './components/EmptyListCTA/EmptyListCTA';
 import { TagFilter } from './components/TagFilter/TagFilter';
@@ -18,7 +17,7 @@ import {
   LegacyForms,
   SeriesColorPickerPopoverWithTheme,
   UnitPicker,
-} from '@grafana/ui';
+} from '@grafinsight/ui';
 import { FunctionEditor } from 'app/plugins/datasource/graphite/FunctionEditor';
 import { LokiAnnotationsQueryEditor } from '../plugins/datasource/loki/components/AnnotationsQueryEditor';
 import { HelpModal } from './components/help/HelpModal';
@@ -127,11 +126,6 @@ export function registerAngularDirectives() {
     'onQueryChange',
     ['datasource', { watchDepth: 'reference' }],
     ['templateSrv', { watchDepth: 'reference' }],
-  ]);
-  react2AngularDirective('cloudwatchAnnotationQueryEditor', CloudWatchAnnotationQueryEditor, [
-    'query',
-    'onChange',
-    ['datasource', { watchDepth: 'reference' }],
   ]);
   react2AngularDirective('secretFormField', SecretFormField, [
     'value',

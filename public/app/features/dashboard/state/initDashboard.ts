@@ -26,7 +26,7 @@ import {
   DashboardInitPhase,
 } from 'app/types';
 import { DashboardModel } from './DashboardModel';
-import { DataQuery, locationUtil } from '@grafana/data';
+import { DataQuery, locationUtil } from '@grafinsight/data';
 import { initVariablesTransaction } from '../../variables/state/actions';
 import { emitDashboardViewEvent } from './analyticsProcessor';
 import { dashboardWatcher } from 'app/features/live/dashboard/dashboardWatcher';

@@ -13,8 +13,8 @@ import {
   ScopedVars,
   TIME_SERIES_TIME_FIELD_NAME,
   TIME_SERIES_VALUE_FIELD_NAME,
-} from '@grafana/data';
-import { FetchResponse, getDataSourceSrv, getTemplateSrv } from '@grafana/runtime';
+} from '@grafinsight/data';
+import { FetchResponse, getDataSourceSrv, getTemplateSrv } from '@grafinsight/runtime/src';
 import { descending, deviation } from 'd3';
 import {
   ExemplarTraceIdDestination,

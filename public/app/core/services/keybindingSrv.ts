@@ -2,7 +2,7 @@ import _ from 'lodash';
 import Mousetrap from 'mousetrap';
 import 'mousetrap-global-bind';
 import { ILocationService, IRootScopeService, ITimeoutService } from 'angular';
-import { LegacyGraphHoverClearEvent, locationUtil } from '@grafana/data';
+import { LegacyGraphHoverClearEvent, locationUtil } from '@grafinsight/data';
 
 import coreModule from 'app/core/core_module';
 import appEvents from 'app/core/app_events';

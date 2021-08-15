@@ -1,5 +1,5 @@
-import { BigValueTextMode, sharedSingleStatMigrationHandler } from '@grafana/ui';
-import { PanelPlugin } from '@grafana/data';
+import { BigValueTextMode, sharedSingleStatMigrationHandler } from '@grafinsight/ui';
+import { PanelPlugin } from '@grafinsight/data';
 import { addStandardDataReduceOptions, StatPanelOptions } from './types';
 import { StatPanel } from './StatPanel';
 import { statPanelChangedHandler } from './StatMigrations';

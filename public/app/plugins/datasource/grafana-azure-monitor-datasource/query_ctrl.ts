@@ -4,9 +4,9 @@ import { QueryCtrl } from 'app/plugins/sdk';
 import TimegrainConverter from './time_grain_converter';
 import './editor/editor_component';
 
-import { TemplateSrv } from '@grafana/runtime';
+import { TemplateSrv } from '@grafinsight/runtime/src';
 import { auto, IPromise } from 'angular';
-import { DataFrame, PanelEvents, rangeUtil } from '@grafana/data';
+import { DataFrame, PanelEvents, rangeUtil } from '@grafinsight/data';
 import { AzureQueryType, AzureMetricQuery } from './types';
 
 export interface ResultFormat {

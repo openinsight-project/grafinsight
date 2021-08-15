@@ -1,4 +1,4 @@
-import { DataFrame, FieldType, parseLabels, KeyValue, CircularDataFrame } from '@grafana/data';
+import { DataFrame, FieldType, parseLabels, KeyValue, CircularDataFrame } from '@grafinsight/data';
 import { Observable, throwError, timer } from 'rxjs';
 import { webSocket } from 'rxjs/webSocket';
 import { LokiTailResponse } from './types';

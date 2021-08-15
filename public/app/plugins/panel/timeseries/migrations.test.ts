@@ -1,4 +1,4 @@
-import { PanelModel } from '@grafana/data';
+import { PanelModel } from '@grafinsight/data';
 import { graphPanelChangedHandler } from './migrations';
 
 describe('Graph Migrations', () => {

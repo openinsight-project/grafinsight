@@ -9,10 +9,10 @@ import {
   formattedValueToString,
   AnnotationEventFieldSource,
   getValueFormat,
-} from '@grafana/data';
+} from '@grafinsight/data';
 
 import { annotationEventNames, AnnotationFieldInfo } from '../standardAnnotationSupport';
-import { Select, Tooltip, Icon } from '@grafana/ui';
+import { Select, Tooltip, Icon } from '@grafinsight/ui';
 import { AnnotationQueryResponse } from '../types';
 
 // const valueOptions: Array<SelectableValue<AnnotationEventFieldSource>> = [

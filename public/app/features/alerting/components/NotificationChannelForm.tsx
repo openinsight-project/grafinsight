@@ -1,7 +1,7 @@
 import React, { FC, useEffect } from 'react';
 import { css } from 'emotion';
-import { GrafanaTheme, SelectableValue } from '@grafana/data';
-import { Button, FormAPI, HorizontalGroup, stylesFactory, useTheme, Spinner } from '@grafana/ui';
+import { GrafInsightTheme, SelectableValue } from '@grafinsight/data';
+import { Button, FormAPI, HorizontalGroup, stylesFactory, useTheme, Spinner } from '@grafinsight/ui';
 import { NotificationChannelType, NotificationChannelDTO, NotificationChannelSecureFields } from '../../../types';
 import { NotificationSettings } from './NotificationSettings';
 import { BasicSettings } from './BasicSettings';
@@ -115,7 +115,7 @@ export const NotificationChannelForm: FC<Props> = ({
   );
 };
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => {
+const getStyles = stylesFactory((theme: GrafInsightTheme) => {
   return {
     formContainer: css``,
     formItem: css`

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Badge, NodeGraph, Collapse } from '@grafana/ui';
-import { DataFrame, TimeRange } from '@grafana/data';
+import { Badge, NodeGraph, Collapse } from '@grafinsight/ui';
+import { DataFrame, TimeRange } from '@grafinsight/data';
 import { ExploreId, StoreState } from '../../types';
 import { splitOpen } from './state/main';
 import { connect, ConnectedProps } from 'react-redux';

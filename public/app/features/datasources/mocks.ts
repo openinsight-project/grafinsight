@@ -1,4 +1,4 @@
-import { DataSourceSettings } from '@grafana/data';
+import { DataSourceSettings } from '@grafinsight/data';
 
 export function createDatasourceSettings<T>(jsonData: T): DataSourceSettings<T> {
   return {

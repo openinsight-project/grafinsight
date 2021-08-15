@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import config from 'app/core/config';
-import { Icon, IconName } from '@grafana/ui';
+import { Icon, IconName } from '@grafinsight/ui';
 
 export interface FooterLink {
   text: string;

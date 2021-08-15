@@ -4,10 +4,10 @@ import config from 'app/core/config';
 import { updateLocation } from 'app/core/actions';
 import { connect } from 'react-redux';
 import { StoreState } from 'app/types';
-import { getBackendSrv } from '@grafana/runtime';
+import { getBackendSrv } from '@grafinsight/runtime/src';
 import { hot } from 'react-hot-loader';
 import appEvents from 'app/core/app_events';
-import { AppEvents } from '@grafana/data';
+import { AppEvents } from '@grafinsight/data';
 
 const isOauthEnabled = () => {
   return !!config.oauth && Object.keys(config.oauth).length > 0;
@@ -81,7 +81,8 @@ export class LoginCtrl extends PureComponent<Props, State> {
       .post('/api/user/password/reset', resetModel)
       .then(() => {
         this.toGrafana();
-      });
+      })
+      .catch((err: any) => console.error(err));;
   };
 
   login = (formModel: FormModel) => {

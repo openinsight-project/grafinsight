@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 import { connect, MapDispatchToProps, MapStateToProps } from 'react-redux';
-import { NavModel } from '@grafana/data';
-import { config } from '@grafana/runtime';
-import { Form } from '@grafana/ui';
+import { NavModel } from '@grafinsight/data';
+import { config } from '@grafinsight/runtime/src';
+import { Form } from '@grafinsight/ui';
 import Page from 'app/core/components/Page/Page';
 import { NotificationChannelForm } from './components/NotificationChannelForm';
 import {

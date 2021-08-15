@@ -1,4 +1,4 @@
-import { toDataQueryError, getDataSourceSrv } from '@grafana/runtime';
+import { toDataQueryError, getDataSourceSrv } from '@grafinsight/runtime/src';
 import { updateOptions } from '../state/actions';
 import { QueryVariableModel } from '../types';
 import { ThunkResult } from '../../../types';

@@ -1,5 +1,5 @@
 import { Observer, Subscription } from 'rxjs';
-import { LoadingState } from '@grafana/data';
+import { LoadingState } from '@grafinsight/data';
 
 import { UpdateOptionsResults } from './VariableQueryRunner';
 

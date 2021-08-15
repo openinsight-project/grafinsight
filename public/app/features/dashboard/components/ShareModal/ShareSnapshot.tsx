@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
-import { Button, ClipboardButton, Icon, Spinner, Select, Input, LinkButton, Field } from '@grafana/ui';
-import { AppEvents, SelectableValue } from '@grafana/data';
-import { getBackendSrv } from '@grafana/runtime';
+import { Button, ClipboardButton, Icon, Spinner, Select, Input, LinkButton, Field } from '@grafinsight/ui';
+import { AppEvents, SelectableValue } from '@grafinsight/data';
+import { getBackendSrv } from '@grafinsight/runtime/src';
 import { DashboardModel, PanelModel } from 'app/features/dashboard/state';
 import { getTimeSrv } from 'app/features/dashboard/services/TimeSrv';
 import { appEvents } from 'app/core/core';

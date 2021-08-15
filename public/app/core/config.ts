@@ -1,8 +1,8 @@
-import { config, GrafanaBootConfig } from '@grafana/runtime';
+import { config, GrafInsightBootConfig } from '@grafinsight/runtime';
 // Legacy binding paths
-export { config, GrafanaBootConfig as Settings };
+export { config, GrafInsightBootConfig as Settings };
 
-let grafanaConfig: GrafanaBootConfig = config;
+let grafanaConfig: GrafInsightBootConfig = config;
 
 export default grafanaConfig;
 
@@ -10,7 +10,7 @@ export const getConfig = () => {
   return grafanaConfig;
 };
 
-export const updateConfig = (update: Partial<GrafanaBootConfig>) => {
+export const updateConfig = (update: Partial<GrafInsightBootConfig>) => {
   grafanaConfig = {
     ...grafanaConfig,
     ...update,

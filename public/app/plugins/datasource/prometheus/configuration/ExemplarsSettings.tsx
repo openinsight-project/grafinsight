@@ -1,4 +1,4 @@
-import { Button } from '@grafana/ui';
+import { Button } from '@grafinsight/ui';
 import { css } from 'emotion';
 import React from 'react';
 import { ExemplarTraceIdDestination } from '../types';

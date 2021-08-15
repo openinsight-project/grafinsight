@@ -13,9 +13,9 @@ import {
   RadioButtonGroup,
   FieldSet,
   TimeZonePicker,
-} from '@grafana/ui';
-import { SelectableValue } from '@grafana/data';
-import { selectors } from '@grafana/e2e-selectors';
+} from '@grafinsight/ui';
+import { SelectableValue } from '@grafinsight/data';
+import { selectors } from '@grafinsight/e2e-selectors/src';
 
 import { DashboardSearchHit, DashboardSearchItemType } from 'app/features/search/types';
 import { backendSrv } from 'app/core/services/backend_srv';

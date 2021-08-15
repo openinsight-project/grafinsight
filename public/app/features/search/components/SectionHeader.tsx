@@ -1,8 +1,8 @@
 import React, { FC, useCallback } from 'react';
 import { css, cx } from 'emotion';
 import { useLocalStorage } from 'react-use';
-import { GrafanaTheme } from '@grafana/data';
-import { Icon, Spinner, stylesFactory, useTheme } from '@grafana/ui';
+import { GrafInsightTheme } from '@grafinsight/data';
+import { Icon, Spinner, stylesFactory, useTheme } from '@grafinsight/ui';
 import { DashboardSection, OnToggleChecked } from '../types';
 import { SearchCheckbox } from './SearchCheckbox';
 import { getSectionIcon, getSectionStorageKey } from '../utils';
@@ -65,7 +65,7 @@ export const SectionHeader: FC<SectionHeaderProps> = ({
   );
 };
 
-const getSectionHeaderStyles = stylesFactory((theme: GrafanaTheme, selected = false, editable: boolean) => {
+const getSectionHeaderStyles = stylesFactory((theme: GrafInsightTheme, selected = false, editable: boolean) => {
   const { sm } = theme.spacing;
   return {
     wrapper: cx(

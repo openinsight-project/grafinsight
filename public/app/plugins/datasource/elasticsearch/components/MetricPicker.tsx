@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { css, cx } from 'emotion';
-import { SelectableValue } from '@grafana/data';
-import { Segment } from '@grafana/ui';
+import { SelectableValue } from '@grafinsight/data';
+import { Segment } from '@grafinsight/ui';
 import { describeMetric } from '../utils';
 import { MetricAggregation } from './QueryEditor/MetricAggregationsEditor/aggregations';
 

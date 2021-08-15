@@ -1,15 +1,15 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { mergeMap } from 'rxjs/operators';
 import { css } from 'emotion';
-import { Icon, JSONFormatter, useStyles } from '@grafana/ui';
+import { Icon, JSONFormatter, useStyles } from '@grafinsight/ui';
 import {
   DataFrame,
   DataTransformerConfig,
-  GrafanaTheme,
+  GrafInsightTheme,
   transformDataFrame,
   TransformerRegistryItem,
-} from '@grafana/data';
-import { selectors } from '@grafana/e2e-selectors';
+} from '@grafinsight/data';
+import { selectors } from '@grafinsight/e2e-selectors/src';
 
 import { TransformationsEditorTransformation } from './types';
 
@@ -95,7 +95,7 @@ export const TransformationEditor = ({
   );
 };
 
-const getStyles = (theme: GrafanaTheme) => {
+const getStyles = (theme: GrafInsightTheme) => {
   const debugBorder = theme.isLight ? theme.palette.gray85 : theme.palette.gray15;
 
   return {

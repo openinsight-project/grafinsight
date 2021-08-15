@@ -1,6 +1,6 @@
 import isString from 'lodash/isString';
-import { ScopedVars, VariableType } from '@grafana/data';
-import { getTemplateSrv } from '@grafana/runtime';
+import { ScopedVars, VariableType } from '@grafinsight/data';
+import { getTemplateSrv } from '@grafinsight/runtime/src';
 
 import { ALL_VARIABLE_TEXT, ALL_VARIABLE_VALUE } from './state/types';
 import { QueryVariableModel, VariableModel, VariableRefresh } from './types';

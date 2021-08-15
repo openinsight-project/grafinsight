@@ -1,6 +1,6 @@
 import React, { MouseEvent, PureComponent } from 'react';
-import { Icon } from '@grafana/ui';
-import { selectors } from '@grafana/e2e-selectors';
+import { Icon } from '@grafinsight/ui';
+import { selectors } from '@grafinsight/e2e-selectors/src';
 
 import { toVariableIdentifier, toVariablePayload, VariableIdentifier } from '../state/types';
 import { StoreState } from '../../../types';

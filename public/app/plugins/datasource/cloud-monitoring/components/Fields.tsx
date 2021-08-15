@@ -1,6 +1,6 @@
 import React, { InputHTMLAttributes, FunctionComponent } from 'react';
-import { InlineFormLabel, Select, InlineField } from '@grafana/ui';
-import { SelectableValue } from '@grafana/data';
+import { InlineFormLabel, Select, InlineField } from '@grafinsight/ui';
+import { SelectableValue } from '@grafinsight/data';
 
 export interface Props extends InputHTMLAttributes<HTMLInputElement> {
   label: string;

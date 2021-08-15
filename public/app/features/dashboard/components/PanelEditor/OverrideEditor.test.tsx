@@ -1,7 +1,7 @@
 import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
-import { FieldConfigOptionsRegistry } from '@grafana/data';
-import { selectors } from '@grafana/e2e-selectors';
+import { FieldConfigOptionsRegistry } from '@grafinsight/data';
+import { selectors } from '@grafinsight/e2e-selectors/src';
 import { OverrideEditor } from './OverrideEditor';
 
 describe('OverrideEditor', () => {

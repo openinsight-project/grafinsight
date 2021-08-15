@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon } from '@grafana/ui';
+import { Icon } from '@grafinsight/ui';
 
 function formatLatency(value: number) {
   return `${(value / 1000).toFixed(1)}s`;

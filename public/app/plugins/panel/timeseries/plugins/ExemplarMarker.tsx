@@ -3,12 +3,12 @@ import {
   dateTimeFormat,
   Field,
   FieldType,
-  GrafanaTheme,
+  GrafInsightTheme,
   LinkModel,
   systemDateFormats,
   TimeZone,
-} from '@grafana/data';
-import { FieldLinkList, Portal, TooltipContainer, useStyles } from '@grafana/ui';
+} from '@grafinsight/data';
+import { FieldLinkList, Portal, TooltipContainer, useStyles } from '@grafinsight/ui';
 import { css, cx } from 'emotion';
 import React, { useCallback, useRef, useState } from 'react';
 
@@ -109,7 +109,7 @@ export const ExemplarMarker: React.FC<ExemplarMarkerProps> = ({ timeZone, dataFr
   );
 };
 
-const getExemplarMarkerStyles = (theme: GrafanaTheme) => {
+const getExemplarMarkerStyles = (theme: GrafInsightTheme) => {
   const bg = theme.isDark ? theme.palette.dark2 : theme.palette.white;
   const headerBg = theme.isDark ? theme.palette.dark9 : theme.palette.gray5;
   const shadowColor = theme.isDark ? theme.palette.black : theme.palette.white;

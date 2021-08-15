@@ -7,11 +7,11 @@ import PluginList from './PluginList';
 import { loadPlugins } from './state/actions';
 import { getNavModel } from 'app/core/selectors/navModel';
 import { getPlugins, getPluginsSearchQuery } from './state/selectors';
-import { NavModel, PluginMeta } from '@grafana/data';
+import { NavModel, PluginMeta } from '@grafinsight/data';
 import { StoreState } from 'app/types';
 import { setPluginsSearchQuery } from './state/reducers';
 import { useAsync } from 'react-use';
-import { selectors } from '@grafana/e2e-selectors';
+import { selectors } from '@grafinsight/e2e-selectors/src';
 import { PluginsErrorsInfo } from './PluginsErrorsInfo';
 
 export interface Props {

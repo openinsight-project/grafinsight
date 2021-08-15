@@ -1,5 +1,5 @@
 import React from 'react';
-import { getTagColorsFromName, Icon } from '@grafana/ui';
+import { getTagColorsFromName, Icon } from '@grafinsight/ui';
 
 export interface Props {
   label: string;

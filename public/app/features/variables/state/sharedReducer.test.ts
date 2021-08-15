@@ -1,5 +1,5 @@
 import cloneDeep from 'lodash/cloneDeep';
-import { LoadingState, VariableType } from '@grafana/data';
+import { LoadingState, VariableType } from '@grafinsight/data';
 
 import { reducerTester } from '../../../../test/core/redux/reducerTester';
 import {

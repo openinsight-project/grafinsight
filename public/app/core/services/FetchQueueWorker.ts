@@ -1,7 +1,7 @@
 import { concatMap, filter } from 'rxjs/operators';
 
 import { FetchQueue, FetchStatus } from './FetchQueue';
-import { BackendSrvRequest, GrafanaBootConfig } from '@grafana/runtime';
+import { BackendSrvRequest, GrafInsightBootConfig } from '@grafinsight/runtime/src';
 import { isDataQuery } from '../utils/query';
 import { ResponseQueue } from './ResponseQueue';
 
@@ -11,7 +11,7 @@ interface WorkerEntry {
 }
 
 export class FetchQueueWorker {
-  constructor(fetchQueue: FetchQueue, responseQueue: ResponseQueue, config: GrafanaBootConfig) {
+  constructor(fetchQueue: FetchQueue, responseQueue: ResponseQueue, config: GrafInsightBootConfig) {
     const maxParallelRequests = config?.http2Enabled ? 1000 : 5; // for tests that don't mock GrafanaBootConfig the config param will be undefined
 
     // This will create an implicit live subscription for as long as this class lives.

@@ -14,7 +14,7 @@ import {
   LiveChannelScope,
   LoadingState,
   TimeRange,
-} from '@grafana/data';
+} from '@grafinsight/data';
 import { Scenario, TestDataQuery } from './types';
 import {
   DataSourceWithBackend,
@@ -23,7 +23,7 @@ import {
   getTemplateSrv,
   TemplateSrv,
   toDataQueryError,
-} from '@grafana/runtime';
+} from '@grafinsight/runtime/src';
 import { queryMetricTree } from './metricTree';
 import { runStream } from './runStreams';
 import { getSearchFilterScopedVar } from 'app/features/variables/utils';
@@ -220,7 +220,7 @@ function runGrafanaLiveQuery(
   }
   return getLiveMeasurementsObserver(
     {
-      scope: LiveChannelScope.Grafana,
+      scope: LiveChannelScope.GrafInsight,
       namespace: 'testdata',
       path: target.channel,
     },

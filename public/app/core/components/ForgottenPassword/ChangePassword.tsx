@@ -1,6 +1,6 @@
 import React, { FC, SyntheticEvent } from 'react';
-import { Tooltip, Form, Field, Input, VerticalGroup, Button } from '@grafana/ui';
-import { selectors } from '@grafana/e2e-selectors';
+import { Tooltip, Form, Field, Input, VerticalGroup, Button } from '@grafinsight/ui';
+import { selectors } from '@grafinsight/e2e-selectors/src';
 import { submitButton } from '../Login/LoginForm';
 interface Props {
   onSubmit: (pw: string) => void;

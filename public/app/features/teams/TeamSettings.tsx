@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { connect } from 'react-redux';
-import { Input, Field, Form, Button, FieldSet, VerticalGroup } from '@grafana/ui';
+import { Input, Field, Form, Button, FieldSet, VerticalGroup } from '@grafinsight/ui';
 
 import { SharedPreferences } from 'app/core/components/SharedPreferences/SharedPreferences';
 import { updateTeam } from './state/actions';

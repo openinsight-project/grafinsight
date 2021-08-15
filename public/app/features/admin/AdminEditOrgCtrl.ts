@@ -1,4 +1,4 @@
-import { getBackendSrv } from '@grafana/runtime';
+import { getBackendSrv } from '@grafinsight/runtime/src';
 import { NavModelSrv } from 'app/core/core';
 import { promiseToDigest } from 'app/core/utils/promiseToDigest';
 

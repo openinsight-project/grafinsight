@@ -6,7 +6,7 @@ import find from 'lodash/find';
 // Types
 import {
   AppPlugin,
-  GrafanaPlugin,
+  GrafInsightPlugin,
   NavModel,
   NavModelItem,
   PluginDependencies,
@@ -17,9 +17,9 @@ import {
   PluginSignatureStatus,
   PluginType,
   UrlQueryMap,
-} from '@grafana/data';
+} from '@grafinsight/data';
 import { AppNotificationSeverity, CoreEvents, StoreState } from 'app/types';
-import { Alert, InfoBox, Tooltip } from '@grafana/ui';
+import { Alert, InfoBox, Tooltip } from '@grafinsight/ui';
 
 import Page from 'app/core/components/Page/Page';
 import { getPluginSettings } from './PluginSettingsCache';
@@ -33,7 +33,7 @@ import { config } from 'app/core/config';
 import { ContextSrv } from '../../core/services/context_srv';
 import { css } from 'emotion';
 import { PluginSignatureBadge } from './PluginSignatureBadge';
-import { selectors } from '@grafana/e2e-selectors';
+import { selectors } from '@grafinsight/e2e-selectors/src';
 
 export function getLoadingNav(): NavModel {
   const node = {
@@ -46,7 +46,7 @@ export function getLoadingNav(): NavModel {
   };
 }
 
-export function loadPlugin(pluginId: string): Promise<GrafanaPlugin> {
+export function loadPlugin(pluginId: string): Promise<GrafInsightPlugin> {
   return getPluginSettings(pluginId).then((info) => {
     if (info.type === PluginType.app) {
       return importAppPlugin(info);
@@ -67,7 +67,7 @@ export function loadPlugin(pluginId: string): Promise<GrafanaPlugin> {
       });
     }
     if (info.type === PluginType.renderer) {
-      return Promise.resolve({ meta: info } as GrafanaPlugin);
+      return Promise.resolve({ meta: info } as GrafInsightPlugin);
     }
     return Promise.reject('Unknown Plugin type: ' + info.type);
   });
@@ -82,7 +82,7 @@ interface Props {
 
 interface State {
   loading: boolean;
-  plugin?: GrafanaPlugin;
+  plugin?: GrafInsightPlugin;
   nav: NavModel;
   defaultPage: string; // The first configured one or readme
 }
@@ -260,7 +260,7 @@ class PluginPage extends PureComponent<Props, State> {
         <ul className="ui-list plugin-info-list">
           <li className="plugin-info-list-item">
             <img src="public/img/grafana_icon.svg" alt="Grafana logo" />
-            Grafana {dependencies.grafanaVersion}
+            Grafana {dependencies.grafinsightVersion}
           </li>
           {dependencies.plugins &&
             dependencies.plugins.map((plug) => {
@@ -374,7 +374,7 @@ class PluginPage extends PureComponent<Props, State> {
 }
 
 function getPluginTabsNav(
-  plugin: GrafanaPlugin,
+  plugin: GrafInsightPlugin,
   appSubUrl: string,
   path: string,
   query: UrlQueryMap,

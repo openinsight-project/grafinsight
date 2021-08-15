@@ -1,7 +1,7 @@
 import React, { MouseEvent, useContext } from 'react';
 import { css } from 'emotion';
-import { CallToActionCard, Icon, IconName, LinkButton, ThemeContext } from '@grafana/ui';
-import { selectors } from '@grafana/e2e-selectors';
+import { CallToActionCard, Icon, IconName, LinkButton, ThemeContext } from '@grafinsight/ui';
+import { selectors } from '@grafinsight/e2e-selectors/src';
 
 export interface Props {
   title: string;

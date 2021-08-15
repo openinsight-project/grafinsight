@@ -1,4 +1,4 @@
-import { DataQuery, DataSourceJsonData, SelectableValue } from '@grafana/data';
+import { DataQuery, DataSourceJsonData, SelectableValue } from '@grafinsight/data';
 
 export enum AuthType {
   JWT = 'jwt',

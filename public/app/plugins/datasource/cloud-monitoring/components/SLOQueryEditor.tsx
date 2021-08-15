@@ -1,6 +1,6 @@
 import React from 'react';
-import { Segment, SegmentAsync } from '@grafana/ui';
-import { SelectableValue } from '@grafana/data';
+import { Segment, SegmentAsync } from '@grafinsight/ui';
+import { SelectableValue } from '@grafinsight/data';
 import { selectors } from '../constants';
 import { Project, AlignmentPeriods, AliasBy, QueryInlineField } from '.';
 import { SLOQuery } from '../types';

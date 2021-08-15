@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { Card } from '../types';
-import { Icon, stylesFactory, useTheme } from '@grafana/ui';
-import { GrafanaTheme } from '@grafana/data';
+import { Icon, stylesFactory, useTheme } from '@grafinsight/ui';
+import { GrafInsightTheme } from '@grafinsight/data';
 import { css } from 'emotion';
 import { cardContent, cardStyle, iconStyle } from './sharedStyles';
 
@@ -36,7 +36,7 @@ export const DocsCard: FC<Props> = ({ card }) => {
   );
 };
 
-const getStyles = stylesFactory((theme: GrafanaTheme, complete: boolean) => {
+const getStyles = stylesFactory((theme: GrafInsightTheme, complete: boolean) => {
   return {
     card: css`
       ${cardStyle(theme, complete)}

@@ -1,9 +1,9 @@
 import React, { FC, useState } from 'react';
-import { Form, Field, Input, Button, Legend, Container, HorizontalGroup, LinkButton } from '@grafana/ui';
+import { Form, Field, Input, Button, Legend, Container, HorizontalGroup, LinkButton } from '@grafinsight/ui';
 import { getConfig } from 'app/core/config';
-import { getBackendSrv } from '@grafana/runtime';
+import { getBackendSrv } from '@grafinsight/runtime/src';
 import appEvents from 'app/core/app_events';
-import { AppEvents } from '@grafana/data';
+import { AppEvents } from '@grafinsight/data';
 
 interface EmailDTO {
   email: string;

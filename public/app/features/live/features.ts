@@ -1,5 +1,5 @@
-import { LiveChannelConfig } from '@grafana/data';
-import { MeasurementCollector } from '@grafana/runtime';
+import { LiveChannelConfig } from '@grafinsight/data';
+import { MeasurementCollector } from '@grafinsight/runtime/src';
 import { getDashboardChannelsFeature } from './dashboard/dashboardWatcher';
 import { LiveMeasurementsSupport } from './measurements/measurementsSupport';
 import { grafanaLiveCoreFeatures } from './scopes';

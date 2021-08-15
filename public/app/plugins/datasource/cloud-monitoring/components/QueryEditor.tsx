@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 import appEvents from 'app/core/app_events';
 import { CoreEvents } from 'app/types';
-import { ExploreQueryFieldProps, SelectableValue } from '@grafana/data';
-import { Segment } from '@grafana/ui';
+import { ExploreQueryFieldProps, SelectableValue } from '@grafinsight/data';
+import { Segment } from '@grafinsight/ui';
 import { Help, MetricQueryEditor, SLOQueryEditor } from './';
 import { CloudMonitoringQuery, MetricQuery, QueryType, SLOQuery, queryTypes, EditorMode } from '../types';
 import { defaultQuery } from './MetricQueryEditor';

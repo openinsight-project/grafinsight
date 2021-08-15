@@ -1,5 +1,5 @@
 import { RssFeed } from './types';
-import { ArrayVector, FieldType, DataFrame, dateTime } from '@grafana/data';
+import { ArrayVector, FieldType, DataFrame, dateTime } from '@grafinsight/data';
 
 export function feedToDataFrame(feed: RssFeed): DataFrame {
   const date = new ArrayVector<number>([]);

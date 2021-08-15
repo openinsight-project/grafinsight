@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
-import { selectors as e2eSelectors } from '@grafana/e2e-selectors';
-import { Field, RadioButtonGroup, Switch, ClipboardButton, Icon, InfoBox, Input, FieldSet } from '@grafana/ui';
-import { SelectableValue, PanelModel, AppEvents } from '@grafana/data';
+import { selectors as e2eSelectors } from '@grafinsight/e2e-selectors/src';
+import { Field, RadioButtonGroup, Switch, ClipboardButton, Icon, InfoBox, Input, FieldSet } from '@grafinsight/ui';
+import { SelectableValue, PanelModel, AppEvents } from '@grafinsight/data';
 import { DashboardModel } from 'app/features/dashboard/state';
 import { buildImageUrl, buildShareUrl } from './utils';
 import { appEvents } from 'app/core/core';

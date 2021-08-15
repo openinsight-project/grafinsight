@@ -7,9 +7,9 @@ import PostgresQuery from './postgres_query';
 import sqlPart from './sql_part';
 import { auto } from 'angular';
 import { CoreEvents } from 'app/types';
-import { PanelEvents, QueryResultMeta } from '@grafana/data';
+import { PanelEvents, QueryResultMeta } from '@grafinsight/data';
 import { VariableWithMultiSupport } from 'app/features/variables/types';
-import { TemplateSrv } from '@grafana/runtime';
+import { TemplateSrv } from '@grafinsight/runtime/src';
 
 const defaultQuery = `SELECT
   $__time(time_column),

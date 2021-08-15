@@ -3,7 +3,7 @@ import { connect, MapStateToProps, useDispatch } from 'react-redux';
 
 import { DashboardModel, PanelModel } from 'app/features/dashboard/state';
 
-import { PanelPlugin } from '@grafana/data';
+import { PanelPlugin } from '@grafinsight/data';
 import { StoreState } from 'app/types';
 import { GetDataOptions } from '../../../query/state/PanelQueryRunner';
 import { usePanelLatestData } from '../PanelEditor/usePanelLatestData';

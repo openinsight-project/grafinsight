@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { css } from 'emotion';
 import cx from 'classnames';
-import { LegacyForms } from '@grafana/ui';
+import { LegacyForms } from '@grafinsight/ui';
 const { FormField } = LegacyForms;
 import { DerivedFieldConfig } from '../types';
-import { ArrayVector, Field, FieldType, LinkModel } from '@grafana/data';
+import { ArrayVector, Field, FieldType, LinkModel } from '@grafinsight/data';
 import { getFieldLinksForExplore } from '../../../../features/explore/utils/links';
 
 type Props = {

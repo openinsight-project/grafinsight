@@ -1,15 +1,15 @@
 import 'whatwg-fetch'; // fetch polyfill needed backendSrv
 import { of } from 'rxjs';
-import { DataSourceInstanceSettings, toUtc } from '@grafana/data';
+import { DataSourceInstanceSettings, toUtc } from '@grafinsight/data';
 
 import { PrometheusDatasource } from './datasource';
 import PrometheusMetricFindQuery from './metric_find_query';
 import { backendSrv } from 'app/core/services/backend_srv'; // will use the version in __mocks__
 import { PromOptions } from './types';
-import { FetchResponse } from '@grafana/runtime';
+import { FetchResponse } from '@grafinsight/runtime/src';
 
-jest.mock('@grafana/runtime', () => ({
-  ...((jest.requireActual('@grafana/runtime') as unknown) as object),
+jest.mock('@grafinsight/runtime', () => ({
+  ...((jest.requireActual('@grafinsight/runtime') as unknown) as object),
   getBackendSrv: () => backendSrv,
 }));
 

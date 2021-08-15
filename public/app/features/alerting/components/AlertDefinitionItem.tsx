@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 // @ts-ignore
 import Highlighter from 'react-highlight-words';
-import { FeatureState } from '@grafana/data';
-import { Card, FeatureBadge, Icon, LinkButton } from '@grafana/ui';
+import { FeatureState } from '@grafinsight/data';
+import { Card, FeatureBadge, Icon, LinkButton } from '@grafinsight/ui';
 import { AlertDefinition } from 'app/types';
 
 interface Props {

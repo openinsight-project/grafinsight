@@ -1,10 +1,10 @@
 import _ from 'lodash';
-import { deprecationWarning, ScopedVars, TimeRange } from '@grafana/data';
+import { deprecationWarning, ScopedVars, TimeRange } from '@grafinsight/data';
 import { getFilteredVariables, getVariables, getVariableWithName } from '../variables/state/selectors';
 import { variableRegex } from '../variables/utils';
 import { isAdHoc } from '../variables/guard';
 import { VariableModel } from '../variables/types';
-import { setTemplateSrv, TemplateSrv as BaseTemplateSrv } from '@grafana/runtime';
+import { setTemplateSrv, TemplateSrv as BaseTemplateSrv } from '@grafinsight/runtime/src';
 import { FormatOptions, formatRegistry } from './formatRegistry';
 import { ALL_VARIABLE_TEXT, ALL_VARIABLE_VALUE } from '../variables/state/types';
 

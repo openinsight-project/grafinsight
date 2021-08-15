@@ -1,7 +1,7 @@
 import React, { Dispatch, FC, SetStateAction } from 'react';
 import { css } from 'emotion';
-import { Button, Checkbox, stylesFactory, useTheme, HorizontalGroup } from '@grafana/ui';
-import { GrafanaTheme, SelectableValue } from '@grafana/data';
+import { Button, Checkbox, stylesFactory, useTheme, HorizontalGroup } from '@grafinsight/ui';
+import { GrafInsightTheme, SelectableValue } from '@grafinsight/data';
 import { DashboardQuery } from '../types';
 import { ActionRow } from './ActionRow';
 
@@ -71,7 +71,7 @@ export const SearchResultsFilter: FC<Props> = ({
   );
 };
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => {
+const getStyles = stylesFactory((theme: GrafInsightTheme) => {
   const { sm, md } = theme.spacing;
   return {
     wrapper: css`

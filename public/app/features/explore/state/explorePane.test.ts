@@ -1,7 +1,7 @@
-import { DataQuery, DefaultTimeZone, EventBusExtended, serializeStateToUrlParam, toUtc } from '@grafana/data';
+import { DataQuery, DefaultTimeZone, EventBusExtended, serializeStateToUrlParam, toUtc } from '@grafinsight/data';
 import { ExploreId } from 'app/types';
 import { refreshExplore } from './explorePane';
-import { setDataSourceSrv } from '@grafana/runtime';
+import { setDataSourceSrv } from '@grafinsight/runtime/src';
 import { configureStore } from '../../../store/configureStore';
 import { of } from 'rxjs';
 

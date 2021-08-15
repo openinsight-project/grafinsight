@@ -15,7 +15,7 @@ import {
 import { auto } from 'angular';
 import { getProcessedDataFrames } from 'app/features/query/state/runRequest';
 import { DataProcessor } from '../graph/data_processor';
-import { LegacyResponseData, PanelEvents, DataFrame, rangeUtil } from '@grafana/data';
+import { LegacyResponseData, PanelEvents, DataFrame, rangeUtil } from '@grafinsight/data';
 import { CoreEvents } from 'app/types';
 
 const X_BUCKET_NUMBER_DEFAULT = 30;

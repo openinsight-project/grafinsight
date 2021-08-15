@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { connect, MapDispatchToProps, MapStateToProps } from 'react-redux';
-import { NavModel } from '@grafana/data';
-import { Button, Input, Form, Field } from '@grafana/ui';
+import { NavModel } from '@grafinsight/data';
+import { Button, Input, Form, Field } from '@grafinsight/ui';
 import Page from 'app/core/components/Page/Page';
 import { createNewFolder } from '../state/actions';
 import { getNavModel } from 'app/core/selectors/navModel';

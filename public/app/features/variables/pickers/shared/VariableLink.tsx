@@ -1,8 +1,8 @@
 import React, { FC, MouseEvent, useCallback } from 'react';
 import { css } from 'emotion';
-import { getTagColorsFromName, Icon, Tooltip, useStyles } from '@grafana/ui';
-import { selectors } from '@grafana/e2e-selectors';
-import { GrafanaTheme } from '@grafana/data';
+import { getTagColorsFromName, Icon, Tooltip, useStyles } from '@grafinsight/ui';
+import { selectors } from '@grafinsight/e2e-selectors/src';
+import { GrafInsightTheme } from '@grafinsight/data';
 
 import { VariableTag } from '../../types';
 
@@ -88,7 +88,7 @@ const LoadingIndicator: FC<Pick<Props, 'onCancel'>> = ({ onCancel }) => {
   );
 };
 
-const getStyles = (theme: GrafanaTheme) => ({
+const getStyles = (theme: GrafInsightTheme) => ({
   container: css`
     max-width: 500px;
     padding-right: 10px;

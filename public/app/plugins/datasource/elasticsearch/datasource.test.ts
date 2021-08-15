@@ -13,8 +13,8 @@ import {
   MutableDataFrame,
   TimeRange,
   toUtc,
-} from '@grafana/data';
-import { BackendSrvRequest, FetchResponse } from '@grafana/runtime';
+} from '@grafinsight/data';
+import { BackendSrvRequest, FetchResponse } from '@grafinsight/runtime/src';
 
 import { ElasticDatasource, enhanceDataFrame } from './datasource';
 import { backendSrv } from 'app/core/services/backend_srv'; // will use the version in __mocks__
@@ -24,8 +24,8 @@ import { createFetchResponse } from '../../../../test/helpers/createFetchRespons
 
 const ELASTICSEARCH_MOCK_URL = 'http://elasticsearch.local';
 
-jest.mock('@grafana/runtime', () => ({
-  ...((jest.requireActual('@grafana/runtime') as unknown) as object),
+jest.mock('@grafinsight/runtime', () => ({
+  ...((jest.requireActual('@grafinsight/runtime') as unknown) as object),
   getBackendSrv: () => backendSrv,
   getDataSourceSrv: () => {
     return {

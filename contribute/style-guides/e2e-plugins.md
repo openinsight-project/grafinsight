@@ -4,7 +4,7 @@ Be sure that you've read the [generalized E2E document](e2e.md).
 
 ## Commands
 
-- `yarn test:e2e` will run [Grafana's E2E utility](../../packages/grafana-e2e) against an already running Grafana server.
+- `yarn test:e2e` will run [Grafana's E2E utility](../../packages/grafinsight-e2e) against an already running Grafana server.
 - `yarn test:e2e:update` will run `test:e2e` but instead of asserting that screenshots match their expected fixtures, they'll be replaced with new ones.
 
 Your running Grafana instance can be targeted by setting the `CYPRESS_BASE_URL`, `CYPRESS_USERNAME` and `CYPRESS_PASSWORD` environment variableS:

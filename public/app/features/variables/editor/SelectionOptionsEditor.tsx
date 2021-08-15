@@ -1,6 +1,6 @@
 import React, { ChangeEvent, FormEvent, FunctionComponent, useCallback } from 'react';
-import { InlineFieldRow, VerticalGroup } from '@grafana/ui';
-import { selectors } from '@grafana/e2e-selectors';
+import { InlineFieldRow, VerticalGroup } from '@grafinsight/ui';
+import { selectors } from '@grafinsight/e2e-selectors/src';
 
 import { VariableWithMultiSupport } from '../types';
 import { VariableEditorProps } from './types';

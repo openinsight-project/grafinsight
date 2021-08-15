@@ -23,8 +23,8 @@ import {
   PluginMeta,
   QueryResultMeta,
   ScopedVars,
-} from '@grafana/data';
-import { getTemplateSrv, TemplateSrv, BackendSrvRequest, FetchError, getBackendSrv } from '@grafana/runtime';
+} from '@grafinsight/data';
+import { getTemplateSrv, TemplateSrv, BackendSrvRequest, FetchError, getBackendSrv } from '@grafinsight/runtime/src';
 import { addLabelToQuery } from 'app/plugins/datasource/prometheus/add_label_to_query';
 import { getTimeSrv, TimeSrv } from 'app/features/dashboard/services/TimeSrv';
 import { convertToWebSocketUrl } from 'app/core/utils/explore';
@@ -47,7 +47,7 @@ import {
 import { LiveStreams, LokiLiveTarget } from './live_streams';
 import LanguageProvider from './language_provider';
 import { serializeParams } from '../../../core/utils/fetch';
-import { RowContextOptions } from '@grafana/ui/src/components/Logs/LogRowContextProvider';
+import { RowContextOptions } from '@grafinsight/ui/src/components/Logs/LogRowContextProvider';
 import syntax from './syntax';
 
 export type RangeQueryOptions = DataQueryRequest<LokiQuery> | AnnotationQueryRequest<LokiQuery>;

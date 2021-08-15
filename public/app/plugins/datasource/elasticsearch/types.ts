@@ -1,4 +1,4 @@
-import { DataQuery, DataSourceJsonData } from '@grafana/data';
+import { DataQuery, DataSourceJsonData } from '@grafinsight/data';
 import {
   BucketAggregation,
   BucketAggregationType,

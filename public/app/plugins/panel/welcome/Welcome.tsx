@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { css } from 'emotion';
-import { GrafanaTheme } from '@grafana/data';
-import { stylesFactory, useTheme } from '@grafana/ui';
+import { GrafInsightTheme } from '@grafinsight/data';
+import { stylesFactory, useTheme } from '@grafinsight/ui';
 import lightBackground from './img/background_light.svg';
 
 export const WelcomeBanner: FC = () => {
@@ -14,7 +14,7 @@ export const WelcomeBanner: FC = () => {
   );
 };
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => {
+const getStyles = stylesFactory((theme: GrafInsightTheme) => {
   const backgroundImage = theme.isDark ? 'public/img/login_background_dark.svg' : lightBackground;
 
   return {

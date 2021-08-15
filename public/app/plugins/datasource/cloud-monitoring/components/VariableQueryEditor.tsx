@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 
-import { getTemplateSrv } from '@grafana/runtime';
-import { QueryEditorProps } from '@grafana/data';
+import { getTemplateSrv } from '@grafinsight/runtime/src';
+import { QueryEditorProps } from '@grafinsight/data';
 
 import { VariableQueryField } from './';
 import { extractServicesFromMetricDescriptors, getLabelKeys, getMetricTypes } from '../functions';

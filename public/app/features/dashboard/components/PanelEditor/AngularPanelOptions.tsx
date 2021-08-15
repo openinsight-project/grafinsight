@@ -3,11 +3,11 @@ import React, { PureComponent } from 'react';
 import { connect, MapStateToProps, MapDispatchToProps } from 'react-redux';
 
 // Utils & Services
-import { AngularComponent, getAngularLoader } from '@grafana/runtime';
+import { AngularComponent, getAngularLoader } from '@grafinsight/runtime/src';
 
 // Types
 import { PanelModel, DashboardModel } from '../../state';
-import { PanelPlugin, PanelPluginMeta } from '@grafana/data';
+import { PanelPlugin, PanelPluginMeta } from '@grafinsight/data';
 import { PanelCtrl } from 'app/plugins/sdk';
 import { changePanelPlugin } from '../../state/actions';
 import { StoreState } from 'app/types';

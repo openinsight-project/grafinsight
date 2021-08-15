@@ -6,7 +6,7 @@ import {
   AngularComponent,
   AngularLoader as AngularLoaderInterface,
   setAngularLoader as setAngularLoaderInterface,
-} from '@grafana/runtime';
+} from '@grafinsight/runtime/src';
 import { GrafanaRootScope } from 'app/routes/GrafanaCtrl';
 
 export class AngularLoader implements AngularLoaderInterface {

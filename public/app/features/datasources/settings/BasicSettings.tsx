@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { InlineFormLabel, LegacyForms } from '@grafana/ui';
-import { selectors } from '@grafana/e2e-selectors';
+import { InlineFormLabel, LegacyForms } from '@grafinsight/ui';
+import { selectors } from '@grafinsight/e2e-selectors/src';
 
 const { Input, Switch } = LegacyForms;
 

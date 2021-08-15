@@ -1,8 +1,8 @@
-import { PanelPlugin } from '@grafana/data';
+import { PanelPlugin } from '@grafinsight/data';
 import { TablePanel } from './TablePanel';
 import { CustomFieldConfig, Options } from './types';
 import { tableMigrationHandler, tablePanelChangedHandler } from './migrations';
-import { TableCellDisplayMode } from '@grafana/ui';
+import { TableCellDisplayMode } from '@grafinsight/ui';
 
 export const plugin = new PanelPlugin<Options, CustomFieldConfig>(TablePanel)
   .setPanelChangeHandler(tablePanelChangedHandler)

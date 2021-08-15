@@ -1,10 +1,10 @@
 import React, { FC, useCallback, useState } from 'react';
-import { selectors } from '@grafana/e2e-selectors';
+import { selectors } from '@grafinsight/e2e-selectors/src';
 
 import { VariableQueryProps } from 'app/types/plugins';
 import { VariableTextAreaField } from './VariableTextAreaField';
-import { useStyles } from '@grafana/ui';
-import { GrafanaTheme } from '@grafana/data';
+import { useStyles } from '@grafinsight/ui';
+import { GrafInsightTheme } from '@grafinsight/data';
 import { css } from 'emotion';
 
 export const LEGACY_VARIABLE_QUERY_EDITOR_NAME = 'Grafana-LegacyVariableQueryEditor';
@@ -43,7 +43,7 @@ export const LegacyVariableQueryEditor: FC<VariableQueryProps> = ({ onChange, qu
   );
 };
 
-function getStyles(theme: GrafanaTheme) {
+function getStyles(theme: GrafInsightTheme) {
   return {
     container: css`
       margin-bottom: ${theme.spacing.xs};

@@ -1,5 +1,5 @@
-import { GrafanaTheme } from '@grafana/data';
-import { IconButton, InlineFieldRow, InlineLabel, InlineSegmentGroup, stylesFactory, useTheme } from '@grafana/ui';
+import { GrafInsightTheme } from '@grafinsight/data';
+import { IconButton, InlineFieldRow, InlineLabel, InlineSegmentGroup, stylesFactory, useTheme } from '@grafinsight/ui';
 import { css } from 'emotion';
 import { noop } from 'lodash';
 import React, { FunctionComponent } from 'react';
@@ -55,7 +55,7 @@ export const QueryEditorRow: FunctionComponent<Props> = ({
   );
 };
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => {
+const getStyles = stylesFactory((theme: GrafInsightTheme) => {
   return {
     iconWrapper: css`
       display: flex;

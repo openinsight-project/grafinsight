@@ -4,9 +4,9 @@
 
 **Themes are implemented in Typescript.** That's because our goal is to share variables between Grafana TypeScript and [Sass](https://sass-lang.com/) code. Theme definitions are located in the following files:
 
-- [packages/grafana-ui/src/themes/dark.ts](../../packages/grafana-ui/src/themes/dark.ts)
-- [packages/grafana-ui/src/themes/default.ts](../../packages/grafana-ui/src/themes/default.ts)
-- [packages/grafana-ui/src/themes/light.ts](../../packages/grafana-ui/src/themes/light.ts)
+- [packages/grafinsight-ui/src/themes/dark.ts](../../packages/grafinsight-ui/src/themes/dark.ts)
+- [packages/grafinsight-ui/src/themes/default.ts](../../packages/grafinsight-ui/src/themes/default.ts)
+- [packages/grafinsight-ui/src/themes/light.ts](../../packages/grafinsight-ui/src/themes/light.ts)
 
 The `default.ts` file holds common variables like typography and spacing definitions, while `[light|dark].ts` primarily specify colors used in themes.
 

@@ -1,10 +1,10 @@
-import { GrafanaTheme } from '@grafana/data';
-import { Icon, InlineSegmentGroup, stylesFactory, useTheme } from '@grafana/ui';
+import { GrafInsightTheme } from '@grafinsight/data';
+import { Icon, InlineSegmentGroup, stylesFactory, useTheme } from '@grafinsight/ui';
 import { css, cx } from 'emotion';
 import React, { FunctionComponent, useState } from 'react';
 import { segmentStyles } from './styles';
 
-const getStyles = stylesFactory((theme: GrafanaTheme, hidden: boolean) => {
+const getStyles = stylesFactory((theme: GrafInsightTheme, hidden: boolean) => {
   return {
     wrapper: css`
       display: flex;

@@ -1,8 +1,8 @@
 import React, { FC, useState } from 'react';
 import { css } from 'emotion';
-import { PanelMenuItem } from '@grafana/data';
-import { Icon, IconName, useTheme } from '@grafana/ui';
-import { selectors } from '@grafana/e2e-selectors';
+import { PanelMenuItem } from '@grafinsight/data';
+import { Icon, IconName, useTheme } from '@grafinsight/ui';
+import { selectors } from '@grafinsight/e2e-selectors/src';
 
 interface Props {
   children?: any;

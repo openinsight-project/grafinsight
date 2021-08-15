@@ -1,4 +1,4 @@
-import { NavModel, NavModelItem, NavIndex } from '@grafana/data';
+import { NavModel, NavModelItem, NavIndex } from '@grafinsight/data';
 
 const getNotFoundModel = (): NavModel => {
   const node: NavModelItem = {

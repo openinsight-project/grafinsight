@@ -1,6 +1,6 @@
-import { AppEvents, ExploreQueryFieldProps } from '@grafana/data';
-import { selectors } from '@grafana/e2e-selectors';
-import { ButtonCascader, CascaderOption } from '@grafana/ui';
+import { AppEvents, ExploreQueryFieldProps } from '@grafinsight/data';
+import { selectors } from '@grafinsight/e2e-selectors/src';
+import { ButtonCascader, CascaderOption } from '@grafinsight/ui';
 import { fromPairs } from 'lodash';
 import React, { useCallback, useMemo, useState } from 'react';
 import { useAsyncFn, useMount, useMountedState } from 'react-use';

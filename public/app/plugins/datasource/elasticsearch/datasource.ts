@@ -17,16 +17,16 @@ import {
   ScopedVars,
   TimeRange,
   toUtc,
-} from '@grafana/data';
+} from '@grafinsight/data';
 import LanguageProvider from './language_provider';
 import { ElasticResponse } from './elastic_response';
 import { IndexPattern } from './index_pattern';
 import { ElasticQueryBuilder } from './query_builder';
 import { defaultBucketAgg, hasMetricOfType } from './query_def';
-import { getBackendSrv, getDataSourceSrv } from '@grafana/runtime';
+import { getBackendSrv, getDataSourceSrv } from '@grafinsight/runtime/src';
 import { getTemplateSrv, TemplateSrv } from 'app/features/templating/template_srv';
 import { DataLinkConfig, ElasticsearchOptions, ElasticsearchQuery } from './types';
-import { RowContextOptions } from '@grafana/ui/src/components/Logs/LogRowContextProvider';
+import { RowContextOptions } from '@grafinsight/ui/src/components/Logs/LogRowContextProvider';
 import { metricAggregationConfig } from './components/QueryEditor/MetricAggregationsEditor/utils';
 import {
   isMetricAggregationWithField,

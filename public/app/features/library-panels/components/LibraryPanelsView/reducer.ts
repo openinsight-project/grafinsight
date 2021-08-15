@@ -1,5 +1,5 @@
 import { createAction } from '@reduxjs/toolkit';
-import { LoadingState } from '@grafana/data';
+import { LoadingState } from '@grafinsight/data';
 
 import { LibraryPanelDTO } from '../../types';
 import { AnyAction } from 'redux';

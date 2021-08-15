@@ -1,6 +1,6 @@
 import React, { FormEvent, PureComponent } from 'react';
-import { RadioButtonGroup, Switch, Field, TextArea, ClipboardButton } from '@grafana/ui';
-import { SelectableValue, AppEvents } from '@grafana/data';
+import { RadioButtonGroup, Switch, Field, TextArea, ClipboardButton } from '@grafinsight/ui';
+import { SelectableValue, AppEvents } from '@grafinsight/data';
 import { DashboardModel, PanelModel } from 'app/features/dashboard/state';
 import { appEvents } from 'app/core/core';
 import { buildIframeHtml } from './utils';

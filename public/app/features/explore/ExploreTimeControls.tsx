@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 // Types
 import { ExploreId } from 'app/types';
-import { TimeRange, TimeZone, RawTimeRange, dateTimeForTimeZone } from '@grafana/data';
+import { TimeRange, TimeZone, RawTimeRange, dateTimeForTimeZone } from '@grafinsight/data';
 
 // State
 

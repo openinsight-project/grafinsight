@@ -2,9 +2,9 @@ import React, { FC } from 'react';
 import { css } from 'emotion';
 import { FixedSizeList } from 'react-window';
 import AutoSizer from 'react-virtualized-auto-sizer';
-import { GrafanaTheme } from '@grafana/data';
-import { stylesFactory, useTheme, Spinner } from '@grafana/ui';
-import { selectors } from '@grafana/e2e-selectors';
+import { GrafInsightTheme } from '@grafinsight/data';
+import { stylesFactory, useTheme, Spinner } from '@grafinsight/ui';
+import { selectors } from '@grafinsight/e2e-selectors/src';
 import { DashboardSection, OnToggleChecked, SearchLayout } from '../types';
 import { SEARCH_ITEM_HEIGHT, SEARCH_ITEM_MARGIN } from '../constants';
 import { SearchItem } from './SearchItem';
@@ -99,7 +99,7 @@ export const SearchResults: FC<Props> = ({
   );
 };
 
-const getSectionStyles = stylesFactory((theme: GrafanaTheme) => {
+const getSectionStyles = stylesFactory((theme: GrafInsightTheme) => {
   const { md } = theme.spacing;
 
   return {

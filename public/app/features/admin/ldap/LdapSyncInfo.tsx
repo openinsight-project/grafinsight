@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
-import { dateTimeFormat } from '@grafana/data';
-import { Spinner } from '@grafana/ui';
+import { dateTimeFormat } from '@grafinsight/data';
+import { Spinner } from '@grafinsight/ui';
 import { SyncInfo } from 'app/types';
 
 interface Props {

@@ -287,7 +287,7 @@ def publish_storybook_step(edition, ver_mode):
             'printenv GCP_KEY | base64 -d > /tmp/gcpkey.json',
             'gcloud auth activate-service-account --key-file=/tmp/gcpkey.json',
         ] + [
-            'gsutil -m rsync -d -r ./packages/grafana-ui/dist/storybook gs://grafana-storybook/{}'.format(c)
+            'gsutil -m rsync -d -r ./packages/grafinsight-ui/dist/storybook gs://grafana-storybook/{}'.format(c)
             for c in channels
         ])
 

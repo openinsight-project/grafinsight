@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
-import { PieChart, useTheme } from '@grafana/ui';
+import { PieChart, useTheme } from '@grafinsight/ui';
 import { PieChartOptions } from './types';
-import { getFieldDisplayValues, PanelProps } from '@grafana/data';
+import { getFieldDisplayValues, PanelProps } from '@grafinsight/data';
 import { changeSeriesColorConfigFactory } from '../timeseries/overrides/colorSeriesConfigFactory';
 
 interface Props extends PanelProps<PieChartOptions> {}

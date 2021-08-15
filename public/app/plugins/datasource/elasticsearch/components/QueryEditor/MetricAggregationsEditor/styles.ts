@@ -1,8 +1,8 @@
-import { GrafanaTheme } from '@grafana/data';
-import { stylesFactory } from '@grafana/ui';
+import { GrafInsightTheme } from '@grafinsight/data';
+import { stylesFactory } from '@grafinsight/ui';
 import { css } from 'emotion';
 
-export const getStyles = stylesFactory((theme: GrafanaTheme, hidden: boolean) => ({
+export const getStyles = stylesFactory((theme: GrafInsightTheme, hidden: boolean) => ({
   color:
     hidden &&
     css`

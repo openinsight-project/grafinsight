@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
 import { connect, MapStateToProps } from 'react-redux';
 import { StoreState } from 'app/types';
-import { Form, Field, Input, Button, HorizontalGroup, LinkButton } from '@grafana/ui';
+import { Form, Field, Input, Button, HorizontalGroup, LinkButton } from '@grafinsight/ui';
 import { getConfig } from 'app/core/config';
-import { getBackendSrv } from '@grafana/runtime';
+import { getBackendSrv } from '@grafinsight/runtime/src';
 import appEvents from 'app/core/app_events';
-import { AppEvents } from '@grafana/data';
+import { AppEvents } from '@grafinsight/data';
 
 interface SignupDTO {
   name?: string;

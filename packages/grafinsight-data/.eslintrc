@@ -1,0 +1,13 @@
+{
+  "rules": {
+    "no-restricted-imports": ["error", { "patterns": ["@grafinsight/runtime", "@grafinsight/ui", "@grafinsight/data", "@grafinsight/e2e/*"] }]
+  },
+  "overrides": [
+    {
+      "files": ["**/*.test.{ts,tsx}"],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ]
+}

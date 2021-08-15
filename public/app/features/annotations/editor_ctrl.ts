@@ -5,7 +5,7 @@ import coreModule from 'app/core/core_module';
 import { DashboardModel } from 'app/features/dashboard/state';
 import DatasourceSrv from '../plugins/datasource_srv';
 import appEvents from 'app/core/app_events';
-import { AnnotationQuery, AppEvents } from '@grafana/data';
+import { AnnotationQuery, AppEvents } from '@grafinsight/data';
 
 // Registeres the angular directive
 import './components/StandardAnnotationQueryEditor';

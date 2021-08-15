@@ -1,9 +1,9 @@
 import React, { FC, PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { hot } from 'react-hot-loader';
-import { DataSourcePluginMeta, NavModel } from '@grafana/data';
-import { Button, LinkButton, List } from '@grafana/ui';
-import { selectors } from '@grafana/e2e-selectors';
+import { DataSourcePluginMeta, NavModel } from '@grafinsight/data';
+import { Button, LinkButton, List } from '@grafinsight/ui';
+import { selectors } from '@grafinsight/e2e-selectors/src';
 
 import Page from 'app/core/components/Page/Page';
 import { DataSourcePluginCategory, StoreState } from 'app/types';

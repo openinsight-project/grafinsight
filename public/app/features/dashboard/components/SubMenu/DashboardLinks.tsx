@@ -1,6 +1,6 @@
 import React, { FC, useReducer } from 'react';
-import { Icon, IconName, Tooltip } from '@grafana/ui';
-import { sanitize, sanitizeUrl } from '@grafana/data/src/text/sanitize';
+import { Icon, IconName, Tooltip } from '@grafinsight/ui';
+import { sanitize, sanitizeUrl } from '@grafinsight/data/src/text/sanitize';
 import { DashboardLinksDashboard } from './DashboardLinksDashboard';
 import { getLinkSrv } from '../../../panel/panellinks/link_srv';
 
@@ -9,7 +9,7 @@ import { DashboardLink } from '../../state/DashboardModel';
 import { linkIconMap } from '../LinksSettings/LinkSettingsEdit';
 import { useEffectOnce } from 'react-use';
 import { CoreEvents } from 'app/types';
-import { selectors } from '@grafana/e2e-selectors';
+import { selectors } from '@grafinsight/e2e-selectors/src';
 
 export interface Props {
   dashboard: DashboardModel;

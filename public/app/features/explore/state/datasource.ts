@@ -1,7 +1,7 @@
 // Libraries
 import { AnyAction, createAction } from '@reduxjs/toolkit';
-import { RefreshPicker } from '@grafana/ui';
-import { DataSourceApi, HistoryItem } from '@grafana/data';
+import { RefreshPicker } from '@grafinsight/ui';
+import { DataSourceApi, HistoryItem } from '@grafinsight/data';
 import { stopQueryState } from 'app/core/utils/explore';
 import { ExploreItemState, ThunkResult } from 'app/types';
 

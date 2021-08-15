@@ -1,6 +1,6 @@
 import { buildCategories } from './buildCategories';
 import { getMockPlugin } from '../../plugins/__mocks__/pluginMocks';
-import { DataSourcePluginMeta } from '@grafana/data';
+import { DataSourcePluginMeta } from '@grafinsight/data';
 
 const plugins: DataSourcePluginMeta[] = [
   {

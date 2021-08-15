@@ -8,7 +8,7 @@ import {
   getDefaultTimeRange,
   LoadingState,
   ScopedVars,
-} from '@grafana/data';
+} from '@grafinsight/data';
 
 import { VariableIdentifier } from '../state/types';
 import { getVariable } from '../state/selectors';

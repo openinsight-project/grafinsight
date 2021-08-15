@@ -1,4 +1,4 @@
-import { DataSourcePluginMeta, DataSourceSettings, UrlQueryValue } from '@grafana/data';
+import { DataSourcePluginMeta, DataSourceSettings, UrlQueryValue } from '@grafinsight/data';
 import { DataSourcesState } from '../../../types/datasources';
 
 export const getDataSources = (state: DataSourcesState) => {

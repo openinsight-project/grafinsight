@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
-import { getTagColorsFromName, Icon, Tooltip } from '@grafana/ui';
-import { selectors } from '@grafana/e2e-selectors';
+import { getTagColorsFromName, Icon, Tooltip } from '@grafinsight/ui';
+import { selectors } from '@grafinsight/e2e-selectors/src';
 
 import { VariableOption, VariableTag } from '../../types';
 

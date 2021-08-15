@@ -1,9 +1,9 @@
 import React, { memo, useContext } from 'react';
 import { css } from 'emotion';
-import { GrafanaTheme } from '@grafana/data';
-import { stylesFactory, ThemeContext } from '@grafana/ui';
+import { GrafInsightTheme } from '@grafinsight/data';
+import { stylesFactory, ThemeContext } from '@grafinsight/ui';
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => ({
+const getStyles = stylesFactory((theme: GrafInsightTheme) => ({
   metaContainer: css`
     flex: 1;
     color: ${theme.colors.textWeak};

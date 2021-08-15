@@ -6,8 +6,8 @@ import { getTitleFromNavModel } from 'app/core/selectors/navModel';
 import PageHeader from '../PageHeader/PageHeader';
 import { Footer } from '../Footer/Footer';
 import { PageContents } from './PageContents';
-import { CustomScrollbar, useStyles } from '@grafana/ui';
-import { GrafanaTheme, NavModel } from '@grafana/data';
+import { CustomScrollbar, useStyles } from '@grafinsight/ui';
+import { GrafInsightTheme, NavModel } from '@grafinsight/data';
 import { Branding } from '../Branding/Branding';
 import { css } from 'emotion';
 
@@ -47,7 +47,7 @@ Page.Contents = PageContents;
 
 export default Page;
 
-const getStyles = (theme: GrafanaTheme) => ({
+const getStyles = (theme: GrafInsightTheme) => ({
   wrapper: css`
     position: absolute;
     top: 0;

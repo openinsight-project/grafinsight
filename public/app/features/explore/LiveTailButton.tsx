@@ -1,8 +1,8 @@
 import React from 'react';
 import { css } from 'emotion';
 import { CSSTransition } from 'react-transition-group';
-import { useTheme, Tooltip, stylesFactory, ButtonGroup, ToolbarButton } from '@grafana/ui';
-import { GrafanaTheme } from '@grafana/data';
+import { useTheme, Tooltip, stylesFactory, ButtonGroup, ToolbarButton } from '@grafinsight/ui';
+import { GrafInsightTheme } from '@grafinsight/data';
 
 type LiveTailButtonProps = {
   splitted: boolean;
@@ -57,7 +57,7 @@ export function LiveTailButton(props: LiveTailButtonProps) {
   );
 }
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => {
+const getStyles = stylesFactory((theme: GrafInsightTheme) => {
   return {
     stopButtonEnter: css`
       label: stopButtonEnter;

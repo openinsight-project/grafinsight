@@ -1,7 +1,7 @@
 import React, { SyntheticEvent } from 'react';
-import { InlineFormLabel, LegacyForms } from '@grafana/ui';
+import { InlineFormLabel, LegacyForms } from '@grafinsight/ui';
 const { Select, Input } = LegacyForms;
-import { DataSourceSettings, SelectableValue } from '@grafana/data';
+import { DataSourceSettings, SelectableValue } from '@grafinsight/data';
 import { OpenTsdbOptions } from '../types';
 
 const tsdbVersions = [

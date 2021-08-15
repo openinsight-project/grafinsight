@@ -1,16 +1,16 @@
 const applyFieldOverridesMock = jest.fn();
 
-jest.mock('@grafana/data', () => ({
+jest.mock('@grafinsight/data', () => ({
   __esModule: true,
-  ...(jest.requireActual('@grafana/data') as any),
+  ...(jest.requireActual('@grafinsight/data') as any),
   applyFieldOverrides: applyFieldOverridesMock,
 }));
 
 import { PanelQueryRunner } from './PanelQueryRunner';
 // Importing this way to be able to spy on grafana/data
-import * as grafanaData from '@grafana/data';
+import * as grafanaData from '@grafinsight/data';
 import { DashboardModel } from '../../dashboard/state/index';
-import { setDataSourceSrv, setEchoSrv } from '@grafana/runtime';
+import { setDataSourceSrv, setEchoSrv } from '@grafinsight/runtime/src';
 import { Echo } from '../../../core/services/echo/Echo';
 
 jest.mock('app/core/services/backend_srv');
@@ -234,7 +234,7 @@ describe('PanelQueryRunner', () => {
           overrides: [],
         },
         replaceVariables: (v) => v,
-        theme: {} as grafanaData.GrafanaTheme,
+        theme: {} as grafanaData.GrafInsightTheme,
       }),
       getTransformations: () => undefined,
     }
@@ -298,7 +298,7 @@ describe('PanelQueryRunner', () => {
           overrides: [],
         },
         replaceVariables: (v) => v,
-        theme: {} as grafanaData.GrafanaTheme,
+        theme: {} as grafanaData.GrafInsightTheme,
       }),
       // @ts-ignore
       getTransformations: () => [({} as unknown) as grafanaData.DataTransformerConfig],
@@ -340,7 +340,7 @@ describe('PanelQueryRunner', () => {
           overrides: [],
         },
         replaceVariables: (v) => v,
-        theme: {} as grafanaData.GrafanaTheme,
+        theme: {} as grafanaData.GrafInsightTheme,
       }),
       // @ts-ignore
       getTransformations: () => [{}],

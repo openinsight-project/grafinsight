@@ -5,11 +5,11 @@ import {
   DynamicConfigValue,
   FieldConfigOptionsRegistry,
   FieldConfigProperty,
-  GrafanaTheme,
+  GrafInsightTheme,
   isSystemOverride as isSystemOverrideGuard,
   VariableSuggestionsScope,
-} from '@grafana/data';
-import { Field, fieldMatchersUI, HorizontalGroup, Icon, IconButton, Label, useStyles, ValuePicker } from '@grafana/ui';
+} from '@grafinsight/data';
+import { Field, fieldMatchersUI, HorizontalGroup, Icon, IconButton, Label, useStyles, ValuePicker } from '@grafinsight/ui';
 import { DynamicConfigValueEditor } from './DynamicConfigValueEditor';
 
 import { getDataLinksVariableSuggestions } from '../../../panel/panellinks/link_srv';
@@ -187,7 +187,7 @@ export const OverrideEditor: React.FC<OverrideEditorProps> = ({
   );
 };
 
-const getStyles = (theme: GrafanaTheme) => {
+const getStyles = (theme: GrafInsightTheme) => {
   return {
     matcherUi: css`
       padding: ${theme.spacing.sm};

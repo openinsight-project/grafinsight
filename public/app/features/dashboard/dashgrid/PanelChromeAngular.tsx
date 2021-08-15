@@ -7,15 +7,15 @@ import { connect, MapDispatchToProps, MapStateToProps } from 'react-redux';
 import { PanelHeader } from './PanelHeader/PanelHeader';
 // Utils & Services
 import { getTimeSrv, TimeSrv } from '../services/TimeSrv';
-import { AngularComponent, getAngularLoader } from '@grafana/runtime';
+import { AngularComponent, getAngularLoader } from '@grafinsight/runtime/src';
 import { setPanelAngularComponent } from '../state/reducers';
 import config from 'app/core/config';
 // Types
 import { DashboardModel, PanelModel } from '../state';
 import { StoreState } from 'app/types';
-import { getDefaultTimeRange, LoadingState, PanelData, PanelPlugin } from '@grafana/data';
+import { getDefaultTimeRange, LoadingState, PanelData, PanelPlugin } from '@grafinsight/data';
 import { PANEL_BORDER } from 'app/core/constants';
-import { selectors } from '@grafana/e2e-selectors';
+import { selectors } from '@grafinsight/e2e-selectors/src';
 import { RenderEvent } from 'app/types/events';
 
 interface OwnProps {

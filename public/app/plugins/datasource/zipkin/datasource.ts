@@ -6,8 +6,8 @@ import {
   DataSourceInstanceSettings,
   FieldType,
   MutableDataFrame,
-} from '@grafana/data';
-import { BackendSrvRequest, FetchResponse, getBackendSrv } from '@grafana/runtime';
+} from '@grafinsight/data';
+import { BackendSrvRequest, FetchResponse, getBackendSrv } from '@grafinsight/runtime/src';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { serializeParams } from '../../../core/utils/fetch';

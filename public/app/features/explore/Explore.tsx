@@ -5,20 +5,20 @@ import { compose } from 'redux';
 import { connect } from 'react-redux';
 import AutoSizer from 'react-virtualized-auto-sizer';
 import memoizeOne from 'memoize-one';
-import { selectors } from '@grafana/e2e-selectors';
-import { ErrorBoundaryAlert, stylesFactory, withTheme } from '@grafana/ui';
+import { selectors } from '@grafinsight/e2e-selectors/src';
+import { ErrorBoundaryAlert, stylesFactory, withTheme } from '@grafinsight/ui';
 import {
   AbsoluteTimeRange,
   DataQuery,
   DataSourceApi,
-  GrafanaTheme,
+  GrafInsightTheme,
   LoadingState,
   PanelData,
   RawTimeRange,
   TimeZone,
   LogsModel,
   DataFrame,
-} from '@grafana/data';
+} from '@grafinsight/data';
 
 import LogsContainer from './LogsContainer';
 import QueryRows from './QueryRows';
@@ -39,11 +39,11 @@ import { ErrorContainer } from './ErrorContainer';
 //TODO:unification
 import { TraceView } from './TraceView/TraceView';
 import { SecondaryActions } from './SecondaryActions';
-import { FILTER_FOR_OPERATOR, FILTER_OUT_OPERATOR, FilterItem } from '@grafana/ui/src/components/Table/types';
+import { FILTER_FOR_OPERATOR, FILTER_OUT_OPERATOR, FilterItem } from '@grafinsight/ui/src/components/Table/types';
 import { ExploreGraphNGPanel } from './ExploreGraphNGPanel';
 import { NodeGraphContainer } from './NodeGraphContainer';
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => {
+const getStyles = stylesFactory((theme: GrafInsightTheme) => {
   return {
     exploreMain: css`
       label: exploreMain;
@@ -88,7 +88,7 @@ export interface ExploreProps {
   queryResponse: PanelData;
   originPanelId: number;
   addQueryRow: typeof addQueryRow;
-  theme: GrafanaTheme;
+  theme: GrafInsightTheme;
   loading: boolean;
   showMetrics: boolean;
   showTable: boolean;

@@ -1,5 +1,5 @@
-import { MetricFindValue, SelectableValue } from '@grafana/data';
-import { InlineSegmentGroup, Segment, SegmentAsync } from '@grafana/ui';
+import { MetricFindValue, SelectableValue } from '@grafinsight/data';
+import { InlineSegmentGroup, Segment, SegmentAsync } from '@grafinsight/ui';
 import React, { FunctionComponent } from 'react';
 import { useDispatch } from '../../../hooks/useStatelessReducer';
 import { useDatasource } from '../ElasticsearchQueryContext';

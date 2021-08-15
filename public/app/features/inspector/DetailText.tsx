@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
-import { useStyles } from '@grafana/ui';
-import { GrafanaTheme } from '@grafana/data';
+import { useStyles } from '@grafinsight/ui';
+import { GrafInsightTheme } from '@grafinsight/data';
 import { css } from 'emotion';
 
-const getStyles = (theme: GrafanaTheme) => css`
+const getStyles = (theme: GrafInsightTheme) => css`
   margin: 0;
   margin-left: ${theme.spacing.md};
   font-size: ${theme.typography.size.sm};

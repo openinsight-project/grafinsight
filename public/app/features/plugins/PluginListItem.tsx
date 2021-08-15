@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
-import { PluginMeta } from '@grafana/data';
+import { PluginMeta } from '@grafinsight/data';
 import { PluginSignatureBadge } from './PluginSignatureBadge';
-import { selectors } from '@grafana/e2e-selectors';
+import { selectors } from '@grafinsight/e2e-selectors/src';
 
 interface Props {
   plugin: PluginMeta;

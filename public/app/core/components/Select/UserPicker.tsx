@@ -3,10 +3,10 @@ import React, { Component } from 'react';
 import _, { debounce } from 'lodash';
 
 // Components
-import { AsyncSelect } from '@grafana/ui';
+import { AsyncSelect } from '@grafinsight/ui';
 
 // Utils & Services
-import { getBackendSrv } from '@grafana/runtime';
+import { getBackendSrv } from '@grafinsight/runtime/src';
 
 // Types
 import { User } from 'app/types';

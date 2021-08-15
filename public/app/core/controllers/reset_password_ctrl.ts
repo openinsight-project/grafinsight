@@ -1,7 +1,7 @@
 import coreModule from '../core_module';
 import config from 'app/core/config';
-import { AppEvents } from '@grafana/data';
-import { getBackendSrv } from '@grafana/runtime';
+import { AppEvents } from '@grafinsight/data';
+import { getBackendSrv } from '@grafinsight/runtime/src';
 import { promiseToDigest } from '../utils/promiseToDigest';
 
 export class ResetPasswordCtrl {
@@ -56,7 +56,8 @@ export class ResetPasswordCtrl {
         .post('/api/user/password/reset', $scope.formModel)
         .then(() => {
           $location.path('login');
-        });
+        })
+        .catch((err: any) => console.error(err));;
     };
   }
 }

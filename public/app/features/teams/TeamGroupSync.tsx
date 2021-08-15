@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 
 import { SlideDown } from 'app/core/components/Animations/SlideDown';
-import { LegacyForms, Tooltip, Icon } from '@grafana/ui';
+import { LegacyForms, Tooltip, Icon } from '@grafinsight/ui';
 const { Input } = LegacyForms;
 
 import { TeamGroup } from '../../types';

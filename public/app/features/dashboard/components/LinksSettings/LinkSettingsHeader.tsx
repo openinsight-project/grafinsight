@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Icon, HorizontalGroup } from '@grafana/ui';
+import { Button, Icon, HorizontalGroup } from '@grafinsight/ui';
 import { LinkSettingsMode } from '../DashboardSettings/LinksSettings';
 
 type LinkSettingsHeaderProps = {

@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { getBackendSrv } from '@grafana/runtime';
-import { Button, Field, Form, Input } from '@grafana/ui';
+import { getBackendSrv } from '@grafinsight/runtime/src';
+import { Button, Field, Form, Input } from '@grafinsight/ui';
 import { useAsync } from 'react-use';
 
 import { StoreState } from 'app/types';

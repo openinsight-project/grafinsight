@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { dateTime } from '@grafana/data';
+import { dateTime } from '@grafinsight/data';
 
 export default class ResponseParser {
   constructor(private results: any) {}

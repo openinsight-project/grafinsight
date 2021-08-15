@@ -1,7 +1,7 @@
 import { css } from 'emotion';
-import { GrafanaTheme } from '@grafana/data';
+import { GrafInsightTheme } from '@grafinsight/data';
 
-export function getModalStyles(theme: GrafanaTheme) {
+export function getModalStyles(theme: GrafInsightTheme) {
   return {
     myTable: css`
       max-height: 204px;

@@ -1,4 +1,4 @@
-import { IconName } from '@grafana/ui';
+import { IconName } from '@grafinsight/ui';
 
 export type CardType = 'tutorial' | 'docs' | 'other';
 

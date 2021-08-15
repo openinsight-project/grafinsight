@@ -1,6 +1,6 @@
 import { GraphiteDatasource } from './datasource';
 import { GraphiteQueryCtrl } from './query_ctrl';
-import { DataSourcePlugin } from '@grafana/data';
+import { DataSourcePlugin } from '@grafinsight/data';
 import { ConfigEditor } from './configuration/ConfigEditor';
 import { MetricTankMetaInspector } from './MetricTankMetaInspector';
 

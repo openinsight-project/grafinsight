@@ -1,8 +1,8 @@
 import React from 'react';
-import { EventsWithValidation, regexValidation, LegacyForms } from '@grafana/ui';
+import { EventsWithValidation, regexValidation, LegacyForms } from '@grafinsight/ui';
 const { Select, Input, FormField } = LegacyForms;
 import { ElasticsearchOptions, Interval } from '../types';
-import { DataSourceSettings, SelectableValue } from '@grafana/data';
+import { DataSourceSettings, SelectableValue } from '@grafinsight/data';
 
 const indexPatternTypes = [
   { label: 'No pattern', value: 'none' },

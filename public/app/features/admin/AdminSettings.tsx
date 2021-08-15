@@ -2,8 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { hot } from 'react-hot-loader';
 
-import { getBackendSrv } from '@grafana/runtime';
-import { NavModel } from '@grafana/data';
+import { getBackendSrv } from '@grafinsight/runtime/src';
+import { NavModel } from '@grafinsight/data';
 
 import { StoreState } from 'app/types';
 import { getNavModel } from 'app/core/selectors/navModel';

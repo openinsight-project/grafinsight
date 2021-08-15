@@ -1,6 +1,6 @@
 import { Observable, Subject } from 'rxjs';
 import { filter } from 'rxjs/operators';
-import { BackendSrvRequest, FetchResponse } from '@grafana/runtime';
+import { BackendSrvRequest, FetchResponse } from '@grafinsight/runtime/src';
 import { FetchQueue } from './FetchQueue';
 
 interface FetchWorkEntry {

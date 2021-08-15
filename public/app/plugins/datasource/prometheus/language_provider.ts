@@ -2,8 +2,8 @@ import _ from 'lodash';
 import LRU from 'lru-cache';
 import { Value } from 'slate';
 
-import { dateTime, HistoryItem, LanguageProvider } from '@grafana/data';
-import { CompletionItem, CompletionItemGroup, TypeaheadInput, TypeaheadOutput } from '@grafana/ui';
+import { dateTime, HistoryItem, LanguageProvider } from '@grafinsight/data';
+import { CompletionItem, CompletionItemGroup, TypeaheadInput, TypeaheadOutput } from '@grafinsight/ui';
 
 import {
   fixSummariesMetadata,

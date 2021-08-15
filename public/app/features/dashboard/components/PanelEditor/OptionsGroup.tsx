@@ -1,11 +1,11 @@
 import React, { FC, memo, ReactNode, useCallback, useEffect, useState } from 'react';
 import { css, cx } from 'emotion';
 import _ from 'lodash';
-import { GrafanaTheme } from '@grafana/data';
-import { Icon, stylesFactory, useTheme } from '@grafana/ui';
+import { GrafInsightTheme } from '@grafinsight/data';
+import { Icon, stylesFactory, useTheme } from '@grafinsight/ui';
 import { PANEL_EDITOR_UI_STATE_STORAGE_KEY } from './state/reducers';
 import { useLocalStorage } from 'react-use';
-import { selectors } from '@grafana/e2e-selectors';
+import { selectors } from '@grafinsight/e2e-selectors/src';
 
 export interface OptionsGroupProps {
   id: string;
@@ -115,7 +115,7 @@ const CollapsibleSection: FC<Omit<OptionsGroupProps, 'persistMe'>> = ({
   );
 };
 
-const getStyles = stylesFactory((theme: GrafanaTheme, isExpanded: boolean, isNested: boolean) => {
+const getStyles = stylesFactory((theme: GrafInsightTheme, isExpanded: boolean, isNested: boolean) => {
   return {
     box: cx(
       !isNested &&

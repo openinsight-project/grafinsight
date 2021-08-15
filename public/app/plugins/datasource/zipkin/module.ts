@@ -1,4 +1,4 @@
-import { DataSourcePlugin } from '@grafana/data';
+import { DataSourcePlugin } from '@grafinsight/data';
 import { ZipkinDatasource } from './datasource';
 import { QueryField } from './QueryField';
 import { ConfigEditor } from './ConfigEditor';

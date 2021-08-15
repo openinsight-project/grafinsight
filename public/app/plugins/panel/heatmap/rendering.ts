@@ -15,8 +15,8 @@ import {
   LegacyGraphHoverEvent,
   LegacyGraphHoverClearEvent,
   getColorForTheme,
-} from '@grafana/data';
-import { graphTimeFormat } from '@grafana/ui';
+} from '@grafinsight/data';
+import { graphTimeFormat } from '@grafinsight/ui';
 import { config } from 'app/core/config';
 
 const MIN_CARD_SIZE = 1,

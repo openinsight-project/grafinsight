@@ -7,10 +7,10 @@ import {
   TransformerUIProps,
   getFieldDisplayName,
   stringToJsRegex,
-} from '@grafana/data';
-import { Field, Input, FilterPill, HorizontalGroup } from '@grafana/ui';
+} from '@grafinsight/data';
+import { Field, Input, FilterPill, HorizontalGroup } from '@grafinsight/ui';
 import { css } from 'emotion';
-import { FilterFieldsByNameTransformerOptions } from '@grafana/data/src/transformations/transformers/filterByName';
+import { FilterFieldsByNameTransformerOptions } from '@grafinsight/data/src/transformations/transformers/filterByName';
 
 interface FilterByNameTransformerEditorProps extends TransformerUIProps<FilterFieldsByNameTransformerOptions> {}
 

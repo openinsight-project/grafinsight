@@ -5,12 +5,12 @@ import {
   standardTransformers,
   TransformerRegistryItem,
   TransformerUIProps,
-} from '@grafana/data';
-import { Input, Select } from '@grafana/ui';
+} from '@grafinsight/data';
+import { Input, Select } from '@grafinsight/ui';
 import {
   ConcatenateFrameNameMode,
   ConcatenateTransformerOptions,
-} from '@grafana/data/src/transformations/transformers/concat';
+} from '@grafinsight/data/src/transformations/transformers/concat';
 
 interface ConcatenateTransformerEditorProps extends TransformerUIProps<ConcatenateTransformerOptions> {}
 

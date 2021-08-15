@@ -1,4 +1,4 @@
-import { DataSourcePluginMeta, PluginType } from '@grafana/data';
+import { DataSourcePluginMeta, PluginType } from '@grafinsight/data';
 import { DataSourcePluginCategory } from 'app/types';
 import { config } from '../../../core/config';
 

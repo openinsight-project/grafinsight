@@ -1,5 +1,5 @@
-import { DataSourceInstanceSettings, ScopedVars } from '@grafana/data';
-import { setDataSourceSrv, setTemplateSrv } from '@grafana/runtime';
+import { DataSourceInstanceSettings, ScopedVars } from '@grafinsight/data';
+import { setDataSourceSrv, setTemplateSrv } from '@grafinsight/runtime/src';
 import { createSpanLinkFactory } from './createSpanLink';
 
 describe('createSpanLinkFactory', () => {

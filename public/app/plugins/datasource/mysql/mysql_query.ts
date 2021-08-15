@@ -1,6 +1,6 @@
 import _ from 'lodash';
-import { TemplateSrv } from '@grafana/runtime';
-import { ScopedVars } from '@grafana/data';
+import { TemplateSrv } from '@grafinsight/runtime/src';
+import { ScopedVars } from '@grafinsight/data';
 
 export default class MysqlQuery {
   target: any;

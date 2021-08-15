@@ -1,7 +1,7 @@
 import React from 'react';
 import { css } from 'emotion';
 import sumBy from 'lodash/sumBy';
-import { Modal, ConfirmModal, HorizontalGroup, Button } from '@grafana/ui';
+import { Modal, ConfirmModal, HorizontalGroup, Button } from '@grafinsight/ui';
 import { DashboardModel, PanelModel } from '../../state';
 import { useDashboardDelete } from './useDashboardDelete';
 

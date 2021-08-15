@@ -1,14 +1,14 @@
 import React, { PureComponent } from 'react';
-import { Button, JSONFormatter, LoadingPlaceholder } from '@grafana/ui';
-import { selectors } from '@grafana/e2e-selectors';
-import { AppEvents, DataFrame } from '@grafana/data';
+import { Button, JSONFormatter, LoadingPlaceholder } from '@grafinsight/ui';
+import { selectors } from '@grafinsight/e2e-selectors/src';
+import { AppEvents, DataFrame } from '@grafinsight/data';
 
 import appEvents from 'app/core/app_events';
 import { CopyToClipboard } from 'app/core/components/CopyToClipboard/CopyToClipboard';
 import { PanelModel } from 'app/features/dashboard/state';
 import { getPanelInspectorStyles } from './styles';
 import { supportsDataQuery } from 'app/features/dashboard/components/PanelEditor/utils';
-import { config } from '@grafana/runtime';
+import { config } from '@grafinsight/runtime/src';
 import { css } from 'emotion';
 import { Subscription } from 'rxjs';
 import { backendSrv } from 'app/core/services/backend_srv';

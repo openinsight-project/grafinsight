@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 import { hot } from 'react-hot-loader';
 import Page from 'app/core/components/Page/Page';
-import { DeleteButton, LinkButton } from '@grafana/ui';
-import { NavModel } from '@grafana/data';
+import { DeleteButton, LinkButton } from '@grafinsight/ui';
+import { NavModel } from '@grafinsight/data';
 import EmptyListCTA from 'app/core/components/EmptyListCTA/EmptyListCTA';
 import { OrgRole, StoreState, Team } from 'app/types';
 import { deleteTeam, loadTeams } from './state/actions';

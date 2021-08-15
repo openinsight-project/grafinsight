@@ -1,6 +1,6 @@
 import React, { FormEvent, PureComponent } from 'react';
-import { selectors } from '@grafana/e2e-selectors';
-import { VerticalGroup } from '@grafana/ui';
+import { selectors } from '@grafinsight/e2e-selectors/src';
+import { VerticalGroup } from '@grafinsight/ui';
 
 import { ConstantVariableModel } from '../types';
 import { VariableEditorProps } from '../editor/types';

@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 import { connect, MapDispatchToProps, MapStateToProps } from 'react-redux';
-import { Alert, Button, ConfirmModal, Container, CustomScrollbar, HorizontalGroup, IconName, Modal } from '@grafana/ui';
-import { selectors } from '@grafana/e2e-selectors';
-import { AngularComponent, getAngularLoader, getDataSourceSrv } from '@grafana/runtime';
+import { Alert, Button, ConfirmModal, Container, CustomScrollbar, HorizontalGroup, IconName, Modal } from '@grafinsight/ui';
+import { selectors } from '@grafinsight/e2e-selectors/src';
+import { AngularComponent, getAngularLoader, getDataSourceSrv } from '@grafinsight/runtime/src';
 import { getAlertingValidationMessage } from './getAlertingValidationMessage';
 
 import EmptyListCTA from 'app/core/components/EmptyListCTA/EmptyListCTA';

@@ -1,6 +1,6 @@
 import React, { PropsWithChildren, ReactElement } from 'react';
-import { InlineFormLabel, Select, useStyles } from '@grafana/ui';
-import { GrafanaTheme, SelectableValue } from '@grafana/data';
+import { InlineFormLabel, Select, useStyles } from '@grafinsight/ui';
+import { GrafInsightTheme, SelectableValue } from '@grafinsight/data';
 import { css } from 'emotion';
 
 interface VariableSelectFieldProps<T> {
@@ -44,7 +44,7 @@ export function VariableSelectField({
   );
 }
 
-function getStyles(theme: GrafanaTheme) {
+function getStyles(theme: GrafInsightTheme) {
   return {
     selectContainer: css`
       margin-right: ${theme.spacing.xs};
