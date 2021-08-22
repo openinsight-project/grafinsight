@@ -69,7 +69,7 @@ func (h *ContextHandler) Middleware(c *macaron.Context) {
 		Logger:         log.New("context"),
 	}
 
-	const headerName = "X-Grafana-Org-Id"
+	const headerName = "X-Grafinsight-Org-Id"
 	orgID := int64(0)
 	orgIDHeader := ctx.Req.Header.Get(headerName)
 	if orgIDHeader != "" {

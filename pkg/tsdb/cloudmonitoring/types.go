@@ -68,7 +68,7 @@ type (
 		SloId            string
 	}
 
-	grafanaQuery struct {
+	grafinsightQuery struct {
 		DatasourceId int
 		RefId        string
 		QueryType    string

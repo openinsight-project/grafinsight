@@ -10,7 +10,7 @@ import (
 	"github.com/openinsight-project/grafinsight/pkg/models"
 )
 
-// testDataRunner manages all the `grafana/dashboard/*` channels.
+// testDataRunner manages all the `grafinsight/dashboard/*` channels.
 type testDataRunner struct {
 	publisher   models.ChannelPublisher
 	running     bool
@@ -20,7 +20,7 @@ type testDataRunner struct {
 	name        string
 }
 
-// TestDataSupplier manages all the `grafana/testdata/*` channels.
+// TestDataSupplier manages all the `grafinsight/testdata/*` channels.
 type TestDataSupplier struct {
 	Publisher models.ChannelPublisher
 }
@@ -28,7 +28,7 @@ type TestDataSupplier struct {
 // GetHandlerForPath gets the channel handler for a path.
 // Called on init.
 func (s *TestDataSupplier) GetHandlerForPath(path string) (models.ChannelHandler, error) {
-	channel := "grafana/testdata/" + path
+	channel := "grafinsight/testdata/" + path
 
 	if path == "random-2s-stream" {
 		return &testDataRunner{

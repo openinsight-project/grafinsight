@@ -150,7 +150,7 @@ func (e *InfluxDBExecutor) createRequest(ctx context.Context, dsInfo *models.Dat
 		return nil, ErrInvalidHttpMode
 	}
 
-	req.Header.Set("User-Agent", "Grafana")
+	req.Header.Set("User-Agent", "Grafinsight")
 
 	params := req.URL.Query()
 	params.Set("db", dsInfo.Database)

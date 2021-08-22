@@ -141,7 +141,7 @@ func (hs *HTTPServer) getFrontendSettingsMap(c *models.ReqContext) (map[string]i
 		return nil, err
 	}
 
-	defaultDS := "-- Grafana --"
+	defaultDS := "-- Grafinsight --"
 	for n, ds := range dataSources {
 		dsM := ds.(map[string]interface{})
 		if isDefault, _ := dsM["isDefault"].(bool); isDefault {
@@ -196,7 +196,7 @@ func (hs *HTTPServer) getFrontendSettingsMap(c *models.ReqContext) (map[string]i
 		"panels":                     panels,
 		"appUrl":                     hs.Cfg.AppURL,
 		"appSubUrl":                  hs.Cfg.AppSubURL,
-		"allowOrgCreate":             (setting.AllowUserOrgCreate && c.IsSignedIn) || c.IsGrafanaAdmin,
+		"allowOrgCreate":             (setting.AllowUserOrgCreate && c.IsSignedIn) || c.IsGrafinsightAdmin,
 		"authProxyEnabled":           setting.AuthProxyEnabled,
 		"ldapEnabled":                hs.Cfg.LDAPEnabled,
 		"alertingEnabled":            setting.AlertingEnabled,
@@ -224,19 +224,9 @@ func (hs *HTTPServer) getFrontendSettingsMap(c *models.ReqContext) (map[string]i
 			"version":       version,
 			"commit":        commit,
 			"buildstamp":    buildstamp,
-			"edition":       hs.License.Edition(),
-			"latestVersion": hs.PluginManager.GrafanaLatestVersion,
-			"hasUpdate":     hs.PluginManager.GrafanaHasUpdate,
+			"latestVersion": hs.PluginManager.GrafinsightLatestVersion,
+			"hasUpdate":     hs.PluginManager.GrafinsightHasUpdate,
 			"env":           setting.Env,
-			"isEnterprise":  hs.License.HasValidLicense(),
-		},
-		"licenseInfo": map[string]interface{}{
-			"hasLicense":      hs.License.HasLicense(),
-			"hasValidLicense": hs.License.HasValidLicense(),
-			"expiry":          hs.License.Expiry(),
-			"stateInfo":       hs.License.StateInfo(),
-			"licenseUrl":      hs.License.LicenseURL(c.SignedInUser),
-			"edition":         hs.License.Edition(),
 		},
 		"featureToggles":          hs.Cfg.FeatureToggles,
 		"rendererAvailable":       hs.RenderService.IsAvailable(),

@@ -9,7 +9,6 @@ import (
 	"time"
 
 	"github.com/openinsight-project/grafinsight/pkg/bus"
-	"github.com/openinsight-project/grafinsight/pkg/services/licensing"
 	"github.com/openinsight-project/grafinsight/pkg/services/sqlstore"
 	"github.com/openinsight-project/grafinsight/pkg/util"
 	"github.com/stretchr/testify/assert"
@@ -21,7 +20,6 @@ func TestUsageStatsService_GetConcurrentUsersStats(t *testing.T) {
 	uss := &UsageStatsService{
 		Bus:      bus.New(),
 		SQLStore: sqlStore,
-		License:  &licensing.OSSLicensingService{},
 	}
 
 	createConcurrentTokens(t, sqlStore)

@@ -15,7 +15,7 @@ func TestGetUrl(t *testing.T) {
 
 	t.Run("When renderer and callback url configured should return callback url plus path", func(t *testing.T) {
 		rs.Cfg.RendererUrl = "http://localhost:8081/render"
-		rs.Cfg.RendererCallbackUrl = "http://public-grafana.com/"
+		rs.Cfg.RendererCallbackUrl = "http://public-grafinsight.com/"
 		url := rs.getURL(path)
 		require.Equal(t, rs.Cfg.RendererCallbackUrl+path+"&render=1", url)
 	})
@@ -34,9 +34,9 @@ func TestGetUrl(t *testing.T) {
 
 			t.Run("And serve from sub path should return expected path", func(t *testing.T) {
 				rs.Cfg.ServeFromSubPath = true
-				rs.Cfg.AppSubURL = "/grafana"
+				rs.Cfg.AppSubURL = "/grafinsight"
 				url := rs.getURL(path)
-				require.Equal(t, "http://localhost:3000/grafana/"+path+"&render=1", url)
+				require.Equal(t, "http://localhost:3000/grafinsight/"+path+"&render=1", url)
 			})
 		})
 

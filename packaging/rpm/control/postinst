@@ -2,22 +2,22 @@
 
 set -e
 
-[ -f /etc/sysconfig/grafana-server ] && . /etc/sysconfig/grafana-server
+[ -f /etc/sysconfig/grafinsight-server ] && . /etc/sysconfig/grafinsight-server
 
 startGrafana() {
   if [ -x /bin/systemctl ] ; then
     /bin/systemctl daemon-reload
-		/bin/systemctl start grafana-server.service
-	elif [ -x /etc/init.d/grafana-server ] ; then
-		/etc/init.d/grafana-server start
-	elif [ -x /etc/rc.d/init.d/grafana-server ] ; then
-		/etc/rc.d/init.d/grafana-server start
+		/bin/systemctl start grafinsight-server.service
+	elif [ -x /etc/init.d/grafinsight-server ] ; then
+		/etc/init.d/grafinsight-server start
+	elif [ -x /etc/rc.d/init.d/grafinsight-server ] ; then
+		/etc/rc.d/init.d/grafinsight-server start
 	fi
 }
 
 stopGrafana() {
 	if [ -x /bin/systemctl ] ; then
-		/bin/systemctl stop grafana-server.service > /dev/null 2>&1 || :
+		/bin/systemctl stop grafinsight-server.service > /dev/null 2>&1 || :
 	elif [ -x /etc/init.d/grafana-service ] ; then
 		/etc/init.d/grafana-service stop
 	elif [ -x /etc/rc.d/init.d/grafana-service ] ; then
@@ -75,14 +75,14 @@ if [ $1 -eq 1 ] ; then
   if [ -x /bin/systemctl ] ; then
     echo "### NOT starting on installation, please execute the following statements to configure grafana to start automatically using systemd"
     echo " sudo /bin/systemctl daemon-reload"
-    echo " sudo /bin/systemctl enable grafana-server.service"
-    echo "### You can start grafana-server by executing"
-    echo " sudo /bin/systemctl start grafana-server.service"
+    echo " sudo /bin/systemctl enable grafinsight-server.service"
+    echo "### You can start grafinsight-server by executing"
+    echo " sudo /bin/systemctl start grafinsight-server.service"
   elif [ -x /sbin/chkconfig ] ; then
-    echo "### NOT starting grafana-server by default on bootup, please execute"
-    echo " sudo /sbin/chkconfig --add grafana-server"
-    echo "### In order to start grafana-server, execute"
-    echo " sudo service grafana-server start"
+    echo "### NOT starting grafinsight-server by default on bootup, please execute"
+    echo " sudo /sbin/chkconfig --add grafinsight-server"
+    echo "### In order to start grafinsight-server, execute"
+    echo " sudo service grafinsight-server start"
   fi
 elif [ $1 -ge 2 ] ; then
   if [ "$RESTART_ON_UPGRADE" == "true" ]; then

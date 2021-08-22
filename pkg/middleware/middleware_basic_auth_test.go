@@ -46,7 +46,7 @@ func TestMiddlewareBasicAuth(t *testing.T) {
 		const salt = "Salt"
 		const orgID int64 = 2
 
-		bus.AddHandler("grafana-auth", func(query *models.LoginUserQuery) error {
+		bus.AddHandler("grafinsight-auth", func(query *models.LoginUserQuery) error {
 			t.Log("Handling LoginUserQuery")
 			encoded, err := util.EncodePassword(password, salt)
 			if err != nil {

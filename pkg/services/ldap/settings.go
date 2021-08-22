@@ -58,7 +58,7 @@ type GroupToOrgRole struct {
 	OrgId   int64  `toml:"org_id"`
 
 	// This pointer specifies if setting was set (for backwards compatibility)
-	IsGrafanaAdmin *bool `toml:"grafana_admin"`
+	IsGrafinsightAdmin *bool `toml:"grafinsight_admin"`
 
 	OrgRole models.RoleType `toml:"org_role"`
 }
@@ -120,7 +120,7 @@ func readConfig(configFile string) (*Config, error) {
 	logger.Info("LDAP enabled, reading config file", "file", configFile)
 
 	// nolint:gosec
-	// We can ignore the gosec G304 warning on this one because `filename` comes from grafana configuration file
+	// We can ignore the gosec G304 warning on this one because `filename` comes from grafinsight configuration file
 	fileBytes, err := ioutil.ReadFile(configFile)
 	if err != nil {
 		return nil, errutil.Wrap("Failed to load LDAP config file", err)

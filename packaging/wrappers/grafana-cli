@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
-# Wrapper for the grafana-cli binary
-# This file serves as a wrapper for the grafana-cli binary. It ensures we set
+# Wrapper for the grafinsight-cli binary
+# This file serves as a wrapper for the grafinsight-cli binary. It ensures we set
 # the system-wide Grafana configuration that was bundled with the package as we
 # use the binary.
 
@@ -16,7 +16,7 @@ LOG_DIR=/var/log/grafana
 CONF_FILE=$CONF_DIR/grafana.ini
 PROVISIONING_CFG_DIR=$CONF_DIR/provisioning
 
-EXECUTABLE=$GRAFANA_HOME/bin/grafana-cli
+EXECUTABLE=$GRAFANA_HOME/bin/grafinsight-cli
 
 if [ ! -x $EXECUTABLE ]; then
  echo "Program not installed or not executable"

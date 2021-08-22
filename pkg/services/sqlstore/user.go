@@ -436,16 +436,16 @@ func GetUserProfile(query *models.GetUserProfileQuery) error {
 	}
 
 	query.Result = models.UserProfileDTO{
-		Id:             user.Id,
-		Name:           user.Name,
-		Email:          user.Email,
-		Login:          user.Login,
-		Theme:          user.Theme,
-		IsGrafanaAdmin: user.IsAdmin,
-		IsDisabled:     user.IsDisabled,
-		OrgId:          user.OrgId,
-		UpdatedAt:      user.Updated,
-		CreatedAt:      user.Created,
+		Id:                 user.Id,
+		Name:               user.Name,
+		Email:              user.Email,
+		Login:              user.Login,
+		Theme:              user.Theme,
+		IsGrafinsightAdmin: user.IsAdmin,
+		IsDisabled:         user.IsDisabled,
+		OrgId:              user.OrgId,
+		UpdatedAt:          user.Updated,
+		CreatedAt:          user.Created,
 	}
 
 	return err
@@ -513,7 +513,7 @@ func GetSignedInUser(query *models.GetSignedInUserQuery) error {
 
 	var rawSQL = `SELECT
 		u.id             as user_id,
-		u.is_admin       as is_grafana_admin,
+		u.is_admin       as is_grafinsight_admin,
 		u.email          as email,
 		u.login          as login,
 		u.name           as name,
@@ -730,7 +730,7 @@ func UpdateUserPermissions(cmd *models.UpdateUserPermissionsCommand) error {
 			return err
 		}
 
-		user.IsAdmin = cmd.IsGrafanaAdmin
+		user.IsAdmin = cmd.IsGrafinsightAdmin
 		sess.UseBool("is_admin")
 
 		_, err := sess.ID(user.Id).Update(&user)
@@ -768,7 +768,7 @@ func validateOneAdminLeft(sess *DBSession) error {
 	}
 
 	if count == 0 {
-		return models.ErrLastGrafanaAdmin
+		return models.ErrLastGrafinsightAdmin
 	}
 
 	return nil

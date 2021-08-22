@@ -45,8 +45,8 @@ var (
 	workingDir            string
 	includeBuildId        bool     = true
 	buildId               string   = "0"
-	serverBinary          string   = "grafana-server"
-	cliBinary             string   = "grafana-cli"
+	serverBinary          string   = "grafinsight-server"
+	cliBinary             string   = "grafinsight-cli"
 	binaries              []string = []string{serverBinary, cliBinary}
 	isDev                 bool     = false
 	enterprise            bool     = false
@@ -112,11 +112,11 @@ func main() {
 
 		case "build-srv", "build-server":
 			clean()
-			doBuild("grafana-server", "./pkg/cmd/grafana-server", buildTags)
+			doBuild("grafinsight-server", "./pkg/cmd/grafinsight-server", buildTags)
 
 		case "build-cli":
 			clean()
-			doBuild("grafana-cli", "./pkg/cmd/grafana-cli", buildTags)
+			doBuild("grafinsight-cli", "./pkg/cmd/grafinsight-cli", buildTags)
 
 		case "build":
 			//clean()
@@ -149,15 +149,15 @@ func makeLatestDistCopies() {
 	}
 
 	latestMapping := map[string]string{
-		"_amd64.deb":               "dist/grafana_latest_amd64.deb",
-		".x86_64.rpm":              "dist/grafana-latest-1.x86_64.rpm",
-		".linux-amd64.tar.gz":      "dist/grafana-latest.linux-x64.tar.gz",
-		".linux-amd64-musl.tar.gz": "dist/grafana-latest.linux-x64-musl.tar.gz",
-		".linux-armv7.tar.gz":      "dist/grafana-latest.linux-armv7.tar.gz",
-		".linux-armv7-musl.tar.gz": "dist/grafana-latest.linux-armv7-musl.tar.gz",
-		".linux-armv6.tar.gz":      "dist/grafana-latest.linux-armv6.tar.gz",
-		".linux-arm64.tar.gz":      "dist/grafana-latest.linux-arm64.tar.gz",
-		".linux-arm64-musl.tar.gz": "dist/grafana-latest.linux-arm64-musl.tar.gz",
+		"_amd64.deb":               "dist/grafinsight_latest_amd64.deb",
+		".x86_64.rpm":              "dist/grafinsight-latest-1.x86_64.rpm",
+		".linux-amd64.tar.gz":      "dist/grafinsight-latest.linux-x64.tar.gz",
+		".linux-amd64-musl.tar.gz": "dist/grafinsight-latest.linux-x64-musl.tar.gz",
+		".linux-armv7.tar.gz":      "dist/grafinsight-latest.linux-armv7.tar.gz",
+		".linux-armv7-musl.tar.gz": "dist/grafinsight-latest.linux-armv7-musl.tar.gz",
+		".linux-armv6.tar.gz":      "dist/grafinsight-latest.linux-armv6.tar.gz",
+		".linux-arm64.tar.gz":      "dist/grafinsight-latest.linux-arm64.tar.gz",
+		".linux-arm64-musl.tar.gz": "dist/grafinsight-latest.linux-arm64-musl.tar.gz",
 	}
 
 	for _, file := range files {
@@ -223,7 +223,7 @@ func setup() {
 	if goos == windows {
 		args = append(args, "-buildmode=exe")
 	}
-	args = append(args, "./pkg/cmd/grafana-server")
+	args = append(args, "./pkg/cmd/grafinsight-server")
 	runPrint("go", args...)
 }
 

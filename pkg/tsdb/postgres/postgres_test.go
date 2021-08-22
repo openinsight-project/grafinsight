@@ -142,8 +142,8 @@ func TestGenerateConnectionString(t *testing.T) {
 }
 
 // To run this test, set runPostgresTests=true
-// Or from the commandline: GRAFANA_TEST_DB=postgres go test -v ./pkg/tsdb/postgres
-// The tests require a PostgreSQL db named grafanadstest and a user/password grafanatest/grafanatest!
+// Or from the commandline: Grafinsight_TEST_DB=postgres go test -v ./pkg/tsdb/postgres
+// The tests require a PostgreSQL db named grafinsightdstest and a user/password grafinsighttest/grafinsighttest!
 // Use the docker/blocks/postgres_tests/docker-compose.yaml to spin up a
 // preconfigured Postgres server suitable for running these tests.
 // There is also a datasource and dashboard provisioned by devenv scripts that you can
@@ -1117,8 +1117,8 @@ func TestPostgres(t *testing.T) {
 
 func InitPostgresTestDB(t *testing.T) *xorm.Engine {
 	testDB := sqlutil.PostgresTestDB()
-	x, err := xorm.NewEngine(testDB.DriverName, strings.Replace(testDB.ConnStr, "dbname=grafanatest",
-		"dbname=grafanadstest", 1))
+	x, err := xorm.NewEngine(testDB.DriverName, strings.Replace(testDB.ConnStr, "dbname=grafinsighttest",
+		"dbname=grafinsightdstest", 1))
 	require.NoError(t, err, "Failed to init postgres DB")
 
 	x.DatabaseTZ = time.UTC

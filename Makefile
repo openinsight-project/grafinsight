@@ -31,11 +31,11 @@ build-go: ## Build all Go binaries.
 	@echo "build go files"
 	$(GO) run build.go build
 
-build-server: ## Build Grafana server.
+build-server: ## Build GrafInsight server.
 	@echo "build server"
 	$(GO) run build.go build-server
 
-build-cli: ## Build Grafana CLI application.
+build-cli: ## Build GrafInsight CLI application.
 	@echo "build in CI environment"
 	$(GO) run build.go build-cli
 

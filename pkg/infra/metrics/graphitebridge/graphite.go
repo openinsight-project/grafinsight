@@ -27,7 +27,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/openinsight-project/grafinsight/pkg/cmd/grafana-cli/logger"
+	"github.com/openinsight-project/grafinsight/pkg/cmd/grafinsight-cli/logger"
 	"github.com/prometheus/client_golang/prometheus"
 	dto "github.com/prometheus/client_model/go"
 	"github.com/prometheus/common/expfmt"
@@ -64,7 +64,7 @@ var metricCategoryPrefix = []string{
 	"go_",
 	"process_"}
 
-var trimMetricPrefix = []string{"grafana_"}
+var trimMetricPrefix = []string{"grafinsight_"}
 
 // Config defines the Graphite bridge config.
 type Config struct {

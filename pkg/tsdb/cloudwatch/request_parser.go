@@ -97,7 +97,7 @@ func parseRequestQuery(model *simplejson.Json, refId string, startTime time.Time
 	queryType := model.Get("type").MustString()
 	if queryType == "" {
 		// If no type is provided we assume we are called by alerting service, which requires to return data!
-		// Note, this is sort of a hack, but the official Grafana interfaces do not carry the information
+		// Note, this is sort of a hack, but the official Grafinsight interfaces do not carry the information
 		// who (which service) called the TsdbQueryEndpoint.Query(...) function.
 		returnData = true
 	}

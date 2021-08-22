@@ -21,7 +21,7 @@ func (hs *HTTPServer) registerRoutes() {
 	reqNoAuth := middleware.NoAuth()
 	reqSignedIn := middleware.ReqSignedIn
 	reqSignedInNoAnonymous := middleware.ReqSignedInNoAnonymous
-	reqGrafanaAdmin := middleware.ReqGrafanaAdmin
+	reqGrafinsightAdmin := middleware.ReqGrafinsightAdmin
 	reqEditorRole := middleware.ReqEditorRole
 	reqOrgAdmin := middleware.ReqOrgAdmin
 	reqCanAccessTeams := middleware.AdminOrFeatureEnabled(hs.Cfg.EditorsCanAdmin)
@@ -48,7 +48,7 @@ func (hs *HTTPServer) registerRoutes() {
 	r.Get("/.well-known/change-password", redirectToChangePassword)
 	r.Get("/profile/switch-org/:id", reqSignedInNoAnonymous, hs.ChangeActiveOrgAndRedirectToHome)
 	r.Get("/org/", reqOrgAdmin, hs.Index)
-	r.Get("/org/new", reqGrafanaAdmin, hs.Index)
+	r.Get("/org/new", reqGrafinsightAdmin, hs.Index)
 	r.Get("/datasources/", reqOrgAdmin, hs.Index)
 	r.Get("/datasources/new", reqOrgAdmin, hs.Index)
 	r.Get("/datasources/edit/*", reqOrgAdmin, hs.Index)
@@ -59,16 +59,16 @@ func (hs *HTTPServer) registerRoutes() {
 	r.Get("/org/teams/*", reqCanAccessTeams, hs.Index)
 	r.Get("/org/apikeys/", reqOrgAdmin, hs.Index)
 	r.Get("/dashboard/import/", reqSignedIn, hs.Index)
-	r.Get("/configuration", reqGrafanaAdmin, hs.Index)
-	r.Get("/admin", reqGrafanaAdmin, hs.Index)
-	r.Get("/admin/settings", reqGrafanaAdmin, hs.Index)
-	r.Get("/admin/users", reqGrafanaAdmin, hs.Index)
-	r.Get("/admin/users/create", reqGrafanaAdmin, hs.Index)
-	r.Get("/admin/users/edit/:id", reqGrafanaAdmin, hs.Index)
-	r.Get("/admin/orgs", reqGrafanaAdmin, hs.Index)
-	r.Get("/admin/orgs/edit/:id", reqGrafanaAdmin, hs.Index)
-	r.Get("/admin/stats", reqGrafanaAdmin, hs.Index)
-	r.Get("/admin/ldap", reqGrafanaAdmin, hs.Index)
+	r.Get("/configuration", reqGrafinsightAdmin, hs.Index)
+	r.Get("/admin", reqGrafinsightAdmin, hs.Index)
+	r.Get("/admin/settings", reqGrafinsightAdmin, hs.Index)
+	r.Get("/admin/users", reqGrafinsightAdmin, hs.Index)
+	r.Get("/admin/users/create", reqGrafinsightAdmin, hs.Index)
+	r.Get("/admin/users/edit/:id", reqGrafinsightAdmin, hs.Index)
+	r.Get("/admin/orgs", reqGrafinsightAdmin, hs.Index)
+	r.Get("/admin/orgs/edit/:id", reqGrafinsightAdmin, hs.Index)
+	r.Get("/admin/stats", reqGrafinsightAdmin, hs.Index)
+	r.Get("/admin/ldap", reqGrafinsightAdmin, hs.Index)
 
 	r.Get("/styleguide", reqSignedIn, hs.Index)
 
@@ -162,7 +162,7 @@ func (hs *HTTPServer) registerRoutes() {
 			usersRoute.Get("/lookup", routing.Wrap(GetUserByLoginOrEmail))
 			usersRoute.Put("/:id", bind(models.UpdateUserCommand{}), routing.Wrap(UpdateUser))
 			usersRoute.Post("/:id/using/:orgId", routing.Wrap(UpdateUserActiveOrg))
-		}, reqGrafanaAdmin)
+		}, reqGrafinsightAdmin)
 
 		// team (admin permission required)
 		apiRoute.Group("/teams", func(teamsRoute routing.RouteRegister) {
@@ -217,7 +217,7 @@ func (hs *HTTPServer) registerRoutes() {
 		apiRoute.Post("/orgs", quota("org"), bind(models.CreateOrgCommand{}), routing.Wrap(CreateOrg))
 
 		// search all orgs
-		apiRoute.Get("/orgs", reqGrafanaAdmin, routing.Wrap(SearchOrgs))
+		apiRoute.Get("/orgs", reqGrafinsightAdmin, routing.Wrap(SearchOrgs))
 
 		// orgs (admin routes)
 		apiRoute.Group("/orgs/:orgId", func(orgsRoute routing.RouteRegister) {
@@ -231,12 +231,12 @@ func (hs *HTTPServer) registerRoutes() {
 			orgsRoute.Delete("/users/:userId", routing.Wrap(RemoveOrgUser))
 			orgsRoute.Get("/quotas", routing.Wrap(GetOrgQuotas))
 			orgsRoute.Put("/quotas/:target", bind(models.UpdateOrgQuotaCmd{}), routing.Wrap(UpdateOrgQuota))
-		}, reqGrafanaAdmin)
+		}, reqGrafinsightAdmin)
 
 		// orgs (admin routes)
 		apiRoute.Group("/orgs/name/:name", func(orgsRoute routing.RouteRegister) {
 			orgsRoute.Get("/", routing.Wrap(hs.GetOrgByName))
-		}, reqGrafanaAdmin)
+		}, reqGrafinsightAdmin)
 
 		// auth api keys
 		apiRoute.Group("/auth/keys", func(keysRoute routing.RouteRegister) {
@@ -353,7 +353,7 @@ func (hs *HTTPServer) registerRoutes() {
 
 		// metrics
 		apiRoute.Post("/tsdb/query", bind(dtos.MetricRequest{}), routing.Wrap(hs.QueryMetrics))
-		apiRoute.Get("/tsdb/testdata/gensql", reqGrafanaAdmin, routing.Wrap(GenerateSQLTestData))
+		apiRoute.Get("/tsdb/testdata/gensql", reqGrafinsightAdmin, routing.Wrap(GenerateSQLTestData))
 		apiRoute.Get("/tsdb/testdata/random-walk", routing.Wrap(GetTestDataRandomWalk))
 
 		// DataSource w/ expressions
@@ -427,12 +427,12 @@ func (hs *HTTPServer) registerRoutes() {
 		adminRoute.Post("/ldap/sync/:id", routing.Wrap(hs.PostSyncUserWithLDAP))
 		adminRoute.Get("/ldap/:username", routing.Wrap(hs.GetUserFromLDAP))
 		adminRoute.Get("/ldap/status", routing.Wrap(hs.GetLDAPStatus))
-	}, reqGrafanaAdmin)
+	}, reqGrafinsightAdmin)
 
 	// rendering
 	r.Get("/render/*", reqSignedIn, hs.RenderToPng)
 
-	// grafana.net proxy
+	// grafinsight.net proxy
 	r.Any("/api/gnet/*", reqSignedIn, ProxyGnetRequest)
 
 	// Gravatar service.

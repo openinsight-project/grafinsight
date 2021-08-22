@@ -55,15 +55,15 @@ func GetUserByLoginOrEmail(c *models.ReqContext) response.Response {
 	}
 	user := query.Result
 	result := models.UserProfileDTO{
-		Id:             user.Id,
-		Name:           user.Name,
-		Email:          user.Email,
-		Login:          user.Login,
-		Theme:          user.Theme,
-		IsGrafanaAdmin: user.IsAdmin,
-		OrgId:          user.OrgId,
-		UpdatedAt:      user.Updated,
-		CreatedAt:      user.Created,
+		Id:                 user.Id,
+		Name:               user.Name,
+		Email:              user.Email,
+		Login:              user.Login,
+		Theme:              user.Theme,
+		IsGrafinsightAdmin: user.IsAdmin,
+		OrgId:              user.OrgId,
+		UpdatedAt:          user.Updated,
+		CreatedAt:          user.Created,
 	}
 	return response.JSON(200, &result)
 }
@@ -353,8 +353,8 @@ func GetAuthProviderLabel(authModule string) string {
 		return "AzureAD"
 	case "oauth_gitlab":
 		return "GitLab"
-	case "oauth_grafana_com", "oauth_grafananet":
-		return "grafana.com"
+	case "oauth_grafinsight_com", "oauth_grafinsightnet":
+		return "grafinsight.com"
 	case "auth.saml":
 		return "SAML"
 	case "ldap", "":

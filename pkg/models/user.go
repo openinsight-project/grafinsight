@@ -7,9 +7,9 @@ import (
 
 // Typed errors
 var (
-	ErrUserNotFound      = errors.New("user not found")
-	ErrUserAlreadyExists = errors.New("user already exists")
-	ErrLastGrafanaAdmin  = errors.New("cannot remove last grafana admin")
+	ErrUserNotFound         = errors.New("user not found")
+	ErrUserAlreadyExists    = errors.New("user already exists")
+	ErrLastGrafinsightAdmin = errors.New("cannot remove last grafinsight admin")
 )
 
 type Password string
@@ -88,8 +88,8 @@ type ChangeUserPasswordCommand struct {
 }
 
 type UpdateUserPermissionsCommand struct {
-	IsGrafanaAdmin bool
-	UserId         int64 `json:"-"`
+	IsGrafinsightAdmin bool
+	UserId             int64 `json:"-"`
 }
 
 type DisableUserCommand struct {
@@ -170,20 +170,20 @@ type GetUserOrgListQuery struct {
 // DTO & Projections
 
 type SignedInUser struct {
-	UserId         int64
-	OrgId          int64
-	OrgName        string
-	OrgRole        RoleType
-	Login          string
-	Name           string
-	Email          string
-	ApiKeyId       int64
-	OrgCount       int
-	IsGrafanaAdmin bool
-	IsAnonymous    bool
-	HelpFlags1     HelpFlags1
-	LastSeenAt     time.Time
-	Teams          []int64
+	UserId             int64
+	OrgId              int64
+	OrgName            string
+	OrgRole            RoleType
+	Login              string
+	Name               string
+	Email              string
+	ApiKeyId           int64
+	OrgCount           int
+	IsGrafinsightAdmin bool
+	IsAnonymous        bool
+	HelpFlags1         HelpFlags1
+	LastSeenAt         time.Time
+	Teams              []int64
 }
 
 func (u *SignedInUser) ShouldUpdateLastSeenAt() bool {
@@ -205,7 +205,7 @@ type UpdateUserLastSeenAtCommand struct {
 }
 
 func (u *SignedInUser) HasRole(role RoleType) bool {
-	if u.IsGrafanaAdmin {
+	if u.IsGrafinsightAdmin {
 		return true
 	}
 
@@ -217,19 +217,19 @@ func (u *SignedInUser) IsRealUser() bool {
 }
 
 type UserProfileDTO struct {
-	Id             int64     `json:"id"`
-	Email          string    `json:"email"`
-	Name           string    `json:"name"`
-	Login          string    `json:"login"`
-	Theme          string    `json:"theme"`
-	OrgId          int64     `json:"orgId"`
-	IsGrafanaAdmin bool      `json:"isGrafanaAdmin"`
-	IsDisabled     bool      `json:"isDisabled"`
-	IsExternal     bool      `json:"isExternal"`
-	AuthLabels     []string  `json:"authLabels"`
-	UpdatedAt      time.Time `json:"updatedAt"`
-	CreatedAt      time.Time `json:"createdAt"`
-	AvatarUrl      string    `json:"avatarUrl"`
+	Id                 int64     `json:"id"`
+	Email              string    `json:"email"`
+	Name               string    `json:"name"`
+	Login              string    `json:"login"`
+	Theme              string    `json:"theme"`
+	OrgId              int64     `json:"orgId"`
+	IsGrafinsightAdmin bool      `json:"isGrafinsightAdmin"`
+	IsDisabled         bool      `json:"isDisabled"`
+	IsExternal         bool      `json:"isExternal"`
+	AuthLabels         []string  `json:"authLabels"`
+	UpdatedAt          time.Time `json:"updatedAt"`
+	CreatedAt          time.Time `json:"createdAt"`
+	AvatarUrl          string    `json:"avatarUrl"`
 }
 
 type UserSearchHitDTO struct {

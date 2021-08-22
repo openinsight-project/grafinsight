@@ -152,4 +152,4 @@ func (t *mysqlQueryResultTransformer) TransformQueryError(err error) error {
 	return err
 }
 
-var errQueryFailed = errors.New("query failed - please inspect Grafana server log for details")
+var errQueryFailed = errors.New("query failed - please inspect Grafinsight server log for details")

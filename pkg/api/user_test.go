@@ -27,16 +27,16 @@ func TestUserAPIEndpoint_userLoggedIn(t *testing.T) {
 		fakeNow := time.Date(2019, 2, 11, 17, 30, 40, 0, time.UTC)
 		bus.AddHandler("test", func(query *models.GetUserProfileQuery) error {
 			query.Result = models.UserProfileDTO{
-				Id:             int64(1),
-				Email:          "daniel@grafana.com",
-				Name:           "Daniel",
-				Login:          "danlee",
-				OrgId:          int64(2),
-				IsGrafanaAdmin: true,
-				IsDisabled:     false,
-				IsExternal:     false,
-				UpdatedAt:      fakeNow,
-				CreatedAt:      fakeNow,
+				Id:                 int64(1),
+				Email:              "daniel@grafinsight.com",
+				Name:               "Daniel",
+				Login:              "danlee",
+				OrgId:              int64(2),
+				IsGrafinsightAdmin: true,
+				IsDisabled:         false,
+				IsExternal:         false,
+				UpdatedAt:          fakeNow,
+				CreatedAt:          fakeNow,
 			}
 			return nil
 		})
@@ -49,18 +49,18 @@ func TestUserAPIEndpoint_userLoggedIn(t *testing.T) {
 		})
 
 		sc.handlerFunc = GetUserByID
-		avatarUrl := dtos.GetGravatarUrl("daniel@grafana.com")
+		avatarUrl := dtos.GetGravatarUrl("daniel@grafinsight.com")
 		sc.fakeReqWithParams("GET", sc.url, map[string]string{}).exec()
 
 		expected := fmt.Sprintf(`
 			{
 				"id": 1,
-				"email": "daniel@grafana.com",
+				"email": "daniel@grafinsight.com",
 				"name": "Daniel",
 				"login": "danlee",
 				"theme": "",
 				"orgId": 2,
-				"isGrafanaAdmin": true,
+				"isGrafinsightAdmin": true,
 				"isDisabled": false,
 				"isExternal": true,
 				"authLabels": [
@@ -83,7 +83,7 @@ func TestUserAPIEndpoint_userLoggedIn(t *testing.T) {
 
 			query.Result = &models.User{
 				Id:         int64(1),
-				Email:      "daniel@grafana.com",
+				Email:      "daniel@grafinsight.com",
 				Name:       "Daniel",
 				Login:      "danlee",
 				Theme:      "light",
@@ -103,12 +103,12 @@ func TestUserAPIEndpoint_userLoggedIn(t *testing.T) {
 		expected := `
 			{
 				"id": 1,
-				"email": "daniel@grafana.com",
+				"email": "daniel@grafinsight.com",
 				"name": "Daniel",
 				"login": "danlee",
 				"theme": "light",
 				"orgId": 2,
-				"isGrafanaAdmin": true,
+				"isGrafinsightAdmin": true,
 				"isDisabled": false,
 				"authLabels": null,
 				"isExternal": false,

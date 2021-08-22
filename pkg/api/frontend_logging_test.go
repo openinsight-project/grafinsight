@@ -46,7 +46,7 @@ func logSentryEventScenario(t *testing.T, desc string, event frontendlogging.Fro
 
 		sc := setupScenarioContext(t, "/log")
 
-		cdnRootURL, e := url.Parse("https://storage.googleapis.com/grafana-static-assets")
+		cdnRootURL, e := url.Parse("https://storage.googleapis.com/grafinsight-static-assets")
 		require.NoError(t, e)
 
 		cfg := &setting.Cfg{
@@ -259,7 +259,7 @@ func TestFrontendLoggingEndpoint(t *testing.T) {
 								},
 								{
 									Function: "cdn",
-									Filename: "https://storage.googleapis.com/grafana-static-assets/grafana-oss/pre-releases/7.5.0-11925pre/public/build/foo.js", // source map found and mapped
+									Filename: "https://storage.googleapis.com/grafinsight-static-assets/grafinsight-oss/pre-releases/7.5.0-11925pre/public/build/foo.js", // source map found and mapped
 									Lineno:   3,
 									Colno:    10,
 								},

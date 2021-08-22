@@ -45,7 +45,7 @@ func TestDashboardProvisioningTest(t *testing.T) {
 				DashboardCmd: saveDashboardCmd,
 				DashboardProvisioning: &models.DashboardProvisioning{
 					Name:       "default",
-					ExternalId: "/var/grafana.json",
+					ExternalId: "/var/grafinsight.json",
 					Updated:    now.Unix(),
 				},
 			}
@@ -69,7 +69,7 @@ func TestDashboardProvisioningTest(t *testing.T) {
 					},
 					DashboardProvisioning: &models.DashboardProvisioning{
 						Name:       "another_reader",
-						ExternalId: "/var/grafana.json",
+						ExternalId: "/var/grafinsight.json",
 						Updated:    now.Unix(),
 					},
 				}

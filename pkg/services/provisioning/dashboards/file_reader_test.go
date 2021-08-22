@@ -62,9 +62,9 @@ func TestCreatingNewDashboardFileReader(t *testing.T) {
 		})
 
 		Convey("using full path", func() {
-			fullPath := "/var/lib/grafana/dashboards"
+			fullPath := "/var/lib/grafinsight/dashboards"
 			if runtime.GOOS == "windows" {
-				fullPath = `c:\var\lib\grafana`
+				fullPath = `c:\var\lib\grafinsight`
 			}
 
 			cfg.Options["folder"] = fullPath
@@ -136,7 +136,7 @@ func TestDashboardFileReader(t *testing.T) {
 
 				fakeService.getDashboard = append(fakeService.getDashboard, &models.Dashboard{
 					Updated: stat.ModTime().AddDate(0, 0, -1),
-					Slug:    "grafana",
+					Slug:    "grafinsight",
 				})
 
 				reader, err := NewDashboardFileReader(cfg, logger)
@@ -190,7 +190,7 @@ func TestDashboardFileReader(t *testing.T) {
 					switch title {
 					case "folderOne", "folderTwo":
 						So(d.Dashboard.IsFolder, ShouldBeTrue)
-					case "Grafana1", "Grafana2", "RootDashboard":
+					case "Grafinsight1", "Grafinsight2", "RootDashboard":
 						So(d.Dashboard.IsFolder, ShouldBeFalse)
 					default:
 						So(fmt.Errorf("unknown dashboard title %q", title), ShouldBeNil)

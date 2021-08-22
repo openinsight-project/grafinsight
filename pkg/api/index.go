@@ -139,7 +139,7 @@ func (hs *HTTPServer) getNavTree(c *models.ReqContext, hasEditPerm bool) ([]*dto
 			})
 		}
 		children = append(children, &dtos.NavLink{
-			Text: "Import", SubTitle: "Import dashboard from file or Grafana.com", Id: "import", Icon: "import",
+			Text: "Import", SubTitle: "Import dashboard from file or Grafinsight.com", Id: "import", Icon: "import",
 			Url: setting.AppSubUrl + "/dashboard/import",
 		})
 		navTree = append(navTree, &dtos.NavLink{
@@ -285,7 +285,7 @@ func (hs *HTTPServer) getNavTree(c *models.ReqContext, hasEditPerm bool) ([]*dto
 		})
 	}
 
-	if c.IsGrafanaAdmin {
+	if c.IsGrafinsightAdmin {
 		adminNavLinks := []*dtos.NavLink{
 			{Text: "Users", Id: "global-users", Url: setting.AppSubUrl + "/admin/users", Icon: "user"},
 			{Text: "Orgs", Id: "global-orgs", Url: setting.AppSubUrl + "/admin/orgs", Icon: "building"},
@@ -386,32 +386,32 @@ func (hs *HTTPServer) setIndexViewData(c *models.ReqContext) (*dtos.IndexViewDat
 			OrgName:                    c.OrgName,
 			OrgRole:                    c.OrgRole,
 			GravatarUrl:                dtos.GetGravatarUrl(c.Email),
-			IsGrafanaAdmin:             c.IsGrafanaAdmin,
+			IsGrafinsightAdmin:         c.IsGrafinsightAdmin,
 			LightTheme:                 prefs.Theme == lightName,
 			Timezone:                   prefs.Timezone,
 			Locale:                     locale,
 			HelpFlags1:                 c.HelpFlags1,
 			HasEditPermissionInFolders: hasEditPerm,
 		},
-		Settings:                settings,
-		Theme:                   prefs.Theme,
-		AppUrl:                  appURL,
-		AppSubUrl:               appSubURL,
-		GoogleAnalyticsId:       setting.GoogleAnalyticsId,
-		GoogleTagManagerId:      setting.GoogleTagManagerId,
-		BuildVersion:            setting.BuildVersion,
-		BuildCommit:             setting.BuildCommit,
-		NewGrafanaVersion:       hs.PluginManager.GrafanaLatestVersion,
-		NewGrafanaVersionExists: hs.PluginManager.GrafanaHasUpdate,
-		AppName:                 setting.ApplicationName,
-		AppNameBodyClass:        getAppNameBodyClass(hs.License.HasValidLicense()),
-		FavIcon:                 "public/img/fav32.png",
-		AppleTouchIcon:          "public/img/apple-touch-icon.png",
-		AppTitle:                "Grafana",
-		NavTree:                 navTree,
-		Sentry:                  &hs.Cfg.Sentry,
-		Nonce:                   c.RequestNonce,
-		ContentDeliveryURL:      hs.Cfg.GetContentDeliveryURL(hs.License.ContentDeliveryPrefix()),
+		Settings:                    settings,
+		Theme:                       prefs.Theme,
+		AppUrl:                      appURL,
+		AppSubUrl:                   appSubURL,
+		GoogleAnalyticsId:           setting.GoogleAnalyticsId,
+		GoogleTagManagerId:          setting.GoogleTagManagerId,
+		BuildVersion:                setting.BuildVersion,
+		BuildCommit:                 setting.BuildCommit,
+		NewGrafinsightVersion:       hs.PluginManager.GrafinsightLatestVersion,
+		NewGrafinsightVersionExists: hs.PluginManager.GrafinsightHasUpdate,
+		AppName:                     setting.ApplicationName,
+		AppNameBodyClass:            getAppNameBodyClass(),
+		FavIcon:                     "public/img/fav32.png",
+		AppleTouchIcon:              "public/img/apple-touch-icon.png",
+		AppTitle:                    "Grafinsight",
+		NavTree:                     navTree,
+		Sentry:                      &hs.Cfg.Sentry,
+		Nonce:                       c.RequestNonce,
+		ContentDeliveryURL:          hs.Cfg.GetContentDeliveryURL(""),
 	}
 
 	if setting.DisableGravatar {
@@ -464,10 +464,6 @@ func (hs *HTTPServer) NotFoundHandler(c *models.ReqContext) {
 	c.HTML(404, "index", data)
 }
 
-func getAppNameBodyClass(validLicense bool) string {
-	if validLicense {
-		return "app-enterprise"
-	}
-
-	return "app-grafana"
+func getAppNameBodyClass() string {
+	return "app-grafinsight"
 }

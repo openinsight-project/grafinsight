@@ -59,13 +59,13 @@ func (e Error) Error() string {
 }
 
 const (
-	grafanaCom = "grafana_com"
+	grafinsightCom = "grafinsight_com"
 )
 
 var (
 	SocialBaseUrl = "/login/"
 	SocialMap     = make(map[string]SocialConnector)
-	allOauthes    = []string{"github", "gitlab", "google", "generic_oauth", "grafananet", grafanaCom, "azuread", "okta"}
+	allOauthes    = []string{"github", "gitlab", "google", "generic_oauth", "grafinsightnet", grafinsightCom, "azuread", "okta"}
 )
 
 func newSocialBase(name string, config *oauth2.Config, info *setting.OAuthInfo) *SocialBase {
@@ -110,8 +110,8 @@ func NewOAuthService() {
 			continue
 		}
 
-		if name == "grafananet" {
-			name = grafanaCom
+		if name == "grafinsightnet" {
+			name = grafinsightCom
 		}
 
 		setting.OAuthService.OAuthInfos[name] = info
@@ -190,22 +190,22 @@ func NewOAuthService() {
 			}
 		}
 
-		if name == grafanaCom {
+		if name == grafinsightCom {
 			config = oauth2.Config{
 				ClientID:     info.ClientId,
 				ClientSecret: info.ClientSecret,
 				Endpoint: oauth2.Endpoint{
-					AuthURL:   setting.GrafanaComUrl + "/oauth2/authorize",
-					TokenURL:  setting.GrafanaComUrl + "/api/oauth2/token",
+					AuthURL:   setting.GrafinsightComUrl + "/oauth2/authorize",
+					TokenURL:  setting.GrafinsightComUrl + "/api/oauth2/token",
 					AuthStyle: oauth2.AuthStyleInHeader,
 				},
 				RedirectURL: strings.TrimSuffix(setting.AppUrl, "/") + SocialBaseUrl + name,
 				Scopes:      info.Scopes,
 			}
 
-			SocialMap[grafanaCom] = &SocialGrafanaCom{
+			SocialMap[grafinsightCom] = &SocialGrafinsightCom{
 				SocialBase:           newSocialBase(name, &config, info),
-				url:                  setting.GrafanaComUrl,
+				url:                  setting.GrafinsightComUrl,
 				allowedOrganizations: util.SplitString(sec.Key("allowed_organizations").String()),
 			}
 		}
@@ -221,8 +221,8 @@ var GetOAuthProviders = func(cfg *setting.Cfg) map[string]bool {
 	}
 
 	for _, name := range allOauthes {
-		if name == "grafananet" {
-			name = grafanaCom
+		if name == "grafinsightnet" {
+			name = grafinsightCom
 		}
 
 		sec := cfg.Raw.Section("auth." + name)

@@ -5,7 +5,7 @@ import { rangeUtil } from '@grafinsight/data';
 
 export class User {
   id: number;
-  isGrafanaAdmin: any;
+  isGrafinsightAdmin: any;
   isSignedIn: any;
   orgRole: any;
   orgId: number;
@@ -30,7 +30,7 @@ export class ContextSrv {
   version: any;
   user: User;
   isSignedIn: any;
-  isGrafanaAdmin: any;
+  isGrafinsightAdmin: any;
   isEditor: any;
   sidemenuSmallBreakpoint = false;
   hasEditPermissionInFolders: boolean;
@@ -43,7 +43,7 @@ export class ContextSrv {
 
     this.user = new User();
     this.isSignedIn = this.user.isSignedIn;
-    this.isGrafanaAdmin = this.user.isGrafanaAdmin;
+    this.isGrafinsightAdmin = this.user.isGrafinsightAdmin;
     this.isEditor = this.hasRole('Editor') || this.hasRole('Admin');
     this.hasEditPermissionInFolders = this.user.hasEditPermissionInFolders;
     this.minRefreshInterval = config.minRefreshInterval;

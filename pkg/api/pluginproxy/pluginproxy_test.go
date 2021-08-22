@@ -64,7 +64,7 @@ func TestPluginProxy(t *testing.T) {
 		)
 
 		// Get will return empty string even if header is not set
-		assert.Equal(t, "test_user", req.Header.Get("X-Grafana-User"))
+		assert.Equal(t, "test_user", req.Header.Get("X-Grafinsight-User"))
 	})
 
 	t.Run("When SendUserHeader config is disabled", func(t *testing.T) {
@@ -79,7 +79,7 @@ func TestPluginProxy(t *testing.T) {
 			nil,
 		)
 		// Get will return empty string even if header is not set
-		assert.Equal(t, "", req.Header.Get("X-Grafana-User"))
+		assert.Equal(t, "", req.Header.Get("X-Grafinsight-User"))
 	})
 
 	t.Run("When SendUserHeader config is enabled but user is anonymous", func(t *testing.T) {
@@ -93,7 +93,7 @@ func TestPluginProxy(t *testing.T) {
 		)
 
 		// Get will return empty string even if header is not set
-		assert.Equal(t, "", req.Header.Get("X-Grafana-User"))
+		assert.Equal(t, "", req.Header.Get("X-Grafinsight-User"))
 	})
 
 	t.Run("When getting templated url", func(t *testing.T) {
@@ -105,7 +105,7 @@ func TestPluginProxy(t *testing.T) {
 		bus.AddHandler("test", func(query *models.GetPluginSettingByIdQuery) error {
 			query.Result = &models.PluginSetting{
 				JsonData: map[string]interface{}{
-					"dynamicUrl": "https://dynamic.grafana.com",
+					"dynamicUrl": "https://dynamic.grafinsight.com",
 				},
 			}
 			return nil
@@ -121,7 +121,7 @@ func TestPluginProxy(t *testing.T) {
 			&setting.Cfg{SendUserHeader: true},
 			route,
 		)
-		assert.Equal(t, "https://dynamic.grafana.com", req.URL.String())
+		assert.Equal(t, "https://dynamic.grafinsight.com", req.URL.String())
 		assert.Equal(t, "{{.JsonData.dynamicUrl}}", route.URL)
 	})
 
@@ -162,7 +162,7 @@ func getPluginProxiedRequest(t *testing.T, ctx *models.ReqContext, cfg *setting.
 	}
 	proxy := NewApiPluginProxy(ctx, "", route, "", cfg)
 
-	req, err := http.NewRequest(http.MethodGet, "/api/plugin-proxy/grafana-simple-app/api/v4/alerts", nil)
+	req, err := http.NewRequest(http.MethodGet, "/api/plugin-proxy/grafinsight-simple-app/api/v4/alerts", nil)
 	require.NoError(t, err)
 	proxy.Director(req)
 	return req

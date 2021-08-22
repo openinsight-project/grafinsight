@@ -21,25 +21,25 @@ var (
 )
 
 func init() {
-	registry.RegisterService(&GrafanaLive{
+	registry.RegisterService(&GrafinsightLive{
 		channels:   make(map[string]models.ChannelHandler),
 		channelsMu: sync.RWMutex{},
-		GrafanaScope: CoreGrafanaScope{
+		GrafinsightScope: CoreGrafinsightScope{
 			Features: make(map[string]models.ChannelHandlerFactory),
 		},
 	})
 }
 
-// CoreGrafanaScope list of core features
-type CoreGrafanaScope struct {
+// CoreGrafinsightScope list of core features
+type CoreGrafinsightScope struct {
 	Features map[string]models.ChannelHandlerFactory
 
 	// The generic service to advertise dashboard changes
 	Dashboards models.DashboardActivityChannel
 }
 
-// GrafanaLive pretends to be the server
-type GrafanaLive struct {
+// GrafinsightLive pretends to be the server
+type GrafinsightLive struct {
 	Cfg           *setting.Cfg            `inject:""`
 	RouteRegister routing.RouteRegister   `inject:""`
 	LogsService   *cloudwatch.LogsService `inject:""`
@@ -53,16 +53,16 @@ type GrafanaLive struct {
 	channelsMu sync.RWMutex
 
 	// The core internal features
-	GrafanaScope CoreGrafanaScope
+	GrafinsightScope CoreGrafinsightScope
 }
 
 // Init initializes the instance.
 // Required to implement the registry.Service interface.
-func (g *GrafanaLive) Init() error {
-	logger.Debug("GrafanaLive initialization")
+func (g *GrafinsightLive) Init() error {
+	logger.Debug("GrafinsightLive initialization")
 
 	if !g.IsEnabled() {
-		logger.Debug("GrafanaLive feature not enabled, skipping initialization")
+		logger.Debug("GrafinsightLive feature not enabled, skipping initialization")
 		return nil
 	}
 
@@ -88,13 +88,13 @@ func (g *GrafanaLive) Init() error {
 		Publisher: g.Publish,
 	}
 
-	g.GrafanaScope.Dashboards = dash
-	g.GrafanaScope.Features["dashboard"] = dash
-	g.GrafanaScope.Features["testdata"] = &features.TestDataSupplier{
+	g.GrafinsightScope.Dashboards = dash
+	g.GrafinsightScope.Features["dashboard"] = dash
+	g.GrafinsightScope.Features["testdata"] = &features.TestDataSupplier{
 		Publisher: g.Publish,
 	}
-	g.GrafanaScope.Features["broadcast"] = &features.BroadcastRunner{}
-	g.GrafanaScope.Features["measurements"] = &features.MeasurementsRunner{}
+	g.GrafinsightScope.Features["broadcast"] = &features.BroadcastRunner{}
+	g.GrafinsightScope.Features["measurements"] = &features.MeasurementsRunner{}
 
 	// Set ConnectHandler called when client successfully connected to Node. Your code
 	// inside handler must be synchronized since it will be called concurrently from
@@ -161,7 +161,7 @@ func (g *GrafanaLive) Init() error {
 }
 
 // GetChannelHandler gives threadsafe access to the channel
-func (g *GrafanaLive) GetChannelHandler(channel string) (models.ChannelHandler, error) {
+func (g *GrafinsightLive) GetChannelHandler(channel string) (models.ChannelHandler, error) {
 	g.channelsMu.RLock()
 	c, ok := g.channels[channel]
 	g.channelsMu.RUnlock() // defer? but then you can't lock further down
@@ -200,9 +200,9 @@ func (g *GrafanaLive) GetChannelHandler(channel string) (models.ChannelHandler, 
 
 // GetChannelHandlerFactory gets a ChannelHandlerFactory for a namespace.
 // It gives threadsafe access to the channel.
-func (g *GrafanaLive) GetChannelHandlerFactory(scope string, name string) (models.ChannelHandlerFactory, error) {
-	if scope == "grafana" {
-		p, ok := g.GrafanaScope.Features[name]
+func (g *GrafinsightLive) GetChannelHandlerFactory(scope string, name string) (models.ChannelHandlerFactory, error) {
+	if scope == "grafinsight" {
+		p, ok := g.GrafinsightScope.Features[name]
 		if ok {
 			return p, nil
 		}
@@ -236,13 +236,13 @@ func (g *GrafanaLive) GetChannelHandlerFactory(scope string, name string) (model
 }
 
 // Publish sends the data to the channel without checking permissions etc
-func (g *GrafanaLive) Publish(channel string, data []byte) error {
+func (g *GrafinsightLive) Publish(channel string, data []byte) error {
 	_, err := g.node.Publish(channel, data)
 	return err
 }
 
-// IsEnabled returns true if the Grafana Live feature is enabled.
-func (g *GrafanaLive) IsEnabled() bool {
+// IsEnabled returns true if the Grafinsight Live feature is enabled.
+func (g *GrafinsightLive) IsEnabled() bool {
 	return g.Cfg.IsLiveEnabled()
 }
 

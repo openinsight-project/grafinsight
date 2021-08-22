@@ -130,7 +130,7 @@ func (pn *PagerdutyNotifier) buildEventPayload(evalContext *alerting.EvalContext
 	payloadJSON := simplejson.New()
 
 	// set default, override in following case switch if defined
-	payloadJSON.Set("component", "Grafana")
+	payloadJSON.Set("component", "Grafinsight")
 	payloadJSON.Set("severity", pn.Severity)
 	dedupKey := "alertId-" + strconv.FormatInt(evalContext.Rule.ID, 10)
 
@@ -198,7 +198,7 @@ func (pn *PagerdutyNotifier) buildEventPayload(evalContext *alerting.EvalContext
 	linkJSON := simplejson.New()
 	linkJSON.Set("href", ruleURL)
 	bodyJSON.Set("client_url", ruleURL)
-	bodyJSON.Set("client", "Grafana")
+	bodyJSON.Set("client", "Grafinsight")
 
 	links[0] = linkJSON
 	bodyJSON.Set("links", links)

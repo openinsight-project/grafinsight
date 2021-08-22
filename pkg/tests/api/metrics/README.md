@@ -1,3 +1,3 @@
 # API integration tests
 
-This directory contains Grafana HTTP API integration tests.
+This directory contains Grafinsight HTTP API integration tests.

@@ -241,7 +241,7 @@ func (auth *AuthProxy) LoginViaLDAP() (int64, error) {
 		return 0, err
 	}
 
-	// Have to sync grafana and LDAP user during log in
+	// Have to sync grafinsight and LDAP user during log in
 	upsert := &models.UpsertUserCommand{
 		ReqContext:    auth.ctx,
 		SignupAllowed: auth.cfg.LDAPAllowSignup,

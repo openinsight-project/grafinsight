@@ -7,7 +7,6 @@ import (
 
 	"github.com/openinsight-project/grafinsight/pkg/bus"
 	"github.com/openinsight-project/grafinsight/pkg/login/social"
-	"github.com/openinsight-project/grafinsight/pkg/models"
 	"github.com/openinsight-project/grafinsight/pkg/services/alerting"
 	"github.com/openinsight-project/grafinsight/pkg/services/sqlstore"
 
@@ -35,7 +34,6 @@ type UsageStatsService struct {
 	Bus                bus.Bus                    `inject:""`
 	SQLStore           *sqlstore.SQLStore         `inject:""`
 	AlertingUsageStats alerting.UsageStatsQuerier `inject:""`
-	License            models.Licensing           `inject:""`
 
 	log log.Logger
 

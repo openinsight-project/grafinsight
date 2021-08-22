@@ -82,7 +82,7 @@ func IsOAuthPassThruEnabled(ds *models.DataSource) bool {
 	return ds.JsonData != nil && ds.JsonData.Get("oauthPassThru").MustBool()
 }
 
-// tokensEq checks for OAuth2 token equivalence given the fields of the struct Grafana is interested in
+// tokensEq checks for OAuth2 token equivalence given the fields of the struct Grafinsight is interested in
 func tokensEq(t1, t2 *oauth2.Token) bool {
 	return t1.AccessToken == t2.AccessToken &&
 		t1.RefreshToken == t2.RefreshToken &&

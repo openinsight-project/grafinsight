@@ -106,7 +106,7 @@ func TestMiddlewareContext(t *testing.T) {
 
 	t.Run("When the cache key contains additional headers", func(t *testing.T) {
 		const id int64 = 33
-		const group = "grafana-core-team"
+		const group = "grafinsight-core-team"
 
 		h, err := HashCacheKey(hdrName + "-" + group)
 		require.NoError(t, err)

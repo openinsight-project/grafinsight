@@ -710,12 +710,12 @@ func TestGuardianGetHiddenACL(t *testing.T) {
 			So(hiddenACL[0].UserID, ShouldEqual, 2)
 		})
 
-		Convey("Grafana admin should not get hidden acl", func() {
+		Convey("Grafinsight admin should not get hidden acl", func() {
 			user := &models.SignedInUser{
-				OrgId:          orgID,
-				UserId:         1,
-				Login:          "user1",
-				IsGrafanaAdmin: true,
+				OrgId:              orgID,
+				UserId:             1,
+				Login:              "user1",
+				IsGrafinsightAdmin: true,
 			}
 			g := New(dashboardID, orgID, user)
 

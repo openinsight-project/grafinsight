@@ -153,8 +153,8 @@ func TestPluginManager_Init(t *testing.T) {
 		assert.Equal(t, pluginId, Plugins[pluginId].Id)
 		assert.Equal(t, "1.0.0", Plugins[pluginId].Info.Version)
 		assert.Equal(t, pluginSignatureValid, Plugins[pluginId].Signature)
-		assert.Equal(t, grafanaType, Plugins[pluginId].SignatureType)
-		assert.Equal(t, "Grafana Labs", Plugins[pluginId].SignatureOrg)
+		assert.Equal(t, grafinsightType, Plugins[pluginId].SignatureType)
+		assert.Equal(t, "Grafinsight Labs", Plugins[pluginId].SignatureOrg)
 		assert.False(t, Plugins[pluginId].IsCorePlugin)
 	})
 

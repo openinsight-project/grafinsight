@@ -20,7 +20,7 @@ var validatePassword = func(providedPassword string, userPassword string, userSa
 	return nil
 }
 
-var loginUsingGrafanaDB = func(query *models.LoginUserQuery) error {
+var loginUsingGrafinsightDB = func(query *models.LoginUserQuery) error {
 	userQuery := models.GetUserByLoginQuery{LoginOrEmail: query.Username}
 
 	if err := bus.Dispatch(&userQuery); err != nil {

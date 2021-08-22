@@ -13,7 +13,6 @@ import (
 	"github.com/grafana/grafana-aws-sdk/pkg/awsds"
 	"github.com/grafana/grafana-plugin-sdk-go/backend"
 	"github.com/openinsight-project/grafinsight/pkg/infra/log"
-	"github.com/openinsight-project/grafinsight/pkg/models"
 	"github.com/openinsight-project/grafinsight/pkg/setting"
 	"github.com/stretchr/testify/require"
 )
@@ -42,8 +41,6 @@ func TestManager(t *testing.T) {
 
 	newManagerScenario(t, true, func(t *testing.T, ctx *managerScenarioCtx) {
 		t.Run("Managed plugin scenario", func(t *testing.T) {
-			ctx.license.edition = "Open Source"
-			ctx.license.hasLicense = false
 			ctx.cfg.BuildVersion = "7.0.0"
 
 			t.Run("Should be able to register plugin", func(t *testing.T) {
@@ -195,8 +192,6 @@ func TestManager(t *testing.T) {
 
 	newManagerScenario(t, false, func(t *testing.T, ctx *managerScenarioCtx) {
 		t.Run("Unmanaged plugin scenario", func(t *testing.T) {
-			ctx.license.edition = "Open Source"
-			ctx.license.hasLicense = false
 			ctx.cfg.BuildVersion = "7.0.0"
 
 			t.Run("Should be able to register plugin", func(t *testing.T) {
@@ -250,10 +245,7 @@ func TestManager(t *testing.T) {
 	})
 
 	newManagerScenario(t, true, func(t *testing.T, ctx *managerScenarioCtx) {
-		t.Run("Plugin registration scenario when Grafana is licensed", func(t *testing.T) {
-			ctx.license.edition = "Enterprise"
-			ctx.license.hasLicense = true
-			ctx.license.tokenRaw = "testtoken"
+		t.Run("Plugin registration scenario when Grafinsight is licensed", func(t *testing.T) {
 			ctx.cfg.BuildVersion = "7.0.0"
 			ctx.cfg.EnterpriseLicensePath = "/license.txt"
 
@@ -270,7 +262,6 @@ func TestManager(t *testing.T) {
 
 type managerScenarioCtx struct {
 	cfg     *setting.Cfg
-	license *testLicensingService
 	manager *manager
 	factory PluginFactoryFunc
 	plugin  *testPlugin
@@ -283,14 +274,11 @@ func newManagerScenario(t *testing.T, managed bool, fn func(t *testing.T, ctx *m
 	cfg.AWSAllowedAuthProviders = []string{"keys", "credentials"}
 	cfg.AWSAssumeRoleEnabled = true
 
-	license := &testLicensingService{}
 	validator := &testPluginRequestValidator{}
 	ctx := &managerScenarioCtx{
-		cfg:     cfg,
-		license: license,
+		cfg: cfg,
 		manager: &manager{
 			Cfg:                    cfg,
-			License:                license,
 			PluginRequestValidator: validator,
 		},
 	}
@@ -386,44 +374,6 @@ func (tp *testPlugin) CallResource(ctx context.Context, req *backend.CallResourc
 	}
 
 	return ErrMethodNotImplemented
-}
-
-type testLicensingService struct {
-	edition    string
-	hasLicense bool
-	tokenRaw   string
-}
-
-func (t *testLicensingService) HasLicense() bool {
-	return t.hasLicense
-}
-
-func (t *testLicensingService) Expiry() int64 {
-	return 0
-}
-
-func (t *testLicensingService) Edition() string {
-	return t.edition
-}
-
-func (t *testLicensingService) StateInfo() string {
-	return ""
-}
-
-func (t *testLicensingService) ContentDeliveryPrefix() string {
-	return ""
-}
-
-func (t *testLicensingService) LicenseURL(user *models.SignedInUser) string {
-	return ""
-}
-
-func (t *testLicensingService) HasValidLicense() bool {
-	return false
-}
-
-func (t *testLicensingService) Environment() map[string]string {
-	return map[string]string{"GF_ENTERPRISE_LICENSE_TEXT": t.tokenRaw}
 }
 
 type testPluginRequestValidator struct{}

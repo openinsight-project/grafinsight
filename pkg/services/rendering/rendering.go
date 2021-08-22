@@ -98,8 +98,8 @@ func (rs *RenderingService) Run(ctx context.Context) error {
 	}
 
 	rs.log.Debug("No image renderer found/installed. " +
-		"For image rendering support please install the grafana-image-renderer plugin. " +
-		"Read more at https://grafana.com/docs/grafana/latest/administration/image_rendering/")
+		"For image rendering support please install the grafinsight-image-renderer plugin. " +
+		"Read more at https://grafinsight.com/docs/grafinsight/latest/administration/image_rendering/")
 
 	<-ctx.Done()
 	return nil
@@ -163,8 +163,8 @@ func (rs *RenderingService) render(ctx context.Context, opts Opts) (*RenderResul
 
 	if !rs.IsAvailable() {
 		rs.log.Warn("Could not render image, no image renderer found/installed. " +
-			"For image rendering support please install the grafana-image-renderer plugin. " +
-			"Read more at https://grafana.com/docs/grafana/latest/administration/image_rendering/")
+			"For image rendering support please install the grafinsight-image-renderer plugin. " +
+			"Read more at https://grafinsight.com/docs/grafinsight/latest/administration/image_rendering/")
 		return rs.renderUnavailableImage(), nil
 	}
 
@@ -221,7 +221,7 @@ func (rs *RenderingService) getURL(path string) string {
 	if rs.Cfg.RendererUrl != "" {
 		// The backend rendering service can potentially be remote.
 		// So we need to use the root_url to ensure the rendering service
-		// can reach this Grafana instance.
+		// can reach this Grafinsight instance.
 
 		// &render=1 signals to the legacy redirect layer to
 		return fmt.Sprintf("%s%s&render=1", rs.Cfg.RendererCallbackUrl, path)

@@ -35,7 +35,7 @@ func (m *mySqlMacroEngine) Interpolate(query *tsdb.Query, timeRange *tsdb.TimeRa
 	matches := restrictedRegExp.FindAllStringSubmatch(sql, 1)
 	if len(matches) > 0 {
 		m.logger.Error("show grants, session_user(), current_user(), system_user() or user() not allowed in query")
-		return "", errors.New("invalid query - inspect Grafana server log for details")
+		return "", errors.New("invalid query - inspect Grafinsight server log for details")
 	}
 
 	rExp, _ := regexp.Compile(sExpr)

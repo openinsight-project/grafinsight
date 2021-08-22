@@ -1,7 +1,7 @@
 groups:
-  - name: GrafanaAlerts
+  - name: GrafinsightAlerts
     rules:
-      - alert: GrafanaRequestsFailing
+      - alert: GrafinsightRequestsFailing
         for: 5m
         expr: |
           100 * namespace_job_handler_statuscode:http_request_total:rate5m{handler!~"/datasources/proxy/:id.*|/ds/query|/tsdb/query", statuscode=~"5.."}

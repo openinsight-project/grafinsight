@@ -33,7 +33,7 @@ func RedirectFromLegacyDashboardURL() func(c *models.ReqContext) {
 	}
 }
 
-// In Grafana v7.0 we changed panel edit & view query parameters.
+// In Grafinsight v7.0 we changed panel edit & view query parameters.
 // This middleware tries to detect those old url parameters and direct to the new url query params
 func RedirectFromLegacyPanelEditURL(cfg *setting.Cfg) func(c *models.ReqContext) {
 	return func(c *models.ReqContext) {

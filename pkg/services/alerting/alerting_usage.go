@@ -12,19 +12,19 @@ import (
 type DatasourceAlertUsage map[string]int
 
 // UsageStats contains stats about alert rules configured in
-// Grafana.
+// Grafinsight.
 type UsageStats struct {
 	DatasourceUsage DatasourceAlertUsage
 }
 
 // UsageStatsQuerier returns usage stats about alert rules
-// configured in Grafana.
+// configured in Grafinsight.
 type UsageStatsQuerier interface {
 	QueryUsageStats() (*UsageStats, error)
 }
 
 // QueryUsageStats returns usage stats about alert rules
-// configured in Grafana.
+// configured in Grafinsight.
 func (e *AlertEngine) QueryUsageStats() (*UsageStats, error) {
 	cmd := &models.GetAllAlertsQuery{}
 	err := e.Bus.Dispatch(cmd)

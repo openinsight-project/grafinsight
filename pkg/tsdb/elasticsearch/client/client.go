@@ -182,7 +182,7 @@ func (c *baseClientImpl) executeRequest(method, uriPath, uriQuery string, body [
 		}
 	}
 
-	req.Header.Set("User-Agent", "Grafana")
+	req.Header.Set("User-Agent", "Grafinsight")
 	req.Header.Set("Content-Type", "application/json")
 
 	if c.ds.BasicAuth {

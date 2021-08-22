@@ -303,7 +303,7 @@ func (hs *HTTPServer) PostDashboard(c *models.ReqContext, cmd models.SaveDashboa
 
 	// Tell everyone listening that the dashboard changed
 	if hs.Live.IsEnabled() {
-		err := hs.Live.GrafanaScope.Dashboards.DashboardSaved(
+		err := hs.Live.GrafinsightScope.Dashboards.DashboardSaved(
 			dashboard.Uid,
 			c.UserId,
 		)

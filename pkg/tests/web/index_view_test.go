@@ -12,26 +12,26 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-// TestIndexView tests the Grafana index view.
+// TestIndexView tests the Grafinsight index view.
 func TestIndexView(t *testing.T) {
 	t.Run("CSP enabled", func(t *testing.T) {
-		grafDir, cfgPath := testinfra.CreateGrafDir(t, testinfra.GrafanaOpts{
+		grafDir, cfgPath := testinfra.CreateGrafDir(t, testinfra.GrafinsightOpts{
 			EnableCSP: true,
 		})
 		sqlStore := testinfra.SetUpDatabase(t, grafDir)
-		addr := testinfra.StartGrafana(t, grafDir, cfgPath, sqlStore)
+		addr := testinfra.StartGrafinsight(t, grafDir, cfgPath, sqlStore)
 
 		// nolint:bodyclose
 		resp, html := makeRequest(t, addr)
 
-		assert.Regexp(t, "script-src 'unsafe-eval' 'strict-dynamic' 'nonce-[^']+';object-src 'none';font-src 'self';style-src 'self' 'unsafe-inline';img-src 'self' data:;base-uri 'self';connect-src 'self' grafana.com;manifest-src 'self';media-src 'none';form-action 'self';", resp.Header.Get("Content-Security-Policy"))
+		assert.Regexp(t, "script-src 'unsafe-eval' 'strict-dynamic' 'nonce-[^']+';object-src 'none';font-src 'self';style-src 'self' 'unsafe-inline';img-src 'self' data:;base-uri 'self';connect-src 'self' grafinsight.com;manifest-src 'self';media-src 'none';form-action 'self';", resp.Header.Get("Content-Security-Policy"))
 		assert.Regexp(t, `<script nonce="[^"]+"`, html)
 	})
 
 	t.Run("CSP disabled", func(t *testing.T) {
 		grafDir, cfgPath := testinfra.CreateGrafDir(t)
 		sqlStore := testinfra.SetUpDatabase(t, grafDir)
-		addr := testinfra.StartGrafana(t, grafDir, cfgPath, sqlStore)
+		addr := testinfra.StartGrafinsight(t, grafDir, cfgPath, sqlStore)
 
 		// nolint:bodyclose
 		resp, html := makeRequest(t, addr)

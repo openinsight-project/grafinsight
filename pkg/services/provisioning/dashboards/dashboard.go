@@ -12,7 +12,7 @@ import (
 )
 
 // DashboardProvisioner is responsible for syncing dashboard from disk to
-// Grafana's database.
+// Grafinsight's database.
 type DashboardProvisioner interface {
 	Provision() error
 	PollChanges(ctx context.Context)
@@ -24,7 +24,7 @@ type DashboardProvisioner interface {
 // DashboardProvisionerFactory creates DashboardProvisioners based on input
 type DashboardProvisionerFactory func(string) (DashboardProvisioner, error)
 
-// Provisioner is responsible for syncing dashboard from disk to Grafana's database.
+// Provisioner is responsible for syncing dashboard from disk to Grafinsight's database.
 type Provisioner struct {
 	log         log.Logger
 	fileReaders []*FileReader

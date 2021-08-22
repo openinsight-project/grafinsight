@@ -35,7 +35,7 @@ type CurrentUser struct {
 	OrgId                      int64             `json:"orgId"`
 	OrgName                    string            `json:"orgName"`
 	OrgRole                    models.RoleType   `json:"orgRole"`
-	IsGrafanaAdmin             bool              `json:"isGrafanaAdmin"`
+	IsGrafinsightAdmin         bool              `json:"isGrafinsightAdmin"`
 	GravatarUrl                string            `json:"gravatarUrl"`
 	Timezone                   string            `json:"timezone"`
 	Locale                     string            `json:"locale"`
@@ -77,7 +77,7 @@ func GetGravatarUrlWithDefault(text string, defaultText string) string {
 }
 
 func IsHiddenUser(userLogin string, signedInUser *models.SignedInUser, cfg *setting.Cfg) bool {
-	if userLogin == "" || signedInUser.IsGrafanaAdmin || userLogin == signedInUser.Login {
+	if userLogin == "" || signedInUser.IsGrafinsightAdmin || userLogin == signedInUser.Login {
 		return false
 	}
 

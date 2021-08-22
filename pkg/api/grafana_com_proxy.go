@@ -12,7 +12,7 @@ import (
 	"github.com/openinsight-project/grafinsight/pkg/util"
 )
 
-var grafanaComProxyTransport = &http.Transport{
+var grafinsightComProxyTransport = &http.Transport{
 	Proxy: http.ProxyFromEnvironment,
 	Dial: (&net.Dialer{
 		Timeout:   30 * time.Second,
@@ -22,7 +22,7 @@ var grafanaComProxyTransport = &http.Transport{
 }
 
 func ReverseProxyGnetReq(proxyPath string) *httputil.ReverseProxy {
-	url, _ := url.Parse(setting.GrafanaComUrl)
+	url, _ := url.Parse(setting.GrafinsightComUrl)
 
 	director := func(req *http.Request) {
 		req.URL.Scheme = url.Scheme
@@ -43,7 +43,7 @@ func ReverseProxyGnetReq(proxyPath string) *httputil.ReverseProxy {
 func ProxyGnetRequest(c *models.ReqContext) {
 	proxyPath := c.Params("*")
 	proxy := ReverseProxyGnetReq(proxyPath)
-	proxy.Transport = grafanaComProxyTransport
+	proxy.Transport = grafinsightComProxyTransport
 	proxy.ServeHTTP(c.Resp, c.Req.Request)
 	c.Resp.Header().Del("Set-Cookie")
 }

@@ -545,7 +545,7 @@ func TestUserDataAccess(t *testing.T) {
 			})
 		})
 
-		Convey("Given one grafana admin user", func() {
+		Convey("Given one grafinsight admin user", func() {
 			var err error
 			createUserCmd := &models.CreateUserCommand{
 				Email:   fmt.Sprint("admin", "@test.com"),
@@ -557,10 +557,10 @@ func TestUserDataAccess(t *testing.T) {
 			So(err, ShouldBeNil)
 
 			Convey("Cannot make themselves a non-admin", func() {
-				updateUserPermsCmd := models.UpdateUserPermissionsCommand{IsGrafanaAdmin: false, UserId: 1}
+				updateUserPermsCmd := models.UpdateUserPermissionsCommand{IsGrafinsightAdmin: false, UserId: 1}
 				updatePermsError := UpdateUserPermissions(&updateUserPermsCmd)
 
-				So(updatePermsError, ShouldEqual, models.ErrLastGrafanaAdmin)
+				So(updatePermsError, ShouldEqual, models.ErrLastGrafinsightAdmin)
 
 				query := models.GetUserByIdQuery{Id: createUserCmd.Result.Id}
 				getUserError := GetUserById(&query)

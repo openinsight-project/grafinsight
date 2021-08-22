@@ -22,7 +22,7 @@ import (
 )
 
 // Soon we can fetch keys from:
-//  https://grafana.com/api/plugins/ci/keys
+//  https://grafinsight.com/api/plugins/ci/keys
 const publicKeyText = `-----BEGIN PGP PUBLIC KEY BLOCK-----
 Version: OpenPGP.js v4.10.1
 Comment: https://openpgpjs.org

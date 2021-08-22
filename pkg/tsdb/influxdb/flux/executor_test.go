@@ -251,7 +251,7 @@ func TestMaxDataPointsExceededNoAggregate(t *testing.T) {
 	dr := executeMockedQuery(t, "max_data_points_exceeded", queryModel{MaxDataPoints: 2})
 
 	// it should contain the error-message
-	require.EqualError(t, dr.Error, "A query returned too many datapoints and the results have been truncated at 21 points to prevent memory issues. At the current graph size, Grafana can only draw 2. Try using the aggregateWindow() function in your query to reduce the number of points returned.")
+	require.EqualError(t, dr.Error, "A query returned too many datapoints and the results have been truncated at 21 points to prevent memory issues. At the current graph size, Grafinsight can only draw 2. Try using the aggregateWindow() function in your query to reduce the number of points returned.")
 	assertDataResponseDimensions(t, dr, 2, 21)
 }
 
@@ -262,6 +262,6 @@ func TestMaxDataPointsExceededWithAggregate(t *testing.T) {
 	dr := executeMockedQuery(t, "max_data_points_exceeded", queryModel{RawQuery: "aggregateWindow()", MaxDataPoints: 2})
 
 	// it should contain the error-message
-	require.EqualError(t, dr.Error, "A query returned too many datapoints and the results have been truncated at 21 points to prevent memory issues. At the current graph size, Grafana can only draw 2.")
+	require.EqualError(t, dr.Error, "A query returned too many datapoints and the results have been truncated at 21 points to prevent memory issues. At the current graph size, Grafinsight can only draw 2.")
 	assertDataResponseDimensions(t, dr, 2, 21)
 }

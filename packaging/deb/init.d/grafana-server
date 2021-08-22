@@ -20,7 +20,7 @@
 #  3. Centos with initscripts package installed
 
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
-NAME=grafana-server
+NAME=grafinsight-server
 DESC="Grafana Server"
 DEFAULT=/etc/default/$NAME
 

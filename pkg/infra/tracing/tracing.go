@@ -66,7 +66,7 @@ func (ts *TracingService) parseSettings() {
 
 func (ts *TracingService) initJaegerCfg() (jaegercfg.Configuration, error) {
 	cfg := jaegercfg.Configuration{
-		ServiceName: "grafana",
+		ServiceName: "grafinsight",
 		Disabled:    !ts.enabled,
 		Sampler: &jaegercfg.SamplerConfig{
 			Type:              ts.samplerType,

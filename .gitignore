@@ -69,9 +69,9 @@ profile.cov
 /local
 .notouch
 /Makefile.local
-/pkg/cmd/grafana-cli/grafana-cli
-/pkg/cmd/grafana-server/grafana-server
-/pkg/cmd/grafana-server/debug
+/pkg/cmd/grafinsight-cli/grafinsight-cli
+/pkg/cmd/grafinsight-server/grafinsight-server
+/pkg/cmd/grafinsight-server/debug
 /pkg/extensions/*
 !/pkg/extensions/main.go
 /public/app/extensions

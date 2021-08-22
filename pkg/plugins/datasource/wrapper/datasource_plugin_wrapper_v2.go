@@ -118,7 +118,7 @@ func (tw *DatasourcePluginWrapperV2) Query(ctx context.Context, ds *models.DataS
 	return tR, nil
 }
 
-// BackendUserFromSignedInUser converts Grafana's SignedInUser model
+// BackendUserFromSignedInUser converts Grafinsight's SignedInUser model
 // to the backend plugin's model.
 func BackendUserFromSignedInUser(su *models.SignedInUser) *backend.User {
 	if su == nil {

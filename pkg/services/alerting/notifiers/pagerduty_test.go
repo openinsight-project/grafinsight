@@ -149,7 +149,7 @@ func TestPagerdutyNotifier(t *testing.T) {
 				So(err, ShouldBeNil)
 
 				diff := cmp.Diff(map[string]interface{}{
-					"client":       "Grafana",
+					"client":       "Grafinsight",
 					"client_url":   "",
 					"dedup_key":    "alertId-0",
 					"event_action": "trigger",
@@ -159,7 +159,7 @@ func TestPagerdutyNotifier(t *testing.T) {
 						},
 					},
 					"payload": map[string]interface{}{
-						"component": "Grafana",
+						"component": "Grafinsight",
 						"source":    "<<PRESENCE>>",
 						"custom_details": map[string]interface{}{
 							"state": "alerting",
@@ -216,7 +216,7 @@ func TestPagerdutyNotifier(t *testing.T) {
 				So(err, ShouldBeNil)
 
 				diff := cmp.Diff(map[string]interface{}{
-					"client":       "Grafana",
+					"client":       "Grafinsight",
 					"client_url":   "",
 					"dedup_key":    "alertId-0",
 					"event_action": "trigger",
@@ -226,7 +226,7 @@ func TestPagerdutyNotifier(t *testing.T) {
 						},
 					},
 					"payload": map[string]interface{}{
-						"component": "Grafana",
+						"component": "Grafinsight",
 						"source":    "<<PRESENCE>>",
 						"custom_details": map[string]interface{}{
 							"message": "someMessage",
@@ -287,7 +287,7 @@ func TestPagerdutyNotifier(t *testing.T) {
 				So(err, ShouldBeNil)
 
 				diff := cmp.Diff(map[string]interface{}{
-					"client":       "Grafana",
+					"client":       "Grafinsight",
 					"client_url":   "",
 					"dedup_key":    "key-" + strings.Repeat("x", 250),
 					"event_action": "trigger",
@@ -366,7 +366,7 @@ func TestPagerdutyNotifier(t *testing.T) {
 				So(err, ShouldBeNil)
 
 				diff := cmp.Diff(map[string]interface{}{
-					"client":       "Grafana",
+					"client":       "Grafinsight",
 					"client_url":   "",
 					"dedup_key":    "alertId-0",
 					"event_action": "trigger",
@@ -445,7 +445,7 @@ func TestPagerdutyNotifier(t *testing.T) {
 				So(err, ShouldBeNil)
 
 				diff := cmp.Diff(map[string]interface{}{
-					"client":       "Grafana",
+					"client":       "Grafinsight",
 					"client_url":   "",
 					"dedup_key":    "alertId-0",
 					"event_action": "trigger",

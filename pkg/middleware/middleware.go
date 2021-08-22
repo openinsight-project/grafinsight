@@ -11,9 +11,9 @@ import (
 )
 
 var (
-	ReqGrafanaAdmin = Auth(&AuthOptions{
-		ReqSignedIn:     true,
-		ReqGrafanaAdmin: true,
+	ReqGrafinsightAdmin = Auth(&AuthOptions{
+		ReqSignedIn:         true,
+		reqGrafinsightAdmin: true,
 	})
 	ReqSignedIn            = Auth(&AuthOptions{ReqSignedIn: true})
 	ReqSignedInNoAnonymous = Auth(&AuthOptions{ReqSignedIn: true, ReqNoAnonynmous: true})
@@ -22,7 +22,7 @@ var (
 )
 
 func HandleNoCacheHeader(ctx *models.ReqContext) {
-	ctx.SkipCache = ctx.Req.Header.Get("X-Grafana-NoCache") == "true"
+	ctx.SkipCache = ctx.Req.Header.Get("X-Grafinsight-NoCache") == "true"
 }
 
 func AddDefaultResponseHeaders(cfg *setting.Cfg) macaron.Handler {

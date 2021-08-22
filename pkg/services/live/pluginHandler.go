@@ -6,7 +6,7 @@ import (
 	"github.com/openinsight-project/grafinsight/pkg/plugins"
 )
 
-// PluginHandler manages all the `grafana/dashboard/*` channels
+// PluginHandler manages all the `grafinsight/dashboard/*` channels
 type PluginHandler struct {
 	Plugin *plugins.PluginBase
 }

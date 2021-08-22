@@ -1,31 +1,31 @@
-name: "grafana"
+name: "grafinsight"
 arch: "${ARCH}"
 platform: "linux"
 version: "${VERSION}"
 section: "default"
 priority: "extra"
 replaces:
-- grafana
+- grafinsight
 provides:
-- grafana-server
-- grafana-cli
+- grafinsight-server
+- grafinsight-cli
 depends:
 - adduser
 - libfontconfig1
-maintainer: "<contact@grafana.com>"
+maintainer: "grafinsight"
 description: |
-  Grafana
-vendor: "Grafana"
-homepage: "https://grafana.com"
+  GrafInsight
+vendor: "GrafInsight"
+homepage: "https://github.com/openinsight-project/grafinsight"
 license: "Apache 2"
 bindir: "/usr/sbin"
 files:
-  "./bin/grafana-server": "/usr/sbin/grafana-server"
-  "./bin/grafana-cli": "/usr/sbin/grafana-cli"
+  "./bin/grafinsight-server": "/usr/sbin/grafinsight-server"
+  "./bin/grafinsight-cli": "/usr/sbin/grafinsight-cli"
 config_files:
-  ./packaging/deb/init.d/grafana-server: "/etc/init.d/grafana-server"
-  ./packaging/deb/default/grafana-server: "/etc/default/grafana-server"
-  ./packaging/deb/systemd/grafana-server.service: "/usr/lib/systemd/system/grafana-server.service"
+  ./packaging/deb/init.d/grafinsight-server: "/etc/init.d/grafinsight-server"
+  ./packaging/deb/default/grafinsight-server: "/etc/default/grafinsight-server"
+  ./packaging/deb/systemd/grafinsight-server.service: "/usr/lib/systemd/system/grafinsight-server.service"
 overrides:
   rpm:
     scripts:

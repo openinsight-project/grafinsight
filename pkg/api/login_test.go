@@ -20,7 +20,6 @@ import (
 	"github.com/openinsight-project/grafinsight/pkg/models"
 	"github.com/openinsight-project/grafinsight/pkg/services/auth"
 	"github.com/openinsight-project/grafinsight/pkg/services/hooks"
-	"github.com/openinsight-project/grafinsight/pkg/services/licensing"
 	"github.com/openinsight-project/grafinsight/pkg/setting"
 	"github.com/openinsight-project/grafinsight/pkg/util"
 	"github.com/stretchr/testify/assert"
@@ -94,15 +93,14 @@ func TestLoginErrorCookieAPIEndpoint(t *testing.T) {
 	sc := setupScenarioContext(t, "/login")
 	cfg := setting.NewCfg()
 	hs := &HTTPServer{
-		Cfg:     cfg,
-		License: &licensing.OSSLicensingService{},
+		Cfg: cfg,
 	}
 
 	sc.defaultHandler = routing.Wrap(func(w http.ResponseWriter, c *models.ReqContext) {
 		hs.LoginView(c)
 	})
 
-	cfg.LoginCookieName = "grafana_session"
+	cfg.LoginCookieName = "grafinsight_session"
 	setting.SecretKey = "login_testing"
 
 	origOAuthService := setting.OAuthService
@@ -155,8 +153,7 @@ func TestLoginViewRedirect(t *testing.T) {
 	fakeViewIndex(t)
 	sc := setupScenarioContext(t, "/login")
 	hs := &HTTPServer{
-		Cfg:     setting.NewCfg(),
-		License: &licensing.OSSLicensingService{},
+		Cfg: setting.NewCfg(),
 	}
 	hs.Cfg.CookieSecure = true
 
@@ -173,45 +170,45 @@ func TestLoginViewRedirect(t *testing.T) {
 
 	redirectCases := []redirectCase{
 		{
-			desc:        "grafana relative url without subpath",
+			desc:        "grafinsight relative url without subpath",
 			url:         "/profile",
 			redirectURL: "/profile",
 			appURL:      "http://localhost:3000/",
 			status:      302,
 		},
 		{
-			desc:        "grafana invalid relative url starting with the subpath",
-			url:         "/grafanablah",
-			redirectURL: "/grafana/",
+			desc:        "grafinsight invalid relative url starting with the subpath",
+			url:         "/grafinsightblah",
+			redirectURL: "/grafinsight/",
 			appURL:      "http://localhost:3000/",
-			appSubURL:   "/grafana",
+			appSubURL:   "/grafinsight",
 			status:      302,
 		},
 		{
-			desc:        "grafana relative url with subpath with leading slash",
-			url:         "/grafana/profile",
-			redirectURL: "/grafana/profile",
+			desc:        "grafinsight relative url with subpath with leading slash",
+			url:         "/grafinsight/profile",
+			redirectURL: "/grafinsight/profile",
 			appURL:      "http://localhost:3000",
-			appSubURL:   "/grafana",
+			appSubURL:   "/grafinsight",
 			status:      302,
 		},
 		{
 			desc:        "relative url with missing subpath",
 			url:         "/profile",
-			redirectURL: "/grafana/",
+			redirectURL: "/grafinsight/",
 			appURL:      "http://localhost:3000/",
-			appSubURL:   "/grafana",
+			appSubURL:   "/grafinsight",
 			status:      302,
 		},
 		{
-			desc:        "grafana absolute url",
+			desc:        "grafinsight absolute url",
 			url:         "http://localhost:3000/profile",
 			redirectURL: "/",
 			appURL:      "http://localhost:3000/",
 			status:      302,
 		},
 		{
-			desc:        "non grafana absolute url",
+			desc:        "non grafinsight absolute url",
 			url:         "http://example.com",
 			redirectURL: "/",
 			appURL:      "http://localhost:3000/",
@@ -225,14 +222,14 @@ func TestLoginViewRedirect(t *testing.T) {
 			status:      302,
 		},
 		{
-			desc:        "non-Grafana URL without scheme",
+			desc:        "non-Grafinsight URL without scheme",
 			url:         "example.com",
 			redirectURL: "/",
 			appURL:      "http://localhost:3000/",
 			status:      302,
 		},
 		{
-			desc:        "non-Grafana URL without scheme",
+			desc:        "non-Grafinsight URL without scheme",
 			url:         "www.example.com",
 			redirectURL: "/",
 			appURL:      "http://localhost:3000/",
@@ -332,7 +329,6 @@ func TestLoginPostRedirect(t *testing.T) {
 		log:              &FakeLogger{},
 		Cfg:              setting.NewCfg(),
 		HooksService:     &hooks.HooksService{},
-		License:          &licensing.OSSLicensingService{},
 		AuthTokenService: auth.NewFakeUserAuthTokenService(),
 	}
 	hs.Cfg.CookieSecure = true
@@ -345,7 +341,7 @@ func TestLoginPostRedirect(t *testing.T) {
 		return hs.LoginPost(c, cmd)
 	})
 
-	bus.AddHandler("grafana-auth", func(query *models.LoginUserQuery) error {
+	bus.AddHandler("grafinsight-auth", func(query *models.LoginUserQuery) error {
 		query.User = &models.User{
 			Id:    42,
 			Email: "",
@@ -355,38 +351,38 @@ func TestLoginPostRedirect(t *testing.T) {
 
 	redirectCases := []redirectCase{
 		{
-			desc:   "grafana relative url without subpath",
+			desc:   "grafinsight relative url without subpath",
 			url:    "/profile",
 			appURL: "https://localhost:3000/",
 		},
 		{
-			desc:      "grafana relative url with subpath with leading slash",
-			url:       "/grafana/profile",
+			desc:      "grafinsight relative url with subpath with leading slash",
+			url:       "/grafinsight/profile",
 			appURL:    "https://localhost:3000/",
-			appSubURL: "/grafana",
+			appSubURL: "/grafinsight",
 		},
 		{
-			desc:      "grafana invalid relative url starting with subpath",
-			url:       "/grafanablah",
+			desc:      "grafinsight invalid relative url starting with subpath",
+			url:       "/grafinsightblah",
 			appURL:    "https://localhost:3000/",
-			appSubURL: "/grafana",
+			appSubURL: "/grafinsight",
 			err:       login.ErrInvalidRedirectTo,
 		},
 		{
 			desc:      "relative url with missing subpath",
 			url:       "/profile",
 			appURL:    "https://localhost:3000/",
-			appSubURL: "/grafana",
+			appSubURL: "/grafinsight",
 			err:       login.ErrInvalidRedirectTo,
 		},
 		{
-			desc:   "grafana absolute url",
+			desc:   "grafinsight absolute url",
 			url:    "http://localhost:3000/profile",
 			appURL: "http://localhost:3000/",
 			err:    login.ErrAbsoluteRedirectTo,
 		},
 		{
-			desc:   "non grafana absolute url",
+			desc:   "non grafinsight absolute url",
 			url:    "http://example.com",
 			appURL: "https://localhost:3000/",
 			err:    login.ErrAbsoluteRedirectTo,
@@ -398,13 +394,13 @@ func TestLoginPostRedirect(t *testing.T) {
 			err:    login.ErrInvalidRedirectTo,
 		},
 		{
-			desc:   "non-Grafana URL without scheme",
+			desc:   "non-Grafinsight URL without scheme",
 			url:    "example.com",
 			appURL: "http://localhost:3000/",
 			err:    login.ErrForbiddenRedirectTo,
 		},
 		{
-			desc:   "non-Grafana URL without scheme",
+			desc:   "non-Grafinsight URL without scheme",
 			url:    "www.example.com",
 			appURL: "http://localhost:3000/",
 			err:    login.ErrForbiddenRedirectTo,
@@ -486,8 +482,7 @@ func TestLoginOAuthRedirect(t *testing.T) {
 
 	sc := setupScenarioContext(t, "/login")
 	hs := &HTTPServer{
-		Cfg:     setting.NewCfg(),
-		License: &licensing.OSSLicensingService{},
+		Cfg: setting.NewCfg(),
 	}
 
 	sc.defaultHandler = routing.Wrap(func(c *models.ReqContext) {
@@ -519,9 +514,8 @@ func TestLoginInternal(t *testing.T) {
 	fakeViewIndex(t)
 	sc := setupScenarioContext(t, "/login")
 	hs := &HTTPServer{
-		Cfg:     setting.NewCfg(),
-		License: &licensing.OSSLicensingService{},
-		log:     log.New("test"),
+		Cfg: setting.NewCfg(),
+		log: log.New("test"),
 	}
 
 	sc.defaultHandler = routing.Wrap(func(c *models.ReqContext) {
@@ -567,17 +561,16 @@ func TestAuthProxyLoginWithEnableLoginToken(t *testing.T) {
 	assert.Equal(t, "/", location[0])
 	setCookie := sc.resp.Header()["Set-Cookie"]
 	require.NotNil(t, setCookie, "Set-Cookie should exist")
-	assert.Equal(t, "grafana_session=; Path=/; Max-Age=0; HttpOnly", setCookie[0])
+	assert.Equal(t, "grafinsight_session=; Path=/; Max-Age=0; HttpOnly", setCookie[0])
 }
 
 func setupAuthProxyLoginTest(t *testing.T, enableLoginToken bool) *scenarioContext {
 	fakeSetIndexViewData(t)
 
 	sc := setupScenarioContext(t, "/login")
-	sc.cfg.LoginCookieName = "grafana_session"
+	sc.cfg.LoginCookieName = "grafinsight_session"
 	hs := &HTTPServer{
 		Cfg:              sc.cfg,
-		License:          &licensing.OSSLicensingService{},
 		AuthTokenService: auth.NewFakeUserAuthTokenService(),
 		log:              log.New("hello"),
 	}
@@ -615,7 +608,6 @@ func TestLoginPostRunLokingHook(t *testing.T) {
 	hs := &HTTPServer{
 		log:              log.New("test"),
 		Cfg:              setting.NewCfg(),
-		License:          &licensing.OSSLicensingService{},
 		AuthTokenService: auth.NewFakeUserAuthTokenService(),
 		HooksService:     hookService,
 	}
@@ -662,11 +654,11 @@ func TestLoginPostRunLokingHook(t *testing.T) {
 			},
 		},
 		{
-			desc:       "valid Grafana user",
+			desc:       "valid Grafinsight user",
 			authUser:   testUser,
-			authModule: "grafana",
+			authModule: "grafinsight",
 			info: models.LoginInfo{
-				AuthModule: "grafana",
+				AuthModule: "grafinsight",
 				User:       testUser,
 				HTTPStatus: 200,
 			},
@@ -685,7 +677,7 @@ func TestLoginPostRunLokingHook(t *testing.T) {
 
 	for _, c := range testCases {
 		t.Run(c.desc, func(t *testing.T) {
-			bus.AddHandler("grafana-auth", func(query *models.LoginUserQuery) error {
+			bus.AddHandler("grafinsight-auth", func(query *models.LoginUserQuery) error {
 				query.User = c.authUser
 				query.AuthModule = c.authModule
 				return c.authErr

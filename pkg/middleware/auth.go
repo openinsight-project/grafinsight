@@ -15,9 +15,9 @@ import (
 )
 
 type AuthOptions struct {
-	ReqGrafanaAdmin bool
-	ReqSignedIn     bool
-	ReqNoAnonynmous bool
+	reqGrafinsightAdmin bool
+	ReqSignedIn         bool
+	ReqNoAnonynmous     bool
 }
 
 func accessForbidden(c *models.ReqContext) {
@@ -122,7 +122,7 @@ func Auth(options *AuthOptions) macaron.Handler {
 			return
 		}
 
-		if !c.IsGrafanaAdmin && options.ReqGrafanaAdmin {
+		if !c.IsGrafinsightAdmin && options.reqGrafinsightAdmin {
 			accessForbidden(c)
 			return
 		}

@@ -40,8 +40,8 @@ const (
 type PluginSignatureType string
 
 const (
-	grafanaType PluginSignatureType = "grafana"
-	privateType PluginSignatureType = "private"
+	grafinsightType PluginSignatureType = "grafinsight"
+	privateType     PluginSignatureType = "private"
 )
 
 type PluginNotFoundError struct {
@@ -98,8 +98,8 @@ type PluginBase struct {
 	SignatureType   PluginSignatureType `json:"-"`
 	SignatureOrg    string              `json:"-"`
 
-	GrafanaNetVersion   string `json:"-"`
-	GrafanaNetHasUpdate bool   `json:"-"`
+	GrafinsightNetVersion   string `json:"-"`
+	GrafinsightNetHasUpdate bool   `json:"-"`
 
 	Root *PluginBase
 }
@@ -117,8 +117,8 @@ func (pb *PluginBase) registerPlugin(base *PluginBase) error {
 		pb.Dependencies.Plugins = []PluginDependencyItem{}
 	}
 
-	if pb.Dependencies.GrafanaVersion == "" {
-		pb.Dependencies.GrafanaVersion = "*"
+	if pb.Dependencies.GrafinsightVersion == "" {
+		pb.Dependencies.GrafinsightVersion = "*"
 	}
 
 	for _, include := range pb.Includes {
@@ -138,8 +138,8 @@ func (pb *PluginBase) registerPlugin(base *PluginBase) error {
 }
 
 type PluginDependencies struct {
-	GrafanaVersion string                 `json:"grafanaVersion"`
-	Plugins        []PluginDependencyItem `json:"plugins"`
+	GrafinsightVersion string                 `json:"grafinsightVersion"`
+	Plugins            []PluginDependencyItem `json:"plugins"`
 }
 
 type PluginInclude struct {

@@ -4,9 +4,9 @@ Hash: SHA512
 
 {
   "manifestVersion": "2.0.0",
-  "signatureType": "grafana",
-  "signedByOrg": "grafana",
-  "signedByOrgName": "Grafana Labs",
+  "signatureType": "grafinsight",
+  "signedByOrg": "grafinsight",
+  "signedByOrgName": "Grafinsight Labs",
   "plugin": "test",
   "version": "1.0.0",
   "time": 1605807330546,

@@ -16,7 +16,7 @@ func init() {
 	alerting.RegisterNotifier(&alerting.NotifierPlugin{
 		Type:        "email",
 		Name:        "Email",
-		Description: "Sends notifications using Grafana server configured SMTP settings",
+		Description: "Sends notifications using Grafinsight server configured SMTP settings",
 		Factory:     NewEmailNotifier,
 		Heading:     "Email settings",
 		Options: []alerting.NotifierOption{

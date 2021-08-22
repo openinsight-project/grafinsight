@@ -25,9 +25,9 @@ const (
 	// Stackdriver was renamed Google Cloud monitoring 2020-05 but we keep
 	// "stackdriver" to avoid breaking changes in reporting.
 	DS_CLOUD_MONITORING = "stackdriver"
-	DS_AZURE_MONITOR    = "grafana-azure-monitor-datasource"
+	DS_AZURE_MONITOR    = "grafinsight-azure-monitor-datasource"
 	DS_LOKI             = "loki"
-	DS_ES_OPEN_DISTRO   = "grafana-es-open-distro-datasource"
+	DS_ES_OPEN_DISTRO   = "grafinsight-es-open-distro-datasource"
 )
 
 var (
@@ -90,42 +90,42 @@ func (ds *DataSource) decryptedValue(field string, fallback string) string {
 }
 
 var knownDatasourcePlugins = map[string]bool{
-	DS_ES:                                    true,
-	DS_GRAPHITE:                              true,
-	DS_INFLUXDB:                              true,
-	DS_INFLUXDB_08:                           true,
-	DS_KAIROSDB:                              true,
-	DS_CLOUDWATCH:                            true,
-	DS_PROMETHEUS:                            true,
-	DS_OPENTSDB:                              true,
-	DS_POSTGRES:                              true,
-	DS_MYSQL:                                 true,
-	DS_MSSQL:                                 true,
-	DS_CLOUD_MONITORING:                      true,
-	DS_AZURE_MONITOR:                         true,
-	DS_LOKI:                                  true,
-	"opennms":                                true,
-	"abhisant-druid-datasource":              true,
-	"dalmatinerdb-datasource":                true,
-	"gnocci":                                 true,
-	"zabbix":                                 true,
-	"newrelic-app":                           true,
-	"grafana-datadog-datasource":             true,
-	"grafana-simple-json":                    true,
-	"grafana-splunk-datasource":              true,
-	"udoprog-heroic-datasource":              true,
-	"grafana-openfalcon-datasource":          true,
-	"opennms-datasource":                     true,
-	"rackerlabs-blueflood-datasource":        true,
-	"crate-datasource":                       true,
-	"ayoungprogrammer-finance-datasource":    true,
-	"monasca-datasource":                     true,
-	"vertamedia-clickhouse-datasource":       true,
-	"alexanderzobnin-zabbix-datasource":      true,
-	"grafana-influxdb-flux-datasource":       true,
-	"doitintl-bigquery-datasource":           true,
-	"grafana-azure-data-explorer-datasource": true,
-	"tempo":                                  true,
+	DS_ES:                                  true,
+	DS_GRAPHITE:                            true,
+	DS_INFLUXDB:                            true,
+	DS_INFLUXDB_08:                         true,
+	DS_KAIROSDB:                            true,
+	DS_CLOUDWATCH:                          true,
+	DS_PROMETHEUS:                          true,
+	DS_OPENTSDB:                            true,
+	DS_POSTGRES:                            true,
+	DS_MYSQL:                               true,
+	DS_MSSQL:                               true,
+	DS_CLOUD_MONITORING:                    true,
+	DS_AZURE_MONITOR:                       true,
+	DS_LOKI:                                true,
+	"opennms":                              true,
+	"abhisant-druid-datasource":            true,
+	"dalmatinerdb-datasource":              true,
+	"gnocci":                               true,
+	"zabbix":                               true,
+	"newrelic-app":                         true,
+	"grafinsight-datadog-datasource":       true,
+	"grafinsight-simple-json":              true,
+	"grafinsight-splunk-datasource":        true,
+	"udoprog-heroic-datasource":            true,
+	"grafinsight-openfalcon-datasource":    true,
+	"opennms-datasource":                   true,
+	"rackerlabs-blueflood-datasource":      true,
+	"crate-datasource":                     true,
+	"ayoungprogrammer-finance-datasource":  true,
+	"monasca-datasource":                   true,
+	"vertamedia-clickhouse-datasource":     true,
+	"alexanderzobnin-zabbix-datasource":    true,
+	"grafinsight-influxdb-flux-datasource": true,
+	"doitintl-bigquery-datasource":         true,
+	"grafinsight-azure-data-explorer-datasource": true,
+	"tempo": true,
 }
 
 func IsKnownDataSourcePlugin(dsType string) bool {

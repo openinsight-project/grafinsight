@@ -105,9 +105,9 @@ func (ls *LoginService) UpsertUser(cmd *models.UpsertUserCommand) error {
 		return err
 	}
 
-	// Sync isGrafanaAdmin permission
-	if extUser.IsGrafanaAdmin != nil && *extUser.IsGrafanaAdmin != cmd.Result.IsAdmin {
-		if err := ls.Bus.Dispatch(&models.UpdateUserPermissionsCommand{UserId: cmd.Result.Id, IsGrafanaAdmin: *extUser.IsGrafanaAdmin}); err != nil {
+	// Sync isGrafinsightAdmin permission
+	if extUser.IsGrafinsightAdmin != nil && *extUser.IsGrafinsightAdmin != cmd.Result.IsAdmin {
+		if err := ls.Bus.Dispatch(&models.UpdateUserPermissionsCommand{UserId: cmd.Result.Id, IsGrafinsightAdmin: *extUser.IsGrafinsightAdmin}); err != nil {
 			return err
 		}
 	}

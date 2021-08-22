@@ -73,13 +73,12 @@ type HTTPServer struct {
 	RemoteCacheService     *remotecache.RemoteCache           `inject:""`
 	ProvisioningService    provisioning.ProvisioningService   `inject:""`
 	Login                  *login.LoginService                `inject:""`
-	License                models.Licensing                   `inject:""`
 	BackendPluginManager   backendplugin.Manager              `inject:""`
 	PluginRequestValidator models.PluginRequestValidator      `inject:""`
 	PluginManager          *plugins.PluginManager             `inject:""`
 	SearchService          *search.SearchService              `inject:""`
 	ShortURLService        *shorturls.ShortURLService         `inject:""`
-	Live                   *live.GrafanaLive                  `inject:""`
+	Live                   *live.GrafinsightLive              `inject:""`
 	ContextHandler         *contexthandler.ContextHandler     `inject:""`
 	SQLStore               *sqlstore.SQLStore                 `inject:""`
 	LibraryPanelService    *librarypanels.LibraryPanelService `inject:""`
@@ -339,7 +338,7 @@ func (hs *HTTPServer) addMiddlewaresAndStaticRoutes() {
 		Delims:     macaron.Delims{Left: "[[", Right: "]]"},
 	}))
 
-	// These endpoints are used for monitoring the Grafana instance
+	// These endpoints are used for monitoring the Grafinsight instance
 	// and should not be redirected or rejected.
 	m.Use(hs.healthzHandler)
 	m.Use(hs.apiHealthHandler)
@@ -380,7 +379,7 @@ func (hs *HTTPServer) metricsEndpoint(ctx *macaron.Context) {
 		ServeHTTP(ctx.Resp, ctx.Req.Request)
 }
 
-// healthzHandler always return 200 - Ok if Grafana's web server is running
+// healthzHandler always return 200 - Ok if Grafinsight's web server is running
 func (hs *HTTPServer) healthzHandler(ctx *macaron.Context) {
 	notHeadOrGet := ctx.Req.Method != http.MethodGet && ctx.Req.Method != http.MethodHead
 	if notHeadOrGet || ctx.Req.URL.Path != "/healthz" {
@@ -394,7 +393,7 @@ func (hs *HTTPServer) healthzHandler(ctx *macaron.Context) {
 	}
 }
 
-// apiHealthHandler will return ok if Grafana's web server is running and it
+// apiHealthHandler will return ok if Grafinsight's web server is running and it
 // can access the database. If the database cannot be accessed it will return
 // http status code 503.
 func (hs *HTTPServer) apiHealthHandler(ctx *macaron.Context) {

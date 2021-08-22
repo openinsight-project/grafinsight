@@ -7,7 +7,6 @@ import (
 
 	"github.com/openinsight-project/grafinsight/pkg/bus"
 	"github.com/openinsight-project/grafinsight/pkg/models"
-	"github.com/openinsight-project/grafinsight/pkg/services/licensing"
 	"github.com/openinsight-project/grafinsight/pkg/setting"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -16,9 +15,9 @@ import (
 func setUpGetTeamMembersHandler() {
 	bus.AddHandler("test", func(query *models.GetTeamMembersQuery) error {
 		query.Result = []*models.TeamMemberDTO{
-			{Email: "testUser@grafana.com", Login: testUserLogin},
-			{Email: "user1@grafana.com", Login: "user1"},
-			{Email: "user2@grafana.com", Login: "user2"},
+			{Email: "testUser@grafinsight.com", Login: testUserLogin},
+			{Email: "user1@grafinsight.com", Login: "user1"},
+			{Email: "user2@grafinsight.com", Login: "user2"},
 		}
 		return nil
 	})
@@ -27,8 +26,7 @@ func setUpGetTeamMembersHandler() {
 func TestTeamMembersAPIEndpoint_userLoggedIn(t *testing.T) {
 	settings := setting.NewCfg()
 	hs := &HTTPServer{
-		Cfg:     settings,
-		License: &licensing.OSSLicensingService{},
+		Cfg: settings,
 	}
 
 	loggedInUserScenarioWithRole(t, "When calling GET on", "GET", "api/teams/1/members",

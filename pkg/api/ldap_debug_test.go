@@ -95,12 +95,12 @@ func TestGetUserFromLDAPAPIEndpoint_UserNotFound(t *testing.T) {
 func TestGetUserFromLDAPAPIEndpoint_OrgNotfound(t *testing.T) {
 	isAdmin := true
 	userSearchResult = &models.ExternalUserInfo{
-		Name:           "John Doe",
-		Email:          "john.doe@example.com",
-		Login:          "johndoe",
-		Groups:         []string{"cn=admins,ou=groups,dc=grafana,dc=org"},
-		OrgRoles:       map[int64]models.RoleType{1: models.ROLE_ADMIN, 2: models.ROLE_VIEWER},
-		IsGrafanaAdmin: &isAdmin,
+		Name:               "John Doe",
+		Email:              "john.doe@example.com",
+		Login:              "johndoe",
+		Groups:             []string{"cn=admins,ou=groups,dc=grafinsight,dc=org"},
+		OrgRoles:           map[int64]models.RoleType{1: models.ROLE_ADMIN, 2: models.ROLE_VIEWER},
+		IsGrafinsightAdmin: &isAdmin,
 	}
 
 	userSearchConfig = ldap.ServerConfig{
@@ -112,12 +112,12 @@ func TestGetUserFromLDAPAPIEndpoint_OrgNotfound(t *testing.T) {
 		},
 		Groups: []*ldap.GroupToOrgRole{
 			{
-				GroupDN: "cn=admins,ou=groups,dc=grafana,dc=org",
+				GroupDN: "cn=admins,ou=groups,dc=grafinsight,dc=org",
 				OrgId:   1,
 				OrgRole: models.ROLE_ADMIN,
 			},
 			{
-				GroupDN: "cn=admins,ou=groups,dc=grafana,dc=org",
+				GroupDN: "cn=admins,ou=groups,dc=grafinsight,dc=org",
 				OrgId:   2,
 				OrgRole: models.ROLE_VIEWER,
 			},
@@ -157,12 +157,12 @@ func TestGetUserFromLDAPAPIEndpoint_OrgNotfound(t *testing.T) {
 func TestGetUserFromLDAPAPIEndpoint(t *testing.T) {
 	isAdmin := true
 	userSearchResult = &models.ExternalUserInfo{
-		Name:           "John Doe",
-		Email:          "john.doe@example.com",
-		Login:          "johndoe",
-		Groups:         []string{"cn=admins,ou=groups,dc=grafana,dc=org", "another-group-not-matched"},
-		OrgRoles:       map[int64]models.RoleType{1: models.ROLE_ADMIN},
-		IsGrafanaAdmin: &isAdmin,
+		Name:               "John Doe",
+		Email:              "john.doe@example.com",
+		Login:              "johndoe",
+		Groups:             []string{"cn=admins,ou=groups,dc=grafinsight,dc=org", "another-group-not-matched"},
+		OrgRoles:           map[int64]models.RoleType{1: models.ROLE_ADMIN},
+		IsGrafinsightAdmin: &isAdmin,
 	}
 
 	userSearchConfig = ldap.ServerConfig{
@@ -174,12 +174,12 @@ func TestGetUserFromLDAPAPIEndpoint(t *testing.T) {
 		},
 		Groups: []*ldap.GroupToOrgRole{
 			{
-				GroupDN: "cn=admins,ou=groups,dc=grafana,dc=org",
+				GroupDN: "cn=admins,ou=groups,dc=grafinsight,dc=org",
 				OrgId:   1,
 				OrgRole: models.ROLE_ADMIN,
 			},
 			{
-				GroupDN: "cn=admins2,ou=groups,dc=grafana,dc=org",
+				GroupDN: "cn=admins2,ou=groups,dc=grafinsight,dc=org",
 				OrgId:   1,
 				OrgRole: models.ROLE_ADMIN,
 			},
@@ -221,10 +221,10 @@ func TestGetUserFromLDAPAPIEndpoint(t *testing.T) {
 			"login": {
 				"cfgAttrValue": "ldap-username", "ldapValue": "johndoe"
 			},
-			"isGrafanaAdmin": true,
+			"isGrafinsightAdmin": true,
 			"isDisabled": false,
 			"roles": [
-				{ "orgId": 1, "orgRole": "Admin", "orgName": "Main Org.", "groupDN": "cn=admins,ou=groups,dc=grafana,dc=org" },
+				{ "orgId": 1, "orgRole": "Admin", "orgName": "Main Org.", "groupDN": "cn=admins,ou=groups,dc=grafinsight,dc=org" },
 				{ "orgId": 0, "orgRole": "", "orgName": "", "groupDN": "another-group-not-matched" }
 			],
 			"teams": null
@@ -237,12 +237,12 @@ func TestGetUserFromLDAPAPIEndpoint(t *testing.T) {
 func TestGetUserFromLDAPAPIEndpoint_WithTeamHandler(t *testing.T) {
 	isAdmin := true
 	userSearchResult = &models.ExternalUserInfo{
-		Name:           "John Doe",
-		Email:          "john.doe@example.com",
-		Login:          "johndoe",
-		Groups:         []string{"cn=admins,ou=groups,dc=grafana,dc=org"},
-		OrgRoles:       map[int64]models.RoleType{1: models.ROLE_ADMIN},
-		IsGrafanaAdmin: &isAdmin,
+		Name:               "John Doe",
+		Email:              "john.doe@example.com",
+		Login:              "johndoe",
+		Groups:             []string{"cn=admins,ou=groups,dc=grafinsight,dc=org"},
+		OrgRoles:           map[int64]models.RoleType{1: models.ROLE_ADMIN},
+		IsGrafinsightAdmin: &isAdmin,
 	}
 
 	userSearchConfig = ldap.ServerConfig{
@@ -254,7 +254,7 @@ func TestGetUserFromLDAPAPIEndpoint_WithTeamHandler(t *testing.T) {
 		},
 		Groups: []*ldap.GroupToOrgRole{
 			{
-				GroupDN: "cn=admins,ou=groups,dc=grafana,dc=org",
+				GroupDN: "cn=admins,ou=groups,dc=grafinsight,dc=org",
 				OrgId:   1,
 				OrgRole: models.ROLE_ADMIN,
 			},
@@ -301,10 +301,10 @@ func TestGetUserFromLDAPAPIEndpoint_WithTeamHandler(t *testing.T) {
 			"login": {
 				"cfgAttrValue": "ldap-username", "ldapValue": "johndoe"
 			},
-			"isGrafanaAdmin": true,
+			"isGrafinsightAdmin": true,
 			"isDisabled": false,
 			"roles": [
-				{ "orgId": 1, "orgRole": "Admin", "orgName": "Main Org.", "groupDN": "cn=admins,ou=groups,dc=grafana,dc=org" }
+				{ "orgId": 1, "orgRole": "Admin", "orgName": "Main Org.", "groupDN": "cn=admins,ou=groups,dc=grafinsight,dc=org" }
 			],
 			"teams": []
 		}
@@ -485,7 +485,7 @@ func TestPostSyncUserWithLDAPAPIEndpoint_WhenUserNotFound(t *testing.T) {
 	assert.JSONEq(t, expected, sc.resp.Body.String())
 }
 
-func TestPostSyncUserWithLDAPAPIEndpoint_WhenGrafanaAdmin(t *testing.T) {
+func TestPostSyncUserWithLDAPAPIEndpoint_WhenGrafinsightAdmin(t *testing.T) {
 	sc := postSyncUserWithLDAPContext(t, "/api/admin/ldap/sync/34", func(t *testing.T, sc *scenarioContext) {
 		getLDAPConfig = func(*setting.Cfg) (*ldap.Config, error) {
 			return &ldap.Config{}, nil
@@ -519,7 +519,7 @@ func TestPostSyncUserWithLDAPAPIEndpoint_WhenGrafanaAdmin(t *testing.T) {
 	expected := `
 	{
 		"error": "did not find a user",
-		"message": "Refusing to sync grafana super admin \"ldap-daniel\" - it would be disabled"
+		"message": "Refusing to sync grafinsight super admin \"ldap-daniel\" - it would be disabled"
 	}
 	`
 

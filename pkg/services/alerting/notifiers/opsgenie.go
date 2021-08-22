@@ -121,7 +121,7 @@ func (on *OpsGenieNotifier) createAlert(evalContext *alerting.EvalContext) error
 
 	bodyJSON := simplejson.New()
 	bodyJSON.Set("message", evalContext.Rule.Name)
-	bodyJSON.Set("source", "Grafana")
+	bodyJSON.Set("source", "Grafinsight")
 	bodyJSON.Set("alias", "alertId-"+strconv.FormatInt(evalContext.Rule.ID, 10))
 	bodyJSON.Set("description", fmt.Sprintf("%s - %s\n%s\n%s", evalContext.Rule.Name, ruleURL, evalContext.Rule.Message, customData))
 
@@ -174,7 +174,7 @@ func (on *OpsGenieNotifier) closeAlert(evalContext *alerting.EvalContext) error 
 	on.log.Info("Closing OpsGenie alert", "ruleId", evalContext.Rule.ID, "notification", on.Name)
 
 	bodyJSON := simplejson.New()
-	bodyJSON.Set("source", "Grafana")
+	bodyJSON.Set("source", "Grafinsight")
 	body, _ := bodyJSON.MarshalJSON()
 
 	cmd := &models.SendWebhookSync{
