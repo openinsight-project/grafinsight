@@ -27,7 +27,7 @@ func init() {
 
 func getFilteredUsers(signedInUser *models.SignedInUser, hiddenUsers map[string]struct{}) []string {
 	filteredUsers := make([]string, 0, len(hiddenUsers))
-	if signedInUser == nil || signedInUser.IsGrafanaAdmin {
+	if signedInUser == nil || signedInUser.IsGrafinsightAdmin {
 		return filteredUsers
 	}
 

@@ -171,12 +171,12 @@ func (gcn *GoogleChatNotifier) Notify(evalContext *alerting.EvalContext) error {
 		}
 	}
 
-	// add a button widget (link to Grafana)
+	// add a button widget (link to Grafinsight)
 	widgets = append(widgets, buttonWidget{
 		Buttons: []button{
 			{
 				TextButton: textButton{
-					Text: "OPEN IN GRAFANA",
+					Text: "OPEN IN Grafinsight",
 					OnClick: onClick{
 						OpenLink: openLink{
 							URL: ruleURL,
@@ -190,7 +190,7 @@ func (gcn *GoogleChatNotifier) Notify(evalContext *alerting.EvalContext) error {
 	// add text paragraph widget for the build version and timestamp
 	widgets = append(widgets, textParagraphWidget{
 		Text: text{
-			Text: "Grafana v" + setting.BuildVersion + " | " + (time.Now()).Format(time.RFC822),
+			Text: "Grafinsight v" + setting.BuildVersion + " | " + (time.Now()).Format(time.RFC822),
 		},
 	})
 

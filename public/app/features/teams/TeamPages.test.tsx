@@ -25,7 +25,7 @@ const setup = (propOverrides?: object) => {
     editorsCanAdmin: false,
     signedInUser: {
       id: 1,
-      isGrafanaAdmin: false,
+      isGrafinsightAdmin: false,
       orgRole: OrgRole.Viewer,
     } as User,
   };
@@ -92,7 +92,7 @@ describe('Render', () => {
         editorsCanAdmin: true,
         signedInUser: {
           id: 1,
-          isGrafanaAdmin: false,
+          isGrafinsightAdmin: false,
           orgRole: OrgRole.Admin,
         } as User,
       });
@@ -112,7 +112,7 @@ describe('Render', () => {
         editorsCanAdmin: true,
         signedInUser: {
           id: 1,
-          isGrafanaAdmin: false,
+          isGrafinsightAdmin: false,
           orgRole: OrgRole.Viewer,
         } as User,
       });

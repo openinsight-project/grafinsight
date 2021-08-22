@@ -84,7 +84,7 @@ func TestDataSourceProxy_routeRule(t *testing.T) {
 		ds := &models.DataSource{
 			JsonData: simplejson.NewFromAny(map[string]interface{}{
 				"clientId":   "asd",
-				"dynamicUrl": "https://dynamic.grafana.com",
+				"dynamicUrl": "https://dynamic.grafinsight.com",
 				"queryParam": "apiKey",
 			}),
 			SecureJsonData: map[string][]byte{
@@ -122,7 +122,7 @@ func TestDataSourceProxy_routeRule(t *testing.T) {
 			proxy.route = plugin.Routes[3]
 			ApplyRoute(proxy.ctx.Req.Context(), req, proxy.proxyPath, proxy.route, proxy.ds)
 
-			assert.Equal(t, "https://dynamic.grafana.com/some/method?apiKey=123", req.URL.String())
+			assert.Equal(t, "https://dynamic.grafinsight.com/some/method?apiKey=123", req.URL.String())
 			assert.Equal(t, "my secret 123", req.Header.Get("x-header"))
 		})
 
@@ -292,7 +292,7 @@ func TestDataSourceProxy_routeRule(t *testing.T) {
 
 		proxy, err := NewDataSourceProxy(ds, plugin, ctx, "/render", &setting.Cfg{})
 		require.NoError(t, err)
-		req, err := http.NewRequest(http.MethodGet, "http://grafana.com/sub", nil)
+		req, err := http.NewRequest(http.MethodGet, "http://grafinsight.com/sub", nil)
 		require.NoError(t, err)
 
 		proxy.director(req)
@@ -300,7 +300,7 @@ func TestDataSourceProxy_routeRule(t *testing.T) {
 		t.Run("Can translate request URL and path", func(t *testing.T) {
 			assert.Equal(t, "graphite:8080", req.URL.Host)
 			assert.Equal(t, "/render", req.URL.Path)
-			assert.Equal(t, "Grafana/5.3.0", req.Header.Get("User-Agent"))
+			assert.Equal(t, "Grafinsight/5.3.0", req.Header.Get("User-Agent"))
 		})
 	})
 
@@ -319,7 +319,7 @@ func TestDataSourceProxy_routeRule(t *testing.T) {
 		proxy, err := NewDataSourceProxy(ds, plugin, ctx, "", &setting.Cfg{})
 		require.NoError(t, err)
 
-		req, err := http.NewRequest(http.MethodGet, "http://grafana.com/sub", nil)
+		req, err := http.NewRequest(http.MethodGet, "http://grafinsight.com/sub", nil)
 		require.NoError(t, err)
 
 		proxy.director(req)
@@ -342,10 +342,10 @@ func TestDataSourceProxy_routeRule(t *testing.T) {
 		proxy, err := NewDataSourceProxy(ds, plugin, ctx, "", &setting.Cfg{})
 		require.NoError(t, err)
 
-		requestURL, err := url.Parse("http://grafana.com/sub")
+		requestURL, err := url.Parse("http://grafinsight.com/sub")
 		require.NoError(t, err)
 		req := http.Request{URL: requestURL, Header: make(http.Header)}
-		cookies := "grafana_user=admin; grafana_remember=99; grafana_sess=11; JSESSION_ID=test"
+		cookies := "grafinsight_user=admin; grafinsight_remember=99; grafinsight_sess=11; JSESSION_ID=test"
 		req.Header.Set("Cookie", cookies)
 
 		proxy.director(&req)
@@ -369,10 +369,10 @@ func TestDataSourceProxy_routeRule(t *testing.T) {
 		proxy, err := NewDataSourceProxy(ds, plugin, ctx, "", &setting.Cfg{})
 		require.NoError(t, err)
 
-		requestURL, err := url.Parse("http://grafana.com/sub")
+		requestURL, err := url.Parse("http://grafinsight.com/sub")
 		require.NoError(t, err)
 		req := http.Request{URL: requestURL, Header: make(http.Header)}
-		cookies := "grafana_user=admin; grafana_remember=99; grafana_sess=11; JSESSION_ID=test"
+		cookies := "grafinsight_user=admin; grafinsight_remember=99; grafinsight_sess=11; JSESSION_ID=test"
 		req.Header.Set("Cookie", cookies)
 
 		proxy.director(&req)
@@ -389,9 +389,9 @@ func TestDataSourceProxy_routeRule(t *testing.T) {
 		ctx := &models.ReqContext{}
 		proxy, err := NewDataSourceProxy(ds, plugin, ctx, "/path/to/folder/", &setting.Cfg{})
 		require.NoError(t, err)
-		req, err := http.NewRequest(http.MethodGet, "http://grafana.com/sub", nil)
-		req.Header.Set("Origin", "grafana.com")
-		req.Header.Set("Referer", "grafana.com")
+		req, err := http.NewRequest(http.MethodGet, "http://grafinsight.com/sub", nil)
+		req.Header.Set("Origin", "grafinsight.com")
+		req.Header.Set("Referer", "grafinsight.com")
 		req.Header.Set("X-Canary", "stillthere")
 		require.NoError(t, err)
 
@@ -450,7 +450,7 @@ func TestDataSourceProxy_routeRule(t *testing.T) {
 		}
 		proxy, err := NewDataSourceProxy(ds, plugin, ctx, "/path/to/folder/", &setting.Cfg{})
 		require.NoError(t, err)
-		req, err = http.NewRequest(http.MethodGet, "http://grafana.com/sub", nil)
+		req, err = http.NewRequest(http.MethodGet, "http://grafinsight.com/sub", nil)
 		require.NoError(t, err)
 
 		proxy.director(req)
@@ -468,7 +468,7 @@ func TestDataSourceProxy_routeRule(t *testing.T) {
 			},
 			&setting.Cfg{SendUserHeader: true},
 		)
-		assert.Equal(t, "test_user", req.Header.Get("X-Grafana-User"))
+		assert.Equal(t, "test_user", req.Header.Get("X-Grafinsight-User"))
 	})
 
 	t.Run("When SendUserHeader config is disabled", func(t *testing.T) {
@@ -482,7 +482,7 @@ func TestDataSourceProxy_routeRule(t *testing.T) {
 			&setting.Cfg{SendUserHeader: false},
 		)
 		// Get will return empty string even if header is not set
-		assert.Empty(t, req.Header.Get("X-Grafana-User"))
+		assert.Empty(t, req.Header.Get("X-Grafinsight-User"))
 	})
 
 	t.Run("When SendUserHeader config is enabled but user is anonymous", func(t *testing.T) {
@@ -494,7 +494,7 @@ func TestDataSourceProxy_routeRule(t *testing.T) {
 			&setting.Cfg{SendUserHeader: true},
 		)
 		// Get will return empty string even if header is not set
-		assert.Empty(t, req.Header.Get("X-Grafana-User"))
+		assert.Empty(t, req.Header.Get("X-Grafinsight-User"))
 	})
 
 	t.Run("When proxying data source proxy should handle authentication", func(t *testing.T) {
@@ -760,7 +760,7 @@ func getDatasourceProxiedRequest(t *testing.T, ctx *models.ReqContext, cfg *sett
 
 	proxy, err := NewDataSourceProxy(ds, plugin, ctx, "", cfg)
 	require.NoError(t, err)
-	req, err := http.NewRequest(http.MethodGet, "http://grafana.com/sub", nil)
+	req, err := http.NewRequest(http.MethodGet, "http://grafinsight.com/sub", nil)
 	require.NoError(t, err)
 
 	proxy.director(req)
@@ -871,7 +871,7 @@ func runDatasourceAuthTest(t *testing.T, test *testCase) {
 	proxy, err := NewDataSourceProxy(test.datasource, plugin, ctx, "", &setting.Cfg{})
 	require.NoError(t, err)
 
-	req, err := http.NewRequest(http.MethodGet, "http://grafana.com/sub", nil)
+	req, err := http.NewRequest(http.MethodGet, "http://grafinsight.com/sub", nil)
 	require.NoError(t, err)
 
 	proxy.director(req)

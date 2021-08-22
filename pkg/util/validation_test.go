@@ -21,9 +21,9 @@ func TestIsEmail(t *testing.T) {
 		"@example.org":             {description: "no recipient", valid: false},
 		"please\x0Ano@example.org": {description: "new line", valid: false},
 
-		"abc@def.com":                 {description: "a simple valid email", valid: true},
-		"grapher+grafana@example.org": {description: "a gmail style alias", valid: true},
-		"öhnej@example.se":            {description: "non-ASCII characters", valid: true},
+		"abc@def.com":                     {description: "a simple valid email", valid: true},
+		"grapher+grafinsight@example.org": {description: "a gmail style alias", valid: true},
+		"öhnej@example.se":                {description: "non-ASCII characters", valid: true},
 	}
 	for input, testcase := range emails {
 		validity := "invalid"

@@ -26,13 +26,13 @@ func TestAdminAPIEndpoint(t *testing.T) {
 
 	t.Run("Given a server admin attempts to remove themselves as an admin", func(t *testing.T) {
 		updateCmd := dtos.AdminUpdateUserPermissionsForm{
-			IsGrafanaAdmin: false,
+			IsGrafinsightAdmin: false,
 		}
 
 		putAdminScenario(t, "When calling PUT on", "/api/admin/users/1/permissions",
 			"/api/admin/users/:id/permissions", role, updateCmd, func(sc *scenarioContext) {
 				bus.AddHandler("test", func(cmd *models.UpdateUserPermissionsCommand) error {
-					return models.ErrLastGrafanaAdmin
+					return models.ErrLastGrafinsightAdmin
 				})
 
 				sc.fakeReqWithParams("PUT", sc.url, map[string]string{}).exec()

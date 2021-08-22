@@ -14,8 +14,6 @@ import (
 	"github.com/openinsight-project/grafinsight/pkg/plugins"
 	"github.com/openinsight-project/grafinsight/pkg/services/rendering"
 
-	"github.com/openinsight-project/grafinsight/pkg/services/licensing"
-
 	"github.com/openinsight-project/grafinsight/pkg/bus"
 	"github.com/openinsight-project/grafinsight/pkg/services/sqlstore"
 
@@ -48,7 +46,6 @@ func setupTestEnvironment(t *testing.T, cfg *setting.Cfg) (*macaron.Macaron, *HT
 	hs := &HTTPServer{
 		Cfg:           cfg,
 		Bus:           bus.GetBus(),
-		License:       &licensing.OSSLicensingService{Cfg: cfg},
 		RenderService: r,
 		PluginManager: &plugins.PluginManager{Cfg: cfg},
 	}

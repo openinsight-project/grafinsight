@@ -380,7 +380,7 @@ func (ss *SQLStore) readConfig() {
 	ss.dbCfg.ClientKeyPath = sec.Key("client_key_path").String()
 	ss.dbCfg.ClientCertPath = sec.Key("client_cert_path").String()
 	ss.dbCfg.ServerCertName = sec.Key("server_cert_name").String()
-	ss.dbCfg.Path = sec.Key("path").MustString("data/grafana.db")
+	ss.dbCfg.Path = sec.Key("path").MustString("data/grafinsight.db")
 
 	ss.dbCfg.CacheMode = sec.Key("cache_mode").MustString("private")
 	ss.dbCfg.SkipMigrations = sec.Key("skip_migrations").MustBool()
@@ -418,7 +418,7 @@ func InitTestDB(t ITestDB, opts ...InitTestDBOpt) *SQLStore {
 		dbType := migrator.SQLite
 
 		// environment variable present for test db?
-		if db, present := os.LookupEnv("GRAFANA_TEST_DB"); present {
+		if db, present := os.LookupEnv("Grafinsight_TEST_DB"); present {
 			t.Logf("Using database type %q", db)
 			dbType = db
 		}
@@ -488,7 +488,7 @@ func InitTestDB(t ITestDB, opts ...InitTestDBOpt) *SQLStore {
 }
 
 func IsTestDbMySQL() bool {
-	if db, present := os.LookupEnv("GRAFANA_TEST_DB"); present {
+	if db, present := os.LookupEnv("Grafinsight_TEST_DB"); present {
 		return db == migrator.MySQL
 	}
 
@@ -496,7 +496,7 @@ func IsTestDbMySQL() bool {
 }
 
 func IsTestDbPostgres() bool {
-	if db, present := os.LookupEnv("GRAFANA_TEST_DB"); present {
+	if db, present := os.LookupEnv("Grafinsight_TEST_DB"); present {
 		return db == migrator.Postgres
 	}
 

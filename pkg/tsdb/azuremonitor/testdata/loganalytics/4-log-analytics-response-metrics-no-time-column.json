@@ -14,15 +14,15 @@
       ],
       "rows": [
         [
-          "grafana-vm",
+          "grafinsight-vm",
           1.1
         ],
         [
-          "grafana-vm",
+          "grafinsight-vm",
           2.2
         ],
         [
-          "grafana-vm",
+          "grafinsight-vm",
           3.3
         ]
       ]

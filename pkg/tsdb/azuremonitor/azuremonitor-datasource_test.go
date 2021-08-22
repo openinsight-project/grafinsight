@@ -110,8 +110,8 @@ func TestAzureMonitorBuildQueries(t *testing.T) {
 
 	commonAzureModelProps := map[string]interface{}{
 		"aggregation":      "Average",
-		"resourceGroup":    "grafanastaging",
-		"resourceName":     "grafana",
+		"resourceGroup":    "grafinsightstaging",
+		"resourceName":     "grafinsight",
 		"metricDefinition": "Microsoft.Compute/virtualMachines",
 		"metricNamespace":  "Microsoft.Compute-virtualMachines",
 		"metricName":       "Percentage CPU",
@@ -149,11 +149,11 @@ func TestAzureMonitorBuildQueries(t *testing.T) {
 			}
 
 			azureMonitorQuery := &AzureMonitorQuery{
-				URL: "12345678-aaaa-bbbb-cccc-123456789abc/resourceGroups/grafanastaging/providers/Microsoft.Compute/virtualMachines/grafana/providers/microsoft.insights/metrics",
+				URL: "12345678-aaaa-bbbb-cccc-123456789abc/resourceGroups/grafinsightstaging/providers/Microsoft.Compute/virtualMachines/grafinsight/providers/microsoft.insights/metrics",
 				UrlComponents: map[string]string{
 					"metricDefinition": "Microsoft.Compute/virtualMachines",
-					"resourceGroup":    "grafanastaging",
-					"resourceName":     "grafana",
+					"resourceGroup":    "grafinsightstaging",
+					"resourceName":     "grafinsight",
 					"subscription":     "12345678-aaaa-bbbb-cccc-123456789abc",
 				},
 				Target: tt.azureMonitorQueryTarget,
@@ -190,7 +190,7 @@ func TestAzureMonitorParseResponse(t *testing.T) {
 			responseFile: "1-azure-monitor-response-avg.json",
 			mockQuery: &AzureMonitorQuery{
 				UrlComponents: map[string]string{
-					"resourceName": "grafana",
+					"resourceName": "grafinsight",
 				},
 				Params: url.Values{
 					"aggregation": {"Average"},
@@ -210,7 +210,7 @@ func TestAzureMonitorParseResponse(t *testing.T) {
 			responseFile: "2-azure-monitor-response-total.json",
 			mockQuery: &AzureMonitorQuery{
 				UrlComponents: map[string]string{
-					"resourceName": "grafana",
+					"resourceName": "grafinsight",
 				},
 				Params: url.Values{
 					"aggregation": {"Total"},
@@ -230,7 +230,7 @@ func TestAzureMonitorParseResponse(t *testing.T) {
 			responseFile: "3-azure-monitor-response-maximum.json",
 			mockQuery: &AzureMonitorQuery{
 				UrlComponents: map[string]string{
-					"resourceName": "grafana",
+					"resourceName": "grafinsight",
 				},
 				Params: url.Values{
 					"aggregation": {"Maximum"},
@@ -250,7 +250,7 @@ func TestAzureMonitorParseResponse(t *testing.T) {
 			responseFile: "4-azure-monitor-response-minimum.json",
 			mockQuery: &AzureMonitorQuery{
 				UrlComponents: map[string]string{
-					"resourceName": "grafana",
+					"resourceName": "grafinsight",
 				},
 				Params: url.Values{
 					"aggregation": {"Minimum"},
@@ -270,7 +270,7 @@ func TestAzureMonitorParseResponse(t *testing.T) {
 			responseFile: "5-azure-monitor-response-count.json",
 			mockQuery: &AzureMonitorQuery{
 				UrlComponents: map[string]string{
-					"resourceName": "grafana",
+					"resourceName": "grafinsight",
 				},
 				Params: url.Values{
 					"aggregation": {"Count"},
@@ -290,7 +290,7 @@ func TestAzureMonitorParseResponse(t *testing.T) {
 			responseFile: "6-azure-monitor-response-single-dimension.json",
 			mockQuery: &AzureMonitorQuery{
 				UrlComponents: map[string]string{
-					"resourceName": "grafana",
+					"resourceName": "grafinsight",
 				},
 				Params: url.Values{
 					"aggregation": {"Average"},
@@ -322,7 +322,7 @@ func TestAzureMonitorParseResponse(t *testing.T) {
 			mockQuery: &AzureMonitorQuery{
 				Alias: "custom {{resourcegroup}} {{namespace}} {{resourceName}} {{metric}}",
 				UrlComponents: map[string]string{
-					"resourceName": "grafana",
+					"resourceName": "grafinsight",
 				},
 				Params: url.Values{
 					"aggregation": {"Total"},
@@ -334,7 +334,7 @@ func TestAzureMonitorParseResponse(t *testing.T) {
 						makeDates(time.Date(2019, 2, 9, 13, 29, 0, 0, time.UTC), 5, time.Minute)),
 					data.NewField("Percentage CPU", nil, []*float64{
 						ptr.Float64(8.26), ptr.Float64(8.7), ptr.Float64(14.82), ptr.Float64(10.07), ptr.Float64(8.52),
-					}).SetConfig(&data.FieldConfig{Unit: "percent", DisplayName: "custom grafanastaging Microsoft.Compute/virtualMachines grafana Percentage CPU"})),
+					}).SetConfig(&data.FieldConfig{Unit: "percent", DisplayName: "custom grafinsightstaging Microsoft.Compute/virtualMachines grafinsight Percentage CPU"})),
 			},
 		},
 		{
@@ -343,7 +343,7 @@ func TestAzureMonitorParseResponse(t *testing.T) {
 			mockQuery: &AzureMonitorQuery{
 				Alias: "{{dimensionname}}={{DimensionValue}}",
 				UrlComponents: map[string]string{
-					"resourceName": "grafana",
+					"resourceName": "grafinsight",
 				},
 				Params: url.Values{
 					"aggregation": {"Average"},
@@ -377,7 +377,7 @@ func TestAzureMonitorParseResponse(t *testing.T) {
 			mockQuery: &AzureMonitorQuery{
 				Alias: "{{resourcegroup}} {Blob Type={{blobtype}}, Tier={{Tier}}}",
 				UrlComponents: map[string]string{
-					"resourceName": "grafana",
+					"resourceName": "grafinsight",
 				},
 				Params: url.Values{
 					"aggregation": {"Average"},
@@ -412,7 +412,7 @@ func TestAzureMonitorParseResponse(t *testing.T) {
 			mockQuery: &AzureMonitorQuery{
 				Alias: "custom",
 				UrlComponents: map[string]string{
-					"resourceName": "grafana",
+					"resourceName": "grafinsight",
 				},
 				Params: url.Values{
 					"aggregation": {"Average"},

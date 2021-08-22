@@ -54,7 +54,6 @@ type Manager interface {
 
 type manager struct {
 	Cfg                    *setting.Cfg                  `inject:""`
-	License                models.Licensing              `inject:""`
 	PluginRequestValidator models.PluginRequestValidator `inject:""`
 	pluginsMu              sync.RWMutex
 	plugins                map[string]Plugin
@@ -94,20 +93,6 @@ func (m *manager) Register(pluginID string, factory PluginFactoryFunc) error {
 
 	hostEnv := []string{
 		fmt.Sprintf("GF_VERSION=%s", m.Cfg.BuildVersion),
-		fmt.Sprintf("GF_EDITION=%s", m.License.Edition()),
-	}
-
-	if m.License.HasLicense() {
-		hostEnv = append(
-			hostEnv,
-			fmt.Sprintf("GF_ENTERPRISE_LICENSE_PATH=%s", m.Cfg.EnterpriseLicensePath),
-		)
-
-		if envProvider, ok := m.License.(models.LicenseEnvironment); ok {
-			for k, v := range envProvider.Environment() {
-				hostEnv = append(hostEnv, fmt.Sprintf("%s=%s", k, v))
-			}
-		}
 	}
 
 	hostEnv = append(hostEnv, m.getAWSEnvironmentVariables()...)

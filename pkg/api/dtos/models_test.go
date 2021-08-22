@@ -25,8 +25,8 @@ func TestIsHiddenUser(t *testing.T) {
 			desc:      "non-server admin user should see non-hidden user",
 			userLogin: "user",
 			signedInUser: &models.SignedInUser{
-				IsGrafanaAdmin: false,
-				Login:          "admin",
+				IsGrafinsightAdmin: false,
+				Login:              "admin",
 			},
 			hiddenUsers: emptyHiddenUsers,
 			expected:    false,
@@ -35,8 +35,8 @@ func TestIsHiddenUser(t *testing.T) {
 			desc:      "non-server admin user should not see hidden user",
 			userLogin: "user",
 			signedInUser: &models.SignedInUser{
-				IsGrafanaAdmin: false,
-				Login:          "admin",
+				IsGrafinsightAdmin: false,
+				Login:              "admin",
 			},
 			hiddenUsers: hiddenUser,
 			expected:    true,
@@ -45,8 +45,8 @@ func TestIsHiddenUser(t *testing.T) {
 			desc:      "non-server admin user should see himself, even if he's hidden",
 			userLogin: "admin",
 			signedInUser: &models.SignedInUser{
-				IsGrafanaAdmin: false,
-				Login:          "admin",
+				IsGrafinsightAdmin: false,
+				Login:              "admin",
 			},
 			hiddenUsers: map[string]struct{}{
 				"admin": {},
@@ -57,8 +57,8 @@ func TestIsHiddenUser(t *testing.T) {
 			desc:      "server admin user should see hidden user",
 			userLogin: "user",
 			signedInUser: &models.SignedInUser{
-				IsGrafanaAdmin: true,
-				Login:          "admin",
+				IsGrafinsightAdmin: true,
+				Login:              "admin",
 			},
 			hiddenUsers: hiddenUser,
 			expected:    false,
@@ -67,8 +67,8 @@ func TestIsHiddenUser(t *testing.T) {
 			desc:      "server admin user should see non-hidden user",
 			userLogin: "user",
 			signedInUser: &models.SignedInUser{
-				IsGrafanaAdmin: true,
-				Login:          "admin",
+				IsGrafinsightAdmin: true,
+				Login:              "admin",
 			},
 			hiddenUsers: emptyHiddenUsers,
 			expected:    false,

@@ -216,7 +216,7 @@ func (g *dashboardGuardianImpl) getTeams() ([]*models.TeamDTO, error) {
 
 func (g *dashboardGuardianImpl) GetHiddenACL(cfg *setting.Cfg) ([]*models.DashboardAcl, error) {
 	hiddenACL := make([]*models.DashboardAcl, 0)
-	if g.user.IsGrafanaAdmin {
+	if g.user.IsGrafinsightAdmin {
 		return hiddenACL, nil
 	}
 

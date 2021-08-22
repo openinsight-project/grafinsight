@@ -60,10 +60,10 @@ func addQueryString(req *http.Request, route *plugins.AppPluginRoute, data templ
 	return nil
 }
 
-// Set the X-Grafana-User header if needed (and remove if not)
+// Set the X-Grafinsight-User header if needed (and remove if not)
 func applyUserHeader(sendUserHeader bool, req *http.Request, user *models.SignedInUser) {
-	req.Header.Del("X-Grafana-User")
+	req.Header.Del("X-Grafinsight-User")
 	if sendUserHeader && !user.IsAnonymous {
-		req.Header.Set("X-Grafana-User", user.Login)
+		req.Header.Set("X-Grafinsight-User", user.Login)
 	}
 }

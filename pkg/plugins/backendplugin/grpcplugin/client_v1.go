@@ -18,7 +18,7 @@ type clientV1 struct {
 }
 
 func newClientV1(descriptor PluginDescriptor, logger log.Logger, rpcClient plugin.ClientProtocol) (pluginClient, error) {
-	logger.Warn("Plugin uses a deprecated version of Grafana's backend plugin system which will be removed in a future release. " +
+	logger.Warn("Plugin uses a deprecated version of Grafinsight's backend plugin system which will be removed in a future release. " +
 		"Consider upgrading to a newer plugin version or reach out to the plugin repository/developer and request an upgrade.")
 
 	raw, err := rpcClient.Dispense(descriptor.pluginID)

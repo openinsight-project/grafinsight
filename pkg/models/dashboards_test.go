@@ -22,17 +22,17 @@ func TestGetFullDashboardUrl(t *testing.T) {
 	origAppURL := setting.AppUrl
 	t.Cleanup(func() { setting.AppUrl = origAppURL })
 
-	setting.AppUrl = "http://grafana.local/"
+	setting.AppUrl = "http://grafinsight.local/"
 	url := GetFullDashboardUrl("uid", "my-dashboard")
-	assert.Equal(t, "http://grafana.local/d/uid/my-dashboard", url)
+	assert.Equal(t, "http://grafinsight.local/d/uid/my-dashboard", url)
 }
 
 func TestDashboard_UpdateSlug(t *testing.T) {
-	dashboard := NewDashboard("Grafana Play Home")
-	assert.Equal(t, "grafana-play-home", dashboard.Slug)
+	dashboard := NewDashboard("Grafinsight Play Home")
+	assert.Equal(t, "grafinsight-play-home", dashboard.Slug)
 
 	dashboard.UpdateSlug()
-	assert.Equal(t, "grafana-play-home", dashboard.Slug)
+	assert.Equal(t, "grafinsight-play-home", dashboard.Slug)
 }
 
 func TestNewDashboardFromJson(t *testing.T) {
@@ -70,11 +70,11 @@ func TestSaveDashboardCommand_GetDashboardModel(t *testing.T) {
 
 func TestSlugifyTitle(t *testing.T) {
 	testCases := map[string]string{
-		"Grafana Play Home": "grafana-play-home",
-		"snöräv-över-ån":    "snorav-over-an",
-		"漢字":                "han-zi",      // Hanzi for hanzi
-		"🇦🇶":                "8J-HpvCfh7Y", // flag of Antarctica-emoji, using fallback
-		"𒆠":                 "8JKGoA",      // cuneiform Ki, using fallback
+		"Grafinsight Play Home": "grafinsight-play-home",
+		"snöräv-över-ån":        "snorav-over-an",
+		"漢字":                    "han-zi",      // Hanzi for hanzi
+		"🇦🇶":                    "8J-HpvCfh7Y", // flag of Antarctica-emoji, using fallback
+		"𒆠":                     "8JKGoA",      // cuneiform Ki, using fallback
 	}
 
 	for input, expected := range testCases {

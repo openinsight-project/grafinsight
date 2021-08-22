@@ -26,7 +26,7 @@ type AdminUpdateUserPasswordForm struct {
 }
 
 type AdminUpdateUserPermissionsForm struct {
-	IsGrafanaAdmin bool `json:"isGrafanaAdmin"`
+	IsGrafinsightAdmin bool `json:"isGrafinsightAdmin"`
 }
 
 type SendResetPasswordEmailForm struct {

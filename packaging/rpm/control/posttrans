@@ -4,7 +4,7 @@ set -e
 
 echo "POSTTRANS: Running script"
 
-[ -f /etc/sysconfig/grafana-server ] && . /etc/sysconfig/grafana-server
+[ -f /etc/sysconfig/grafinsight-server ] && . /etc/sysconfig/grafinsight-server
 
 # copy config files if missing
 if [ ! -f /etc/grafana/grafana.ini ]; then

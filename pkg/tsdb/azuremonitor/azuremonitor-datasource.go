@@ -252,7 +252,7 @@ func (e *AzureMonitorDatasource) createRequest(ctx context.Context, dsInfo *mode
 	}
 
 	req.Header.Set("Content-Type", "application/json")
-	req.Header.Set("User-Agent", fmt.Sprintf("Grafana/%s", setting.BuildVersion))
+	req.Header.Set("User-Agent", fmt.Sprintf("Grafinsight/%s", setting.BuildVersion))
 
 	pluginproxy.ApplyRoute(ctx, req, proxyPass, azureMonitorRoute, dsInfo)
 
@@ -299,7 +299,7 @@ func (e *AzureMonitorDatasource) parseResponse(queryRes *tsdb.QueryResult, amr A
 		dataField.Labels = labels
 		if amr.Value[0].Unit != "Unspecified" {
 			dataField.SetConfig(&data.FieldConfig{
-				Unit: toGrafanaUnit(amr.Value[0].Unit),
+				Unit: toGrafinsightUnit(amr.Value[0].Unit),
 			})
 		}
 		if query.Alias != "" {
@@ -411,7 +411,7 @@ func formatAzureMonitorLegendKey(alias string, resourceName string, metricName s
 //   https://docs.microsoft.com/en-us/rest/api/monitor/metrics/list#unit
 // to
 //   https://github.com/openinsight-project/grafinsight/blob/master/packages/grafinsight-data/src/valueFormats/categories.ts#L24
-func toGrafanaUnit(unit string) string {
+func toGrafinsightUnit(unit string) string {
 	switch unit {
 	case "BitsPerSecond":
 		return "bps"
@@ -432,6 +432,6 @@ func toGrafanaUnit(unit string) string {
 	}
 	return unit // this will become a suffix in the display
 	// "ByteSeconds", "Cores", "MilliCores", and "NanoCores" all both:
-	// 1. Do not have a corresponding unit in Grafana's current list.
+	// 1. Do not have a corresponding unit in Grafinsight's current list.
 	// 2. Do not have the unit listed in any of Azure Monitor's supported metrics anyways.
 }

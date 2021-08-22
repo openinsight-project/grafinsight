@@ -1,5 +1,5 @@
 groups:
-  - name: grafana_rules
+  - name: grafinsight_rules
     rules:
     # Record error rate of http requests excluding dataproxy, /ds/query and /tsdb/query requests
     - record: namespace_job_handler_statuscode:http_request_total:rate5m

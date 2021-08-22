@@ -42,14 +42,14 @@ type LDAPRoleDTO struct {
 
 // LDAPUserDTO is a serializer for users mapped from LDAP
 type LDAPUserDTO struct {
-	Name           *LDAPAttribute           `json:"name"`
-	Surname        *LDAPAttribute           `json:"surname"`
-	Email          *LDAPAttribute           `json:"email"`
-	Username       *LDAPAttribute           `json:"login"`
-	IsGrafanaAdmin *bool                    `json:"isGrafanaAdmin"`
-	IsDisabled     bool                     `json:"isDisabled"`
-	OrgRoles       []LDAPRoleDTO            `json:"roles"`
-	Teams          []models.TeamOrgGroupDTO `json:"teams"`
+	Name               *LDAPAttribute           `json:"name"`
+	Surname            *LDAPAttribute           `json:"surname"`
+	Email              *LDAPAttribute           `json:"email"`
+	Username           *LDAPAttribute           `json:"login"`
+	IsGrafinsightAdmin *bool                    `json:"isGrafinsightAdmin"`
+	IsDisabled         bool                     `json:"isDisabled"`
+	OrgRoles           []LDAPRoleDTO            `json:"roles"`
+	Teams              []models.TeamOrgGroupDTO `json:"teams"`
 }
 
 // LDAPServerDTO is a serializer for LDAP server statuses
@@ -150,7 +150,7 @@ func (hs *HTTPServer) GetLDAPStatus(c *models.ReqContext) response.Response {
 	return response.JSON(http.StatusOK, serverDTOs)
 }
 
-// PostSyncUserWithLDAP enables a single Grafana user to be synchronized against LDAP
+// PostSyncUserWithLDAP enables a single Grafinsight user to be synchronized against LDAP
 func (hs *HTTPServer) PostSyncUserWithLDAP(c *models.ReqContext) response.Response {
 	if !ldap.IsEnabled() {
 		return response.Error(http.StatusBadRequest, "LDAP is not enabled", nil)
@@ -187,8 +187,8 @@ func (hs *HTTPServer) PostSyncUserWithLDAP(c *models.ReqContext) response.Respon
 	user, _, err := ldapServer.User(query.Result.Login)
 	if err != nil {
 		if errors.Is(err, multildap.ErrDidNotFindUser) { // User was not in the LDAP server - we need to take action:
-			if hs.Cfg.AdminUser == query.Result.Login { // User is *the* Grafana Admin. We cannot disable it.
-				errMsg := fmt.Sprintf(`Refusing to sync grafana super admin "%s" - it would be disabled`, query.Result.Login)
+			if hs.Cfg.AdminUser == query.Result.Login { // User is *the* Grafinsight Admin. We cannot disable it.
+				errMsg := fmt.Sprintf(`Refusing to sync grafinsight super admin "%s" - it would be disabled`, query.Result.Login)
 				ldapLogger.Error(errMsg)
 				return response.Error(http.StatusBadRequest, errMsg, err)
 			}
@@ -225,7 +225,7 @@ func (hs *HTTPServer) PostSyncUserWithLDAP(c *models.ReqContext) response.Respon
 	return response.Success("User synced successfully")
 }
 
-// GetUserFromLDAP finds an user based on a username in LDAP. This helps illustrate how would the particular user be mapped in Grafana when synced.
+// GetUserFromLDAP finds an user based on a username in LDAP. This helps illustrate how would the particular user be mapped in Grafinsight when synced.
 func (hs *HTTPServer) GetUserFromLDAP(c *models.ReqContext) response.Response {
 	if !ldap.IsEnabled() {
 		return response.Error(http.StatusBadRequest, "LDAP is not enabled", nil)
@@ -255,12 +255,12 @@ func (hs *HTTPServer) GetUserFromLDAP(c *models.ReqContext) response.Response {
 	name, surname := splitName(user.Name)
 
 	u := &LDAPUserDTO{
-		Name:           &LDAPAttribute{serverConfig.Attr.Name, name},
-		Surname:        &LDAPAttribute{serverConfig.Attr.Surname, surname},
-		Email:          &LDAPAttribute{serverConfig.Attr.Email, user.Email},
-		Username:       &LDAPAttribute{serverConfig.Attr.Username, user.Login},
-		IsGrafanaAdmin: user.IsGrafanaAdmin,
-		IsDisabled:     user.IsDisabled,
+		Name:               &LDAPAttribute{serverConfig.Attr.Name, name},
+		Surname:            &LDAPAttribute{serverConfig.Attr.Surname, surname},
+		Email:              &LDAPAttribute{serverConfig.Attr.Email, user.Email},
+		Username:           &LDAPAttribute{serverConfig.Attr.Username, user.Login},
+		IsGrafinsightAdmin: user.IsGrafinsightAdmin,
+		IsDisabled:         user.IsDisabled,
 	}
 
 	orgRoles := []LDAPRoleDTO{}

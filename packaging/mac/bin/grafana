@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-DAEMON=grafana-server
-EXECUTABLE=/usr/local/bin/grafana-server
+DAEMON=grafinsight-server
+EXECUTABLE=/usr/local/bin/grafinsight-server
 CONFIG=/usr/local/etc/grafana/grafana.ini
 HOMEPATH=/usr/local/share/grafana
 LOGPATH=/usr/local/var/log/grafana

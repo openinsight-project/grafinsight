@@ -11,7 +11,6 @@ import (
 	"time"
 
 	"github.com/openinsight-project/grafinsight/pkg/services/alerting"
-	"github.com/openinsight-project/grafinsight/pkg/services/licensing"
 	"github.com/stretchr/testify/require"
 
 	"net/http"
@@ -42,7 +41,6 @@ func TestMetrics(t *testing.T) {
 		uss := &UsageStatsService{
 			Bus:      bus.New(),
 			SQLStore: sqlstore.InitTestDB(t),
-			License:  &licensing.OSSLicensingService{},
 		}
 
 		var getSystemStatsQuery *models.GetSystemStatsQuery
@@ -203,12 +201,12 @@ func TestMetrics(t *testing.T) {
 		defer ts.Close()
 
 		uss.oauthProviders = map[string]bool{
-			"github":        true,
-			"gitlab":        true,
-			"azuread":       true,
-			"google":        true,
-			"generic_oauth": true,
-			"grafana_com":   true,
+			"github":          true,
+			"gitlab":          true,
+			"azuread":         true,
+			"google":          true,
+			"generic_oauth":   true,
+			"grafinsight_com": true,
 		}
 
 		err := uss.sendUsageStats(context.Background())
@@ -236,7 +234,7 @@ func TestMetrics(t *testing.T) {
 			setting.LDAPEnabled = true
 			setting.AuthProxyEnabled = true
 			setting.Packaging = "deb"
-			setting.ReportingDistributor = "hosted-grafana"
+			setting.ReportingDistributor = "hosted-grafinsight"
 
 			wg.Add(1)
 			err := uss.sendUsageStats(context.Background())
@@ -320,10 +318,10 @@ func TestMetrics(t *testing.T) {
 				assert.Equal(t, 1, metrics.Get("stats.auth_enabled.oauth_google.count").MustInt())
 				assert.Equal(t, 1, metrics.Get("stats.auth_enabled.oauth_azuread.count").MustInt())
 				assert.Equal(t, 1, metrics.Get("stats.auth_enabled.oauth_generic_oauth.count").MustInt())
-				assert.Equal(t, 1, metrics.Get("stats.auth_enabled.oauth_grafana_com.count").MustInt())
+				assert.Equal(t, 1, metrics.Get("stats.auth_enabled.oauth_grafinsight_com.count").MustInt())
 
 				assert.Equal(t, 1, metrics.Get("stats.packaging.deb.count").MustInt())
-				assert.Equal(t, 1, metrics.Get("stats.distributor.hosted-grafana.count").MustInt())
+				assert.Equal(t, 1, metrics.Get("stats.distributor.hosted-grafinsight.count").MustInt())
 
 				assert.Equal(t, 1, metrics.Get("stats.auth_token_per_user_le_3").MustInt())
 				assert.Equal(t, 2, metrics.Get("stats.auth_token_per_user_le_6").MustInt())
@@ -433,7 +431,6 @@ func TestMetrics(t *testing.T) {
 			Bus:                bus.New(),
 			Cfg:                setting.NewCfg(),
 			SQLStore:           sqlstore.InitTestDB(t),
-			License:            &licensing.OSSLicensingService{},
 			AlertingUsageStats: &alertingUsageMock{},
 			externalMetrics:    make(map[string]MetricFunc),
 		}

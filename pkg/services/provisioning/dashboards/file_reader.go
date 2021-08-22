@@ -24,7 +24,7 @@ var (
 )
 
 // FileReader is responsible for reading dashboards from disk and
-// insert/update dashboards to the Grafana database using
+// insert/update dashboards to the Grafinsight database using
 // `dashboards.DashboardProvisioningService`.
 type FileReader struct {
 	Cfg                          *config
@@ -136,7 +136,7 @@ func (fr *FileReader) storeDashboardsInFolder(filesFoundOnDisk map[string]os.Fil
 }
 
 // storeDashboardsInFoldersFromFilesystemStructure saves dashboards from the filesystem on disk to the same folder
-// in Grafana as they are in on the filesystem.
+// in Grafinsight as they are in on the filesystem.
 func (fr *FileReader) storeDashboardsInFoldersFromFileStructure(filesFoundOnDisk map[string]os.FileInfo,
 	dashboardRefs map[string]*models.DashboardProvisioning, resolvedPath string, sanityChecker *provisioningSanityChecker) error {
 	for path, fileInfo := range filesFoundOnDisk {

@@ -32,8 +32,8 @@ const cloudWatchTSFormat = "2006-01-02 15:04:05.000"
 const defaultRegion = "default"
 
 // Constants also defined in datasource/cloudwatch/datasource.ts
-const logIdentifierInternal = "__log__grafana_internal__"
-const logStreamIdentifierInternal = "__logstream__grafana_internal__"
+const logIdentifierInternal = "__log__grafinsight_internal__"
+const logStreamIdentifierInternal = "__logstream__grafinsight_internal__"
 
 var plog = log.New("tsdb.cloudwatch")
 var aliasFormat = regexp.MustCompile(`\{\{\s*(.+?)\s*\}\}`)
@@ -342,7 +342,7 @@ func isTerminated(queryStatus string) bool {
 var NewCWClient = func(sess *session.Session) cloudwatchiface.CloudWatchAPI {
 	client := cloudwatch.New(sess)
 	client.Handlers.Send.PushFront(func(r *request.Request) {
-		r.HTTPRequest.Header.Set("User-Agent", fmt.Sprintf("Grafana/%s", setting.BuildVersion))
+		r.HTTPRequest.Header.Set("User-Agent", fmt.Sprintf("Grafinsight/%s", setting.BuildVersion))
 	})
 
 	return client
@@ -354,7 +354,7 @@ var NewCWClient = func(sess *session.Session) cloudwatchiface.CloudWatchAPI {
 var NewCWLogsClient = func(sess *session.Session) cloudwatchlogsiface.CloudWatchLogsAPI {
 	client := cloudwatchlogs.New(sess)
 	client.Handlers.Send.PushFront(func(r *request.Request) {
-		r.HTTPRequest.Header.Set("User-Agent", fmt.Sprintf("Grafana/%s", setting.BuildVersion))
+		r.HTTPRequest.Header.Set("User-Agent", fmt.Sprintf("Grafinsight/%s", setting.BuildVersion))
 	})
 
 	return client

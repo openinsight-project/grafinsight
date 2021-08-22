@@ -38,10 +38,10 @@ func authenticateUser(query *models.LoginUserQuery) error {
 		return err
 	}
 
-	err := loginUsingGrafanaDB(query)
+	err := loginUsingGrafinsightDB(query)
 	if err == nil || (!errors.Is(err, models.ErrUserNotFound) && !errors.Is(err, ErrInvalidCredentials) &&
 		!errors.Is(err, ErrUserDisabled)) {
-		query.AuthModule = "grafana"
+		query.AuthModule = "grafinsight"
 		return err
 	}
 

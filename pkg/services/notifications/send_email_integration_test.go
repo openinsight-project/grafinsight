@@ -21,7 +21,7 @@ func TestEmailIntegrationTest(t *testing.T) {
 		ns.Cfg.Smtp.Enabled = true
 		ns.Cfg.Smtp.TemplatesPattern = "emails/*.html"
 		ns.Cfg.Smtp.FromAddress = "from@address.com"
-		ns.Cfg.Smtp.FromName = "Grafana Admin"
+		ns.Cfg.Smtp.FromName = "Grafinsight Admin"
 
 		err := ns.Init()
 		So(err, ShouldBeNil)
@@ -59,7 +59,7 @@ func TestEmailIntegrationTest(t *testing.T) {
 			So(err, ShouldBeNil)
 
 			sentMsg := <-ns.mailQueue
-			So(sentMsg.From, ShouldEqual, "Grafana Admin <from@address.com>")
+			So(sentMsg.From, ShouldEqual, "Grafinsight Admin <from@address.com>")
 			So(sentMsg.To[0], ShouldEqual, "asdf@asdf.com")
 			err = ioutil.WriteFile("../../../tmp/test_email.html", []byte(sentMsg.Body), 0777)
 			So(err, ShouldBeNil)

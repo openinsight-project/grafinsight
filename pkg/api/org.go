@@ -78,7 +78,7 @@ func getOrgHelper(orgID int64) response.Response {
 
 // POST /api/orgs
 func CreateOrg(c *models.ReqContext, cmd models.CreateOrgCommand) response.Response {
-	if !c.IsSignedIn || (!setting.AllowUserOrgCreate && !c.IsGrafanaAdmin) {
+	if !c.IsSignedIn || (!setting.AllowUserOrgCreate && !c.IsGrafinsightAdmin) {
 		return response.Error(403, "Access denied", nil)
 	}
 

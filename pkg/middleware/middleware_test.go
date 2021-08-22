@@ -359,7 +359,7 @@ func TestMiddlewareContext(t *testing.T) {
 		}
 
 		const hdrName = "markelog"
-		const group = "grafana-core-team"
+		const group = "grafinsight-core-team"
 
 		middlewareScenario(t, "Should not sync the user if it's in the cache", func(t *testing.T, sc *scenarioContext) {
 			bus.AddHandler("test", func(query *models.GetSignedInUserQuery) error {
@@ -545,7 +545,7 @@ func middlewareScenario(t *testing.T, desc string, fn scenarioFunc, cbs ...func(
 		loginMaxLifetime, err := gtime.ParseDuration("30d")
 		require.NoError(t, err)
 		cfg := setting.NewCfg()
-		cfg.LoginCookieName = "grafana_session"
+		cfg.LoginCookieName = "grafinsight_session"
 		cfg.LoginMaxLifetime = loginMaxLifetime
 		// Required when rendering errors
 		cfg.ErrTemplateName = "error-template"

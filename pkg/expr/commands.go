@@ -38,7 +38,7 @@ func NewMathCommand(refID, expr string) (*MathCommand, error) {
 	}, nil
 }
 
-// UnmarshalMathCommand creates a MathCommand from Grafana's frontend query.
+// UnmarshalMathCommand creates a MathCommand from Grafinsight's frontend query.
 func UnmarshalMathCommand(rn *rawNode) (*MathCommand, error) {
 	rawExpr, ok := rn.Query["expression"]
 	if !ok {
@@ -85,7 +85,7 @@ func NewReduceCommand(refID, reducer, varToReduce string) *ReduceCommand {
 	}
 }
 
-// UnmarshalReduceCommand creates a MathCMD from Grafana's frontend query.
+// UnmarshalReduceCommand creates a MathCMD from Grafinsight's frontend query.
 func UnmarshalReduceCommand(rn *rawNode) (*ReduceCommand, error) {
 	rawVar, ok := rn.Query["expression"]
 	if !ok {
@@ -160,7 +160,7 @@ func NewResampleCommand(refID, rawWindow, varToResample string, downsampler stri
 	}, nil
 }
 
-// UnmarshalResampleCommand creates a ResampleCMD from Grafana's frontend query.
+// UnmarshalResampleCommand creates a ResampleCMD from Grafinsight's frontend query.
 func UnmarshalResampleCommand(rn *rawNode) (*ResampleCommand, error) {
 	rawVar, ok := rn.Query["expression"]
 	if !ok {

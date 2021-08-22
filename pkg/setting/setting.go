@@ -178,8 +178,8 @@ var (
 	// Explore UI
 	ExploreEnabled bool
 
-	// Grafana.NET URL
-	GrafanaComUrl string
+	// Grafinsight.NET URL
+	GrafinsightComUrl string
 
 	ImageUploadProvider string
 )
@@ -263,11 +263,11 @@ type Cfg struct {
 	EnterpriseLicensePath    string
 
 	// Metrics
-	MetricsEndpointEnabled           bool
-	MetricsEndpointBasicAuthUsername string
-	MetricsEndpointBasicAuthPassword string
-	MetricsEndpointDisableTotalStats bool
-	MetricsGrafanaEnvironmentInfo    map[string]string
+	MetricsEndpointEnabled            bool
+	MetricsEndpointBasicAuthUsername  string
+	MetricsEndpointBasicAuthPassword  string
+	MetricsEndpointDisableTotalStats  bool
+	MetricsGrafinsightEnvironmentInfo map[string]string
 
 	// Dashboards
 	DefaultHomeDashboardPath string
@@ -363,7 +363,7 @@ type Cfg struct {
 	ExpressionsEnabled bool
 }
 
-// IsLiveEnabled returns if grafana live should be enabled
+// IsLiveEnabled returns if grafinsight live should be enabled
 func (cfg Cfg) IsLiveEnabled() bool {
 	return cfg.FeatureToggles["live"]
 }
@@ -459,10 +459,10 @@ func applyEnvVariableOverrides(file *ini.File) error {
 	return nil
 }
 
-func (cfg *Cfg) readGrafanaEnvironmentMetrics() error {
+func (cfg *Cfg) readGrafinsightEnvironmentMetrics() error {
 	environmentMetricsSection := cfg.Raw.Section("metrics.environment_info")
 	keys := environmentMetricsSection.Keys()
-	cfg.MetricsGrafanaEnvironmentInfo = make(map[string]string, len(keys))
+	cfg.MetricsGrafinsightEnvironmentInfo = make(map[string]string, len(keys))
 
 	for _, key := range keys {
 		labelName := model.LabelName(key.Name())
@@ -476,7 +476,7 @@ func (cfg *Cfg) readGrafanaEnvironmentMetrics() error {
 			return fmt.Errorf("invalid label value in [metrics.environment_info] configuration. name %q value %q", labelName, labelValue)
 		}
 
-		cfg.MetricsGrafanaEnvironmentInfo[string(labelName)] = string(labelValue)
+		cfg.MetricsGrafinsightEnvironmentInfo[string(labelName)] = string(labelValue)
 	}
 
 	return nil
@@ -631,7 +631,7 @@ func (cfg *Cfg) loadConfiguration(args *CommandLineArgs) (*ini.File, error) {
 
 	// check if config file exists
 	if _, err := os.Stat(defaultConfigFile); os.IsNotExist(err) {
-		fmt.Println("Grafana-server Init Failed: Could not find config defaults, make sure homepath command line parameter is set or working directory is homepath")
+		fmt.Println("Grafinsight-server Init Failed: Could not find config defaults, make sure homepath command line parameter is set or working directory is homepath")
 		os.Exit(1)
 	}
 
@@ -786,7 +786,7 @@ func (cfg *Cfg) Load(args *CommandLineArgs) error {
 
 	cfg.ErrTemplateName = "error"
 
-	ApplicationName = "Grafana"
+	ApplicationName = "Grafinsight"
 
 	Env = valueAsString(iniFile.Section(""), "app_mode", "development")
 	cfg.Env = Env
@@ -848,7 +848,7 @@ func (cfg *Cfg) Load(args *CommandLineArgs) error {
 	GoogleAnalyticsId = analytics.Key("google_analytics_ua_id").String()
 	GoogleTagManagerId = analytics.Key("google_tag_manager_id").String()
 	ReportingEnabled = analytics.Key("reporting_enabled").MustBool(true)
-	ReportingDistributor = analytics.Key("reporting_distributor").MustString("grafana-labs")
+	ReportingDistributor = analytics.Key("reporting_distributor").MustString("grafinsight-labs")
 	if len(ReportingDistributor) >= 100 {
 		ReportingDistributor = ReportingDistributor[:100]
 	}
@@ -872,7 +872,7 @@ func (cfg *Cfg) Load(args *CommandLineArgs) error {
 		plug = strings.TrimSpace(plug)
 		cfg.PluginsAllowUnsigned = append(cfg.PluginsAllowUnsigned, plug)
 	}
-	cfg.MarketplaceURL = pluginsSection.Key("marketplace_url").MustString("https://grafana.com/grafana/plugins/")
+	cfg.MarketplaceURL = pluginsSection.Key("marketplace_url").MustString("https://grafinsight.com/grafinsight/plugins/")
 
 	// Read and populate feature toggles list
 	featureTogglesSection := iniFile.Section("feature_toggles")
@@ -894,7 +894,7 @@ func (cfg *Cfg) Load(args *CommandLineArgs) error {
 	cfg.readQuotaSettings()
 	cfg.readAnnotationSettings()
 	cfg.readExpressionsSettings()
-	if err := cfg.readGrafanaEnvironmentMetrics(); err != nil {
+	if err := cfg.readGrafinsightEnvironmentMetrics(); err != nil {
 		return err
 	}
 
@@ -905,9 +905,9 @@ func (cfg *Cfg) Load(args *CommandLineArgs) error {
 	}
 
 	// check old key  name
-	GrafanaComUrl = valueAsString(iniFile.Section("grafana_net"), "url", "")
-	if GrafanaComUrl == "" {
-		GrafanaComUrl = valueAsString(iniFile.Section("grafana_com"), "url", "https://grafana.com")
+	GrafinsightComUrl = valueAsString(iniFile.Section("grafinsight_net"), "url", "")
+	if GrafinsightComUrl == "" {
+		GrafinsightComUrl = valueAsString(iniFile.Section("grafinsight_com"), "url", "https://grafinsight.com")
 	}
 
 	imageUploadingSection := iniFile.Section("external_image_storage")
@@ -1115,7 +1115,7 @@ func readSecuritySettings(iniFile *ini.File, cfg *Cfg) error {
 func readAuthSettings(iniFile *ini.File, cfg *Cfg) (err error) {
 	auth := iniFile.Section("auth")
 
-	cfg.LoginCookieName = valueAsString(auth, "login_cookie_name", "grafana_session")
+	cfg.LoginCookieName = valueAsString(auth, "login_cookie_name", "grafinsight_session")
 	maxInactiveDaysVal := auth.Key("login_maximum_inactive_lifetime_days").MustString("")
 	if maxInactiveDaysVal != "" {
 		maxInactiveDaysVal = fmt.Sprintf("%sd", maxInactiveDaysVal)

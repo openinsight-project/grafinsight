@@ -61,7 +61,7 @@ func NewApiPluginProxy(ctx *models.ReqContext, proxyPath string, route *plugins.
 			return
 		}
 
-		req.Header.Set("X-Grafana-Context", string(ctxJSON))
+		req.Header.Set("X-Grafinsight-Context", string(ctxJSON))
 
 		applyUserHeader(cfg.SendUserHeader, req, ctx.SignedInUser)
 

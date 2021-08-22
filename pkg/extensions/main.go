@@ -13,7 +13,6 @@ import (
 	_ "github.com/jung-kurt/gofpdf"
 	_ "github.com/linkedin/goavro/v2"
 	"github.com/openinsight-project/grafinsight/pkg/registry"
-	"github.com/openinsight-project/grafinsight/pkg/services/licensing"
 	"github.com/openinsight-project/grafinsight/pkg/services/validations"
 	_ "github.com/pkg/errors"
 	_ "github.com/robfig/cron"
@@ -26,7 +25,6 @@ import (
 )
 
 func init() {
-	registry.RegisterService(&licensing.OSSLicensingService{})
 	registry.RegisterService(&validations.OSSPluginRequestValidator{})
 }
 

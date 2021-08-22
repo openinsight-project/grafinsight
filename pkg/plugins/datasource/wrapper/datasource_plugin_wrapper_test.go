@@ -65,10 +65,10 @@ func TestMappingRowValue(t *testing.T) {
 	require.True(t, ok)
 	require.Equal(t, int64(42), haveInt)
 
-	stringRowValue, _ := dpw.mapRowValue(&datasource.RowValue{Kind: datasource.RowValue_TYPE_STRING, StringValue: "grafana"})
+	stringRowValue, _ := dpw.mapRowValue(&datasource.RowValue{Kind: datasource.RowValue_TYPE_STRING, StringValue: "grafinsight"})
 	haveString, ok := stringRowValue.(string)
 	require.True(t, ok)
-	require.Equal(t, "grafana", haveString)
+	require.Equal(t, "grafinsight", haveString)
 
 	doubleRowValue, _ := dpw.mapRowValue(&datasource.RowValue{Kind: datasource.RowValue_TYPE_DOUBLE, DoubleValue: 1.5})
 	haveDouble, ok := doubleRowValue.(float64)

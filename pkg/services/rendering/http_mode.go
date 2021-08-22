@@ -55,7 +55,7 @@ func (rs *RenderingService) renderViaHttp(ctx context.Context, renderKey string,
 		return nil, err
 	}
 
-	req.Header.Set("User-Agent", fmt.Sprintf("Grafana/%s", setting.BuildVersion))
+	req.Header.Set("User-Agent", fmt.Sprintf("Grafinsight/%s", setting.BuildVersion))
 
 	for k, v := range opts.Headers {
 		req.Header[k] = v

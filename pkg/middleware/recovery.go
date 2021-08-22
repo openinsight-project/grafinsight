@@ -148,7 +148,7 @@ func Recovery(cfg *setting.Cfg) macaron.Handler {
 
 				if ok && ctx.IsApiRequest() {
 					resp := make(map[string]interface{})
-					resp["message"] = "Internal Server Error - Check the Grafana server logs for the detailed error message."
+					resp["message"] = "Internal Server Error - Check the Grafinsight server logs for the detailed error message."
 
 					if c.Data["ErrorMsg"] != nil {
 						resp["error"] = fmt.Sprintf("%v - %v", c.Data["Title"], c.Data["ErrorMsg"])

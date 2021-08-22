@@ -224,7 +224,7 @@ func (proxy *DataSourceProxy) director(req *http.Request) {
 	proxyutil.ClearCookieHeader(req, keepCookieNames)
 	proxyutil.PrepareProxyRequest(req)
 
-	req.Header.Set("User-Agent", fmt.Sprintf("Grafana/%s", setting.BuildVersion))
+	req.Header.Set("User-Agent", fmt.Sprintf("Grafinsight/%s", setting.BuildVersion))
 
 	// Clear Origin and Referer to avoir CORS issues
 	req.Header.Del("Origin")

@@ -7,7 +7,7 @@ const (
 	GOOGLE
 	TWITTER
 	GENERIC
-	GRAFANA_COM
+	Grafinsight_COM
 	GITLAB
 	AZUREAD
 	OKTA

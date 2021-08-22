@@ -1018,7 +1018,7 @@ func TestDashboardAPIEndpoint(t *testing.T) {
 			})
 
 			bus.AddHandler("test", func(query *models.GetProvisionedDashboardDataByIdQuery) error {
-				query.Result = &models.DashboardProvisioning{ExternalId: "/tmp/grafana/dashboards/test/dashboard1.json"}
+				query.Result = &models.DashboardProvisioning{ExternalId: "/tmp/grafinsight/dashboards/test/dashboard1.json"}
 				return nil
 			})
 
@@ -1055,7 +1055,7 @@ func TestDashboardAPIEndpoint(t *testing.T) {
 
 			mock := provisioning.NewProvisioningServiceMock()
 			mock.GetDashboardProvisionerResolvedPathFunc = func(name string) string {
-				return "/tmp/grafana/dashboards"
+				return "/tmp/grafinsight/dashboards"
 			}
 
 			dash := getDashboardShouldReturn200WithConfig(sc, mock)
@@ -1068,7 +1068,7 @@ func TestDashboardAPIEndpoint(t *testing.T) {
 
 			mock := provisioning.NewProvisioningServiceMock()
 			mock.GetDashboardProvisionerResolvedPathFunc = func(name string) string {
-				return "/tmp/grafana/dashboards"
+				return "/tmp/grafinsight/dashboards"
 			}
 			mock.GetAllowUIUpdatesFromConfigFunc = func(name string) bool {
 				return true
@@ -1187,7 +1187,7 @@ func postDashboardScenario(t *testing.T, desc string, url string, routePattern s
 			Bus:                 bus.GetBus(),
 			Cfg:                 cfg,
 			ProvisioningService: provisioning.NewProvisioningServiceMock(),
-			Live:                &live.GrafanaLive{Cfg: setting.NewCfg()},
+			Live:                &live.GrafinsightLive{Cfg: setting.NewCfg()},
 			QuotaService: &quota.QuotaService{
 				Cfg: cfg,
 			},
@@ -1252,7 +1252,7 @@ func restoreDashboardVersionScenario(t *testing.T, desc string, url string, rout
 			Cfg:                 cfg,
 			Bus:                 bus.GetBus(),
 			ProvisioningService: provisioning.NewProvisioningServiceMock(),
-			Live:                &live.GrafanaLive{Cfg: cfg},
+			Live:                &live.GrafinsightLive{Cfg: cfg},
 			QuotaService:        &quota.QuotaService{Cfg: cfg},
 		}
 

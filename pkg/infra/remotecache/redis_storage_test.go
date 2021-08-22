@@ -16,12 +16,12 @@ func Test_parseRedisConnStr(t *testing.T) {
 		ShouldErr     bool
 	}{
 		"all redis options should parse": {
-			"addr=127.0.0.1:6379,pool_size=100,db=1,password=grafanaRocks,ssl=false",
+			"addr=127.0.0.1:6379,pool_size=100,db=1,password=grafinsightRocks,ssl=false",
 			&redis.Options{
 				Addr:      "127.0.0.1:6379",
 				PoolSize:  100,
 				DB:        1,
-				Password:  "grafanaRocks",
+				Password:  "grafinsightRocks",
 				Network:   "tcp",
 				TLSConfig: nil,
 			},
@@ -37,11 +37,11 @@ func Test_parseRedisConnStr(t *testing.T) {
 			false,
 		},
 		"ssl set to true should result in default TLS configuration with tls set to addr's host": {
-			"addr=grafana.com:6379,ssl=true",
+			"addr=grafinsight.com:6379,ssl=true",
 			&redis.Options{
-				Addr:      "grafana.com:6379",
+				Addr:      "grafinsight.com:6379",
 				Network:   "tcp",
-				TLSConfig: &tls.Config{ServerName: "grafana.com"},
+				TLSConfig: &tls.Config{ServerName: "grafinsight.com"},
 			},
 			false,
 		},

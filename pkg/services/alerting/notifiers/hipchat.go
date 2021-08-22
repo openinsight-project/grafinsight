@@ -25,7 +25,7 @@ func init() {
 				Label:        "Hip Chat Url",
 				Element:      alerting.ElementTypeInput,
 				InputType:    alerting.InputTypeText,
-				Placeholder:  "HipChat URL (ex https://grafana.hipchat.com)",
+				Placeholder:  "HipChat URL (ex https://grafinsight.hipchat.com)",
 				PropertyName: "url",
 				Required:     true,
 			},
@@ -150,7 +150,7 @@ func (hc *HipChatNotifier) Notify(evalContext *alerting.EvalContext) error {
 		"title":       evalContext.GetNotificationTitle(),
 		"description": message,
 		"icon": map[string]interface{}{
-			"url": "https://grafana.com/assets/img/fav32.png",
+			"url": "https://grafinsight.com/assets/img/fav32.png",
 		},
 		"date":       evalContext.EndTime.Unix(),
 		"attributes": attributes,

@@ -7,7 +7,7 @@ import (
 	"github.com/openinsight-project/grafinsight/pkg/models"
 )
 
-// BroadcastRunner will simply broadcast all events to `grafana/broadcast/*` channels
+// BroadcastRunner will simply broadcast all events to `grafinsight/broadcast/*` channels
 // This assumes that data is a JSON object
 type BroadcastRunner struct{}
 

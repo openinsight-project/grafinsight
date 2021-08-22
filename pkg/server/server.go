@@ -120,7 +120,7 @@ func (s *Server) init() error {
 
 	s.loadConfiguration()
 	s.writePIDFile()
-	if err := metrics.SetEnvironmentInformation(s.cfg.MetricsGrafanaEnvironmentInfo); err != nil {
+	if err := metrics.SetEnvironmentInformation(s.cfg.MetricsGrafinsightEnvironmentInfo); err != nil {
 		return err
 	}
 
@@ -281,7 +281,7 @@ func (s *Server) loadConfiguration() {
 	}
 
 	if err := s.cfg.Load(args); err != nil {
-		fmt.Fprintf(os.Stderr, "Failed to start grafana. error: %s\n", err.Error())
+		fmt.Fprintf(os.Stderr, "Failed to start grafinsight. error: %s\n", err.Error())
 		os.Exit(1)
 	}
 

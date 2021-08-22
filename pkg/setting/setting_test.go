@@ -79,7 +79,7 @@ func TestLoadingSettings(t *testing.T) {
 		})
 
 		Convey("Should return an error when url is invalid", func() {
-			err := os.Setenv("GF_DATABASE_URL", "postgres.%31://grafana:secret@postgres:5432/grafana")
+			err := os.Setenv("GF_DATABASE_URL", "postgres.%31://grafinsight:secret@postgres:5432/grafinsight")
 			require.NoError(t, err)
 
 			cfg := NewCfg()
@@ -292,7 +292,7 @@ func TestLoadingSettings(t *testing.T) {
 
 		Convey("If key is found - should return value from ini file", func() {
 			value := valueAsString(iniFile.Section("server"), "alt_url", "")
-			So(value, ShouldEqual, "https://grafana.com/")
+			So(value, ShouldEqual, "https://grafinsight.com/")
 		})
 
 		Convey("If key is not found - should return default value", func() {
@@ -310,8 +310,8 @@ func TestParseAppURLAndSubURL(t *testing.T) {
 	}{
 		{rootURL: "http://localhost:3000/", expectedAppURL: "http://localhost:3000/"},
 		{rootURL: "http://localhost:3000", expectedAppURL: "http://localhost:3000/"},
-		{rootURL: "http://localhost:3000/grafana", expectedAppURL: "http://localhost:3000/grafana/", expectedAppSubURL: "/grafana"},
-		{rootURL: "http://localhost:3000/grafana/", expectedAppURL: "http://localhost:3000/grafana/", expectedAppSubURL: "/grafana"},
+		{rootURL: "http://localhost:3000/grafinsight", expectedAppURL: "http://localhost:3000/grafinsight/", expectedAppSubURL: "/grafinsight"},
+		{rootURL: "http://localhost:3000/grafinsight/", expectedAppURL: "http://localhost:3000/grafinsight/", expectedAppSubURL: "/grafinsight"},
 	}
 
 	for _, tc := range testCases {
@@ -395,26 +395,26 @@ func TestGetCDNPath(t *testing.T) {
 	var err error
 	cfg := NewCfg()
 	cfg.BuildVersion = "v7.5.0-11124"
-	cfg.CDNRootURL, err = url.Parse("http://cdn.grafana.com")
+	cfg.CDNRootURL, err = url.Parse("http://cdn.grafinsight.com")
 	require.NoError(t, err)
 
-	require.Equal(t, "http://cdn.grafana.com/grafana-oss/v7.5.0-11124/", cfg.GetContentDeliveryURL("grafana-oss"))
-	require.Equal(t, "http://cdn.grafana.com/grafana/v7.5.0-11124/", cfg.GetContentDeliveryURL("grafana"))
+	require.Equal(t, "http://cdn.grafinsight.com/grafinsight-oss/v7.5.0-11124/", cfg.GetContentDeliveryURL("grafinsight-oss"))
+	require.Equal(t, "http://cdn.grafinsight.com/grafinsight/v7.5.0-11124/", cfg.GetContentDeliveryURL("grafinsight"))
 }
 
 func TestGetContentDeliveryURLWhenNoCDNRootURLIsSet(t *testing.T) {
 	cfg := NewCfg()
-	require.Equal(t, "", cfg.GetContentDeliveryURL("grafana-oss"))
+	require.Equal(t, "", cfg.GetContentDeliveryURL("grafinsight-oss"))
 }
 
 func TestGetCDNPathWithPreReleaseVersionAndSubPath(t *testing.T) {
 	var err error
 	cfg := NewCfg()
 	cfg.BuildVersion = "v7.5.0-11124pre"
-	cfg.CDNRootURL, err = url.Parse("http://cdn.grafana.com/sub")
+	cfg.CDNRootURL, err = url.Parse("http://cdn.grafinsight.com/sub")
 	require.NoError(t, err)
-	require.Equal(t, "http://cdn.grafana.com/sub/grafana-oss/pre-releases/v7.5.0-11124pre/", cfg.GetContentDeliveryURL("grafana-oss"))
-	require.Equal(t, "http://cdn.grafana.com/sub/grafana/pre-releases/v7.5.0-11124pre/", cfg.GetContentDeliveryURL("grafana"))
+	require.Equal(t, "http://cdn.grafinsight.com/sub/grafinsight-oss/pre-releases/v7.5.0-11124pre/", cfg.GetContentDeliveryURL("grafinsight-oss"))
+	require.Equal(t, "http://cdn.grafinsight.com/sub/grafinsight/pre-releases/v7.5.0-11124pre/", cfg.GetContentDeliveryURL("grafinsight"))
 }
 
 // Adding a case for this in case we switch to proper semver version strings
@@ -422,8 +422,8 @@ func TestGetCDNPathWithAlphaVersion(t *testing.T) {
 	var err error
 	cfg := NewCfg()
 	cfg.BuildVersion = "v7.5.0-alpha.11124"
-	cfg.CDNRootURL, err = url.Parse("http://cdn.grafana.com")
+	cfg.CDNRootURL, err = url.Parse("http://cdn.grafinsight.com")
 	require.NoError(t, err)
-	require.Equal(t, "http://cdn.grafana.com/grafana-oss/pre-releases/v7.5.0-alpha.11124/", cfg.GetContentDeliveryURL("grafana-oss"))
-	require.Equal(t, "http://cdn.grafana.com/grafana/pre-releases/v7.5.0-alpha.11124/", cfg.GetContentDeliveryURL("grafana"))
+	require.Equal(t, "http://cdn.grafinsight.com/grafinsight-oss/pre-releases/v7.5.0-alpha.11124/", cfg.GetContentDeliveryURL("grafinsight-oss"))
+	require.Equal(t, "http://cdn.grafinsight.com/grafinsight/pre-releases/v7.5.0-alpha.11124/", cfg.GetContentDeliveryURL("grafinsight"))
 }

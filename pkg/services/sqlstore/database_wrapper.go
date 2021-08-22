@@ -24,7 +24,7 @@ var (
 
 func init() {
 	databaseQueryHistogram = prometheus.NewHistogramVec(prometheus.HistogramOpts{
-		Namespace: "grafana",
+		Namespace: "grafinsight",
 		Name:      "database_queries_duration_seconds",
 		Help:      "Database query histogram",
 		Buckets:   prometheus.ExponentialBuckets(0.00001, 4, 10),

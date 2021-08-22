@@ -29,7 +29,7 @@ func TestSensuNotifier(t *testing.T) {
 				json := `
 				{
 					"url": "http://sensu-api.example.com:4567/results",
-					"source": "grafana_instance_01",
+					"source": "grafinsight_instance_01",
 					"handler": "myhandler"
 				}`
 
@@ -47,7 +47,7 @@ func TestSensuNotifier(t *testing.T) {
 				So(sensuNotifier.Name, ShouldEqual, "sensu")
 				So(sensuNotifier.Type, ShouldEqual, "sensu")
 				So(sensuNotifier.URL, ShouldEqual, "http://sensu-api.example.com:4567/results")
-				So(sensuNotifier.Source, ShouldEqual, "grafana_instance_01")
+				So(sensuNotifier.Source, ShouldEqual, "grafinsight_instance_01")
 				So(sensuNotifier.Handler, ShouldEqual, "myhandler")
 			})
 		})

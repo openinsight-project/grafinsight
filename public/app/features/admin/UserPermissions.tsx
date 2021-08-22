@@ -3,9 +3,9 @@ import { ConfirmButton, RadioButtonGroup, Icon } from '@grafinsight/ui';
 import { cx } from 'emotion';
 
 interface Props {
-  isGrafanaAdmin: boolean;
+  isGrafinsightAdmin: boolean;
 
-  onGrafanaAdminChange: (isGrafanaAdmin: boolean) => void;
+  onGrafanaAdminChange: (isGrafinsightAdmin: boolean) => void;
 }
 
 interface State {
@@ -21,7 +21,7 @@ const adminOptions = [
 export class UserPermissions extends PureComponent<Props, State> {
   state = {
     isEditing: false,
-    currentAdminOption: this.props.isGrafanaAdmin ? 'YES' : 'NO',
+    currentAdminOption: this.props.isGrafinsightAdmin ? 'YES' : 'NO',
   };
 
   onChangeClick = () => {
@@ -31,14 +31,14 @@ export class UserPermissions extends PureComponent<Props, State> {
   onCancelClick = () => {
     this.setState({
       isEditing: false,
-      currentAdminOption: this.props.isGrafanaAdmin ? 'YES' : 'NO',
+      currentAdminOption: this.props.isGrafinsightAdmin ? 'YES' : 'NO',
     });
   };
 
   onGrafanaAdminChange = () => {
     const { currentAdminOption } = this.state;
-    const newIsGrafanaAdmin = currentAdminOption === 'YES' ? true : false;
-    this.props.onGrafanaAdminChange(newIsGrafanaAdmin);
+    const newIsGrafinsightAdmin = currentAdminOption === 'YES' ? true : false;
+    this.props.onGrafanaAdminChange(newIsGrafinsightAdmin);
   };
 
   onAdminOptionSelect = (value: string) => {
@@ -46,7 +46,7 @@ export class UserPermissions extends PureComponent<Props, State> {
   };
 
   render() {
-    const { isGrafanaAdmin } = this.props;
+    const { isGrafinsightAdmin } = this.props;
     const { isEditing, currentAdminOption } = this.state;
     const changeButtonContainerClass = cx('pull-right');
 
@@ -69,7 +69,7 @@ export class UserPermissions extends PureComponent<Props, State> {
                     </td>
                   ) : (
                     <td colSpan={2}>
-                      {isGrafanaAdmin ? (
+                      {isGrafinsightAdmin ? (
                         <>
                           <Icon name="shield" /> Yes
                         </>

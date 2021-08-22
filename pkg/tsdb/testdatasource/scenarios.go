@@ -32,7 +32,7 @@ const (
 	predictableCSVWaveQuery           queryType = "predictable_csv_wave"
 	streamingClientQuery              queryType = "streaming_client"
 	liveQuery                         queryType = "live"
-	grafanaAPIQuery                   queryType = "grafana_api"
+	grafinsightAPIQuery               queryType = "grafinsight_api"
 	arrowQuery                        queryType = "arrow"
 	annotationsQuery                  queryType = "annotations"
 	tableStaticQuery                  queryType = "table_static"
@@ -137,13 +137,13 @@ Timestamps will line up evenly on timeStepSeconds (For example, 60 seconds means
 
 	p.registerScenario(&Scenario{
 		ID:      string(liveQuery),
-		Name:    "Grafana Live",
+		Name:    "Grafinsight Live",
 		handler: p.handleClientSideScenario,
 	})
 
 	p.registerScenario(&Scenario{
-		ID:      string(grafanaAPIQuery),
-		Name:    "Grafana API",
+		ID:      string(grafinsightAPIQuery),
+		Name:    "Grafinsight API",
 		handler: p.handleClientSideScenario,
 	})
 
@@ -391,7 +391,7 @@ func (p *testDataPlugin) handleRandomWalkWithErrorScenario(ctx context.Context, 
 
 		respD := resp.Responses[q.RefID]
 		respD.Frames = append(respD.Frames, randomWalk(q, model, 0))
-		respD.Error = fmt.Errorf("this is an error and it can include URLs http://grafana.com/")
+		respD.Error = fmt.Errorf("this is an error and it can include URLs http://grafinsight.com/")
 		resp.Responses[q.RefID] = respD
 	}
 

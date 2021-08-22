@@ -10,7 +10,7 @@ import (
 	"github.com/openinsight-project/grafinsight/pkg/tsdb"
 )
 
-// corePlugin represents a plugin that's part of Grafana core.
+// corePlugin represents a plugin that's part of Grafinsight core.
 type corePlugin struct {
 	pluginID string
 	logger   log.Logger

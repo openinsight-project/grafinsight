@@ -209,7 +209,7 @@ func ReadLoggingConfig(modes []string, logsPath string, cfg *ini.File) error {
 		case "console":
 			handler = log15.StreamHandler(os.Stdout, format)
 		case "file":
-			fileName := sec.Key("file_name").MustString(filepath.Join(logsPath, "grafana.log"))
+			fileName := sec.Key("file_name").MustString(filepath.Join(logsPath, "grafinsight.log"))
 			dpath := filepath.Dir(fileName)
 			if err := os.MkdirAll(dpath, os.ModePerm); err != nil {
 				Root.Error("Failed to create directory", "dpath", dpath, "err", err)

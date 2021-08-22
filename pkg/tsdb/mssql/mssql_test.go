@@ -19,7 +19,7 @@ import (
 )
 
 // To run this test, remove the Skip from SkipConvey
-// The tests require a MSSQL db named grafanatest and a user/password grafana/Password!
+// The tests require a MSSQL db named grafinsighttest and a user/password grafinsight/Password!
 // Use the docker/blocks/mssql_tests/docker-compose.yaml to spin up a
 // preconfigured MSSQL server suitable for running these tests.
 // There is also a datasource and dashboard provisioned by devenv scripts that you can

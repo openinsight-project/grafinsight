@@ -167,7 +167,7 @@ func (hs *HTTPServer) OAuthLogin(ctx *models.ReqContext) {
 		return
 	}
 
-	// validate that the email is allowed to login to grafana
+	// validate that the email is allowed to login to grafinsight
 	if !connect.IsEmailAllowed(userInfo.Email) {
 		hs.handleOAuthLoginErrorWithRedirect(ctx, loginInfo, login.ErrEmailNotAllowed)
 		return
@@ -238,14 +238,14 @@ func buildExternalUserInfo(token *oauth2.Token, userInfo *social.BasicUserInfo, 
 	return extUser
 }
 
-// syncUser syncs a Grafana user profile with the corresponding OAuth profile.
+// syncUser syncs a Grafinsight user profile with the corresponding OAuth profile.
 func syncUser(
 	ctx *models.ReqContext,
 	extUser *models.ExternalUserInfo,
 	connect social.SocialConnector,
 ) (*models.User, error) {
-	oauthLogger.Debug("Syncing Grafana user with corresponding OAuth profile")
-	// add/update user in Grafana
+	oauthLogger.Debug("Syncing Grafinsight user with corresponding OAuth profile")
+	// add/update user in Grafinsight
 	cmd := &models.UpsertUserCommand{
 		ReqContext:    ctx,
 		ExternalUser:  extUser,

@@ -215,7 +215,7 @@ func TestLDAPLogin(t *testing.T) {
 			}
 			server := &Server{
 				Config: &ServerConfig{
-					BindDN:        "cn=%s,ou=users,dc=grafana,dc=org",
+					BindDN:        "cn=%s,ou=users,dc=grafinsight,dc=org",
 					SearchBaseDNs: []string{"BaseDNHere"},
 				},
 				Connection: connection,
@@ -226,7 +226,7 @@ func TestLDAPLogin(t *testing.T) {
 
 			So(err, ShouldBeNil)
 
-			So(authBindUser, ShouldEqual, "cn=user,ou=users,dc=grafana,dc=org")
+			So(authBindUser, ShouldEqual, "cn=user,ou=users,dc=grafinsight,dc=org")
 			So(authBindPassword, ShouldEqual, "pwd")
 			So(connection.BindCalled, ShouldBeTrue)
 		})

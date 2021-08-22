@@ -319,7 +319,7 @@ func (timeSeriesFilter *cloudMonitoringTimeSeriesFilter) buildDeepLink() string 
 
 	rawQuery := u.Query()
 	rawQuery.Set("project", timeSeriesFilter.ProjectName)
-	rawQuery.Set("Grafana_deeplink", "true")
+	rawQuery.Set("Grafinsight_deeplink", "true")
 
 	pageState := map[string]interface{}{
 		"xyChart": map[string]interface{}{

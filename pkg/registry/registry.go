@@ -103,9 +103,9 @@ func getServicesWithOverrides() []*Descriptor {
 }
 
 // Service interface is the lowest common shape that services
-// are expected to fulfill to be started within Grafana.
+// are expected to fulfill to be started within Grafinsight.
 type Service interface {
-	// Init is called by Grafana main process which gives the service
+	// Init is called by Grafinsight main process which gives the service
 	// the possibility do some initial work before its started. Things
 	// like adding routes, bus handlers should be done in the Init function
 	Init() error
@@ -125,7 +125,7 @@ type CanBeDisabled interface {
 type BackgroundService interface {
 	// Run starts the background process of the service after `Init` have been called
 	// on all services. The `context.Context` passed into the function should be used
-	// to subscribe to ctx.Done() so the service can be notified when Grafana shuts down.
+	// to subscribe to ctx.Done() so the service can be notified when Grafinsight shuts down.
 	Run(ctx context.Context) error
 }
 

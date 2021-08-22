@@ -146,7 +146,7 @@ func TestLDAPPrivateMethods(t *testing.T) {
 		})
 	})
 
-	Convey("validateGrafanaUser()", t, func() {
+	Convey("validateGrafinsightUser()", t, func() {
 		Convey("Returns error when user does not belong in any of the specified LDAP groups", func() {
 			server := &Server{
 				Config: &ServerConfig{
@@ -163,7 +163,7 @@ func TestLDAPPrivateMethods(t *testing.T) {
 				Login: "markelog",
 			}
 
-			result := server.validateGrafanaUser(user)
+			result := server.validateGrafinsightUser(user)
 
 			So(result, ShouldEqual, ErrInvalidCredentials)
 		})
@@ -180,7 +180,7 @@ func TestLDAPPrivateMethods(t *testing.T) {
 				Login: "markelog",
 			}
 
-			result := server.validateGrafanaUser(user)
+			result := server.validateGrafinsightUser(user)
 
 			So(result, ShouldBeNil)
 		})
@@ -204,7 +204,7 @@ func TestLDAPPrivateMethods(t *testing.T) {
 				},
 			}
 
-			result := server.validateGrafanaUser(user)
+			result := server.validateGrafinsightUser(user)
 
 			So(result, ShouldBeNil)
 		})
@@ -238,7 +238,7 @@ func TestLDAPPrivateMethods(t *testing.T) {
 		Convey("it should allow single bind", func() {
 			server := &Server{
 				Config: &ServerConfig{
-					BindDN: "cn=%s,dc=grafana,dc=org",
+					BindDN: "cn=%s,dc=grafinsight,dc=org",
 				},
 			}
 
@@ -249,7 +249,7 @@ func TestLDAPPrivateMethods(t *testing.T) {
 		Convey("it should not allow single bind", func() {
 			server := &Server{
 				Config: &ServerConfig{
-					BindDN: "cn=admin,dc=grafana,dc=org",
+					BindDN: "cn=admin,dc=grafinsight,dc=org",
 				},
 			}
 
@@ -262,12 +262,12 @@ func TestLDAPPrivateMethods(t *testing.T) {
 		Convey("it should allow single bind", func() {
 			server := &Server{
 				Config: &ServerConfig{
-					BindDN: "cn=%s,dc=grafana,dc=org",
+					BindDN: "cn=%s,dc=grafinsight,dc=org",
 				},
 			}
 
 			result := server.singleBindDN("test")
-			So(result, ShouldEqual, "cn=test,dc=grafana,dc=org")
+			So(result, ShouldEqual, "cn=test,dc=grafinsight,dc=org")
 		})
 	})
 }

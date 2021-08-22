@@ -31,7 +31,7 @@ import (
 func TestQueryCloudWatchMetrics(t *testing.T) {
 	grafDir, cfgPath := testinfra.CreateGrafDir(t)
 	sqlStore := setUpDatabase(t, grafDir)
-	addr := testinfra.StartGrafana(t, grafDir, cfgPath, sqlStore)
+	addr := testinfra.StartGrafinsight(t, grafDir, cfgPath, sqlStore)
 
 	origNewCWClient := cloudwatch.NewCWClient
 	t.Cleanup(func() {
@@ -103,7 +103,7 @@ func TestQueryCloudWatchMetrics(t *testing.T) {
 func TestQueryCloudWatchLogs(t *testing.T) {
 	grafDir, cfgPath := testinfra.CreateGrafDir(t)
 	sqlStore := setUpDatabase(t, grafDir)
-	addr := testinfra.StartGrafana(t, grafDir, cfgPath, sqlStore)
+	addr := testinfra.StartGrafinsight(t, grafDir, cfgPath, sqlStore)
 
 	origNewCWLogsClient := cloudwatch.NewCWLogsClient
 	t.Cleanup(func() {

@@ -26,13 +26,13 @@ func init() {
 	httpRequestsInFlight = prometheus.NewGauge(
 		prometheus.GaugeOpts{
 			Name: "http_request_in_flight",
-			Help: "A gauge of requests currently being served by Grafana.",
+			Help: "A gauge of requests currently being served by Grafinsight.",
 		},
 	)
 
 	httpRequestDurationHistogram = prometheus.NewHistogramVec(
 		prometheus.HistogramOpts{
-			Namespace: "grafana",
+			Namespace: "grafinsight",
 			Name:      "http_request_duration_seconds",
 			Help:      "Histogram of latencies for HTTP requests.",
 			Buckets:   defBuckets,

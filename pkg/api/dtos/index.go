@@ -7,25 +7,25 @@ import (
 )
 
 type IndexViewData struct {
-	User                    *CurrentUser
-	Settings                map[string]interface{}
-	AppUrl                  string
-	AppSubUrl               string
-	GoogleAnalyticsId       string
-	GoogleTagManagerId      string
-	NavTree                 []*NavLink
-	BuildVersion            string
-	BuildCommit             string
-	Theme                   string
-	NewGrafanaVersionExists bool
-	NewGrafanaVersion       string
-	AppName                 string
-	AppNameBodyClass        string
-	FavIcon                 template.URL
-	AppleTouchIcon          template.URL
-	AppTitle                string
-	Sentry                  *setting.Sentry
-	ContentDeliveryURL      string
+	User                        *CurrentUser
+	Settings                    map[string]interface{}
+	AppUrl                      string
+	AppSubUrl                   string
+	GoogleAnalyticsId           string
+	GoogleTagManagerId          string
+	NavTree                     []*NavLink
+	BuildVersion                string
+	BuildCommit                 string
+	Theme                       string
+	NewGrafinsightVersionExists bool
+	NewGrafinsightVersion       string
+	AppName                     string
+	AppNameBodyClass            string
+	FavIcon                     template.URL
+	AppleTouchIcon              template.URL
+	AppTitle                    string
+	Sentry                      *setting.Sentry
+	ContentDeliveryURL          string
 	// Nonce is a cryptographic identifier for use with Content Security Policy.
 	Nonce string
 }

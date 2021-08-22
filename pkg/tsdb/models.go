@@ -213,8 +213,8 @@ type dataFrames struct {
 // NewDecodedDataFrames instantiates DataFrames from decoded frames.
 //
 // This should be the primary function for creating DataFrames if you're implementing a plugin.
-// In a Grafana alerting scenario it needs to operate on decoded frames, which is why this function is
-// preferrable. When encoded data frames are needed, e.g. returned from Grafana HTTP API, it will
+// In a Grafinsight alerting scenario it needs to operate on decoded frames, which is why this function is
+// preferrable. When encoded data frames are needed, e.g. returned from Grafinsight HTTP API, it will
 // happen automatically when MarshalJSON() is called.
 func NewDecodedDataFrames(decodedFrames data.Frames) DataFrames {
 	return &dataFrames{
@@ -225,8 +225,8 @@ func NewDecodedDataFrames(decodedFrames data.Frames) DataFrames {
 // NewEncodedDataFrames instantiates DataFrames from encoded frames.
 //
 // This one is primarily used for creating DataFrames when receiving encoded data frames from an external
-// plugin or similar. This may allow the encoded data frames to be returned to Grafana UI without any additional
-// decoding/encoding required. In Grafana alerting scenario it needs to operate on decoded data frames why encoded
+// plugin or similar. This may allow the encoded data frames to be returned to Grafinsight UI without any additional
+// decoding/encoding required. In Grafinsight alerting scenario it needs to operate on decoded data frames why encoded
 // frames needs to be decoded before usage.
 func NewEncodedDataFrames(encodedFrames [][]byte) DataFrames {
 	return &dataFrames{

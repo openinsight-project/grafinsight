@@ -15,14 +15,14 @@ import (
 const (
 	// DefaultProtocolVersion is the protocol version assumed for legacy clients that don't specify
 	// a particular version or version 1 during their handshake. This is currently the version used
-	// since Grafana launched support for backend plugins.
+	// since Grafinsight launched support for backend plugins.
 	DefaultProtocolVersion = 1
 )
 
 // Handshake is the HandshakeConfig used to configure clients and servers.
 var handshake = goplugin.HandshakeConfig{
-	// The ProtocolVersion is the version that must match between Grafana core
-	// and Grafana plugins. This should be bumped whenever a (breaking) change
+	// The ProtocolVersion is the version that must match between Grafinsight core
+	// and Grafinsight plugins. This should be bumped whenever a (breaking) change
 	// happens in one or the other that makes it so that they can't safely communicate.
 	ProtocolVersion: DefaultProtocolVersion,
 

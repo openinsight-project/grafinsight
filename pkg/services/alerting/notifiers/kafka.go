@@ -86,7 +86,7 @@ func (kn *KafkaNotifier) Notify(evalContext *alerting.EvalContext) error {
 	// get alert state in the kafka output issue #11401
 	bodyJSON.Set("alert_state", state)
 	bodyJSON.Set("description", evalContext.Rule.Name+" - "+evalContext.Rule.Message)
-	bodyJSON.Set("client", "Grafana")
+	bodyJSON.Set("client", "Grafinsight")
 	bodyJSON.Set("details", customData)
 	bodyJSON.Set("incident_key", "alertId-"+strconv.FormatInt(evalContext.Rule.ID, 10))
 

@@ -1,4 +1,4 @@
-module github.com/grafana/grafana/scripts/go
+module github.com/openinsight-project/grafinsight/scripts/go
 
 go 1.14
 

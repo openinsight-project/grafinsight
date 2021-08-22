@@ -125,7 +125,7 @@ func inviteExistingUserToOrg(c *models.ReqContext, user *models.User, inviteDto 
 	}
 
 	return response.JSON(200, util.DynMap{
-		"message": fmt.Sprintf("Existing Grafana user %s added to org %s", user.NameOrFallback(), c.OrgName),
+		"message": fmt.Sprintf("Existing Grafinsight user %s added to org %s", user.NameOrFallback(), c.OrgName),
 		"userId":  user.Id,
 	})
 }

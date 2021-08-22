@@ -1,8 +1,8 @@
 {
-  "author": "GrafInsight Labs",
+  "author": "GrafInsight",
   "license": "Apache-2.0",
   "name": "@grafinsight/ui",
-  "version": "7.5.4",
+  "version": "0.0.1",
   "description": "GrafInsight Components Library",
   "keywords": [
     "grafinsight",
@@ -27,9 +27,9 @@
   },
   "dependencies": {
     "@emotion/core": "10.0.27",
-    "@grafinsight/data": "7.5.4",
-    "@grafinsight/e2e-selectors": "7.5.4",
-    "@grafana/slate-react": "0.22.9-grafinsight",
+    "@grafinsight/data": "0.0.1",
+    "@grafinsight/e2e-selectors": "0.0.1",
+    "@grafana/slate-react": "0.22.9-grafana",
     "@grafana/tsconfig": "^1.0.0-rc1",
     "@iconscout/react-unicons": "1.1.4",
     "@popperjs/core": "2.5.4",

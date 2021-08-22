@@ -24,7 +24,7 @@ func TestRecoveryMiddleware(t *testing.T) {
 			sc.req.Header.Set("content-type", "application/json")
 
 			assert.Equal(t, 500, sc.resp.Code)
-			assert.Equal(t, "Internal Server Error - Check the Grafana server logs for the detailed error message.", sc.respJson["message"])
+			assert.Equal(t, "Internal Server Error - Check the Grafinsight server logs for the detailed error message.", sc.respJson["message"])
 			assert.True(t, strings.HasPrefix(sc.respJson["error"].(string), "Server Error"))
 		})
 	})
@@ -37,7 +37,7 @@ func TestRecoveryMiddleware(t *testing.T) {
 
 			assert.Equal(t, 500, sc.resp.Code)
 			assert.Equal(t, "text/html; charset=UTF-8", sc.resp.Header().Get("content-type"))
-			assert.Contains(t, sc.resp.Body.String(), "<title>Grafana - Error</title>")
+			assert.Contains(t, sc.resp.Body.String(), "<title>Grafinsight - Error</title>")
 		})
 	})
 }

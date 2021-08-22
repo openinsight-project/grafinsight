@@ -306,7 +306,7 @@ func (e *cloudWatchExecutor) startLiveQuery(ctx context.Context, responseChannel
 var newQuotasClient = func(sess *session.Session) servicequotasiface.ServiceQuotasAPI {
 	client := servicequotas.New(sess)
 	client.Handlers.Send.PushFront(func(r *request.Request) {
-		r.HTTPRequest.Header.Set("User-Agent", fmt.Sprintf("Grafana/%s", setting.BuildVersion))
+		r.HTTPRequest.Header.Set("User-Agent", fmt.Sprintf("Grafinsight/%s", setting.BuildVersion))
 	})
 
 	return client

@@ -37,7 +37,7 @@ func NewAzureMonitorExecutor(dsInfo *models.DataSource) (tsdb.TsdbQueryEndpoint,
 
 func init() {
 	azlog = log.New("tsdb.azuremonitor")
-	tsdb.RegisterTsdbQueryEndpoint("grafana-azure-monitor-datasource", NewAzureMonitorExecutor)
+	tsdb.RegisterTsdbQueryEndpoint("grafinsight-azure-monitor-datasource", NewAzureMonitorExecutor)
 	legendKeyFormat = regexp.MustCompile(`\{\{\s*(.+?)\s*\}\}`)
 }
 

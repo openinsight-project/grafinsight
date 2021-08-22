@@ -16,32 +16,32 @@ func TestSplitEmails(t *testing.T) {
 			expected: []string{},
 		},
 		{
-			input:    "ops@grafana.org",
-			expected: []string{"ops@grafana.org"},
+			input:    "open@grafinsight.org",
+			expected: []string{"open@grafinsight.org"},
 		},
 		{
-			input:    "ops@grafana.org;dev@grafana.org",
-			expected: []string{"ops@grafana.org", "dev@grafana.org"},
+			input:    "open@grafinsight.org;dev@grafinsight.org",
+			expected: []string{"open@grafinsight.org", "dev@grafinsight.org"},
 		},
 		{
-			input:    "ops@grafana.org;dev@grafana.org,",
-			expected: []string{"ops@grafana.org", "dev@grafana.org"},
+			input:    "open@grafinsight.org;dev@grafinsight.org,",
+			expected: []string{"open@grafinsight.org", "dev@grafinsight.org"},
 		},
 		{
-			input:    "dev@grafana.org,ops@grafana.org",
-			expected: []string{"dev@grafana.org", "ops@grafana.org"},
+			input:    "dev@grafinsight.org,open@grafinsight.org",
+			expected: []string{"dev@grafinsight.org", "open@grafinsight.org"},
 		},
 		{
-			input:    "dev@grafana.org,ops@grafana.org,",
-			expected: []string{"dev@grafana.org", "ops@grafana.org"},
+			input:    "dev@grafinsight.org,open@grafinsight.org,",
+			expected: []string{"dev@grafinsight.org", "open@grafinsight.org"},
 		},
 		{
-			input:    "dev@grafana.org\nops@grafana.org",
-			expected: []string{"dev@grafana.org", "ops@grafana.org"},
+			input:    "dev@grafinsight.org\nopen@grafinsight.org",
+			expected: []string{"dev@grafinsight.org", "open@grafinsight.org"},
 		},
 		{
-			input:    "dev@grafana.org\nops@grafana.org\n",
-			expected: []string{"dev@grafana.org", "ops@grafana.org"},
+			input:    "dev@grafinsight.org\nopen@grafinsight.org\n",
+			expected: []string{"dev@grafinsight.org", "open@grafinsight.org"},
 		},
 	}
 

@@ -119,7 +119,7 @@ func (sn *SensuGoNotifier) Notify(evalContext *alerting.EvalContext) error {
 
 	bodyJSON := simplejson.New()
 	// Sensu Go alerts require an entity and a check. We set it to the user-specified
-	// value (optional), else we fallback and use the grafana rule anme  and ruleID.
+	// value (optional), else we fallback and use the grafinsight rule anme  and ruleID.
 	if sn.Entity != "" {
 		bodyJSON.SetPath([]string{"entity", "metadata", "name"}, sn.Entity)
 	} else {
@@ -129,7 +129,7 @@ func (sn *SensuGoNotifier) Notify(evalContext *alerting.EvalContext) error {
 	if sn.Check != "" {
 		bodyJSON.SetPath([]string{"check", "metadata", "name"}, sn.Check)
 	} else {
-		bodyJSON.SetPath([]string{"check", "metadata", "name"}, "grafana_rule_"+strconv.FormatInt(evalContext.Rule.ID, 10))
+		bodyJSON.SetPath([]string{"check", "metadata", "name"}, "grafinsight_rule_"+strconv.FormatInt(evalContext.Rule.ID, 10))
 	}
 	// Sensu Go requires the entity in an event specify its namespace.  We set it to
 	// the user-specified value (optional), else we fallback and use default

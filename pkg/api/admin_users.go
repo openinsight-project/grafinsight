@@ -91,13 +91,13 @@ func AdminUpdateUserPermissions(c *models.ReqContext, form dtos.AdminUpdateUserP
 	userID := c.ParamsInt64(":id")
 
 	cmd := models.UpdateUserPermissionsCommand{
-		UserId:         userID,
-		IsGrafanaAdmin: form.IsGrafanaAdmin,
+		UserId:             userID,
+		IsGrafinsightAdmin: form.IsGrafinsightAdmin,
 	}
 
 	if err := bus.Dispatch(&cmd); err != nil {
-		if errors.Is(err, models.ErrLastGrafanaAdmin) {
-			return response.Error(400, models.ErrLastGrafanaAdmin.Error(), nil)
+		if errors.Is(err, models.ErrLastGrafinsightAdmin) {
+			return response.Error(400, models.ErrLastGrafinsightAdmin.Error(), nil)
 		}
 
 		return response.Error(500, "Failed to update user permissions", err)

@@ -16,16 +16,15 @@ import (
 	"github.com/openinsight-project/grafinsight/pkg/setting"
 )
 
-var usageStatsURL = "https://stats.grafana.org/grafana-usage-report"
+var usageStatsURL = "https://stats.grafinsight.org/grafinsight-usage-report"
 
 type UsageReport struct {
-	Version         string                 `json:"version"`
-	Metrics         map[string]interface{} `json:"metrics"`
-	Os              string                 `json:"os"`
-	Arch            string                 `json:"arch"`
-	Edition         string                 `json:"edition"`
-	HasValidLicense bool                   `json:"hasValidLicense"`
-	Packaging       string                 `json:"packaging"`
+	Version   string                 `json:"version"`
+	Metrics   map[string]interface{} `json:"metrics"`
+	Os        string                 `json:"os"`
+	Arch      string                 `json:"arch"`
+	Edition   string                 `json:"edition"`
+	Packaging string                 `json:"packaging"`
 }
 
 func (uss *UsageStatsService) GetUsageReport(ctx context.Context) (UsageReport, error) {
@@ -34,13 +33,12 @@ func (uss *UsageStatsService) GetUsageReport(ctx context.Context) (UsageReport, 
 	metrics := map[string]interface{}{}
 
 	report := UsageReport{
-		Version:         version,
-		Metrics:         metrics,
-		Os:              runtime.GOOS,
-		Arch:            runtime.GOARCH,
-		Edition:         getEdition(),
-		HasValidLicense: uss.License.HasValidLicense(),
-		Packaging:       setting.Packaging,
+		Version:   version,
+		Metrics:   metrics,
+		Os:        runtime.GOOS,
+		Arch:      runtime.GOARCH,
+		Edition:   getEdition(),
+		Packaging: setting.Packaging,
 	}
 
 	statsQuery := models.GetSystemStatsQuery{}
@@ -69,7 +67,6 @@ func (uss *UsageStatsService) GetUsageReport(ctx context.Context) (UsageReport, 
 	metrics["stats.total_auth_token.count"] = statsQuery.Result.AuthTokens
 	metrics["stats.dashboard_versions.count"] = statsQuery.Result.DashboardVersions
 	metrics["stats.annotations.count"] = statsQuery.Result.Annotations
-	metrics["stats.valid_license.count"] = getValidLicenseCount(uss.License.HasValidLicense())
 	metrics["stats.edition.oss.count"] = getOssEditionCount()
 	metrics["stats.edition.enterprise.count"] = getEnterpriseEditionCount()
 
@@ -330,11 +327,4 @@ func getOssEditionCount() int {
 		return 0
 	}
 	return 1
-}
-
-func getValidLicenseCount(validLicense bool) int {
-	if validLicense {
-		return 1
-	}
-	return 0
 }

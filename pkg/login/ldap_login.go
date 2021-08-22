@@ -66,9 +66,9 @@ var loginUsingLDAP = func(query *models.LoginUserQuery) (bool, error) {
 	return true, nil
 }
 
-// DisableExternalUser marks external user as disabled in Grafana db
+// DisableExternalUser marks external user as disabled in Grafinsight db
 func DisableExternalUser(username string) error {
-	// Check if external user exist in Grafana
+	// Check if external user exist in Grafinsight
 	userQuery := &models.GetExternalUserInfoByLoginQuery{
 		LoginOrEmail: username,
 	}
@@ -85,7 +85,7 @@ func DisableExternalUser(username string) error {
 			userQuery.Result.Login,
 		)
 
-		// Mark user as disabled in grafana db
+		// Mark user as disabled in grafinsight db
 		disableUserCmd := &models.DisableUserCommand{
 			UserId:     userQuery.Result.UserId,
 			IsDisabled: true,

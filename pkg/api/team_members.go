@@ -28,7 +28,7 @@ func (hs *HTTPServer) GetTeamMembers(c *models.ReqContext) response.Response {
 		member.AvatarUrl = dtos.GetGravatarUrl(member.Email)
 		member.Labels = []string{}
 
-		if hs.License.HasValidLicense() && member.External {
+		if member.External {
 			authProvider := GetAuthProviderLabel(member.AuthModule)
 			member.Labels = append(member.Labels, authProvider)
 		}

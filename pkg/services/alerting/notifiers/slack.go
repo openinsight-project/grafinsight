@@ -269,8 +269,8 @@ func (sn *SlackNotifier) Notify(evalContext *alerting.EvalContext) error {
 		"text":        msg,
 		"fallback":    evalContext.GetNotificationTitle(),
 		"fields":      fields,
-		"footer":      "Grafana v" + setting.BuildVersion,
-		"footer_icon": "https://grafana.com/assets/img/fav32.png",
+		"footer":      "Grafinsight v" + setting.BuildVersion,
+		"footer_icon": "https://grafinsight.com/assets/img/fav32.png",
 		"ts":          time.Now().Unix(),
 	}
 	if sn.NeedsImage() && imageURL != "" {
@@ -332,7 +332,7 @@ func (sn *SlackNotifier) Notify(evalContext *alerting.EvalContext) error {
 func (sn *SlackNotifier) slackFileUpload(evalContext *alerting.EvalContext, log log.Logger, url string, recipient string, token string) error {
 	if evalContext.ImageOnDiskPath == "" {
 		// nolint:gosec
-		// We can ignore the gosec G304 warning on this one because `setting.HomePath` comes from Grafana's configuration file.
+		// We can ignore the gosec G304 warning on this one because `setting.HomePath` comes from Grafinsight's configuration file.
 		evalContext.ImageOnDiskPath = filepath.Join(setting.HomePath, "public/img/mixed_styles.png")
 	}
 	log.Info("Uploading to slack via file.upload API")

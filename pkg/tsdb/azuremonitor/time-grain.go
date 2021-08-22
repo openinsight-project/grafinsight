@@ -11,7 +11,7 @@ import (
 
 // TimeGrain handles conversions between
 // the ISO 8601 Duration format (PT1H), Kbn units (1h) and Time Grains (1 hour)
-// Also handles using the automatic Grafana interval to calculate a ISO 8601 Duration.
+// Also handles using the automatic Grafinsight interval to calculate a ISO 8601 Duration.
 type TimeGrain struct{}
 
 var (
