@@ -119,7 +119,7 @@ export class UsersListPage extends PureComponent<Props, State> {
           <>
             <UsersActionBar onShowInvites={this.onShowInvites} showInvites={this.state.showInvites} />
             {externalUserMngInfoHtml && (
-              <div className="grafana-info-box" dangerouslySetInnerHTML={{ __html: externalUserMngInfoHtml }} />
+              <div className="grafinsight-info-box" dangerouslySetInnerHTML={{ __html: externalUserMngInfoHtml }} />
             )}
             {hasFetched && this.renderTable()}
           </>

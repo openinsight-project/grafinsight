@@ -18,7 +18,7 @@ if [ ! -r "$GF_PATHS_HOME" ]; then
 fi
 
 if [ $PERMISSIONS_OK -eq 1 ]; then
-    echo "You may have issues with file permissions, more information here: http://docs.grafana.org/installation/docker/#migrate-to-v51-or-later"
+    echo "You may have issues with file permissions, more information here: http://docs.grafinsight.org/installation/docker/#migrate-to-v51-or-later"
 fi
 
 if [ ! -d "$GF_PATHS_PLUGINS" ]; then

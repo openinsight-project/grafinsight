@@ -6,10 +6,10 @@
   "state": "deprecated",
 
   "info": {
-    "description": "Table Panel for Grafana",
+    "description": "Table Panel for GrafInsight",
     "author": {
-      "name": "Grafana Labs",
-      "url": "https://grafana.com"
+      "name": "GrafInsight Labs",
+      "url": "https://grafinsight.com"
     },
     "logos": {
       "small": "img/icn-table-panel.svg",

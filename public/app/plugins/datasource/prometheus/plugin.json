@@ -17,8 +17,8 @@
     },
     {
       "type": "dashboard",
-      "name": "Grafana Stats",
-      "path": "dashboards/grafana_stats.json"
+      "name": "GrafInsight Stats",
+      "path": "dashboards/grafinsight_stats.json"
     }
   ],
   "metrics": true,
@@ -30,8 +30,8 @@
   "info": {
     "description": "Open source time series database & alerting",
     "author": {
-      "name": "Grafana Labs",
-      "url": "https://grafana.com"
+      "name": "GrafInsight Labs",
+      "url": "https://grafinsight.com"
     },
     "logos": {
       "small": "img/prometheus_logo.svg",

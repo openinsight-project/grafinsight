@@ -8,8 +8,8 @@
   "info": {
     "description": "Shows list of alerts and their current status",
     "author": {
-      "name": "Grafana Labs",
-      "url": "https://grafana.com"
+      "name": "GrafInsight Labs",
+      "url": "https://grafinsight.com"
     },
     "logos": {
       "small": "img/icn-singlestat-panel.svg",

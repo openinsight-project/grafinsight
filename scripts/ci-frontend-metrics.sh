@@ -20,11 +20,11 @@ echo -e "Legacy forms: $LEGACY_FORMS"
 echo -e "TS Explicit any: $STRICT_LINT_EXPLICIT_ANY"
 
 echo "Metrics: {
-  \"grafana.ci-code.strictErrors\": \"${ERROR_COUNT}\",
-  \"grafana.ci-code.directives\": \"${DIRECTIVES}\",
-  \"grafana.ci-code.controllers\": \"${CONTROLLERS}\",
-  \"grafana.ci-code.grafana-ui.stories\": \"${STORIES_COUNT}\",
-  \"grafana.ci-code.grafana-ui.mdx\": \"${MDX_COUNT}\",
-  \"grafana.ci-code.legacyForms\": \"${LEGACY_FORMS}\",
-  \"grafana.ci-code.strictLint.noExplicitAny\": \"${STRICT_LINT_EXPLICIT_ANY}\"
+  \"grafinsight.ci-code.strictErrors\": \"${ERROR_COUNT}\",
+  \"grafinsight.ci-code.directives\": \"${DIRECTIVES}\",
+  \"grafinsight.ci-code.controllers\": \"${CONTROLLERS}\",
+  \"grafinsight.ci-code.grafinsight-ui.stories\": \"${STORIES_COUNT}\",
+  \"grafinsight.ci-code.grafinsight-ui.mdx\": \"${MDX_COUNT}\",
+  \"grafinsight.ci-code.legacyForms\": \"${LEGACY_FORMS}\",
+  \"grafinsight.ci-code.strictLint.noExplicitAny\": \"${STRICT_LINT_EXPLICIT_ANY}\"
 }"

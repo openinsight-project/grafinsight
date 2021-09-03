@@ -14,7 +14,7 @@ import {
 import { CoreEvents } from 'app/types';
 import { DashboardChangedModal } from './DashboardChangedModal';
 import { DashboardEvent, DashboardEventAction } from './types';
-import { CoreGrafanaLiveFeature } from '../scopes';
+import { CoreGrafInsightLiveFeature } from '../scopes';
 import { sessionId } from '../live';
 
 class DashboardWatcher {
@@ -162,7 +162,7 @@ class DashboardWatcher {
 
 export const dashboardWatcher = new DashboardWatcher();
 
-export function getDashboardChannelsFeature(): CoreGrafanaLiveFeature {
+export function getDashboardChannelsFeature(): CoreGrafInsightLiveFeature {
   const dashboardConfig: LiveChannelConfig = {
     path: '${uid}',
     description: 'Dashboard change events',

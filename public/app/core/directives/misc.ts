@@ -11,7 +11,7 @@ function tip($compile: any) {
     restrict: 'E',
     link: (scope: any, elem: any, attrs: any) => {
       let _t =
-        '<i class="grafana-tip fa fa-' +
+        '<i class="grafinsight-tip fa fa-' +
         (attrs.icon || 'question-circle') +
         '" bs-tooltip="\'' +
         kbn.addSlashes(elem.text()) +

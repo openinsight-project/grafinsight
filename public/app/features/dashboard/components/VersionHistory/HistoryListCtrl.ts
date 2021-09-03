@@ -5,7 +5,7 @@ import { DashboardModel } from '../../state/DashboardModel';
 import { DecoratedRevisionModel } from '../DashboardSettings/VersionsSettings';
 import { CalculateDiffOptions, HistorySrv } from './HistorySrv';
 import { AppEvents, locationUtil } from '@grafinsight/data';
-import { GrafanaRootScope } from 'app/routes/GrafanaCtrl';
+import { GrafInsightRootScope } from 'app/routes/GrafInsightCtrl';
 import { CoreEvents } from 'app/types';
 import { promiseToDigest } from '../../../../core/utils/promiseToDigest';
 
@@ -22,7 +22,7 @@ export class HistoryListCtrl {
   /** @ngInject */
   constructor(
     private $route: any,
-    private $rootScope: GrafanaRootScope,
+    private $rootScope: GrafInsightRootScope,
     private $location: ILocationService,
     private historySrv: HistorySrv,
     public $scope: IScope
@@ -111,4 +111,4 @@ export function dashboardHistoryDirective() {
   };
 }
 
-angular.module('grafana.directives').directive('gfDashboardHistory', dashboardHistoryDirective);
+angular.module('grafinsight.directives').directive('gfDashboardHistory', dashboardHistoryDirective);

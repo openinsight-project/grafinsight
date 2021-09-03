@@ -56,7 +56,7 @@ export class GraphiteDatasource extends DataSourceApi<GraphiteQuery, GraphiteOpt
       links: [
         {
           text: 'Help',
-          url: 'http://docs.grafana.org/features/datasources/graphite/#using-graphite-in-grafana',
+          url: 'http://docs.grafinsight.org/features/datasources/graphite/#using-graphite-in-grafinsight',
         },
       ],
     };
@@ -127,7 +127,7 @@ export class GraphiteDatasource extends DataSourceApi<GraphiteQuery, GraphiteOpt
     for (let i = 0; i < series.length; i++) {
       const s = series[i];
 
-      // Disables Grafana own series naming
+      // Disables GrafInsight own series naming
       s.title = s.target;
 
       for (let y = 0; y < s.datapoints.length; y++) {

@@ -12,13 +12,13 @@ import {
 } from '@grafinsight/data';
 
 import { LivePanelOptions } from './types';
-import { getGrafanaLiveCentrifugeSrv } from 'app/features/live/live';
+import { getGrafInsightLiveCentrifugeSrv } from 'app/features/live/live';
 import { config } from 'app/core/config';
 
 type Props = StandardEditorProps<LiveChannelAddress, any, LivePanelOptions>;
 
 const scopes: Array<SelectableValue<LiveChannelScope>> = [
-  { label: 'Grafana', value: LiveChannelScope.GrafInsight, description: 'Core grafana live features' },
+  { label: 'GrafInsight', value: LiveChannelScope.GrafInsight, description: 'Core grafinsight live features' },
   { label: 'Data Sources', value: LiveChannelScope.DataSource, description: 'Data sources with live support' },
   { label: 'Plugins', value: LiveChannelScope.Plugin, description: 'Plugins with live support' },
 ];
@@ -48,7 +48,7 @@ export class LiveChannelEditor extends PureComponent<Props, State> {
   async updateSelectOptions() {
     const { value } = this.props;
     const { scope, namespace } = value;
-    const srv = getGrafanaLiveCentrifugeSrv();
+    const srv = getGrafInsightLiveCentrifugeSrv();
     const namespaces = await srv.scopes[scope].listNamespaces();
     const support = namespace ? await srv.scopes[scope].getChannelSupport(namespace) : undefined;
     const paths = support ? await support.getSupportedPaths() : undefined;
@@ -107,9 +107,9 @@ export class LiveChannelEditor extends PureComponent<Props, State> {
 
     return (
       <>
-        <FeatureInfoBox title="Grafana Live" featureState={FeatureState.alpha}>
+        <FeatureInfoBox title="GrafInsight Live" featureState={FeatureState.alpha}>
           <p>
-            This supports real-time event streams in grafana core. This feature is under heavy development. Expect the
+            This supports real-time event streams in grafinsight core. This feature is under heavy development. Expect the
             intefaces and structures to change as this becomes more production ready.
           </p>
         </FeatureInfoBox>

@@ -29,18 +29,18 @@ import impressionSrv from 'app/core/services/impression_srv';
 import builtInPlugins from './built_in_plugins';
 import * as d3 from 'd3';
 import * as emotion from 'emotion';
-import * as grafanaData from '@grafinsight/data';
-import * as grafanaUIraw from '@grafinsight/ui';
-import * as grafanaRuntime from '@grafinsight/runtime/src';
+import * as grafinsightData from '@grafinsight/data';
+import * as grafinsightUIraw from '@grafinsight/ui';
+import * as grafinsightRuntime from '@grafinsight/runtime/src';
 
 // Help the 6.4 to 6.5 migration
 // The base classes were moved from @grafinsight/ui to @grafinsight/data
 // This exposes the same classes on both import paths
-const grafanaUI = grafanaUIraw as any;
-grafanaUI.PanelPlugin = grafanaData.PanelPlugin;
-grafanaUI.DataSourcePlugin = grafanaData.DataSourcePlugin;
-grafanaUI.AppPlugin = grafanaData.AppPlugin;
-grafanaUI.DataSourceApi = grafanaData.DataSourceApi;
+const grafinsightUI = grafinsightUIraw as any;
+grafinsightUI.PanelPlugin = grafinsightData.PanelPlugin;
+grafinsightUI.DataSourcePlugin = grafinsightData.DataSourcePlugin;
+grafinsightUI.AppPlugin = grafinsightData.AppPlugin;
+grafinsightUI.DataSourceApi = grafinsightData.DataSourceApi;
 
 // rxjs
 import * as rxjs from 'rxjs';
@@ -51,9 +51,9 @@ const bust = `?_cache=${Date.now()}`;
 function locate(load: { address: string }) {
   return load.address + bust;
 }
-grafanaRuntime.SystemJS.registry.set('plugin-loader', grafanaRuntime.SystemJS.newModule({ locate: locate }));
+grafinsightRuntime.SystemJS.registry.set('plugin-loader', grafinsightRuntime.SystemJS.newModule({ locate: locate }));
 
-grafanaRuntime.SystemJS.config({
+grafinsightRuntime.SystemJS.config({
   baseURL: 'public',
   defaultExtension: 'js',
   packages: {
@@ -75,14 +75,14 @@ grafanaRuntime.SystemJS.config({
 });
 
 function exposeToPlugin(name: string, component: any) {
-  grafanaRuntime.SystemJS.registerDynamic(name, [], true, (require: any, exports: any, module: { exports: any }) => {
+  grafinsightRuntime.SystemJS.registerDynamic(name, [], true, (require: any, exports: any, module: { exports: any }) => {
     module.exports = component;
   });
 }
 
-exposeToPlugin('@grafinsight/data', grafanaData);
-exposeToPlugin('@grafinsight/ui', grafanaUI);
-exposeToPlugin('@grafinsight/runtime', grafanaRuntime);
+exposeToPlugin('@grafinsight/data', grafinsightData);
+exposeToPlugin('@grafinsight/ui', grafinsightUI);
+exposeToPlugin('@grafinsight/runtime', grafinsightRuntime);
 exposeToPlugin('lodash', _);
 exposeToPlugin('moment', moment);
 exposeToPlugin('jquery', jquery);
@@ -118,7 +118,7 @@ exposeToPlugin('app/core/services/backend_srv', {
 });
 
 exposeToPlugin('app/plugins/sdk', sdk);
-exposeToPlugin('app/core/utils/datemath', grafanaData.dateMath);
+exposeToPlugin('app/core/utils/datemath', grafinsightData.dateMath);
 exposeToPlugin('app/core/utils/flatten', flatten);
 exposeToPlugin('app/core/utils/kbn', kbn);
 exposeToPlugin('app/core/utils/ticks', ticks);
@@ -177,10 +177,10 @@ export async function importPluginModule(path: string): Promise<any> {
       return Promise.resolve(builtIn);
     }
   }
-  return grafanaRuntime.SystemJS.import(path);
+  return grafinsightRuntime.SystemJS.import(path);
 }
 
-export function importDataSourcePlugin(meta: grafanaData.DataSourcePluginMeta): Promise<GenericDataSourcePlugin> {
+export function importDataSourcePlugin(meta: grafinsightData.DataSourcePluginMeta): Promise<GenericDataSourcePlugin> {
   return importPluginModule(meta.module).then((pluginExports) => {
     if (pluginExports.plugin) {
       const dsPlugin = pluginExports.plugin as GenericDataSourcePlugin;
@@ -189,10 +189,10 @@ export function importDataSourcePlugin(meta: grafanaData.DataSourcePluginMeta): 
     }
 
     if (pluginExports.Datasource) {
-      const dsPlugin = new grafanaData.DataSourcePlugin<
-        grafanaData.DataSourceApi<grafanaData.DataQuery, grafanaData.DataSourceJsonData>,
-        grafanaData.DataQuery,
-        grafanaData.DataSourceJsonData
+      const dsPlugin = new grafinsightData.DataSourcePlugin<
+        grafinsightData.DataSourceApi<grafinsightData.DataQuery, grafinsightData.DataSourceJsonData>,
+        grafinsightData.DataQuery,
+        grafinsightData.DataSourceJsonData
       >(pluginExports.Datasource);
       dsPlugin.setComponentsFromLegacyExports(pluginExports);
       dsPlugin.meta = meta;
@@ -203,9 +203,9 @@ export function importDataSourcePlugin(meta: grafanaData.DataSourcePluginMeta): 
   });
 }
 
-export function importAppPlugin(meta: grafanaData.PluginMeta): Promise<grafanaData.AppPlugin> {
+export function importAppPlugin(meta: grafinsightData.PluginMeta): Promise<grafinsightData.AppPlugin> {
   return importPluginModule(meta.module).then((pluginExports) => {
-    const plugin = pluginExports.plugin ? (pluginExports.plugin as grafanaData.AppPlugin) : new grafanaData.AppPlugin();
+    const plugin = pluginExports.plugin ? (pluginExports.plugin as grafinsightData.AppPlugin) : new grafinsightData.AppPlugin();
     plugin.init(meta);
     plugin.meta = meta;
     plugin.setComponentsFromLegacyExports(pluginExports);
@@ -217,11 +217,11 @@ import { getPanelPluginNotFound, getPanelPluginLoadError } from '../dashboard/da
 import { GenericDataSourcePlugin } from '../datasources/settings/PluginSettings';
 
 interface PanelCache {
-  [key: string]: Promise<grafanaData.PanelPlugin>;
+  [key: string]: Promise<grafinsightData.PanelPlugin>;
 }
 const panelCache: PanelCache = {};
 
-export function importPanelPlugin(id: string): Promise<grafanaData.PanelPlugin> {
+export function importPanelPlugin(id: string): Promise<grafinsightData.PanelPlugin> {
   const loaded = panelCache[id];
 
   if (loaded) {
@@ -237,9 +237,9 @@ export function importPanelPlugin(id: string): Promise<grafanaData.PanelPlugin> 
   panelCache[id] = importPluginModule(meta.module)
     .then((pluginExports) => {
       if (pluginExports.plugin) {
-        return pluginExports.plugin as grafanaData.PanelPlugin;
+        return pluginExports.plugin as grafinsightData.PanelPlugin;
       } else if (pluginExports.PanelCtrl) {
-        const plugin = new grafanaData.PanelPlugin(null);
+        const plugin = new grafinsightData.PanelPlugin(null);
         plugin.angularPanelCtrl = pluginExports.PanelCtrl;
         return plugin;
       }

@@ -47,7 +47,7 @@ export const DEFAULT_UI_STATE = {
 
 const MAX_HISTORY_ITEMS = 100;
 
-export const LAST_USED_DATASOURCE_KEY = 'grafana.explore.datasource';
+export const LAST_USED_DATASOURCE_KEY = 'grafinsight.explore.datasource';
 export const lastUsedDatasourceKeyForOrgId = (orgId: number) => `${LAST_USED_DATASOURCE_KEY}.${orgId}`;
 
 /**
@@ -324,7 +324,7 @@ export function updateHistory<T extends DataQuery = any>(
   }
 
   // Combine all queries of a datasource type into one history
-  const historyKey = `grafana.explore.history.${datasourceId}`;
+  const historyKey = `grafinsight.explore.history.${datasourceId}`;
   try {
     store.setObject(historyKey, updatedHistory);
     return updatedHistory;
@@ -335,7 +335,7 @@ export function updateHistory<T extends DataQuery = any>(
 }
 
 export function clearHistory(datasourceId: string) {
-  const historyKey = `grafana.explore.history.${datasourceId}`;
+  const historyKey = `grafinsight.explore.history.${datasourceId}`;
   store.delete(historyKey);
 }
 

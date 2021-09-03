@@ -36,8 +36,8 @@ export const PluginListPage: React.FC<Props> = ({
   }, [loadPlugins]);
 
   const linkButton = {
-    href: 'https://grafana.com/plugins?utm_source=grafana_plugin_list',
-    title: 'Find more plugins on Grafana.com',
+    href: 'https://grafinsight.com/plugins?utm_source=grafinsight_plugin_list',
+    title: 'Find more plugins on GrafInsight.com',
   };
 
   return (
@@ -56,7 +56,7 @@ export const PluginListPage: React.FC<Props> = ({
               <br />
               <p>
                 Note that <strong>unsigned front-end datasource and panel plugins</strong> are still usable, but this is
-                subject to change in the upcoming releases of Grafana
+                subject to change in the upcoming releases of GrafInsight
               </p>
             </>
           </PluginsErrorsInfo>

@@ -30,11 +30,11 @@ const loginServices: () => LoginServices = () => {
       enabled: oauthEnabled && config.oauth.gitlab,
       name: 'GitLab',
     },
-    grafanacom: {
-      enabled: oauthEnabled && config.oauth.grafana_com,
-      name: 'Grafana.com',
-      hrefName: 'grafana_com',
-      icon: 'grafana_com',
+    grafinsightcom: {
+      enabled: oauthEnabled && config.oauth.grafinsight_com,
+      name: 'GrafInsight.com',
+      hrefName: 'grafinsight_com',
+      icon: 'grafinsight_com',
     },
     okta: {
       enabled: oauthEnabled && config.oauth.okta,

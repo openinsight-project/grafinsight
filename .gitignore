@@ -25,7 +25,7 @@ vendor/
 /public/fonts/dejavu
 
 # Enterprise devenv
-/devenv/docker/blocks/grafana-enterprise
+/devenv/docker/blocks/grafinsight-enterprise
 
 /tmp
 tools/phantomjs/phantomjs
@@ -65,7 +65,7 @@ conf/custom.ini
 /conf/ldap_dev.toml
 /conf/ldap_freeipa.toml
 profile.cov
-/grafana
+/grafinsight
 /local
 .notouch
 /Makefile.local

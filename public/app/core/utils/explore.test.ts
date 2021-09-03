@@ -60,7 +60,7 @@ describe('state functions', () => {
     });
 
     it('should not return a query for mode in the url', () => {
-      // Previous versions of Grafana included "Explore mode" in the URL; this should not be treated as a query.
+      // Previous versions of GrafInsight included "Explore mode" in the URL; this should not be treated as a query.
       const paramValue =
         '["now-1h","now","x-ray-datasource",{"queryType":"getTraceSummaries"},{"mode":"Metrics"},{"ui":[true,true,true,"none"]}]';
       expect(parseUrlState(paramValue)).toMatchObject({
@@ -210,7 +210,7 @@ describe('getExploreUrl', () => {
 
 describe('updateHistory()', () => {
   const datasourceId = 'myDatasource';
-  const key = `grafana.explore.history.${datasourceId}`;
+  const key = `grafinsight.explore.history.${datasourceId}`;
 
   beforeEach(() => {
     clearHistory(datasourceId);

@@ -1,14 +1,14 @@
 {
   "type": "datasource",
   "name": "Azure Monitor",
-  "id": "grafana-azure-monitor-datasource",
+  "id": "grafinsight-azure-monitor-datasource",
   "category": "cloud",
 
   "info": {
     "description": "Data source for Microsoft Azure Monitor & Application Insights",
     "author": {
-      "name": "Grafana Labs",
-      "url": "https://grafana.com"
+      "name": "GrafInsight Labs",
+      "url": "https://grafinsight.com"
     },
     "keywords": ["azure", "monitor", "Application Insights", "Log Analytics", "App Insights"],
     "logos": {
@@ -16,11 +16,11 @@
       "large": "img/logo.jpg"
     },
     "links": [
-      { "name": "Learn more", "url": "https://github.com/grafana/azure-monitor-datasource" },
-      { "name": "Apache License", "url": "https://github.com/grafana/azure-monitor-datasource/blob/master/LICENSE" }
+      { "name": "Learn more", "url": "https://github.com/grafinsight/azure-monitor-datasource" },
+      { "name": "Apache License", "url": "https://github.com/grafinsight/azure-monitor-datasource/blob/master/LICENSE" }
     ],
     "screenshots": [
-      { "name": "Azure Contoso Loans", "path": "img/contoso_loans_grafana_dashboard.png" },
+      { "name": "Azure Contoso Loans", "path": "img/contoso_loans_grafinsight_dashboard.png" },
       { "name": "Azure Monitor Network", "path": "img/azure_monitor_network.png" },
       { "name": "Azure Monitor CPU", "path": "img/azure_monitor_cpu.png" }
     ],
@@ -42,7 +42,7 @@
           "resource": "https://management.azure.com/"
         }
       },
-      "headers": [{ "name": "x-ms-app", "content": "Grafana" }]
+      "headers": [{ "name": "x-ms-app", "content": "GrafInsight" }]
     },
     {
       "path": "govazuremonitor",
@@ -57,7 +57,7 @@
           "resource": "https://management.usgovcloudapi.net/"
         }
       },
-      "headers": [{ "name": "x-ms-app", "content": "Grafana" }]
+      "headers": [{ "name": "x-ms-app", "content": "GrafInsight" }]
     },
     {
       "path": "germanyazuremonitor",
@@ -72,7 +72,7 @@
           "resource": "https://management.microsoftazure.de/"
         }
       },
-      "headers": [{ "name": "x-ms-app", "content": "Grafana" }]
+      "headers": [{ "name": "x-ms-app", "content": "GrafInsight" }]
     },
     {
       "path": "chinaazuremonitor",
@@ -87,7 +87,7 @@
           "resource": "https://management.chinacloudapi.cn/"
         }
       },
-      "headers": [{ "name": "x-ms-app", "content": "Grafana" }]
+      "headers": [{ "name": "x-ms-app", "content": "GrafInsight" }]
     },
     {
       "path": "appinsights",
@@ -95,7 +95,7 @@
       "url": "https://api.applicationinsights.io",
       "headers": [
         { "name": "X-API-Key", "content": "{{.SecureJsonData.appInsightsApiKey}}" },
-        { "name": "x-ms-app", "content": "Grafana" }
+        { "name": "x-ms-app", "content": "GrafInsight" }
       ]
     },
     {
@@ -104,7 +104,7 @@
       "url": "https://api.applicationinsights.azure.cn",
       "headers": [
         { "name": "X-API-Key", "content": "{{.SecureJsonData.appInsightsApiKey}}" },
-        { "name": "x-ms-app", "content": "Grafana" }
+        { "name": "x-ms-app", "content": "GrafInsight" }
       ]
     },
     {
@@ -120,7 +120,7 @@
           "resource": "https://management.azure.com/"
         }
       },
-      "headers": [{ "name": "x-ms-app", "content": "Grafana" }]
+      "headers": [{ "name": "x-ms-app", "content": "GrafInsight" }]
     },
     {
       "path": "chinaworkspacesloganalytics",
@@ -135,7 +135,7 @@
           "resource": "https://management.chinacloudapi.cn/"
         }
       },
-      "headers": [{ "name": "x-ms-app", "content": "Grafana" }]
+      "headers": [{ "name": "x-ms-app", "content": "GrafInsight" }]
     },
     {
       "path": "govworkspacesloganalytics",
@@ -150,7 +150,7 @@
           "resource": "https://management.usgovcloudapi.net/"
         }
       },
-      "headers": [{ "name": "x-ms-app", "content": "Grafana" }]
+      "headers": [{ "name": "x-ms-app", "content": "GrafInsight" }]
     },
     {
       "path": "loganalyticsazure",
@@ -166,7 +166,7 @@
         }
       },
       "headers": [
-        { "name": "x-ms-app", "content": "Grafana" },
+        { "name": "x-ms-app", "content": "GrafInsight" },
         { "name": "Cache-Control", "content": "public, max-age=60" }
       ]
     },
@@ -184,7 +184,7 @@
         }
       },
       "headers": [
-        { "name": "x-ms-app", "content": "Grafana" },
+        { "name": "x-ms-app", "content": "GrafInsight" },
         { "name": "Cache-Control", "content": "public, max-age=60" }
       ]
     },
@@ -202,14 +202,14 @@
         }
       },
       "headers": [
-        { "name": "x-ms-app", "content": "Grafana" },
+        { "name": "x-ms-app", "content": "GrafInsight" },
         { "name": "Cache-Control", "content": "public, max-age=60" }
       ]
     }
   ],
 
   "dependencies": {
-    "grafanaVersion": "5.2.x",
+    "grafinsightVersion": "5.2.x",
     "plugins": []
   },
 

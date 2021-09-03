@@ -44,7 +44,7 @@ export class HeatmapTooltip {
   }
 
   add() {
-    this.tooltip = d3.select('body').append('div').attr('class', 'heatmap-tooltip graph-tooltip grafana-tooltip');
+    this.tooltip = d3.select('body').append('div').attr('class', 'heatmap-tooltip graph-tooltip grafinsight-tooltip');
   }
 
   destroy() {

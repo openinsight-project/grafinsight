@@ -111,12 +111,12 @@ export class LivePanel extends PureComponent<Props, State> {
     enable = live`;
     return (
       <FeatureInfoBox
-        title="Grafana Live"
+        title="GrafInsight Live"
         style={{
           height: this.props.height,
         }}
       >
-        <p>Grafana live requires a feature flag to run</p>
+        <p>GrafInsight live requires a feature flag to run</p>
 
         <b>custom.ini:</b>
         <pre>{preformatted}</pre>
@@ -275,7 +275,7 @@ export class LivePanel extends PureComponent<Props, State> {
     if (!channel) {
       return (
         <FeatureInfoBox
-          title="Grafana Live"
+          title="GrafInsight Live"
           style={{
             height: this.props.height,
           }}

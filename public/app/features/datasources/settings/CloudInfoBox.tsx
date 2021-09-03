@@ -57,15 +57,15 @@ export const CloudInfoBox: FC<Props> = ({ dataSource }) => {
           >
             <div className={styles.text}>
               Or skip the effort and get {mainDS} (and {extraDS}) as fully managed, scalable and hosted data sources
-              from Grafana Labs with the{' '}
+              from GrafInsight Labs with the{' '}
               <a
                 className="external-link"
-                href={`https://grafana.com/signup/cloud/connect-account?src=grafana-oss&cnt=${dataSource.type}-settings`}
+                href={`https://grafinsight.com/signup/cloud/connect-account?src=grafinsight-oss&cnt=${dataSource.type}-settings`}
                 target="_blank"
                 rel="noreferrer"
                 title="The free plan includes 10k active metrics and 50gb storage."
               >
-                free-forever Grafana Cloud plan
+                free-forever GrafInsight Cloud plan
               </a>
               .
             </div>

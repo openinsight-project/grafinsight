@@ -259,8 +259,8 @@ class PluginPage extends PureComponent<Props, State> {
         <h4>Dependencies</h4>
         <ul className="ui-list plugin-info-list">
           <li className="plugin-info-list-item">
-            <img src="public/img/grafana_icon.svg" alt="Grafana logo" />
-            Grafana {dependencies.grafinsightVersion}
+            <img src="public/img/grafinsight_icon.svg" alt="GrafInsight logo" />
+            GrafInsight {dependencies.grafinsightVersion}
           </li>
           {dependencies.plugins &&
             dependencies.plugins.map((plug) => {
@@ -315,7 +315,7 @@ class PluginPage extends PureComponent<Props, State> {
         aria-label={selectors.pages.PluginPage.signatureInfo}
         severity={plugin.meta.signature !== PluginSignatureStatus.valid ? 'warning' : 'info'}
         urlTitle="Read more about plugins signing"
-        url="https://grafana.com/docs/grafana/latest/plugins/plugin-signatures/"
+        url="https://grafinsight.com/docs/grafinsight/latest/plugins/plugin-signatures/"
       >
         <PluginSignatureBadge
           status={plugin.meta.signature}
@@ -326,10 +326,10 @@ class PluginPage extends PureComponent<Props, State> {
         <br />
         <br />
         <p>
-          Grafana Labs checks each plugin to verify that it has a valid digital signature. Plugin signature verification
+          GrafInsight Labs checks each plugin to verify that it has a valid digital signature. Plugin signature verification
           is part of our security measures to ensure plugins are safe and trustworthy.
           {plugin.meta.signature !== PluginSignatureStatus.valid &&
-            'Grafana Labs can’t guarantee the integrity of this unsigned plugin. Ask the plugin author to request it to be signed.'}
+            'GrafInsight Labs can’t guarantee the integrity of this unsigned plugin. Ask the plugin author to request it to be signed.'}
         </p>
       </InfoBox>
     );

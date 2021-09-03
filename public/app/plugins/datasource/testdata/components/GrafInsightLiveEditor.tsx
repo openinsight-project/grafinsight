@@ -16,7 +16,7 @@ const liveTestDataChannels = [
   },
 ];
 
-export const GrafanaLiveEditor = ({ onChange, query }: EditorProps) => {
+export const GrafInsightLiveEditor = ({ onChange, query }: EditorProps) => {
   const onChannelChange = ({ value }: SelectableValue<string>) => {
     onChange({ ...query, channel: value });
   };

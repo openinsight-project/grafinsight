@@ -1,11 +1,11 @@
 grabpl_version = '0.5.43'
-build_image = 'grafana/build-container:1.4.1'
-publish_image = 'grafana/grafana-ci-deploy:1.3.1'
-grafana_docker_image = 'grafana/drone-grafana-docker:0.3.2'
+build_image = 'grafinsight/build-container:1.4.1'
+publish_image = 'grafinsight/grafinsight-ci-deploy:1.3.1'
+grafinsight_docker_image = 'grafinsight/drone-grafinsight-docker:0.3.2'
 alpine_image = 'alpine:3.13'
 windows_image = 'mcr.microsoft.com/windows:1809'
 dockerize_version = '0.6.1'
-wix_image = 'grafana/ci-wix:0.1.1'
+wix_image = 'grafinsight/ci-wix:0.1.1'
 test_release_ver = 'v7.3.0-test'
 
 def pipeline(
@@ -89,7 +89,7 @@ def init_steps(edition, platform, ver_mode, is_downstream=False, install_deps=Tr
 
     download_grabpl_cmds = [
         'mkdir -p bin',
-        'curl -fL -o bin/grabpl https://grafana-downloads.storage.googleapis.com/grafana-build-pipeline/v{}/grabpl'.format(
+        'curl -fL -o bin/grabpl https://grafinsight-downloads.storage.googleapis.com/grafinsight-build-pipeline/v{}/grabpl'.format(
             grabpl_version
         ),
         'chmod +x bin/grabpl',
@@ -142,8 +142,8 @@ def init_steps(edition, platform, ver_mode, is_downstream=False, install_deps=Tr
                     },
                 },
                 'commands': download_grabpl_cmds + [
-                    'git clone "https://$${GITHUB_TOKEN}@github.com/grafana/grafana-enterprise.git"',
-                    'cd grafana-enterprise',
+                    'git clone "https://$${GITHUB_TOKEN}@github.com/grafinsight/grafinsight-enterprise.git"',
+                    'cd grafinsight-enterprise',
                     'git checkout {}'.format(committish),
                 ],
             },
@@ -159,8 +159,8 @@ def init_steps(edition, platform, ver_mode, is_downstream=False, install_deps=Tr
                 'commands': [
                     'mv bin/grabpl /tmp/',
                     'rmdir bin',
-                    'mv grafana-enterprise /tmp/',
-                    '/tmp/grabpl init-enterprise /tmp/grafana-enterprise{}'.format(source_commit),
+                    'mv grafinsight-enterprise /tmp/',
+                    '/tmp/grabpl init-enterprise /tmp/grafinsight-enterprise{}'.format(source_commit),
                     'mkdir bin',
                     'mv /tmp/grabpl bin/'
                 ] + common_cmds,
@@ -189,14 +189,14 @@ def enterprise_downstream_step(edition):
 
     return {
         'name': 'trigger-enterprise-downstream',
-        'image': 'grafana/drone-downstream',
+        'image': 'grafinsight/drone-downstream',
         'settings': {
-            'server': 'https://drone.grafana.net',
+            'server': 'https://drone.grafinsight.net',
             'token': {
                 'from_secret': 'drone_token',
             },
             'repositories': [
-                'grafana/grafana-enterprise',
+                'grafinsight/grafinsight-enterprise',
             ],
             'params': [
                 'SOURCE_BUILD_NUMBER=${DRONE_BUILD_NUMBER}',
@@ -243,8 +243,8 @@ def ldap_service():
         'name': 'ldap',
         'image': 'osixia/openldap:1.4.0',
         'environment': {
-          'LDAP_ADMIN_PASSWORD': 'grafana',
-          'LDAP_DOMAIN': 'grafana.org',
+          'LDAP_ADMIN_PASSWORD': 'grafinsight',
+          'LDAP_DOMAIN': 'grafinsight.org',
           'SLAPD_ADDITIONAL_MODULES': 'memberof',
         },
     }
@@ -287,7 +287,7 @@ def publish_storybook_step(edition, ver_mode):
             'printenv GCP_KEY | base64 -d > /tmp/gcpkey.json',
             'gcloud auth activate-service-account --key-file=/tmp/gcpkey.json',
         ] + [
-            'gsutil -m rsync -d -r ./packages/grafinsight-ui/dist/storybook gs://grafana-storybook/{}'.format(c)
+            'gsutil -m rsync -d -r ./packages/grafinsight-ui/dist/storybook gs://grafinsight-storybook/{}'.format(c)
             for c in channels
         ])
 
@@ -314,12 +314,12 @@ def upload_cdn(edition):
             'package' + enterprise2_sfx(edition),
         ],
         'environment': {
-            'GCP_GRAFANA_UPLOAD_KEY': {
+            'GCP_GRAFINSIGHT_UPLOAD_KEY': {
                 'from_secret': 'gcp_key',
             },
         },
         'commands': [
-             './bin/grabpl upload-cdn --edition {} --bucket "grafana-static-assets"'.format(edition),
+             './bin/grabpl upload-cdn --edition {} --bucket "grafinsight-static-assets"'.format(edition),
         ],
     }
 
@@ -423,8 +423,8 @@ def build_frontend_docs_step(edition):
 def build_plugins_step(edition, sign=False):
     if sign:
         env = {
-            'GRAFANA_API_KEY': {
-                'from_secret': 'grafana_api_key',
+            'GRAFINSIGHT_API_KEY': {
+                'from_secret': 'grafinsight_api_key',
             },
         }
         sign_args = ' --sign --signing-admin'
@@ -489,13 +489,13 @@ def frontend_metrics_step(edition):
             'initialize',
         ],
         'environment': {
-            'GRAFANA_MISC_STATS_API_KEY': {
-                'from_secret': 'grafana_misc_stats_api_key',
+            'GRAFINSIGHT_MISC_STATS_API_KEY': {
+                'from_secret': 'grafinsight_misc_stats_api_key',
             },
         },
         'failure': 'ignore',
         'commands': [
-            './scripts/ci-frontend-metrics.sh | ./bin/grabpl publish-metrics $${GRAFANA_MISC_STATS_API_KEY}',
+            './scripts/ci-frontend-metrics.sh | ./bin/grabpl publish-metrics $${GRAFINSIGHT_MISC_STATS_API_KEY}',
         ],
     }
 
@@ -585,8 +585,8 @@ def package_step(edition, ver_mode, variants=None, is_downstream=False):
     if ver_mode in ('master', 'release', 'test-release', 'release-branch'):
         sign_args = ' --sign'
         env = {
-            'GRAFANA_API_KEY': {
-                'from_secret': 'grafana_api_key',
+            'GRAFINSIGHT_API_KEY': {
+                'from_secret': 'grafinsight_api_key',
             },
             'GITHUB_TOKEN': {
                 'from_secret': 'github_token',
@@ -637,7 +637,7 @@ def package_step(edition, ver_mode, variants=None, is_downstream=False):
         'image': build_image,
         'depends_on': [
             # This step should have all the dependencies required for packaging, and should generate
-            # dist/grafana.version
+            # dist/grafinsight.version
             'gen-version',
         ],
         'environment': env,
@@ -647,9 +647,9 @@ def package_step(edition, ver_mode, variants=None, is_downstream=False):
 def e2e_tests_server_step(edition, port=3001):
     package_file_pfx = ''
     if edition == 'enterprise2':
-        package_file_pfx = 'grafana' + enterprise2_sfx(edition)
+        package_file_pfx = 'grafinsight' + enterprise2_sfx(edition)
     elif edition == 'enterprise':
-        package_file_pfx = 'grafana-' + edition
+        package_file_pfx = 'grafinsight-' + edition
 
     environment = {
         'PORT': port,
@@ -677,7 +677,7 @@ def e2e_tests_step(edition, port=3001, tries=None):
         cmd += ' --tries {}'.format(tries)
     return {
         'name': 'end-to-end-tests' + enterprise2_sfx(edition),
-        'image': 'grafana/ci-e2e:12.19.0-1',
+        'image': 'grafinsight/ci-e2e:12.19.0-1',
         'depends_on': [
             'end-to-end-tests-server' + enterprise2_sfx(edition),
         ],
@@ -696,14 +696,14 @@ def build_docs_website_step():
     return {
         'name': 'build-docs-website',
         # Use latest revision here, since we want to catch if it breaks
-        'image': 'grafana/docs-base:latest',
+        'image': 'grafinsight/docs-base:latest',
         'depends_on': [
             'initialize',
             'build-frontend-docs',
         ],
         'commands': [
-            'mkdir -p /hugo/content/docs/grafana',
-            'cp -r docs/sources/* /hugo/content/docs/grafana/latest/',
+            'mkdir -p /hugo/content/docs/grafinsight',
+            'cp -r docs/sources/* /hugo/content/docs/grafinsight/latest/',
             'cd /hugo && make prod',
         ],
     }
@@ -746,7 +746,7 @@ def build_docker_images_step(edition, ver_mode, archs=None, ubuntu=False, publis
         settings['archs'] = ','.join(archs)
     return {
         'name': 'build-docker-images' + ubuntu_sfx,
-        'image': grafana_docker_image,
+        'image': grafinsight_docker_image,
         'depends_on': ['copy-packages-for-docker'],
         'settings': settings,
     }
@@ -760,15 +760,15 @@ def postgres_integration_tests_step():
             'test-frontend',
         ],
         'environment': {
-            'PGPASSWORD': 'grafanatest',
-            'GRAFANA_TEST_DB': 'postgres',
+            'PGPASSWORD': 'grafinsighttest',
+            'GRAFINSIGHT_TEST_DB': 'postgres',
             'POSTGRES_HOST': 'postgres',
         },
         'commands': [
             'apt-get update',
             'apt-get install -yq postgresql-client',
             './bin/dockerize -wait tcp://postgres:5432 -timeout 120s',
-            'psql -p 5432 -h postgres -U grafanatest -d grafanatest -f ' +
+            'psql -p 5432 -h postgres -U grafinsighttest -d grafinsighttest -f ' +
                 'devenv/docker/blocks/postgres_tests/setup.sql',
             # Make sure that we don't use cached results for another database
             'go clean -testcache',
@@ -785,7 +785,7 @@ def mysql_integration_tests_step():
             'test-frontend',
         ],
         'environment': {
-            'GRAFANA_TEST_DB': 'mysql',
+            'GRAFINSIGHT_TEST_DB': 'mysql',
             'MYSQL_HOST': 'mysql',
         },
         'commands': [
@@ -848,11 +848,11 @@ def upload_packages_step(edition, ver_mode, is_downstream=False):
     if ver_mode == 'master' and edition in ('enterprise', 'enterprise2') and not is_downstream:
         return None
 
-    packages_bucket = ' --packages-bucket grafana-downloads' + enterprise2_sfx(edition)
+    packages_bucket = ' --packages-bucket grafinsight-downloads' + enterprise2_sfx(edition)
 
     if ver_mode == 'test-release':
         cmd = './bin/grabpl upload-packages --edition {} '.format(edition) + \
-            '--packages-bucket grafana-downloads-test'
+            '--packages-bucket grafinsight-downloads-test'
     else:
         cmd = './bin/grabpl upload-packages --edition {}{}'.format(edition, packages_bucket)
 
@@ -866,7 +866,7 @@ def upload_packages_step(edition, ver_mode, is_downstream=False):
             'postgres-integration-tests',
         ],
         'environment': {
-            'GCP_GRAFANA_UPLOAD_KEY': {
+            'GCP_GRAFINSIGHT_UPLOAD_KEY': {
                 'from_secret': 'gcp_key',
             },
         },
@@ -876,8 +876,8 @@ def upload_packages_step(edition, ver_mode, is_downstream=False):
 def publish_packages_step(edition, ver_mode, is_downstream=False):
     if ver_mode == 'test-release':
         cmd = './bin/grabpl publish-packages --edition {} --gcp-key /tmp/gcpkey.json '.format(edition) + \
-            '--deb-db-bucket grafana-testing-aptly-db --deb-repo-bucket grafana-testing-repo --packages-bucket ' + \
-            'grafana-downloads-test --rpm-repo-bucket grafana-testing-repo --simulate-release {}'.format(
+            '--deb-db-bucket grafinsight-testing-aptly-db --deb-repo-bucket grafinsight-testing-repo --packages-bucket ' + \
+            'grafinsight-downloads-test --rpm-repo-bucket grafinsight-testing-repo --simulate-release {}'.format(
                 test_release_ver,
             )
     elif ver_mode == 'release':
@@ -902,8 +902,8 @@ def publish_packages_step(edition, ver_mode, is_downstream=False):
             'initialize',
         ],
         'environment': {
-            'GRAFANA_COM_API_KEY': {
-                'from_secret': 'grafana_api_key',
+            'GRAFINSIGHT_COM_API_KEY': {
+                'from_secret': 'grafinsight_api_key',
             },
             'GCP_KEY': {
                 'from_secret': 'gcp_key',
@@ -937,7 +937,7 @@ def get_windows_steps(edition, ver_mode, is_downstream=False):
     else:
         init_cmds.extend([
             '$$ProgressPreference = "SilentlyContinue"',
-            'Invoke-WebRequest https://grafana-downloads.storage.googleapis.com/grafana-build-pipeline/v{}/windows/grabpl.exe -OutFile grabpl.exe'.format(grabpl_version),
+            'Invoke-WebRequest https://grafinsight-downloads.storage.googleapis.com/grafinsight-build-pipeline/v{}/windows/grabpl.exe -OutFile grabpl.exe'.format(grabpl_version),
             '.\\grabpl.exe verify-drone',
         ])
     steps = [
@@ -951,14 +951,14 @@ def get_windows_steps(edition, ver_mode, is_downstream=False):
         'release', 'test-release', 'release-branch',
     ):
         bucket_part = ''
-        bucket = 'grafana-downloads'
+        bucket = 'grafinsight-downloads'
         if ver_mode == 'release':
             ver_part = '${DRONE_TAG}'
             dir = 'release'
         elif ver_mode == 'test-release':
             ver_part = test_release_ver
             dir = 'release'
-            bucket = 'grafana-downloads-test'
+            bucket = 'grafinsight-downloads-test'
             bucket_part = ' --packages-bucket {}'.format(bucket)
         else:
             dir = 'master'
@@ -981,7 +981,7 @@ def get_windows_steps(edition, ver_mode, is_downstream=False):
         ):
             installer_commands.extend([
                 '.\\grabpl.exe windows-installer --edition {}{} {}'.format(edition, bucket_part, ver_part),
-                '$$fname = ((Get-Childitem grafana*.msi -name) -split "`n")[0]',
+                '$$fname = ((Get-Childitem grafinsight*.msi -name) -split "`n")[0]',
                 'gsutil cp $$fname gs://{}/{}/{}/'.format(bucket, edition, dir),
                 'gsutil cp "$$fname.sha256" gs://{}/{}/{}/'.format(bucket, edition, dir),
             ])
@@ -1011,14 +1011,14 @@ def get_windows_steps(edition, ver_mode, is_downstream=False):
         # For enterprise, we have to clone both OSS and enterprise and merge the latter into the former
         download_grabpl_cmds = [
             '$$ProgressPreference = "SilentlyContinue"',
-            'Invoke-WebRequest https://grafana-downloads.storage.googleapis.com/grafana-build-pipeline/v{}/windows/grabpl.exe -OutFile grabpl.exe'.format(grabpl_version),
+            'Invoke-WebRequest https://grafinsight-downloads.storage.googleapis.com/grafinsight-build-pipeline/v{}/windows/grabpl.exe -OutFile grabpl.exe'.format(grabpl_version),
         ]
         clone_cmds = [
-            'git clone "https://$$env:GITHUB_TOKEN@github.com/grafana/grafana-enterprise.git"',
+            'git clone "https://$$env:GITHUB_TOKEN@github.com/grafinsight/grafinsight-enterprise.git"',
         ]
         if not is_downstream:
             clone_cmds.extend([
-                'cd grafana-enterprise',
+                'cd grafinsight-enterprise',
                 'git checkout {}'.format(committish),
             ])
         steps.insert(0, {
@@ -1035,12 +1035,12 @@ def get_windows_steps(edition, ver_mode, is_downstream=False):
             'clone',
         ]
         steps[1]['commands'].extend([
-            # Need to move grafana-enterprise out of the way, so directory is empty and can be cloned into
-            'cp -r grafana-enterprise C:\\App\\grafana-enterprise',
-            'rm -r -force grafana-enterprise',
+            # Need to move grafinsight-enterprise out of the way, so directory is empty and can be cloned into
+            'cp -r grafinsight-enterprise C:\\App\\grafinsight-enterprise',
+            'rm -r -force grafinsight-enterprise',
             'cp grabpl.exe C:\\App\\grabpl.exe',
             'rm -force grabpl.exe',
-            'C:\\App\\grabpl.exe init-enterprise C:\\App\\grafana-enterprise{}'.format(source_commit),
+            'C:\\App\\grabpl.exe init-enterprise C:\\App\\grafinsight-enterprise{}'.format(source_commit),
             'cp C:\\App\\grabpl.exe grabpl.exe',
             '.\\grabpl.exe verify-drone',
         ])
@@ -1053,9 +1053,9 @@ def integration_test_services():
             'name': 'postgres',
             'image': 'postgres:12.3-alpine',
             'environment': {
-              'POSTGRES_USER': 'grafanatest',
-              'POSTGRES_PASSWORD': 'grafanatest',
-              'POSTGRES_DB': 'grafanatest',
+              'POSTGRES_USER': 'grafinsighttest',
+              'POSTGRES_PASSWORD': 'grafinsighttest',
+              'POSTGRES_DB': 'grafinsighttest',
             },
         },
         {
@@ -1063,8 +1063,8 @@ def integration_test_services():
             'image': 'mysql:5.6.48',
             'environment': {
                 'MYSQL_ROOT_PASSWORD': 'rootpass',
-                'MYSQL_DATABASE': 'grafana_tests',
-                'MYSQL_USER': 'grafana',
+                'MYSQL_DATABASE': 'grafinsight_tests',
+                'MYSQL_USER': 'grafinsight',
                 'MYSQL_PASSWORD': 'password',
             },
         },

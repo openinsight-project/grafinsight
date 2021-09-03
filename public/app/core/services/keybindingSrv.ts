@@ -10,7 +10,7 @@ import { getExploreUrl } from 'app/core/utils/explore';
 import { dispatch, store } from 'app/store/store';
 import { exitPanelEditor } from 'app/features/dashboard/components/PanelEditor/state/actions';
 import { AppEventEmitter, CoreEvents } from 'app/types';
-import { GrafanaRootScope } from 'app/routes/GrafanaCtrl';
+import { GrafInsightRootScope } from 'app/routes/GrafInsightCtrl';
 import { DashboardModel } from 'app/features/dashboard/state';
 import { ShareModal } from 'app/features/dashboard/components/ShareModal';
 import { SaveDashboardModalProxy } from 'app/features/dashboard/components/SaveDashboard/SaveDashboardModalProxy';
@@ -22,7 +22,7 @@ export class KeybindingSrv {
 
   /** @ngInject */
   constructor(
-    private $rootScope: GrafanaRootScope,
+    private $rootScope: GrafInsightRootScope,
     private $location: ILocationService,
     private $timeout: ITimeoutService,
     private datasourceSrv: any,

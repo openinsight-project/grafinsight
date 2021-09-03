@@ -1,24 +1,24 @@
-GRAFANA_USER=grafana
+GRAFINSIGHT_USER=grafinsight
 
-GRAFANA_GROUP=grafana
+GRAFINSIGHT_GROUP=grafinsight
 
-GRAFANA_HOME=/usr/share/grafana
+GRAFINSIGHT_HOME=/usr/share/grafinsight
 
-LOG_DIR=/var/log/grafana
+LOG_DIR=/var/log/grafinsight
 
-DATA_DIR=/var/lib/grafana
+DATA_DIR=/var/lib/grafinsight
 
 MAX_OPEN_FILES=10000
 
-CONF_DIR=/etc/grafana
+CONF_DIR=/etc/grafinsight
 
-CONF_FILE=/etc/grafana/grafana.ini
+CONF_FILE=/etc/grafinsight/grafinsight.ini
 
 RESTART_ON_UPGRADE=true
 
-PLUGINS_DIR=/var/lib/grafana/plugins
+PLUGINS_DIR=/var/lib/grafinsight/plugins
 
-PROVISIONING_CFG_DIR=/etc/grafana/provisioning
+PROVISIONING_CFG_DIR=/etc/grafinsight/provisioning
 
 # Only used on systemd systems
-PID_FILE_DIR=/var/run/grafana
+PID_FILE_DIR=/var/run/grafinsight

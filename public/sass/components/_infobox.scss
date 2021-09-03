@@ -1,4 +1,4 @@
-.grafana-info-box {
+.grafinsight-info-box {
   position: relative;
   padding: $space-lg;
   background-color: $empty-list-cta-bg;
@@ -37,7 +37,7 @@
   }
 }
 
-.grafana-info-box__close {
+.grafinsight-info-box__close {
   text-align: center;
   display: block;
   color: $link-color !important;

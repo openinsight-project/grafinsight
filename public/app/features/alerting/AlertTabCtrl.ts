@@ -273,7 +273,7 @@ export class AlertTabCtrl {
         this.frequencyWarning =
           'A minimum evaluation interval of ' +
           this.alertingMinInterval +
-          ' have been configured in Grafana and will be used for this alert rule. ' +
+          ' have been configured in GrafInsight and will be used for this alert rule. ' +
           'Please contact the administrator to configure a lower interval.';
       }
     } catch (err) {

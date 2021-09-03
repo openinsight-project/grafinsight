@@ -7,15 +7,15 @@
   "info": {
     "description": "Open source logging & analytics database",
     "author": {
-      "name": "Grafana Labs",
-      "url": "https://grafana.com"
+      "name": "GrafInsight Labs",
+      "url": "https://grafinsight.com"
     },
     "keywords": ["elasticsearch"],
     "logos": {
       "small": "img/elasticsearch.svg",
       "large": "img/elasticsearch.svg"
     },
-    "links": [{ "name": "Learn more", "url": "https://grafana.com/docs/features/datasources/elasticsearch/" }]
+    "links": [{ "name": "Learn more", "url": "https://grafinsight.com/docs/features/datasources/elasticsearch/" }]
   },
 
   "alerting": true,

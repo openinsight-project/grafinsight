@@ -5,7 +5,7 @@ import { cx } from 'emotion';
 interface Props {
   isGrafinsightAdmin: boolean;
 
-  onGrafanaAdminChange: (isGrafinsightAdmin: boolean) => void;
+  onGrafInsightAdminChange: (isGrafinsightAdmin: boolean) => void;
 }
 
 interface State {
@@ -35,10 +35,10 @@ export class UserPermissions extends PureComponent<Props, State> {
     });
   };
 
-  onGrafanaAdminChange = () => {
+  onGrafInsightAdminChange = () => {
     const { currentAdminOption } = this.state;
     const newIsGrafinsightAdmin = currentAdminOption === 'YES' ? true : false;
-    this.props.onGrafanaAdminChange(newIsGrafinsightAdmin);
+    this.props.onGrafInsightAdminChange(newIsGrafinsightAdmin);
   };
 
   onAdminOptionSelect = (value: string) => {
@@ -58,7 +58,7 @@ export class UserPermissions extends PureComponent<Props, State> {
             <table className="filter-table form-inline">
               <tbody>
                 <tr>
-                  <td className="width-16">Grafana Admin</td>
+                  <td className="width-16">GrafInsight Admin</td>
                   {isEditing ? (
                     <td colSpan={2}>
                       <RadioButtonGroup
@@ -83,7 +83,7 @@ export class UserPermissions extends PureComponent<Props, State> {
                       <ConfirmButton
                         className="pull-right"
                         onClick={this.onChangeClick}
-                        onConfirm={this.onGrafanaAdminChange}
+                        onConfirm={this.onGrafInsightAdminChange}
                         onCancel={this.onCancelClick}
                         confirmText="Change"
                       >

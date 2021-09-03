@@ -1,8 +1,8 @@
 import { DataSourceInstanceSettings, dateTime, AnnotationQueryRequest } from '@grafinsight/data';
 
 import { backendSrv } from 'app/core/services/backend_srv'; // will use the version in __mocks__
-import { GrafanaDatasource } from './datasource';
-import { GrafanaQuery, GrafanaAnnotationQuery, GrafanaAnnotationType } from './types';
+import { GrafInsightDatasource } from './datasource';
+import { GrafInsightQuery, GrafInsightAnnotationQuery, GrafInsightAnnotationType } from './types';
 
 jest.mock('@grafinsight/runtime', () => ({
   ...((jest.requireActual('@grafinsight/runtime') as unknown) as object),
@@ -14,7 +14,7 @@ jest.mock('@grafinsight/runtime', () => ({
   }),
 }));
 
-describe('grafana data source', () => {
+describe('grafinsight data source', () => {
   const getMock = jest.spyOn(backendSrv, 'get');
 
   beforeEach(() => {
@@ -23,14 +23,14 @@ describe('grafana data source', () => {
 
   describe('when executing an annotations query', () => {
     let calledBackendSrvParams: any;
-    let ds: GrafanaDatasource;
+    let ds: GrafInsightDatasource;
     beforeEach(() => {
       getMock.mockImplementation((url: string, options: any) => {
         calledBackendSrvParams = options;
         return Promise.resolve([]);
       });
 
-      ds = new GrafanaDatasource({} as DataSourceInstanceSettings);
+      ds = new GrafInsightDatasource({} as DataSourceInstanceSettings);
     });
 
     describe('with tags that have template variables', () => {
@@ -61,7 +61,7 @@ describe('grafana data source', () => {
     describe('with type dashboard', () => {
       const options = setupAnnotationQueryOptions(
         {
-          type: GrafanaAnnotationType.Dashboard,
+          type: GrafInsightAnnotationType.Dashboard,
           tags: ['tag1'],
         },
         { id: 1 }
@@ -78,7 +78,7 @@ describe('grafana data source', () => {
   });
 });
 
-function setupAnnotationQueryOptions(annotation: Partial<GrafanaAnnotationQuery>, dashboard?: { id: number }) {
+function setupAnnotationQueryOptions(annotation: Partial<GrafInsightAnnotationQuery>, dashboard?: { id: number }) {
   return ({
     annotation,
     dashboard,
@@ -87,5 +87,5 @@ function setupAnnotationQueryOptions(annotation: Partial<GrafanaAnnotationQuery>
       to: dateTime(1432288401),
     },
     rangeRaw: { from: 'now-24h', to: 'now' },
-  } as unknown) as AnnotationQueryRequest<GrafanaQuery>;
+  } as unknown) as AnnotationQueryRequest<GrafInsightQuery>;
 }

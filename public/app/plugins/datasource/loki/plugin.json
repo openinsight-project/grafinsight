@@ -15,10 +15,10 @@
   },
 
   "info": {
-    "description": "Like Prometheus but for logs. OSS logging solution from Grafana Labs",
+    "description": "Like Prometheus but for logs. OSS logging solution from GrafInsight Labs",
     "author": {
-      "name": "Grafana Labs",
-      "url": "https://grafana.com"
+      "name": "GrafInsight Labs",
+      "url": "https://grafinsight.com"
     },
     "logos": {
       "small": "img/loki_icon.svg",
@@ -27,7 +27,7 @@
     "links": [
       {
         "name": "Learn more",
-        "url": "https://grafana.com/loki"
+        "url": "https://grafinsight.com/loki"
       },
       {
         "name": "GitHub Project",

@@ -74,7 +74,7 @@ describe('PostgreSQLDatasource', () => {
           {
             format: 'time_series',
             rawQuery: true,
-            rawSql: 'select time, metric from grafana_metric',
+            rawSql: 'select time, metric from grafinsight_metric',
             refId: 'A',
             datasource: 'gdev-ds',
           },
@@ -86,7 +86,7 @@ describe('PostgreSQLDatasource', () => {
           A: {
             refId: 'A',
             meta: {
-              executedQueryString: 'select time, metric from grafana_metric',
+              executedQueryString: 'select time, metric from grafinsight_metric',
               rowCount: 0,
             },
             series: [
@@ -110,7 +110,7 @@ describe('PostgreSQLDatasource', () => {
             {
               datapoints: [[30.226249741223704, 1599643351085]],
               meta: {
-                executedQueryString: 'select time, metric from grafana_metric',
+                executedQueryString: 'select time, metric from grafinsight_metric',
                 rowCount: 0,
               },
               refId: 'A',
@@ -135,7 +135,7 @@ describe('PostgreSQLDatasource', () => {
           {
             format: 'table',
             rawQuery: true,
-            rawSql: 'select time, metric, value from grafana_metric',
+            rawSql: 'select time, metric, value from grafinsight_metric',
             refId: 'A',
             datasource: 'gdev-ds',
           },
@@ -147,7 +147,7 @@ describe('PostgreSQLDatasource', () => {
           A: {
             refId: 'A',
             meta: {
-              executedQueryString: 'select time, metric, value from grafana_metric',
+              executedQueryString: 'select time, metric, value from grafinsight_metric',
               rowCount: 1,
             },
             series: null,
@@ -194,7 +194,7 @@ describe('PostgreSQLDatasource', () => {
               type: 'table',
               refId: 'A',
               meta: {
-                executedQueryString: 'select time, metric, value from grafana_metric',
+                executedQueryString: 'select time, metric, value from grafinsight_metric',
                 rowCount: 1,
               },
             },
@@ -217,7 +217,7 @@ describe('PostgreSQLDatasource', () => {
           {
             format: 'table',
             rawQuery: true,
-            rawSql: 'select time, metric, value from grafana_metric',
+            rawSql: 'select time, metric, value from grafinsight_metric',
             refId: 'A',
             datasource: 'gdev-ds',
             hide: true,
@@ -523,7 +523,7 @@ describe('PostgreSQLDatasource', () => {
       avg(value) as "value",
       hostname as "metric"
     FROM
-      grafana_metric
+      grafinsight_metric
     WHERE
       $__timeFilter("createdAt") AND
       measurement = 'logins.count' AND
@@ -550,7 +550,7 @@ describe('PostgreSQLDatasource', () => {
       avg(value) as "value",
       hostname as "metric"
     FROM
-      grafana_metric
+      grafinsight_metric
     WHERE
       $__timeFilter("createdAt") AND
       measurement = 'logins.count'

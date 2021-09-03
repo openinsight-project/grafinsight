@@ -4,7 +4,7 @@ import { getDefaultTimeRange, LoadingState, PanelData } from '@grafinsight/data'
 import { DisplayMode } from '../types';
 import store from '../../../../../core/store';
 
-export const PANEL_EDITOR_UI_STATE_STORAGE_KEY = 'grafana.dashboard.editor.ui';
+export const PANEL_EDITOR_UI_STATE_STORAGE_KEY = 'grafinsight.dashboard.editor.ui';
 
 export const DEFAULT_PANEL_EDITOR_UI_STATE: PanelEditorUIState = {
   isPanelOptionsVisible: true,

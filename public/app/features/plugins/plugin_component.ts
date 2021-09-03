@@ -7,13 +7,13 @@ import coreModule from 'app/core/core_module';
 import { DataSourceApi, PanelEvents } from '@grafinsight/data';
 import { importPanelPlugin, importDataSourcePlugin, importAppPlugin } from './plugin_loader';
 import DatasourceSrv from './datasource_srv';
-import { GrafanaRootScope } from 'app/routes/GrafanaCtrl';
+import { GrafInsightRootScope } from 'app/routes/GrafInsightCtrl';
 
 /** @ngInject */
 function pluginDirectiveLoader(
   $compile: any,
   datasourceSrv: DatasourceSrv,
-  $rootScope: GrafanaRootScope,
+  $rootScope: GrafInsightRootScope,
   $http: any,
   $templateCache: any,
   $timeout: any,
@@ -99,7 +99,7 @@ function pluginDirectiveLoader(
 
       PanelCtrl.templatePromise = getTemplate(PanelCtrl).then((template: any) => {
         PanelCtrl.templateUrl = null;
-        PanelCtrl.template = `<grafana-panel ctrl="ctrl" class="panel-height-helper">${template}</grafana-panel>`;
+        PanelCtrl.template = `<grafinsight-panel ctrl="ctrl" class="panel-height-helper">${template}</grafinsight-panel>`;
         return componentInfo;
       });
 

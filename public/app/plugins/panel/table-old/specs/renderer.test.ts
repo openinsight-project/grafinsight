@@ -136,7 +136,7 @@ describe('when rendering table', () => {
             },
             {
               value: 'HELLO WORLD',
-              text: 'HELLO GRAFANA',
+              text: 'HELLO GRAFINSIGHT',
             },
             {
               value: 'value1, value2',
@@ -342,7 +342,7 @@ describe('when rendering table', () => {
 
     it('string value should be mapped to text', () => {
       const html = renderer.renderCell(9, 0, 'HELLO WORLD');
-      expect(html).toBe('<td>HELLO GRAFANA</td>');
+      expect(html).toBe('<td>HELLO GRAFINSIGHT</td>');
     });
 
     it('array column value should be mapped to text', () => {

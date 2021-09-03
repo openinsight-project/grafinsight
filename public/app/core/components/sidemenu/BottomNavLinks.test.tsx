@@ -22,7 +22,7 @@ const setup = (propOverrides?: object) => {
         orgRole: '',
         orgId: 1,
         login: 'hello',
-        orgName: 'Grafana',
+        orgName: 'GrafInsight',
         timezone: 'UTC',
         helpFlags1: 1,
         lightTheme: false,

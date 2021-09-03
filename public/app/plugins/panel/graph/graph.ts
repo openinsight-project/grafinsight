@@ -315,7 +315,7 @@ class GraphElement {
      *  the time series data and the: "visualization options -> null value"
      *  set to "connected". In this scenario we will get the wrong dataIndex.
      *
-     *  https://github.com/grafana/grafana/issues/22651
+     *  https://github.com/grafinsight/grafinsight/issues/22651
      */
     const { datapoint, dataIndex } = item;
 
@@ -945,5 +945,5 @@ function graphDirective(timeSrv: TimeSrv, popoverSrv: any, contextSrv: ContextSr
   };
 }
 
-coreModule.directive('grafanaGraph', graphDirective);
+coreModule.directive('grafinsightGraph', graphDirective);
 export { GraphElement, graphDirective };

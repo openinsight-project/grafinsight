@@ -4,10 +4,10 @@
   "id": "heatmap",
 
   "info": {
-    "description": "Heatmap Panel for Grafana",
+    "description": "Heatmap Panel for GrafInsight",
     "author": {
-      "name": "Grafana Labs",
-      "url": "https://grafana.com"
+      "name": "GrafInsight Labs",
+      "url": "https://grafinsight.com"
     },
     "logos": {
       "small": "img/icn-heatmap-panel.svg",

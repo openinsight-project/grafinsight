@@ -123,11 +123,11 @@ describe('linkSrv', () => {
     describe('Building links with root_url set', () => {
       it.each`
         url                 | appSubUrl     | expected
-        ${'/d/XXX'}         | ${'/grafana'} | ${'/grafana/d/XXX'}
-        ${'/grafana/d/XXX'} | ${'/grafana'} | ${'/grafana/d/XXX'}
-        ${'d/whatever'}     | ${'/grafana'} | ${'d/whatever'}
+        ${'/d/XXX'}         | ${'/grafinsight'} | ${'/grafinsight/d/XXX'}
+        ${'/grafinsight/d/XXX'} | ${'/grafinsight'} | ${'/grafinsight/d/XXX'}
+        ${'d/whatever'}     | ${'/grafinsight'} | ${'d/whatever'}
         ${'/d/XXX'}         | ${''}         | ${'/d/XXX'}
-        ${'/grafana/d/XXX'} | ${''}         | ${'/grafana/d/XXX'}
+        ${'/grafinsight/d/XXX'} | ${''}         | ${'/grafinsight/d/XXX'}
         ${'d/whatever'}     | ${''}         | ${'d/whatever'}
       `(
         "when link '$url' and config.appSubUrl set to '$appSubUrl' then result should be '$expected'",

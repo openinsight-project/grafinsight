@@ -1,6 +1,6 @@
 import angular from 'angular';
 
-const module = angular.module('grafana.directives');
+const module = angular.module('grafinsight.directives');
 
 export class QueryRowCtrl {
   target: any;

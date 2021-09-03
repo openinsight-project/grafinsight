@@ -9,49 +9,49 @@ IS_UPGRADE=false
 
 case "$1" in
 	configure)
-	[ -z "$GRAFANA_USER" ] && GRAFANA_USER="grafana"
-	[ -z "$GRAFANA_GROUP" ] && GRAFANA_GROUP="grafana"
-	if ! getent group "$GRAFANA_GROUP" > /dev/null 2>&1 ; then
-	    addgroup --system "$GRAFANA_GROUP" --quiet
+	[ -z "$GRAFINSIGHT_USER" ] && GRAFINSIGHT_USER="grafinsight"
+	[ -z "$GRAFINSIGHT_GROUP" ] && GRAFINSIGHT_GROUP="grafinsight"
+	if ! getent group "$GRAFINSIGHT_GROUP" > /dev/null 2>&1 ; then
+	    addgroup --system "$GRAFINSIGHT_GROUP" --quiet
 	fi
-	if ! id $GRAFANA_USER > /dev/null 2>&1 ; then
-	    adduser --system --home /usr/share/grafana --no-create-home \
-		--ingroup "$GRAFANA_GROUP" --disabled-password --shell /bin/false \
-		"$GRAFANA_USER"
+	if ! id $GRAFINSIGHT_USER > /dev/null 2>&1 ; then
+	    adduser --system --home /usr/share/grafinsight --no-create-home \
+		--ingroup "$GRAFINSIGHT_GROUP" --disabled-password --shell /bin/false \
+		"$GRAFINSIGHT_USER"
 	fi
 
-	# Set user permissions on /var/log/grafana, /var/lib/grafana
-	mkdir -p /var/log/grafana /var/lib/grafana
-	chown -R $GRAFANA_USER:$GRAFANA_GROUP /var/log/grafana /var/lib/grafana
-	chmod 755 /var/log/grafana /var/lib/grafana
+	# Set user permissions on /var/log/grafinsight, /var/lib/grafinsight
+	mkdir -p /var/log/grafinsight /var/lib/grafinsight
+	chown -R $GRAFINSIGHT_USER:$GRAFINSIGHT_GROUP /var/log/grafinsight /var/lib/grafinsight
+	chmod 755 /var/log/grafinsight /var/lib/grafinsight
 
   # copy user config files
   if [ ! -f $CONF_FILE ]; then
-    cp /usr/share/grafana/conf/sample.ini $CONF_FILE
-    cp /usr/share/grafana/conf/ldap.toml /etc/grafana/ldap.toml
+    cp /usr/share/grafinsight/conf/sample.ini $CONF_FILE
+    cp /usr/share/grafinsight/conf/ldap.toml /etc/grafinsight/ldap.toml
   fi
 
   if [ ! -d $PROVISIONING_CFG_DIR ]; then
     mkdir -p $PROVISIONING_CFG_DIR/dashboards $PROVISIONING_CFG_DIR/datasources
-    cp /usr/share/grafana/conf/provisioning/dashboards/sample.yaml $PROVISIONING_CFG_DIR/dashboards/sample.yaml
-    cp /usr/share/grafana/conf/provisioning/datasources/sample.yaml $PROVISIONING_CFG_DIR/datasources/sample.yaml
+    cp /usr/share/grafinsight/conf/provisioning/dashboards/sample.yaml $PROVISIONING_CFG_DIR/dashboards/sample.yaml
+    cp /usr/share/grafinsight/conf/provisioning/datasources/sample.yaml $PROVISIONING_CFG_DIR/datasources/sample.yaml
   fi
 
   if [ ! -d $PROVISIONING_CFG_DIR/notifiers ]; then
     mkdir -p $PROVISIONING_CFG_DIR/notifiers
-    cp /usr/share/grafana/conf/provisioning/notifiers/sample.yaml $PROVISIONING_CFG_DIR/notifiers/sample.yaml
+    cp /usr/share/grafinsight/conf/provisioning/notifiers/sample.yaml $PROVISIONING_CFG_DIR/notifiers/sample.yaml
   fi
 
   if [ ! -d $PROVISIONING_CFG_DIR/plugins ]; then
     mkdir -p $PROVISIONING_CFG_DIR/plugins
-    cp /usr/share/grafana/conf/provisioning/plugins/sample.yaml $PROVISIONING_CFG_DIR/plugins/sample.yaml
+    cp /usr/share/grafinsight/conf/provisioning/plugins/sample.yaml $PROVISIONING_CFG_DIR/plugins/sample.yaml
   fi
 
-	# configuration files should not be modifiable by grafana user, as this can be a security issue
-	chown -Rh root:$GRAFANA_GROUP /etc/grafana/*
-	chmod 755 /etc/grafana
-	find /etc/grafana -type f -exec chmod 640 {} ';'
-	find /etc/grafana -type d -exec chmod 755 {} ';'
+	# configuration files should not be modifiable by grafinsight user, as this can be a security issue
+	chown -Rh root:$GRAFINSIGHT_GROUP /etc/grafinsight/*
+	chmod 755 /etc/grafinsight
+	find /etc/grafinsight -type f -exec chmod 640 {} ';'
+	find /etc/grafinsight -type d -exec chmod 755 {} ';'
 
   # If $1=configure and $2 is set, this is an upgrade
   if [ "$2" != "" ]; then
@@ -60,7 +60,7 @@ case "$1" in
 
   if [ "x$IS_UPGRADE" != "xtrue" ]; then
     if command -v systemctl >/dev/null; then
-      echo "### NOT starting on installation, please execute the following statements to configure grafana to start automatically using systemd"
+      echo "### NOT starting on installation, please execute the following statements to configure grafinsight to start automatically using systemd"
       echo " sudo /bin/systemctl daemon-reload"
       echo " sudo /bin/systemctl enable grafinsight-server"
       echo "### You can start grafinsight-server by executing"

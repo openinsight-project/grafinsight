@@ -184,8 +184,8 @@ describe('shared actions', () => {
       });
     });
 
-    // Fix for https://github.com/grafana/grafana/issues/28791
-    it('fix for https://github.com/grafana/grafana/issues/28791', async () => {
+    // Fix for https://github.com/grafinsight/grafinsight/issues/28791
+    it('fix for https://github.com/grafinsight/grafinsight/issues/28791', async () => {
       setVariableQueryRunner(new VariableQueryRunner());
       const stats = queryBuilder()
         .withId('stats')
@@ -458,7 +458,7 @@ describe('shared actions', () => {
           .thenDispatchedActionsShouldEqual(
             changeVariableNameFailed({
               newName: '__newName',
-              errorText: "Template names cannot begin with '__', that's reserved for Grafana's global variables",
+              errorText: "Template names cannot begin with '__', that's reserved for GrafInsight's global variables",
             })
           );
       });

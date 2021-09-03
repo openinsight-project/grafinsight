@@ -90,7 +90,7 @@ describe('LokiDatasource', () => {
     });
 
     it('should use default intervalMs if one is not provided', () => {
-      const target = { expr: '{job="grafana"}', refId: 'B' };
+      const target = { expr: '{job="grafinsight"}', refId: 'B' };
       const raw = { from: 'now', to: 'now-1h' };
       const range = { from: dateTime(), to: dateTime(), raw: raw };
       const options = {
@@ -104,7 +104,7 @@ describe('LokiDatasource', () => {
     });
 
     it('should use provided intervalMs', () => {
-      const target = { expr: '{job="grafana"}', refId: 'B' };
+      const target = { expr: '{job="grafinsight"}', refId: 'B' };
       const raw = { from: 'now', to: 'now-1h' };
       const range = { from: dateTime(), to: dateTime(), raw: raw };
       const options = {
@@ -119,7 +119,7 @@ describe('LokiDatasource', () => {
     });
 
     it('should set the minimal step to 1ms', () => {
-      const target = { expr: '{job="grafana"}', refId: 'B' };
+      const target = { expr: '{job="grafinsight"}', refId: 'B' };
       const raw = { from: 'now', to: 'now-1h' };
       const range = { from: dateTime('2020-10-14T00:00:00'), to: dateTime('2020-10-14T00:00:01'), raw: raw };
       const options = {
@@ -202,8 +202,8 @@ describe('LokiDatasource', () => {
       return { ds, options };
     }
 
-    const metricsQuery = 'rate({job="grafana"}[10m])';
-    const logsQuery = '{job="grafana"} |= "foo"';
+    const metricsQuery = 'rate({job="grafinsight"}[10m])';
+    const logsQuery = '{job="grafinsight"} |= "foo"';
 
     it('should run logs instant if only instant is selected', async () => {
       const { ds, options } = setup(logsQuery, CoreApp.Explore, true, false);
@@ -318,7 +318,7 @@ describe('LokiDatasource', () => {
       await expect(ds.query(options)).toEmitValuesWith((received) => {
         const err: any = received[0];
         expect(err.data.message).toBe(
-          'Error: parse error at line 1, col 6: invalid char escape. Make sure that all special characters are escaped with \\. For more information on escaping of special characters visit LogQL documentation at https://grafana.com/docs/loki/latest/logql/.'
+          'Error: parse error at line 1, col 6: invalid char escape. Make sure that all special characters are escaped with \\. For more information on escaping of special characters visit LogQL documentation at https://grafinsight.com/docs/loki/latest/logql/.'
         );
       });
     });

@@ -28,7 +28,7 @@ export const ApiKeysAddedModal = (props: Props) => {
           </div>
         </div>
 
-        <div className="grafana-info-box" style={{ border: 0 }}>
+        <div className="grafinsight-info-box" style={{ border: 0 }}>
           You will only be able to view this key here once! It is not stored in this form. So be sure to copy it now.
           <br />
           <br />

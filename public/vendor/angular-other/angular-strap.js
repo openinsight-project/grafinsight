@@ -35,7 +35,7 @@ angular.module('$strap.directives').factory('$modal', [
           if (templateUrl) {
             id += templateUrl.replace('.html', '').replace(/[\/|\.|:]/g, '-');
           }
-          // grafana change, removed fade
+          // grafinsight change, removed fade
           var $modal = $('<div class="modal hide" tabindex="-1"></div>').attr('id', id).html(template);
           if (options.modalClass)
             $modal.addClass(options.modalClass);

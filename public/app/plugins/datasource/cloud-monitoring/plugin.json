@@ -87,8 +87,8 @@
       "large": "img/cloud_monitoring_logo.svg"
     },
     "author": {
-      "name": "Grafana Labs",
-      "url": "https://grafana.com"
+      "name": "GrafInsight Labs",
+      "url": "https://grafinsight.com"
     }
   },
   "routes": [

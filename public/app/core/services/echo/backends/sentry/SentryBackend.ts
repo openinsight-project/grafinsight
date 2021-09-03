@@ -18,7 +18,7 @@ export class SentryEchoBackend implements EchoBackend<SentryEchoEvent, SentryEch
   transports: BaseTransport[];
 
   constructor(public options: SentryEchoBackendOptions) {
-    // set up transports to post events to grafana backend and/or Sentry
+    // set up transports to post events to grafinsight backend and/or Sentry
     this.transports = [];
     if (options.dsn) {
       this.transports.push(new FetchTransport({ dsn: options.dsn }));
@@ -51,7 +51,7 @@ export class SentryEchoBackend implements EchoBackend<SentryEchoEvent, SentryEch
     this.transports.forEach((t) => t.sendEvent(e.payload));
   };
 
-  // backend will log events to stdout, and at least in case of hosted grafana they will be
+  // backend will log events to stdout, and at least in case of hosted grafinsight they will be
   // ingested into Loki. Due to Loki limitations logs cannot be backdated,
   // so not using buffering for this backend to make sure that events are logged as close
   // to their context as possible

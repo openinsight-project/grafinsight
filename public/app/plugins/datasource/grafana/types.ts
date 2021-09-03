@@ -5,34 +5,34 @@ import { MeasurementsQuery } from '@grafinsight/runtime/src';
 // Query
 //----------------------------------------------
 
-export enum GrafanaQueryType {
+export enum GrafInsightQueryType {
   RandomWalk = 'randomWalk',
   LiveMeasurements = 'measurements',
 }
 
-export interface GrafanaQuery extends DataQuery {
-  queryType: GrafanaQueryType; // RandomWalk by default
+export interface GrafInsightQuery extends DataQuery {
+  queryType: GrafInsightQueryType; // RandomWalk by default
   channel?: string;
   measurements?: MeasurementsQuery;
 }
 
-export const defaultQuery: GrafanaQuery = {
+export const defaultQuery: GrafInsightQuery = {
   refId: 'A',
-  queryType: GrafanaQueryType.RandomWalk,
+  queryType: GrafInsightQueryType.RandomWalk,
 };
 
 //----------------------------------------------
 // Annotations
 //----------------------------------------------
 
-export enum GrafanaAnnotationType {
+export enum GrafInsightAnnotationType {
   Dashboard = 'dashboard',
   Tags = 'tags',
 }
 
-export interface GrafanaAnnotationQuery extends AnnotationQuery<GrafanaQuery> {
-  type: GrafanaAnnotationType; // tags
+export interface GrafInsightAnnotationQuery extends AnnotationQuery<GrafInsightQuery> {
+  type: GrafInsightAnnotationType; // tags
   limit: number; // 100
   tags?: string[];
-  matchAny?: boolean; // By default Grafana only shows annotations that match all tags in the query. Enabling this returns annotations that match any of the tags in the query.
+  matchAny?: boolean; // By default GrafInsight only shows annotations that match all tags in the query. Enabling this returns annotations that match any of the tags in the query.
 }

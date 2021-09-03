@@ -119,27 +119,27 @@ describe('ShareModal', () => {
     });
 
     it('should generate render url', async () => {
-      mockLocationHref('http://dashboards.grafana.com/d/abcdefghi/my-dash');
+      mockLocationHref('http://dashboards.grafinsight.com/d/abcdefghi/my-dash');
       ctx.mount({
         panel: { id: 22, options: {}, fieldConfig: { defaults: {}, overrides: [] } },
       });
 
       await ctx.wrapper?.instance().buildUrl();
       const state = ctx.wrapper?.state();
-      const base = 'http://dashboards.grafana.com/render/d-solo/abcdefghi/my-dash';
+      const base = 'http://dashboards.grafinsight.com/render/d-solo/abcdefghi/my-dash';
       const params = '?from=1000&to=2000&orgId=1&panelId=22&width=1000&height=500&tz=UTC';
       expect(state?.imageUrl).toContain(base + params);
     });
 
     it('should generate render url for scripted dashboard', async () => {
-      mockLocationHref('http://dashboards.grafana.com/dashboard/script/my-dash.js');
+      mockLocationHref('http://dashboards.grafinsight.com/dashboard/script/my-dash.js');
       ctx.mount({
         panel: { id: 22, options: {}, fieldConfig: { defaults: {}, overrides: [] } },
       });
 
       await ctx.wrapper?.instance().buildUrl();
       const state = ctx.wrapper?.state();
-      const base = 'http://dashboards.grafana.com/render/dashboard-solo/script/my-dash.js';
+      const base = 'http://dashboards.grafinsight.com/render/dashboard-solo/script/my-dash.js';
       const params = '?from=1000&to=2000&orgId=1&panelId=22&width=1000&height=500&tz=UTC';
       expect(state?.imageUrl).toContain(base + params);
     });

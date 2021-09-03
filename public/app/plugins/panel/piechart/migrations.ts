@@ -7,7 +7,7 @@ export const PieChartPanelChangedHandler = (
   prevPluginId: string,
   prevOptions: any
 ) => {
-  if (prevPluginId === 'grafana-piechart-panel' && prevOptions.angular) {
+  if (prevPluginId === 'grafinsight-piechart-panel' && prevOptions.angular) {
     const angular = prevOptions.angular;
     const overrides = [];
     let options: PieChartOptions = panel.options;

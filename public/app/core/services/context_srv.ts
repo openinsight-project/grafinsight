@@ -61,7 +61,7 @@ export class ContextSrv {
     return this.user.orgRole === role;
   }
 
-  isGrafanaVisible() {
+  isGrafInsightVisible() {
     return !!(document.visibilityState === undefined || document.visibilityState === 'visible');
   }
 

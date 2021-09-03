@@ -31,8 +31,8 @@
 
     <link rel="icon" type="image/png" href="[[.FavIcon]]" />
     <link rel="apple-touch-icon" sizes="180x180" href="[[.AppleTouchIcon]]" />
-    <link rel="mask-icon" href="[[.ContentDeliveryURL]]public/img/grafana_mask_icon.svg" color="#F05A28" />
-    <link rel="stylesheet" href="[[.ContentDeliveryURL]]public/build/grafana.[[ .Theme ]].<%= webpack.hash %>.css" />
+    <link rel="mask-icon" href="[[.ContentDeliveryURL]]public/img/grafinsight_mask_icon.svg" color="#F05A28" />
+    <link rel="stylesheet" href="[[.ContentDeliveryURL]]public/build/grafinsight.[[ .Theme ]].<%= webpack.hash %>.css" />
 
     <script nonce="[[.Nonce]]">
       performance.mark('css done blocking');
@@ -188,16 +188,16 @@
           <div class="preloader__logo"></div>
         </div>
       </div>
-      <div class="preloader__text">Loading Grafana</div>
+      <div class="preloader__text">Loading GrafInsight</div>
       <div class="preloader__text preloader__text--fail">
         <p>
-          <strong>If you're seeing this Grafana has failed to load its application files</strong>
+          <strong>If you're seeing this GrafInsight has failed to load its application files</strong>
           <br />
           <br />
         </p>
         <p>
           1. This could be caused by your reverse proxy settings.<br /><br />
-          2. If you host grafana under subpath make sure your grafana.ini root_url setting includes subpath. If not
+          2. If you host grafinsight under subpath make sure your grafinsight.ini root_url setting includes subpath. If not
           using a reverse proxy make sure to set serve_from_sub_path to true.<br />
           <br />
           3. If you have a local dev build make sure you build frontend using: yarn start, yarn start:hot, or yarn
@@ -206,13 +206,13 @@
           4. Sometimes restarting grafinsight-server can help<br />
           <br />
           5. Check if you are using a non-supported browser. For more information, refer to the list of <a 
-            href="https://grafana.com/docs/grafana/latest/installation/requirements/#supported-web-browsers">
+            href="https://grafinsight.com/docs/grafinsight/latest/installation/requirements/#supported-web-browsers">
             supported browsers</a>.
         </p>
       </div>
     </div>
 
-    <grafana-app class="grafana-app" ng-cloak>
+    <grafinsight-app class="grafinsight-app" ng-cloak>
       <sidemenu class="sidemenu"></sidemenu>
       <app-notifications-list class="page-alert-list"></app-notifications-list>
       <search-wrapper></search-wrapper>
@@ -220,7 +220,7 @@
       <div class="main-view">
         <div ng-view class="scroll-canvas"></div>
       </div>
-    </grafana-app>
+    </grafinsight-app>
 
     <script nonce="[[.Nonce]]">
         window.grafinsightBootData = {

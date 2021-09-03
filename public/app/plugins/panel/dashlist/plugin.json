@@ -8,8 +8,8 @@
   "info": {
     "description": "List of dynamic links to other dashboards",
     "author": {
-      "name": "Grafana Labs",
-      "url": "https://grafana.com"
+      "name": "GrafInsight Labs",
+      "url": "https://grafinsight.com"
     },
     "logos": {
       "small": "img/icn-dashlist-panel.svg",

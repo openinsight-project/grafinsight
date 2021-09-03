@@ -33,7 +33,7 @@ const handleTutorialClick = (event: MouseEvent<HTMLAnchorElement>, card: Tutoria
   if (!isSet) {
     store.set(card.key, true);
   }
-  window.open(`${card.href}?utm_source=grafana_gettingstarted`, '_blank');
+  window.open(`${card.href}?utm_source=grafinsight_gettingstarted`, '_blank');
 };
 
 const getStyles = stylesFactory((theme: GrafInsightTheme, complete: boolean) => {

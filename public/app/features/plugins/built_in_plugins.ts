@@ -6,8 +6,8 @@ const elasticsearchPlugin = async () =>
   await import(/* webpackChunkName: "elasticsearchPlugin" */ 'app/plugins/datasource/elasticsearch/module');
 const opentsdbPlugin = async () =>
   await import(/* webpackChunkName: "opentsdbPlugin" */ 'app/plugins/datasource/opentsdb/module');
-const grafanaPlugin = async () =>
-  await import(/* webpackChunkName: "grafanaPlugin" */ 'app/plugins/datasource/grafana/module');
+const grafinsightPlugin = async () =>
+  await import(/* webpackChunkName: "grafinsightPlugin" */ 'app/plugins/datasource/grafana/module');
 const influxdbPlugin = async () =>
   await import(/* webpackChunkName: "influxdbPlugin" */ 'app/plugins/datasource/influxdb/module');
 const lokiPlugin = async () => await import(/* webpackChunkName: "lokiPlugin" */ 'app/plugins/datasource/loki/module');
@@ -65,7 +65,7 @@ const builtInPlugins: any = {
   'app/plugins/datasource/dashboard/module': dashboardDSPlugin,
   'app/plugins/datasource/elasticsearch/module': elasticsearchPlugin,
   'app/plugins/datasource/opentsdb/module': opentsdbPlugin,
-  'app/plugins/datasource/grafana/module': grafanaPlugin,
+  'app/plugins/datasource/grafana/module': grafinsightPlugin,
   'app/plugins/datasource/influxdb/module': influxdbPlugin,
   'app/plugins/datasource/loki/module': lokiPlugin,
   'app/plugins/datasource/jaeger/module': jaegerPlugin,

@@ -44,7 +44,7 @@ const setup = (renderMethod: any, propOverrides?: object) => {
       scopedVars: {},
       targets: [],
       timezone: 'GMT',
-      app: 'Grafana',
+      app: 'GrafInsight',
       startTime: 0,
     },
     timeRange: {

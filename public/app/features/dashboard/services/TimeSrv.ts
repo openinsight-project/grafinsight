@@ -14,7 +14,7 @@ import {
 import coreModule from 'app/core/core_module';
 import { ContextSrv } from 'app/core/services/context_srv';
 import { DashboardModel } from '../state/DashboardModel';
-import { GrafanaRootScope } from 'app/routes/GrafanaCtrl';
+import { GrafInsightRootScope } from 'app/routes/GrafInsightCtrl';
 import { getShiftedTimeRange, getZoomedTimeRange } from 'app/core/utils/timePicker';
 import { appEvents } from '../../../core/core';
 import { CoreEvents } from '../../../types';
@@ -32,7 +32,7 @@ export class TimeSrv {
 
   /** @ngInject */
   constructor(
-    $rootScope: GrafanaRootScope,
+    $rootScope: GrafInsightRootScope,
     private $timeout: ITimeoutService,
     private $location: ILocationService,
     private timer: any,
@@ -219,7 +219,7 @@ export class TimeSrv {
     this.refreshTimer = this.timer.register(
       this.$timeout(() => {
         this.startNextRefreshTimer(afterMs);
-        if (this.contextSrv.isGrafanaVisible()) {
+        if (this.contextSrv.isGrafInsightVisible()) {
           this.refreshDashboard();
         } else {
           this.autoRefreshBlocked = true;

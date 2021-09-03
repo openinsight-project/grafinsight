@@ -144,7 +144,7 @@ export class BackendSrv implements BackendService {
     if (isLocalUrl(options.url)) {
       if (orgId) {
         options.headers = options.headers ?? {};
-        options.headers['X-Grafana-Org-Id'] = orgId;
+        options.headers['X-GrafInsight-Org-Id'] = orgId;
       }
 
       if (options.url.startsWith('/')) {
@@ -158,7 +158,7 @@ export class BackendSrv implements BackendService {
 
       if (this.noBackendCache) {
         options.headers = options.headers ?? {};
-        options.headers['X-Grafana-NoCache'] = 'true';
+        options.headers['X-GrafInsight-NoCache'] = 'true';
       }
     }
 

@@ -39,7 +39,7 @@ const scope = {
 };
 let link;
 
-describe('grafanaGraph', () => {
+describe('grafinsightGraph', () => {
   const setupCtx = (beforeRender?: any) => {
     config.bootData = {
       user: {

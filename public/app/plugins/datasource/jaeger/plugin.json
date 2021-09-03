@@ -14,8 +14,8 @@
   "info": {
     "description": "Open source, end-to-end distributed tracing",
     "author": {
-      "name": "Grafana Labs",
-      "url": "https://grafana.com"
+      "name": "GrafInsight Labs",
+      "url": "https://grafinsight.com"
     },
     "logos": {
       "small": "img/jaeger_logo.svg",

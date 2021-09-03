@@ -16,7 +16,7 @@ export const DocsCard: FC<Props> = ({ card }) => {
   return (
     <div className={styles.card}>
       <div className={cardContent}>
-        <a href={`${card.href}?utm_source=grafana_gettingstarted`}>
+        <a href={`${card.href}?utm_source=grafinsight_gettingstarted`}>
           <div className={styles.heading}>{card.done ? 'complete' : card.heading}</div>
           <h4 className={styles.title}>{card.title}</h4>
           <div>
@@ -25,7 +25,7 @@ export const DocsCard: FC<Props> = ({ card }) => {
         </a>
       </div>
       <a
-        href={`${card.learnHref}?utm_source=grafana_gettingstarted`}
+        href={`${card.learnHref}?utm_source=grafinsight_gettingstarted`}
         className={styles.url}
         target="_blank"
         rel="noreferrer"

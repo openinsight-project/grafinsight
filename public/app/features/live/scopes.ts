@@ -3,7 +3,7 @@ import { getDataSourceSrv } from '@grafinsight/runtime/src';
 import { config } from 'app/core/config';
 import { loadPlugin } from '../plugins/PluginPage';
 
-export abstract class GrafanaLiveScope {
+export abstract class GrafInsightLiveScope {
   constructor(protected scope: LiveChannelScope) {}
 
   /**
@@ -17,13 +17,13 @@ export abstract class GrafanaLiveScope {
   abstract listNamespaces(): Promise<Array<SelectableValue<string>>>;
 }
 
-export interface CoreGrafanaLiveFeature {
+export interface CoreGrafInsightLiveFeature {
   name: string;
   support: LiveChannelSupport;
   description: string;
 }
 
-class GrafanaLiveCoreScope extends GrafanaLiveScope {
+class GrafInsightLiveCoreScope extends GrafInsightLiveScope {
   readonly features = new Map<string, LiveChannelSupport>();
   readonly namespaces: Array<SelectableValue<string>> = [];
 
@@ -31,7 +31,7 @@ class GrafanaLiveCoreScope extends GrafanaLiveScope {
     super(LiveChannelScope.GrafInsight);
   }
 
-  register(feature: CoreGrafanaLiveFeature) {
+  register(feature: CoreGrafInsightLiveFeature) {
     this.features.set(feature.name, feature.support);
     this.namespaces.push({
       value: feature.name,
@@ -58,9 +58,9 @@ class GrafanaLiveCoreScope extends GrafanaLiveScope {
     return Promise.resolve(this.namespaces);
   }
 }
-export const grafanaLiveCoreFeatures = new GrafanaLiveCoreScope();
+export const grafinsightLiveCoreFeatures = new GrafInsightLiveCoreScope();
 
-export class GrafanaLiveDataSourceScope extends GrafanaLiveScope {
+export class GrafInsightLiveDataSourceScope extends GrafInsightLiveScope {
   names?: Array<SelectableValue<string>>;
 
   constructor() {
@@ -106,7 +106,7 @@ export class GrafanaLiveDataSourceScope extends GrafanaLiveScope {
   }
 }
 
-export class GrafanaLivePluginScope extends GrafanaLiveScope {
+export class GrafInsightLivePluginScope extends GrafInsightLiveScope {
   names?: Array<SelectableValue<string>>;
 
   constructor() {

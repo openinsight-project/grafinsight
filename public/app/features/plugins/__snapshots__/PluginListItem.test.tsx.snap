@@ -44,7 +44,7 @@ exports[`Render should render component 1`] = `
         <div
           className="card-item-sub-name"
         >
-          By Grafana Labs
+          By GrafInsight Labs
         </div>
       </div>
     </div>
@@ -105,7 +105,7 @@ exports[`Render should render has plugin section 1`] = `
         <div
           className="card-item-sub-name"
         >
-          By Grafana Labs
+          By GrafInsight Labs
         </div>
       </div>
     </div>

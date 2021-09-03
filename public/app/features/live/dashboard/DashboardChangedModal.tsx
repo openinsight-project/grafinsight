@@ -43,7 +43,7 @@ export class DashboardChangedModal extends PureComponent<Props, State> {
 
   acceptDelete: ActionInfo = {
     label: 'Discard Local changes',
-    description: 'view grafana homepage',
+    description: 'view grafinsight homepage',
     action: () => {
       // Navigate to the root URL
       document.location.href = config.appUrl;

@@ -4,28 +4,28 @@ import React, { PureComponent } from 'react';
 import { InlineField, Select, FeatureInfoBox } from '@grafinsight/ui';
 import { QueryEditorProps, SelectableValue, LiveChannelScope, FeatureState } from '@grafinsight/data';
 import { getLiveMeasurements, LiveMeasurements } from '@grafinsight/runtime/src';
-import { GrafanaDatasource } from '../datasource';
-import { defaultQuery, GrafanaQuery, GrafanaQueryType } from '../types';
+import { GrafInsightDatasource } from '../datasource';
+import { defaultQuery, GrafInsightQuery, GrafInsightQueryType } from '../types';
 
-type Props = QueryEditorProps<GrafanaDatasource, GrafanaQuery>;
+type Props = QueryEditorProps<GrafInsightDatasource, GrafInsightQuery>;
 
 const labelWidth = 12;
 
 export class QueryEditor extends PureComponent<Props> {
-  queryTypes: Array<SelectableValue<GrafanaQueryType>> = [
+  queryTypes: Array<SelectableValue<GrafInsightQueryType>> = [
     {
       label: 'Random Walk',
-      value: GrafanaQueryType.RandomWalk,
+      value: GrafInsightQueryType.RandomWalk,
       description: 'Random signal within the selected time range',
     },
     {
       label: 'Live Measurements',
-      value: GrafanaQueryType.LiveMeasurements,
-      description: 'Stream real-time measurements from Grafana',
+      value: GrafInsightQueryType.LiveMeasurements,
+      description: 'Stream real-time measurements from GrafInsight',
     },
   ];
 
-  onQueryTypeChange = (sel: SelectableValue<GrafanaQueryType>) => {
+  onQueryTypeChange = (sel: SelectableValue<GrafInsightQueryType>) => {
     const { onChange, query, onRunQuery } = this.props;
     onChange({ ...query, queryType: sel.value! });
     onRunQuery();
@@ -137,9 +137,9 @@ export class QueryEditor extends PureComponent<Props> {
           </div>
         )}
 
-        <FeatureInfoBox title="Grafana Live - Measurements" featureState={FeatureState.alpha}>
+        <FeatureInfoBox title="GrafInsight Live - Measurements" featureState={FeatureState.alpha}>
           <p>
-            This supports real-time event streams in Grafana core. This feature is under heavy development. Expect the
+            This supports real-time event streams in GrafInsight core. This feature is under heavy development. Expect the
             interfaces and structures to change as this becomes more production ready.
           </p>
         </FeatureInfoBox>
@@ -160,7 +160,7 @@ export class QueryEditor extends PureComponent<Props> {
             />
           </InlineField>
         </div>
-        {query.queryType === GrafanaQueryType.LiveMeasurements && this.renderMeasurementsQuery()}
+        {query.queryType === GrafInsightQueryType.LiveMeasurements && this.renderMeasurementsQuery()}
       </>
     );
   }

@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 DAEMON=grafinsight-server
 EXECUTABLE=/usr/local/bin/grafinsight-server
-CONFIG=/usr/local/etc/grafana/grafana.ini
-HOMEPATH=/usr/local/share/grafana
-LOGPATH=/usr/local/var/log/grafana
-DATAPATH=/usr/local/var/lib/grafana
-PLUGINPATH=/usr/local/var/lib/grafana/plugins
-DATASOURCECFGPATH=/usr/local/etc/grafana/datasources
-DASHBOARDSCFGPATH=/usr/local/etc/grafana/dashboards
+CONFIG=/usr/local/etc/grafinsight/grafinsight.ini
+HOMEPATH=/usr/local/share/grafinsight
+LOGPATH=/usr/local/var/log/grafinsight
+DATAPATH=/usr/local/var/lib/grafinsight
+PLUGINPATH=/usr/local/var/lib/grafinsight/plugins
+DATASOURCECFGPATH=/usr/local/etc/grafinsight/datasources
+DASHBOARDSCFGPATH=/usr/local/etc/grafinsight/dashboards
 
 case "$1" in
 start)

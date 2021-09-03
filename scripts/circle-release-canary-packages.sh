@@ -6,7 +6,7 @@ source "$(dirname "$0")/helpers/exit-if-fail.sh"
 
 function prepare_version_commit () {
   echo $'\nCommitting version changes. This commit will not be pushed!'
-  git config --global user.email "drone@grafana.com"
+  git config --global user.email "drone@grafinsight.com"
   git config --global user.name "Drone"
   git commit -am "Version commit"
 }
@@ -20,7 +20,7 @@ else
   echo "Changes detected in ${count} packages"
   echo "Starting to release latest canary version"
 
-  echo "@grafana:registry=https://npm.pkg.github.com" >> ~/.npmrc
+  echo "@grafinsight:registry=https://npm.pkg.github.com" >> ~/.npmrc
   echo "//npm.pkg.github.com/:_authToken=${GITHUB_PACKAGE_TOKEN}" >> ~/.npmrc
 
   # For some reason the --no-git-reset is not working as described so

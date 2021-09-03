@@ -59,7 +59,7 @@ describe('AppRootPage', () => {
   });
 
   it('should not mount plugin twice if nav is changed', async () => {
-    // reproduces https://github.com/grafana/grafana/pull/28105
+    // reproduces https://github.com/grafinsight/grafinsight/pull/28105
 
     getPluginSettingsMock.mockResolvedValue(
       getMockPlugin({

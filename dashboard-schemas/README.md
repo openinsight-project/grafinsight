@@ -1,11 +1,11 @@
 # Dashboard Schemas
 
-Schema description documents for [Grafana Dashboard
-JSON](https://grafana.com/docs/grafana/latest/reference/dashboard/) and core
+Schema description documents for [GrafInsight Dashboard
+JSON](https://grafinsight.com/docs/grafinsight/latest/reference/dashboard/) and core
 panels.
 
 > **Note:** This directory is experimental. The schemas are not currently
-> implemented or enforced in Grafana.
+> implemented or enforced in GrafInsight.
 
 Schemas are defined in [Cue](https://cuelang.org/). Cue was chosen because it
 strongly facilitates our primary use cases - [schema
@@ -20,15 +20,15 @@ schema object. All other schemas describe nested objects within a dashboard.
 They are grouped in the following directories:
 
 * `panels` - schemas for
-  [panels](https://grafana.com/docs/grafana/latest/panels/panels-overview/).
+  [panels](https://grafinsight.com/docs/grafinsight/latest/panels/panels-overview/).
 * `targets` - targets represent
-  [queries](https://grafana.com/docs/grafana/latest/panels/queries/). Each [data
-  source](https://grafana.com/docs/grafana/latest/datasources/) type has a
+  [queries](https://grafinsight.com/docs/grafinsight/latest/panels/queries/). Each [data
+  source](https://grafinsight.com/docs/grafinsight/latest/datasources/) type has a
   unique target schema.
 * `variables` - schemas for
-  [variables](https://grafana.com/docs/grafana/latest/variables/variable-types/).
+  [variables](https://grafinsight.com/docs/grafinsight/latest/variables/variable-types/).
 * `transformations` - schemas for
-  [transformations](https://grafana.com/docs/grafana/latest/panels/transformations/types-options/).
+  [transformations](https://grafinsight.com/docs/grafinsight/latest/panels/transformations/types-options/).
 
 The following somewhat conveys how they fit together when constructing a
 dashboard:

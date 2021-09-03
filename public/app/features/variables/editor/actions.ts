@@ -41,7 +41,7 @@ export const changeVariableName = (identifier: VariableIdentifier, newName: stri
   return (dispatch, getState) => {
     let errorText = null;
     if (!newName.match(/^(?!__).*$/)) {
-      errorText = "Template names cannot begin with '__', that's reserved for Grafana's global variables";
+      errorText = "Template names cannot begin with '__', that's reserved for GrafInsight's global variables";
     }
 
     if (!newName.match(/^\w+$/)) {

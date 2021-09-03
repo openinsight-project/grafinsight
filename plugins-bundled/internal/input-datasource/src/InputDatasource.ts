@@ -8,7 +8,7 @@ import {
   DataFrame,
   DataFrameDTO,
   toDataFrame,
-} from '@grafana/data';
+} from '@grafinsight/data';
 
 import { InputQuery, InputOptions } from './types';
 

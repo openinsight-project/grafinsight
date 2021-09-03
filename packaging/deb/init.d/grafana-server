@@ -1,18 +1,18 @@
 #! /usr/bin/env bash
 
 # chkconfig: 2345 80 05
-# description: Grafana web server & backend
-# processname: grafana
-# config: /etc/grafana/grafana.ini
-# pidfile: /var/run/grafana.pid
+# description: GrafInsight web server & backend
+# processname: grafinsight
+# config: /etc/grafinsight/grafinsight.ini
+# pidfile: /var/run/grafinsight.pid
 
 ### BEGIN INIT INFO
-# Provides:          grafana
+# Provides:          grafinsight
 # Required-Start:    $all
 # Required-Stop:     $remote_fs $syslog
 # Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6
-# Short-Description: Start grafana at boot time
+# Short-Description: Start grafinsight at boot time
 ### END INIT INFO
 
 #  tested on
@@ -21,18 +21,18 @@
 
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 NAME=grafinsight-server
-DESC="Grafana Server"
+DESC="GrafInsight Server"
 DEFAULT=/etc/default/$NAME
 
-GRAFANA_USER=grafana
-GRAFANA_GROUP=grafana
-GRAFANA_HOME=/usr/share/grafana
-CONF_DIR=/etc/grafana
-WORK_DIR=$GRAFANA_HOME
-DATA_DIR=/var/lib/grafana
-PLUGINS_DIR=/var/lib/grafana/plugins
-LOG_DIR=/var/log/grafana
-CONF_FILE=$CONF_DIR/grafana.ini
+GRAFINSIGHT_USER=grafinsight
+GRAFINSIGHT_GROUP=grafinsight
+GRAFINSIGHT_HOME=/usr/share/grafinsight
+CONF_DIR=/etc/grafinsight
+WORK_DIR=$GRAFINSIGHT_HOME
+DATA_DIR=/var/lib/grafinsight
+PLUGINS_DIR=/var/lib/grafinsight/plugins
+LOG_DIR=/var/log/grafinsight
+CONF_FILE=$CONF_DIR/grafinsight.ini
 PROVISIONING_CFG_DIR=$CONF_DIR/provisioning
 MAX_OPEN_FILES=10000
 PID_FILE=/var/run/$NAME.pid
@@ -70,7 +70,7 @@ case "$1" in
   checkUser
 	log_daemon_msg "Starting $DESC"
 
-	pid=`pidofproc -p $PID_FILE grafana`
+	pid=`pidofproc -p $PID_FILE grafinsight`
 	if [ -n "$pid" ] ; then
 		log_begin_msg "Already running."
 		log_end_msg 0
@@ -78,15 +78,15 @@ case "$1" in
 	fi
 
 	# Prepare environment
-	mkdir -p "$LOG_DIR" "$DATA_DIR" && chown "$GRAFANA_USER":"$GRAFANA_GROUP" "$LOG_DIR" "$DATA_DIR"
-	touch "$PID_FILE" && chown "$GRAFANA_USER":"$GRAFANA_GROUP" "$PID_FILE"
+	mkdir -p "$LOG_DIR" "$DATA_DIR" && chown "$GRAFINSIGHT_USER":"$GRAFINSIGHT_GROUP" "$LOG_DIR" "$DATA_DIR"
+	touch "$PID_FILE" && chown "$GRAFINSIGHT_USER":"$GRAFINSIGHT_GROUP" "$PID_FILE"
 
   if [ -n "$MAX_OPEN_FILES" ]; then
 		ulimit -n $MAX_OPEN_FILES
 	fi
 
 	# Start Daemon
-	start-stop-daemon --start -b --chdir "$WORK_DIR" --user "$GRAFANA_USER" -c "$GRAFANA_USER" --pidfile "$PID_FILE" --exec $DAEMON -- $DAEMON_OPTS
+	start-stop-daemon --start -b --chdir "$WORK_DIR" --user "$GRAFINSIGHT_USER" -c "$GRAFINSIGHT_USER" --pidfile "$PID_FILE" --exec $DAEMON -- $DAEMON_OPTS
 	return=$?
 	if [ $return -eq 0 ]
 	then
@@ -119,7 +119,7 @@ case "$1" in
 
 	if [ -f "$PID_FILE" ]; then
 		start-stop-daemon --stop --pidfile "$PID_FILE" \
-			--user "$GRAFANA_USER" \
+			--user "$GRAFINSIGHT_USER" \
 			--retry=TERM/20/KILL/5 >/dev/null
 		if [ $? -eq 1 ]; then
 			log_progress_msg "$DESC is not running but pid file exists, cleaning up"
@@ -135,7 +135,7 @@ case "$1" in
 	log_end_msg 0
 	;;
   status)
-	status_of_proc -p $PID_FILE grafana grafana && exit 0 || exit $?
+	status_of_proc -p $PID_FILE grafinsight grafinsight && exit 0 || exit $?
     ;;
   restart|force-reload)
 	if [ -f "$PID_FILE" ]; then

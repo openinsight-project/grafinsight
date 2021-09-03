@@ -10,8 +10,8 @@
     "version": "1.0.0",
     "description": "Data source that supports manual table & CSV input",
     "author": {
-      "name": "Grafana Labs",
-      "url": "https://grafana.com"
+      "name": "GrafInsight Labs",
+      "url": "https://grafinsight.com"
     },
     "logos": {
       "small": "img/input.svg",

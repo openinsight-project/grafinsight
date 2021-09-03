@@ -57,12 +57,12 @@ class ImportDashboardOverviewUnConnected extends PureComponent<Props, State> {
               <Legend>
                 Importing Dashboard from{' '}
                 <a
-                  href={`https://grafana.com/dashboards/${dashboard.gnetId}`}
+                  href={`https://grafinsight.com/dashboards/${dashboard.gnetId}`}
                   className="external-link"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Grafana.com
+                  GrafInsight.com
                 </a>
               </Legend>
             </div>
