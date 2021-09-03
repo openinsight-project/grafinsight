@@ -77,11 +77,11 @@ class NewDataSourcePage extends PureComponent<Props> {
         <div className="add-data-source-more">
           <LinkButton
             variant="secondary"
-            href="https://grafana.com/plugins?type=datasource&utm_source=grafana_add_ds"
+            href="https://grafinsight.com/plugins?type=datasource&utm_source=grafinsight_add_ds"
             target="_blank"
             rel="noopener"
           >
-            Find more data source plugins on grafana.com
+            Find more data source plugins on grafinsight.com
           </LinkButton>
         </div>
       </>
@@ -105,7 +105,7 @@ class NewDataSourcePage extends PureComponent<Props> {
                 <br />
                 <p>
                   Note that <strong>unsigned front-end datasource plugins</strong> are still usable, but this is subject
-                  to change in the upcoming releases of Grafana
+                  to change in the upcoming releases of GrafInsight
                 </p>
               </>
             </PluginsErrorsInfo>
@@ -144,7 +144,7 @@ const DataSourceTypeCard: FC<DataSourceTypeCardProps> = (props) => {
           {learnMoreLink && (
             <LinkButton
               variant="secondary"
-              href={`${learnMoreLink.url}?utm_source=grafana_add_ds`}
+              href={`${learnMoreLink.url}?utm_source=grafinsight_add_ds`}
               target="_blank"
               rel="noopener"
               onClick={onLearnMoreClick}

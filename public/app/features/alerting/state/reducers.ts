@@ -19,7 +19,7 @@ import store from 'app/core/store';
 import { config } from '@grafinsight/runtime/src';
 import { PanelQueryRunner } from '../../query/state/PanelQueryRunner';
 
-export const ALERT_DEFINITION_UI_STATE_STORAGE_KEY = 'grafana.alerting.alertDefinition.ui';
+export const ALERT_DEFINITION_UI_STATE_STORAGE_KEY = 'grafinsight.alerting.alertDefinition.ui';
 const DEFAULT_ALERT_DEFINITION_UI_STATE: AlertDefinitionUiState = { rightPaneSize: 400, topPaneSize: 0.45 };
 
 export const initialState: AlertRulesState = {

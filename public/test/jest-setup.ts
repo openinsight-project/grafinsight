@@ -10,13 +10,13 @@ import '../vendor/flot/jquery.flot';
 import '../vendor/flot/jquery.flot.time';
 import angular from 'angular';
 
-angular.module('grafana', ['ngRoute']);
-angular.module('grafana.services', ['ngRoute', '$strap.directives']);
-angular.module('grafana.panels', []);
-angular.module('grafana.controllers', []);
-angular.module('grafana.directives', []);
-angular.module('grafana.filters', []);
-angular.module('grafana.routes', ['ngRoute']);
+angular.module('grafinsight', ['ngRoute']);
+angular.module('grafinsight.services', ['ngRoute', '$strap.directives']);
+angular.module('grafinsight.panels', []);
+angular.module('grafinsight.controllers', []);
+angular.module('grafinsight.directives', []);
+angular.module('grafinsight.filters', []);
+angular.module('grafinsight.routes', ['ngRoute']);
 
 jest.mock('app/core/core', () => ({}));
 jest.mock('app/features/plugins/plugin_loader', () => ({}));

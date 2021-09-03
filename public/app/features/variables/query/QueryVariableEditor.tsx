@@ -218,7 +218,7 @@ export class QueryVariableEditorUnConnected extends PureComponent<Props, State> 
                   Optional, if you want to extract part of a series name or metric node segment. Named capture groups
                   can be used to separate the display text and value (
                   <a
-                    href="https://grafana.com/docs/grafana/latest/variables/filter-variables-with-regex#filter-and-modify-using-named-text-and-value-capture-groups"
+                    href="https://grafinsight.com/docs/grafinsight/latest/variables/filter-variables-with-regex#filter-and-modify-using-named-text-and-value-capture-groups"
                     target="__blank"
                   >
                     see examples
@@ -240,7 +240,7 @@ export class QueryVariableEditorUnConnected extends PureComponent<Props, State> 
 
           <VerticalGroup spacing="none">
             <h5>Value group tags</h5>
-            <em className="muted p-b-1">Experimental feature, will be deprecated in Grafana v8.</em>
+            <em className="muted p-b-1">Experimental feature, will be deprecated in GrafInsight v8.</em>
 
             <VariableSwitchField
               value={this.props.variable.useTags}

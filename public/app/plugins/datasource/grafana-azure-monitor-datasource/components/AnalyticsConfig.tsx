@@ -144,7 +144,7 @@ export class AnalyticsConfig extends PureComponent<Props, State> {
           {...addtlAttrs}
         />
         {showSameAsHelpMsg && (
-          <div className="grafana-info-box m-t-2">
+          <div className="grafinsight-info-box m-t-2">
             <div className="alert-body">
               <p>Re-enter your Azure Monitor Client Secret to use this setting.</p>
             </div>

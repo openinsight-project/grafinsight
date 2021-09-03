@@ -7,8 +7,8 @@
   "info": {
     "description": "Data source for PostgreSQL and compatible databases",
     "author": {
-      "name": "Grafana Labs",
-      "url": "https://grafana.com"
+      "name": "GrafInsight Labs",
+      "url": "https://grafinsight.com"
     },
     "logos": {
       "small": "img/postgresql_logo.svg",

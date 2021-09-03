@@ -1,18 +1,18 @@
-# Grafana Docker image
+# GrafInsight Docker image
 
-This topic contains instructions for installing Grafana using the Docker image.
+This topic contains instructions for installing GrafInsight using the Docker image.
 
-## Run the Grafana Docker container
+## Run the GrafInsight Docker container
 
-Start the Docker container by binding Grafana to external port `3000`.
+Start the Docker container by binding GrafInsight to external port `3000`.
 
 ```bash
-docker run -d --name=grafana -p 3000:3000 grafana/grafana
+docker run -d --name=grafinsight -p 3000:3000 grafinsight/grafinsight
 ```
 
 Try it out, default admin user credentials are admin/admin.
 
-Further documentation can be found at http://docs.grafana.org/installation/docker/.
+Further documentation can be found at http://docs.grafinsight.org/installation/docker/.
 
 ## Changelog
 
@@ -36,7 +36,7 @@ Further documentation can be found at http://docs.grafana.org/installation/docke
 - Made it possible to set a specific plugin URL, #12861, thx ClementGautier.
 
 ### v5.1.5, v5.2.0-beta2
-- Fixed: config keys ending with _FILE are not respected [#170](https://github.com/grafana/grafana-docker/issues/170).
+- Fixed: config keys ending with _FILE are not respected [#170](https://github.com/grafinsight/grafinsight-docker/issues/170).
 
 ### v5.2.0-beta1
 - Added support for Docker secrets.
@@ -47,7 +47,7 @@ Further documentation can be found at http://docs.grafana.org/installation/docke
 - Fixed file permissions incompatibility with previous versions.
   * user id changed from 104 to 472.
   * group id changed from 107 to 472.
-- Runs as the Grafana user by default (instead of root).
+- Runs as the GrafInsight user by default (instead of root).
 - Removed all default volumes.
 
 ### v4.2.0
@@ -56,7 +56,7 @@ Further documentation can be found at http://docs.grafana.org/installation/docke
 - Fixed bug caused by installing multiple plugins.
 
 ### v4.0.0-beta2
-- Plugins dir (`/var/lib/grafana/plugins`) is no longer a separate volume.
+- Plugins dir (`/var/lib/grafinsight/plugins`) is no longer a separate volume.
 
 ### v3.1.1
-- Made it possible to install specific plugin version https://github.com/grafana/grafana-docker/issues/59#issuecomment-260584026.
+- Made it possible to install specific plugin version https://github.com/grafinsight/grafinsight-docker/issues/59#issuecomment-260584026.

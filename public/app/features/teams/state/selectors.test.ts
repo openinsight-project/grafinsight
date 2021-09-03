@@ -85,7 +85,7 @@ describe('isSignedInUserTeamAdmin', () => {
   });
 
   describe('when feature toggle editorsCanAdmin is turned on', () => {
-    it('should return true if signed in user is grafanaAdmin', () => {
+    it('should return true if signed in user is grafinsightAdmin', () => {
       const config = setup({
         editorsCanAdmin: true,
         signedInUser: {
@@ -131,7 +131,7 @@ describe('isSignedInUserTeamAdmin', () => {
       expect(result).toBe(true);
     });
 
-    it('should return false if signed in user is not grafanaAdmin, org admin or team admin', () => {
+    it('should return false if signed in user is not grafinsightAdmin, org admin or team admin', () => {
       const config = setup({
         editorsCanAdmin: true,
         signedInUser: {

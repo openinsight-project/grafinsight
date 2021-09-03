@@ -7,11 +7,11 @@ import {
   AngularLoader as AngularLoaderInterface,
   setAngularLoader as setAngularLoaderInterface,
 } from '@grafinsight/runtime/src';
-import { GrafanaRootScope } from 'app/routes/GrafanaCtrl';
+import { GrafInsightRootScope } from 'app/routes/GrafInsightCtrl';
 
 export class AngularLoader implements AngularLoaderInterface {
   /** @ngInject */
-  constructor(private $compile: any, private $rootScope: GrafanaRootScope) {}
+  constructor(private $compile: any, private $rootScope: GrafInsightRootScope) {}
 
   load(elem: any, scopeProps: any, template: string): AngularComponent {
     const scope = this.$rootScope.$new();

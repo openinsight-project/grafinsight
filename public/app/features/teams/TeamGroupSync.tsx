@@ -22,7 +22,7 @@ interface State {
   newGroupId: string;
 }
 
-const headerTooltip = `Sync LDAP or OAuth groups with your Grafana teams.`;
+const headerTooltip = `Sync LDAP or OAuth groups with your GrafInsight teams.`;
 
 export class TeamGroupSync extends PureComponent<Props, State> {
   constructor(props: Props) {
@@ -105,7 +105,7 @@ export class TeamGroupSync extends PureComponent<Props, State> {
                   className="gf-form-input width-30"
                   value={newGroupId}
                   onChange={this.onNewGroupIdChanged}
-                  placeholder="cn=ops,ou=groups,dc=grafana,dc=org"
+                  placeholder="cn=ops,ou=groups,dc=grafinsight,dc=org"
                 />
               </div>
 
@@ -126,7 +126,7 @@ export class TeamGroupSync extends PureComponent<Props, State> {
             buttonTitle="Add Group"
             proTip={headerTooltip}
             proTipLinkTitle="Learn more"
-            proTipLink="http://docs.grafana.org/auth/enhanced_ldap/"
+            proTipLink="http://docs.grafinsight.org/auth/enhanced_ldap/"
             proTipTarget="_blank"
           />
         )}

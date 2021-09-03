@@ -19,7 +19,7 @@ export class TestInfoTab extends PureComponent<Props> {
         <br />
         <a
           className="btn btn-inverse"
-          href="https://github.com/grafana/grafana/tree/master/devenv"
+          href="https://github.com/grafinsight/grafinsight/tree/master/devenv"
           target="_blank"
           rel="noopener noreferrer"
         >

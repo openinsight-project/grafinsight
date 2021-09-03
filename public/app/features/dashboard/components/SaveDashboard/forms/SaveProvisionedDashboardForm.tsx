@@ -31,14 +31,14 @@ export const SaveProvisionedDashboardForm: React.FC<SaveDashboardFormProps> = ({
     <>
       <VerticalGroup spacing="lg">
         <small>
-          This dashboard cannot be saved from Grafana&apos;s UI since it has been provisioned from another source. Copy
+          This dashboard cannot be saved from GrafInsight&apos;s UI since it has been provisioned from another source. Copy
           the JSON or save it to a file below. Then you can update your dashboard in corresponding provisioning source.
           <br />
           <i>
             See{' '}
             <a
               className="external-link"
-              href="http://docs.grafana.org/administration/provisioning/#dashboards"
+              href="http://docs.grafinsight.org/administration/provisioning/#dashboards"
               target="_blank"
               rel="noreferrer"
             >

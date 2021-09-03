@@ -4,10 +4,10 @@
   "id": "graph",
 
   "info": {
-    "description": "Graph Panel for Grafana",
+    "description": "Graph Panel for GrafInsight",
     "author": {
-      "name": "Grafana Labs",
-      "url": "https://grafana.com"
+      "name": "GrafInsight Labs",
+      "url": "https://grafinsight.com"
     },
     "logos": {
       "small": "img/icn-graph-panel.svg",

@@ -40,7 +40,7 @@ import { registerEchoBackend, setEchoSrv } from '@grafinsight/runtime/src';
 import { Echo } from './core/services/echo/Echo';
 import { reportPerformance } from './core/services/echo/EchoSrv';
 import { PerformanceBackend } from './core/services/echo/backends/PerformanceBackend';
-import 'app/routes/GrafanaCtrl';
+import 'app/routes/GrafInsightCtrl';
 import 'app/features/all';
 import { getScrollbarWidth, getStandardFieldConfigs, getStandardOptionEditors } from '@grafinsight/ui';
 import { getDefaultVariableAdapters, variableAdapters } from './features/variables/adapters';
@@ -64,7 +64,7 @@ if (process.env.NODE_ENV === 'development') {
   initDevFeatures();
 }
 
-export class GrafanaApp {
+export class GrafInsightApp {
   registerFunctions: any;
   ngModuleDependencies: any[];
   preBootModules: any[] | null;
@@ -86,7 +86,7 @@ export class GrafanaApp {
   }
 
   init() {
-    const app = angular.module('grafana', []);
+    const app = angular.module('grafinsight', []);
 
     addClassIfNoOverlayScrollbar();
     setLocale(config.bootData.user.locale);
@@ -140,11 +140,11 @@ export class GrafanaApp {
     );
 
     this.ngModuleDependencies = [
-      'grafana.core',
+      'grafinsight.core',
       'ngRoute',
       'ngSanitize',
       '$strap.directives',
-      'grafana',
+      'grafinsight',
       'pasvaz.bindonce',
       'react',
     ];
@@ -225,4 +225,4 @@ function addClassIfNoOverlayScrollbar() {
   }
 }
 
-export default new GrafanaApp();
+export default new GrafInsightApp();

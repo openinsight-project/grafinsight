@@ -120,47 +120,47 @@ describe('LogAnalyticsDatasource', () => {
 
   describe('when using $__escape and multi template variable has one selected value', () => {
     beforeEach(() => {
-      builder.rawQueryString = `$__escapeMulti('\\grafana-vm\Network(eth0)\Total Bytes Received')`;
+      builder.rawQueryString = `$__escapeMulti('\\grafinsight-vm\Network(eth0)\Total Bytes Received')`;
     });
 
     it('should replace $__escape(val) with KQL style escaped string', () => {
       const query = builder.generate().uriString;
-      expect(query).toContain(`%40'%5Cgrafana-vmNetwork(eth0)Total%20Bytes%20Received'`);
+      expect(query).toContain(`%40'%5Cgrafinsight-vmNetwork(eth0)Total%20Bytes%20Received'`);
     });
   });
 
   describe('when using $__escape and multi template variable has multiple selected values', () => {
     beforeEach(() => {
-      builder.rawQueryString = `CounterPath in ($__escapeMulti('\\grafana-vm\Network(eth0)\Total','\\grafana-vm\Network(eth0)\Total'))`;
+      builder.rawQueryString = `CounterPath in ($__escapeMulti('\\grafinsight-vm\Network(eth0)\Total','\\grafinsight-vm\Network(eth0)\Total'))`;
     });
 
     it('should replace $__escape(val) with multiple KQL style escaped string', () => {
       const query = builder.generate().uriString;
       expect(query).toContain(
-        `CounterPath%20in%20(%40'%5Cgrafana-vmNetwork(eth0)Total'%2C%20%40'%5Cgrafana-vmNetwork(eth0)Total')`
+        `CounterPath%20in%20(%40'%5Cgrafinsight-vmNetwork(eth0)Total'%2C%20%40'%5Cgrafinsight-vmNetwork(eth0)Total')`
       );
     });
   });
 
   describe('when using $__escape and multi template variable has one selected value that contains comma', () => {
     beforeEach(() => {
-      builder.rawQueryString = `$__escapeMulti('\\grafana-vm,\Network(eth0)\Total Bytes Received')`;
+      builder.rawQueryString = `$__escapeMulti('\\grafinsight-vm,\Network(eth0)\Total Bytes Received')`;
     });
 
     it('should replace $__escape(val) with KQL style escaped string', () => {
       const query = builder.generate().uriString;
-      expect(query).toContain(`%40'%5Cgrafana-vm%2CNetwork(eth0)Total%20Bytes%20Received'`);
+      expect(query).toContain(`%40'%5Cgrafinsight-vm%2CNetwork(eth0)Total%20Bytes%20Received'`);
     });
   });
 
   describe(`when using $__escape and multi template variable value is not wrapped in single '`, () => {
     beforeEach(() => {
-      builder.rawQueryString = `$__escapeMulti(\\grafana-vm,\Network(eth0)\Total Bytes Received)`;
+      builder.rawQueryString = `$__escapeMulti(\\grafinsight-vm,\Network(eth0)\Total Bytes Received)`;
     });
 
     it('should not replace macro', () => {
       const query = builder.generate().uriString;
-      expect(query).toContain(`%24__escapeMulti(%5Cgrafana-vm%2CNetwork(eth0)Total%20Bytes%20Received)`);
+      expect(query).toContain(`%24__escapeMulti(%5Cgrafinsight-vm%2CNetwork(eth0)Total%20Bytes%20Received)`);
     });
   });
 });

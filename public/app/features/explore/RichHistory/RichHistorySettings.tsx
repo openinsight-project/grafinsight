@@ -75,7 +75,7 @@ export function RichHistorySettings(props: RichHistorySettingsProps) {
     <div className={styles.container}>
       <Field
         label="History time span"
-        description="Select the period of time for which Grafana will save your query history"
+        description="Select the period of time for which GrafInsight will save your query history"
         className="space-between"
       >
         <div className={styles.input}>

@@ -21,9 +21,9 @@ export class ResetPasswordCtrl {
 
     $scope.navModel = {
       main: {
-        icon: 'grafana',
+        icon: 'grafinsight',
         text: 'Reset Password',
-        subTitle: 'Reset your Grafana password',
+        subTitle: 'Reset your GrafInsight password',
         breadcrumbs: [{ title: 'Login', url: 'login' }],
       },
     };

@@ -3,7 +3,7 @@ import { LocalStorageValueProvider } from '../LocalStorageValueProvider';
 import { TimeRange, isDateTime, toUtc } from '@grafinsight/data';
 import { TimeRangePickerProps, TimeRangePicker } from '@grafinsight/ui/src/components/TimePicker/TimeRangePicker';
 
-const LOCAL_STORAGE_KEY = 'grafana.dashboard.timepicker.history';
+const LOCAL_STORAGE_KEY = 'grafinsight.dashboard.timepicker.history';
 
 interface Props extends Omit<TimeRangePickerProps, 'history' | 'theme'> {}
 

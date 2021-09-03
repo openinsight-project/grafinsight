@@ -4,10 +4,10 @@
   "id": "stat",
 
   "info": {
-    "description": "Singlestat Panel for Grafana",
+    "description": "Singlestat Panel for GrafInsight",
     "author": {
-      "name": "Grafana Labs",
-      "url": "https://grafana.com"
+      "name": "GrafInsight Labs",
+      "url": "https://grafinsight.com"
     },
     "logos": {
       "small": "img/icn-singlestat-panel.svg",

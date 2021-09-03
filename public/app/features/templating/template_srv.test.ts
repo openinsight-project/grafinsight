@@ -510,11 +510,11 @@ describe('templateSrv', () => {
           current: { value: 'constructor', text: 'constructor' },
         },
       ]);
-      _templateSrv.setGrafanaVariable('$__auto_interval_interval', '13m');
+      _templateSrv.setGrafInsightVariable('$__auto_interval_interval', '13m');
       _templateSrv.updateIndex();
     });
 
-    it('should replace with text except for grafanaVariables', () => {
+    it('should replace with text except for grafinsightVariables', () => {
       const target = _templateSrv.replaceWithText('Server: $server, period: $period');
       expect(target).toBe('Server: All, period: 13m');
     });

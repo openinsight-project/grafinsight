@@ -37,16 +37,16 @@ import { DashboardSrv, setDashboardSrv } from 'app/features/dashboard/services/D
 import { ILocationService, ITimeoutService, IRootScopeService, IAngularEvent, auto } from 'angular';
 import { AppEvent, AppEvents, locationUtil } from '@grafinsight/data';
 import { backendSrv } from 'app/core/services/backend_srv';
-import { initGrafanaLive } from 'app/features/live/live';
+import { initGrafInsightLive } from 'app/features/live/live';
 
-export type GrafanaRootScope = IRootScopeService & AppEventEmitter & AppEventConsumer & { colors: string[] };
+export type GrafInsightRootScope = IRootScopeService & AppEventEmitter & AppEventConsumer & { colors: string[] };
 
-export class GrafanaCtrl {
+export class GrafInsightCtrl {
   /** @ngInject */
   constructor(
     $scope: any,
     utilSrv: UtilSrv,
-    $rootScope: GrafanaRootScope,
+    $rootScope: GrafInsightRootScope,
     contextSrv: ContextSrv,
     bridgeSrv: BridgeSrv,
     timeSrv: TimeSrv,
@@ -85,7 +85,7 @@ export class GrafanaCtrl {
 
     // Initialize websocket event streaming
     if (config.featureToggles.live) {
-      initGrafanaLive();
+      initGrafInsightLive();
     }
 
     $scope.init = () => {
@@ -156,7 +156,7 @@ function setViewModeBodyClass(body: JQuery, mode: KioskUrlValue) {
 }
 
 /** @ngInject */
-export function grafanaAppDirective(
+export function grafinsightAppDirective(
   playlistSrv: PlaylistSrv,
   contextSrv: ContextSrv,
   $timeout: ITimeoutService,
@@ -165,7 +165,7 @@ export function grafanaAppDirective(
 ) {
   return {
     restrict: 'E',
-    controller: GrafanaCtrl,
+    controller: GrafInsightCtrl,
     link: (scope: IRootScopeService & AppEventEmitter, elem: JQuery) => {
       const body = $('body');
       // see https://github.com/zenorocha/clipboard.js/issues/155
@@ -321,4 +321,4 @@ export function grafanaAppDirective(
   };
 }
 
-coreModule.directive('grafanaApp', grafanaAppDirective);
+coreModule.directive('grafinsightApp', grafinsightAppDirective);

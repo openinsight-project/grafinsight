@@ -203,8 +203,8 @@ describe('dataFrameToLogsModel', () => {
               't=2019-04-26T16:42:50+0200 lvl=eror msg="new token…t unhashed token=56d9fdc5c8b7400bd51b060eea8ca9d7',
             ],
             labels: {
-              filename: '/var/log/grafana/grafana.log',
-              job: 'grafana',
+              filename: '/var/log/grafinsight/grafinsight.log',
+              job: 'grafinsight',
             },
           },
           {
@@ -224,14 +224,14 @@ describe('dataFrameToLogsModel', () => {
     expect(logsModel.rows).toMatchObject([
       {
         entry: 't=2019-04-26T11:05:28+0200 lvl=info msg="Initializing DatasourceCacheService" logger=server',
-        labels: { filename: '/var/log/grafana/grafana.log', job: 'grafana' },
+        labels: { filename: '/var/log/grafinsight/grafinsight.log', job: 'grafinsight' },
         logLevel: 'info',
         uniqueLabels: {},
         uid: 'foo',
       },
       {
         entry: 't=2019-04-26T16:42:50+0200 lvl=eror msg="new token…t unhashed token=56d9fdc5c8b7400bd51b060eea8ca9d7',
-        labels: { filename: '/var/log/grafana/grafana.log', job: 'grafana' },
+        labels: { filename: '/var/log/grafinsight/grafinsight.log', job: 'grafinsight' },
         logLevel: 'error',
         uniqueLabels: {},
         uid: 'bar',
@@ -269,8 +269,8 @@ describe('dataFrameToLogsModel', () => {
               't=2019-04-26T16:42:50+0200 lvl=eror msg="new token…t unhashed token=56d9fdc5c8b7400bd51b060eea8ca9d7',
             ],
             labels: {
-              filename: '/var/log/grafana/grafana.log',
-              job: 'grafana',
+              filename: '/var/log/grafinsight/grafinsight.log',
+              job: 'grafinsight',
               __error__: 'Failed while parsing',
             },
           },
@@ -294,14 +294,14 @@ describe('dataFrameToLogsModel', () => {
     expect(logsModel.rows).toMatchObject([
       {
         entry: 't=2019-04-26T11:05:28+0200 lvl=info msg="Initializing DatasourceCacheService" logger=server',
-        labels: { filename: '/var/log/grafana/grafana.log', job: 'grafana', __error__: 'Failed while parsing' },
+        labels: { filename: '/var/log/grafinsight/grafinsight.log', job: 'grafinsight', __error__: 'Failed while parsing' },
         logLevel: 'info',
         uniqueLabels: {},
         uid: 'foo',
       },
       {
         entry: 't=2019-04-26T16:42:50+0200 lvl=eror msg="new token…t unhashed token=56d9fdc5c8b7400bd51b060eea8ca9d7',
-        labels: { filename: '/var/log/grafana/grafana.log', job: 'grafana', __error__: 'Failed while parsing' },
+        labels: { filename: '/var/log/grafinsight/grafinsight.log', job: 'grafinsight', __error__: 'Failed while parsing' },
         logLevel: 'error',
         uniqueLabels: {},
         uid: 'bar',

@@ -8,7 +8,7 @@ const setup = () => {
       id: 21,
       orgId: 1,
       name: 'Azure Monitor-10-10',
-      type: 'grafana-azure-monitor-datasource',
+      type: 'grafinsight-azure-monitor-datasource',
       typeLogoUrl: '',
       typeName: 'Azure',
       access: 'proxy',

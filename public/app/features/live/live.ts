@@ -4,10 +4,10 @@ import { BehaviorSubject } from 'rxjs';
 import { LiveChannel, LiveChannelScope, LiveChannelAddress } from '@grafinsight/data';
 import { CentrifugeLiveChannel, getErrorChannel } from './channel';
 import {
-  GrafanaLiveScope,
-  grafanaLiveCoreFeatures,
-  GrafanaLiveDataSourceScope,
-  GrafanaLivePluginScope,
+  GrafInsightLiveScope,
+  grafinsightLiveCoreFeatures,
+  GrafInsightLiveDataSourceScope,
+  GrafInsightLivePluginScope,
 } from './scopes';
 import { registerLiveFeatures } from './features';
 
@@ -24,7 +24,7 @@ export class CentrifugeSrv implements GrafInsightLiveSrv {
   readonly centrifuge: Centrifuge;
   readonly connectionState: BehaviorSubject<boolean>;
   readonly connectionBlocker: Promise<void>;
-  readonly scopes: Record<LiveChannelScope, GrafanaLiveScope>;
+  readonly scopes: Record<LiveChannelScope, GrafInsightLiveScope>;
 
   constructor() {
     // build live url replacing scheme in appUrl.
@@ -49,9 +49,9 @@ export class CentrifugeSrv implements GrafInsightLiveSrv {
     });
 
     this.scopes = {
-      [LiveChannelScope.GrafInsight]: grafanaLiveCoreFeatures,
-      [LiveChannelScope.DataSource]: new GrafanaLiveDataSourceScope(),
-      [LiveChannelScope.Plugin]: new GrafanaLivePluginScope(),
+      [LiveChannelScope.GrafInsight]: grafinsightLiveCoreFeatures,
+      [LiveChannelScope.DataSource]: new GrafInsightLiveDataSourceScope(),
+      [LiveChannelScope.Plugin]: new GrafInsightLivePluginScope(),
     };
 
     // Register global listeners
@@ -110,7 +110,7 @@ export class CentrifugeSrv implements GrafInsightLiveSrv {
     return channel;
   }
 
-  private async initChannel(scope: GrafanaLiveScope, channel: CentrifugeLiveChannel): Promise<void> {
+  private async initChannel(scope: GrafInsightLiveScope, channel: CentrifugeLiveChannel): Promise<void> {
     const { addr } = channel;
     const support = await scope.getChannelSupport(addr.namespace);
     if (!support) {
@@ -150,11 +150,11 @@ export class CentrifugeSrv implements GrafInsightLiveSrv {
   }
 }
 
-export function getGrafanaLiveCentrifugeSrv() {
+export function getGrafInsightLiveCentrifugeSrv() {
   return getGrafInsightLiveSrv() as CentrifugeSrv;
 }
 
-export function initGrafanaLive() {
+export function initGrafInsightLive() {
   setGrafInsightLiveSrv(new CentrifugeSrv());
   registerLiveFeatures();
 }

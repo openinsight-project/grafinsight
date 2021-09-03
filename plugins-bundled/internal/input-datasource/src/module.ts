@@ -1,4 +1,4 @@
-import { DataSourcePlugin } from '@grafana/data';
+import { DataSourcePlugin } from '@grafinsight/data';
 
 import { InputDatasource } from './InputDatasource';
 

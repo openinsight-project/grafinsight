@@ -1,7 +1,7 @@
 GrafInsight
 
 
-GrafInsight is a community-driven, open source fork of Grafana V7.5.4 following the licence change in early 2021. We're looking to sustain (and evolve!) a monitoring and observability platform for the multitude of businesses who are dependent on the rights granted by the original, Apache v2.0 License.
+GrafInsight is a community-driven, open source fork of GrafInsight V7.5.4 following the licence change in early 2021. We're looking to sustain (and evolve!) a monitoring and observability platform for the multitude of businesses who are dependent on the rights granted by the original, Apache v2.0 License.
 
 
 

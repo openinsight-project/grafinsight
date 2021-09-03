@@ -26,12 +26,12 @@ const kbn = {
   } as { [index: string]: number },
   regexEscape: (value: string) => value.replace(/[\\^$*+?.()|[\]{}\/]/g, '\\$&'),
 
-  /** @deprecated since 7.2, use grafana/data */
+  /** @deprecated since 7.2, use grafinsight/data */
   roundInterval: (interval: number) => {
     deprecationWarning('kbn.ts', 'kbn.roundInterval()', '@grafinsight/data');
     return rangeUtil.roundInterval(interval);
   },
-  /** @deprecated since 7.2, use grafana/data */
+  /** @deprecated since 7.2, use grafinsight/data */
   secondsToHms: (s: number) => {
     deprecationWarning('kbn.ts', 'kbn.secondsToHms()', '@grafinsight/data');
     return rangeUtil.secondsToHms(s);
@@ -54,22 +54,22 @@ const kbn = {
     str = str.replace(/\0/g, '\\0');
     return str;
   },
-  /** @deprecated since 7.2, use grafana/data */
+  /** @deprecated since 7.2, use grafinsight/data */
   describeInterval: (str: string) => {
     deprecationWarning('kbn.ts', 'kbn.stringToJsRegex()', '@grafinsight/data');
     return rangeUtil.describeInterval(str);
   },
-  /** @deprecated since 7.2, use grafana/data */
+  /** @deprecated since 7.2, use grafinsight/data */
   intervalToSeconds: (str: string) => {
     deprecationWarning('kbn.ts', 'rangeUtil.intervalToSeconds()', '@grafinsight/data');
     return rangeUtil.intervalToSeconds(str);
   },
-  /** @deprecated since 7.2, use grafana/data */
+  /** @deprecated since 7.2, use grafinsight/data */
   intervalToMs: (str: string) => {
     deprecationWarning('kbn.ts', 'rangeUtil.intervalToMs()', '@grafinsight/data');
     return rangeUtil.intervalToMs(str);
   },
-  /** @deprecated since 7.2, use grafana/data */
+  /** @deprecated since 7.2, use grafinsight/data */
   calculateInterval: (range: TimeRange, resolution: number, lowLimitInterval?: string) => {
     deprecationWarning('kbn.ts', 'kbn.calculateInterval()', '@grafinsight/data');
     return rangeUtil.calculateInterval(range, resolution, lowLimitInterval);
@@ -87,7 +87,7 @@ const kbn = {
       .replace(/[^\w ]+/g, '')
       .replace(/ +/g, '-');
   },
-  /** @deprecated since 6.1, use grafana/data */
+  /** @deprecated since 6.1, use grafinsight/data */
   stringToJsRegex: (str: string) => {
     deprecationWarning('kbn.ts', 'kbn.stringToJsRegex()', '@grafinsight/data');
     return stringToJsRegex(str);

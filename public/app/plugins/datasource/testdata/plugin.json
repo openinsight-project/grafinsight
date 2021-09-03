@@ -16,8 +16,8 @@
   "info": {
     "description": "Generates test data in different forms",
     "author": {
-      "name": "Grafana Labs",
-      "url": "https://grafana.com"
+      "name": "GrafInsight Labs",
+      "url": "https://grafinsight.com"
     },
     "logos": {
       "small": "img/testdata.svg",

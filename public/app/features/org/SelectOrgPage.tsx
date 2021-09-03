@@ -7,7 +7,7 @@ import { Button, HorizontalGroup } from '@grafinsight/ui';
 
 const navModel = {
   main: {
-    icon: 'grafana',
+    icon: 'grafinsight',
     subTitle: 'Preferences',
     text: 'Select active organization',
   },

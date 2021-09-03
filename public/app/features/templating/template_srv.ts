@@ -28,7 +28,7 @@ export class TemplateSrv implements BaseTemplateSrv {
   private _variables: any[];
   private regex = variableRegex;
   private index: any = {};
-  private grafanaVariables: any = {};
+  private grafinsightVariables: any = {};
   private timeRange?: TimeRange | null = null;
   private fieldAccessorCache: FieldAccessorCache = {};
 
@@ -148,8 +148,8 @@ export class TemplateSrv implements BaseTemplateSrv {
     return formatItem.formatter(options, variable);
   }
 
-  setGrafanaVariable(name: string, value: any) {
-    this.grafanaVariables[name] = value;
+  setGrafInsightVariable(name: string, value: any) {
+    this.grafinsightVariables[name] = value;
   }
 
   /**
@@ -270,7 +270,7 @@ export class TemplateSrv implements BaseTemplateSrv {
         return match;
       }
 
-      const systemValue = this.grafanaVariables[variable.current.value];
+      const systemValue = this.grafinsightVariables[variable.current.value];
       if (systemValue) {
         return this.formatValue(systemValue, fmt, variable);
       }

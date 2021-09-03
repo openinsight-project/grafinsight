@@ -104,7 +104,7 @@ export default class AzureMonitorDatasource extends DataSourceWithBackend<AzureM
 
   /**
    * This is named differently than DataSourceApi.metricFindQuery
-   * because it's not exposed to Grafana like the main AzureMonitorDataSource.
+   * because it's not exposed to GrafInsight like the main AzureMonitorDataSource.
    * And some of the azure internal data sources return null in this function, which the
    * external interface does not support
    */

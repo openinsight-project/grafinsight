@@ -1228,7 +1228,7 @@ Licensed under the MIT license.
                 points = s.datapoints.points;
                 ps = s.datapoints.pointsize;
 
-                // grafana
+                // grafinsight
                 if (s.transform === 'negative-Y') {
                   for (j = 0; j < points.length; j += ps) {
                     if (points[j] == null)
@@ -1717,7 +1717,7 @@ Licensed under the MIT license.
             axis.max = max;
         }
 
-        // grafana change
+        // grafinsight change
         function getSignificantDigitCount(n) {
           //remove decimal and make positive
           n = Math.abs(String(n).replace(".", ""));
@@ -3049,7 +3049,7 @@ Licensed under the MIT license.
           triggerClickHoverEvent("plotclick", e, function (s) { return s["clickable"] != false; });
         }
 
-        // grafana addon - added to support mobile devices click in plot
+        // grafinsight addon - added to support mobile devices click in plot
         function onTouch(e) {
             if (!e.cancelable) {
                 return;
@@ -3064,7 +3064,7 @@ Licensed under the MIT license.
             e.preventDefault();
         }
 
-        // grafana addon - added to support mobile devices and mapping touch event to click event structure
+        // grafinsight addon - added to support mobile devices and mapping touch event to click event structure
         function mapFromTouchEvent(e) {
             if (!e || !e.originalEvent) {
                 return e;

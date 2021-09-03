@@ -60,7 +60,7 @@ function GridWrapper({
 
   /*
     Disable draggable if mobile device, solving an issue with unintentionally
-     moving panels. https://github.com/grafana/grafana/issues/18497
+     moving panels. https://github.com/grafinsight/grafinsight/issues/18497
      theme.breakpoints.md = 769
   */
   const draggable = width <= 769 ? false : isDraggable;

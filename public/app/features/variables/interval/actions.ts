@@ -38,8 +38,8 @@ export const updateAutoValue = (
       variableInState.auto_count,
       variableInState.auto_min
     );
-    dependencies.templateSrv.setGrafanaVariable('$__auto_interval_' + variableInState.name, res.interval);
+    dependencies.templateSrv.setGrafInsightVariable('$__auto_interval_' + variableInState.name, res.interval);
     // for backward compatibility, to be removed eventually
-    dependencies.templateSrv.setGrafanaVariable('$__auto_interval', res.interval);
+    dependencies.templateSrv.setGrafInsightVariable('$__auto_interval', res.interval);
   }
 };

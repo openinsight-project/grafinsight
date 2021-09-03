@@ -15,4 +15,4 @@ _whatsNewUrl="https://github.com/openinsight-project/grafinsight"
     --wn "${_whatsNewUrl}" \
     --rn "${_releaseNoteUrl}" \
     --version "${CIRCLE_TAG}" \
-    --apikey  "${GRAFANA_COM_API_KEY}" "${EXTRA_OPTS}"
+    --apikey  "${GRAFINSIGHT_COM_API_KEY}" "${EXTRA_OPTS}"

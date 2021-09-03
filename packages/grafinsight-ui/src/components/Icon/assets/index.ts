@@ -5,7 +5,7 @@ export * from './Cog';
 export * from './Favorite';
 export * from './Folder';
 export * from './FolderPlus';
-export * from './Grafana';
+export * from './GrafInsight';
 export * from './Heart';
 export * from './HeartBreak';
 export * from './Import';

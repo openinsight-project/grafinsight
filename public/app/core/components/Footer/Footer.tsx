@@ -30,7 +30,7 @@ export let getVersionLinks = (): FooterLink[] => {
     links.push({
       text: `New version available!`,
       icon: 'download-alt',
-      url: 'https://grafana.com/grafana/download?utm_source=grafana_footer',
+      url: 'https://grafinsight.com/grafinsight/download?utm_source=grafinsight_footer',
       target: '_blank',
     });
   }

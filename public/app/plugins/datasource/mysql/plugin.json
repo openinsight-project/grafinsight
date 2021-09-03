@@ -7,8 +7,8 @@
   "info": {
     "description": "Data source for MySQL databases",
     "author": {
-      "name": "Grafana Labs",
-      "url": "https://grafana.com"
+      "name": "GrafInsight Labs",
+      "url": "https://grafinsight.com"
     },
     "logos": {
       "small": "img/mysql_logo.svg",

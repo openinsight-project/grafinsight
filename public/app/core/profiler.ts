@@ -1,12 +1,12 @@
-import { GrafanaRootScope } from 'app/routes/GrafanaCtrl';
+import { GrafInsightRootScope } from 'app/routes/GrafInsightCtrl';
 
 export class Profiler {
   panelsRendered: number;
   enabled: boolean;
-  $rootScope: GrafanaRootScope;
+  $rootScope: GrafInsightRootScope;
   window: any;
 
-  init(config: any, $rootScope: GrafanaRootScope) {
+  init(config: any, $rootScope: GrafInsightRootScope) {
     this.$rootScope = $rootScope;
     this.window = window;
 

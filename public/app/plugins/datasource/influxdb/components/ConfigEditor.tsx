@@ -269,11 +269,11 @@ export class ConfigEditor extends PureComponent<Props, State> {
 
         {options.jsonData.version === InfluxVersion.Flux && (
           <InfoBox>
-            <h5>Support for Flux in Grafana is currently in beta</h5>
+            <h5>Support for Flux in GrafInsight is currently in beta</h5>
             <p>
               Please report any issues to: <br />
-              <a href="https://github.com/grafana/grafana/issues/new/choose">
-                https://github.com/grafana/grafana/issues
+              <a href="https://github.com/grafinsight/grafinsight/issues/new/choose">
+                https://github.com/grafinsight/grafinsight/issues
               </a>
             </p>
           </InfoBox>
@@ -295,7 +295,7 @@ export class ConfigEditor extends PureComponent<Props, State> {
             <InlineField
               labelWidth={20}
               label="Max series"
-              tooltip="Limit the number of series/tables that Grafana will process. Lower this number to prevent abuse, and increase it if you have lots of small time series and not all are shown. Defaults to 1000."
+              tooltip="Limit the number of series/tables that GrafInsight will process. Lower this number to prevent abuse, and increase it if you have lots of small time series and not all are shown. Defaults to 1000."
             >
               <Input
                 placeholder="1000"

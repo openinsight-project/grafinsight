@@ -103,7 +103,7 @@ describe('Table Migrations', () => {
             link: true,
             linkTargetBlank: true,
             linkTooltip: '',
-            linkUrl: 'http://www.grafana.com',
+            linkUrl: 'http://www.grafinsight.com',
             mappingType: 1,
             pattern: 'ColorValue',
             thresholds: ['5', '10'],

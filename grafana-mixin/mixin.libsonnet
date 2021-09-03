@@ -1,6 +1,6 @@
 {
-  grafanaDashboards: {
-    'grafana-overview.json': (import 'dashboards/grafana-overview.json'),
+  grafinsightDashboards: {
+    'grafinsight-overview.json': (import 'dashboards/grafinsight-overview.json'),
   },
 
   // Helper function to ensure that we don't override other rules, by forcing

@@ -1,21 +1,21 @@
 #!/usr/bin/env bash
 
 PACKAGES=("@grafinsight/ui" "@grafinsight/data" "@grafinsight/toolkit" "@grafinsight/runtime" "@grafinsight/e2e" "@grafinsight/e2e-selectors")
-GRAFANA_TAG=${1:-}
+GRAFINSIGHT_TAG=${1:-}
 RELEASE_CHANNEL="latest"
 
-if echo "$GRAFANA_TAG" | grep -q "^v"; then
-	_grafana_version=$(echo "${GRAFANA_TAG}" | cut -d "v" -f 2)
+if echo "$GRAFINSIGHT_TAG" | grep -q "^v"; then
+	_grafinsight_version=$(echo "${GRAFINSIGHT_TAG}" | cut -d "v" -f 2)
 else
   echo "Provided tag is not a version tag, skipping packages release..."
 	exit
 fi
 
-if grep -q "beta" <<< "$GRAFANA_TAG"; then
+if grep -q "beta" <<< "$GRAFINSIGHT_TAG"; then
   RELEASE_CHANNEL="next"
 fi
 
-echo "$_grafana_version"
+echo "$_grafinsight_version"
 
 # lerna bootstrap might have created yarn.lock
 git checkout .
@@ -25,7 +25,7 @@ git checkout .
 # as specified in release guideline
 PACKAGE_VERSION=$(grep '"version"' lerna.json | cut -d '"' -f 4)
 
-echo "Releasing grafana packages @ ${PACKAGE_VERSION} under ${RELEASE_CHANNEL} channel"
+echo "Releasing grafinsight packages @ ${PACKAGE_VERSION} under ${RELEASE_CHANNEL} channel"
 
 if [ $RELEASE_CHANNEL == "latest" ]; then
   SCRIPT="publishLatest"
@@ -57,7 +57,7 @@ fi
 # Publish to Github Packages registry
 # We do this for the convenience of developers that make use of both the canary and next / latest channels.
 
-echo "@grafana:registry=https://npm.pkg.github.com" >> ~/.npmrc
+echo "@grafinsight:registry=https://npm.pkg.github.com" >> ~/.npmrc
 echo "//npm.pkg.github.com/:_authToken=${GITHUB_PACKAGE_TOKEN}" >> ~/.npmrc
 
 echo $'\nPublishing packages to Github Packages registry'

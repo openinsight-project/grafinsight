@@ -88,7 +88,7 @@ export class UserAdminPage extends PureComponent<Props, State> {
     this.props.enableUser(userId);
   };
 
-  onGrafanaAdminChange = (isGrafinsightAdmin: boolean) => {
+  onGrafInsightAdminChange = (isGrafinsightAdmin: boolean) => {
     const { userId, updateUserPermissions } = this.props;
     updateUserPermissions(userId, isGrafinsightAdmin);
   };
@@ -144,7 +144,7 @@ export class UserAdminPage extends PureComponent<Props, State> {
               {isLDAPUser && config.licenseInfo.hasLicense && ldapSyncInfo && (
                 <UserLdapSyncInfo ldapSyncInfo={ldapSyncInfo} user={user} onUserSync={this.onUserSync} />
               )}
-              <UserPermissions isGrafinsightAdmin={user.isGrafinsightAdmin} onGrafanaAdminChange={this.onGrafanaAdminChange} />
+              <UserPermissions isGrafinsightAdmin={user.isGrafinsightAdmin} onGrafInsightAdminChange={this.onGrafInsightAdminChange} />
             </>
           )}
 

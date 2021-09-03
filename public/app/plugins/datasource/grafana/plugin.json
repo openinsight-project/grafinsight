@@ -1,7 +1,7 @@
 {
   "type": "datasource",
-  "name": "-- Grafana --",
-  "id": "grafana",
+  "name": "-- GrafInsight --",
+  "id": "grafinsight",
 
   "builtIn": true,
   "annotations": true,

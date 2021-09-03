@@ -1,6 +1,6 @@
-ARG GRAFANA_VERSION="latest"
+ARG GRAFINSIGHT_VERSION="latest"
 
-FROM grafana/grafana:${GRAFANA_VERSION}-ubuntu
+FROM grafinsight/grafinsight:${GRAFINSIGHT_VERSION}-ubuntu
 
 USER root
 
@@ -10,10 +10,10 @@ ARG DEBIAN_FRONTEND=noninteractive
 ARG GF_INSTALL_IMAGE_RENDERER_PLUGIN="false"
 
 ARG GF_GID="0"
-ENV GF_PATHS_PLUGINS="/var/lib/grafana-plugins"
+ENV GF_PATHS_PLUGINS="/var/lib/grafinsight-plugins"
 
 RUN mkdir -p "$GF_PATHS_PLUGINS" && \
-    chown -R grafana:${GF_GID} "$GF_PATHS_PLUGINS"
+    chown -R grafinsight:${GF_GID} "$GF_PATHS_PLUGINS"
 
 RUN if [ $GF_INSTALL_IMAGE_RENDERER_PLUGIN = "true" ]; then \
     apt-get update && \
@@ -26,15 +26,15 @@ RUN if [ $GF_INSTALL_IMAGE_RENDERER_PLUGIN = "true" ]; then \
     rm -rf /var/lib/apt/lists/*; \
 fi
 
-USER grafana
+USER grafinsight
 
 ENV GF_RENDERER_PLUGIN_CHROME_BIN="/usr/bin/google-chrome"
 
 RUN if [ $GF_INSTALL_IMAGE_RENDERER_PLUGIN = "true" ]; then \
     grafinsight-cli \
         --pluginsDir "$GF_PATHS_PLUGINS" \
-        --pluginUrl https://github.com/grafana/grafana-image-renderer/releases/latest/download/plugin-linux-x64-glibc-no-chromium.zip \
-        plugins install grafana-image-renderer; \
+        --pluginUrl https://github.com/grafinsight/grafinsight-image-renderer/releases/latest/download/plugin-linux-x64-glibc-no-chromium.zip \
+        plugins install grafinsight-image-renderer; \
 fi
 
 ARG GF_INSTALL_PLUGINS=""

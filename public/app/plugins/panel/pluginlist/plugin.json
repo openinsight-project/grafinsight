@@ -6,10 +6,10 @@
   "skipDataQuery": true,
 
   "info": {
-    "description": "Plugin List for Grafana",
+    "description": "Plugin List for GrafInsight",
     "author": {
-      "name": "Grafana Labs",
-      "url": "https://grafana.com"
+      "name": "GrafInsight Labs",
+      "url": "https://grafinsight.com"
     },
     "logos": {
       "small": "img/icn-dashlist-panel.svg",

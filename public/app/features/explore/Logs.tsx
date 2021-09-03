@@ -40,9 +40,9 @@ import { RowContextOptions } from '@grafinsight/ui/src/components/Logs/LogRowCon
 import { MAX_CHARACTERS } from '@grafinsight/ui/src/components/Logs/LogRowMessage';
 
 const SETTINGS_KEYS = {
-  showLabels: 'grafana.explore.logs.showLabels',
-  showTime: 'grafana.explore.logs.showTime',
-  wrapLogMessage: 'grafana.explore.logs.wrapLogMessage',
+  showLabels: 'grafinsight.explore.logs.showLabels',
+  showTime: 'grafinsight.explore.logs.showTime',
+  wrapLogMessage: 'grafinsight.explore.logs.wrapLogMessage',
 };
 
 function renderMetaItem(value: any, kind: LogsMetaKind) {

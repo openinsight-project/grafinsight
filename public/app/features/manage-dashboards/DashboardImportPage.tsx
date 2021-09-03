@@ -82,16 +82,16 @@ class DashboardImportUnConnected extends PureComponent<Props> {
           </FileUpload>
         </div>
         <div className={styles.option}>
-          <Legend>Import via grafana.com</Legend>
+          <Legend>Import via grafinsight.com</Legend>
           <Form onSubmit={this.getGcomDashboard} defaultValues={{ gcomDashboard: '' }}>
             {({ register, errors }) => (
               <Field invalid={!!errors.gcomDashboard} error={errors.gcomDashboard && errors.gcomDashboard.message}>
                 <Input
                   name="gcomDashboard"
-                  placeholder="Grafana.com dashboard url or id"
+                  placeholder="GrafInsight.com dashboard url or id"
                   type="text"
                   ref={register({
-                    required: 'A Grafana dashboard url or id is required',
+                    required: 'A GrafInsight dashboard url or id is required',
                     validate: validateGcomDashboard,
                   })}
                   addonAfter={<Button type="submit">Load</Button>}

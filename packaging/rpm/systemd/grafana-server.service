@@ -1,18 +1,18 @@
 [Unit]
-Description=Grafana instance
-Documentation=http://docs.grafana.org
+Description=GrafInsight instance
+Documentation=http://docs.grafinsight.org
 Wants=network-online.target
 After=network-online.target
 After=postgresql.service mariadb.service mysqld.service
 
 [Service]
 EnvironmentFile=/etc/sysconfig/grafinsight-server
-User=grafana
-Group=grafana
+User=grafinsight
+Group=grafinsight
 Type=notify
 Restart=on-failure
-WorkingDirectory=/usr/share/grafana
-RuntimeDirectory=grafana
+WorkingDirectory=/usr/share/grafinsight
+RuntimeDirectory=grafinsight
 RuntimeDirectoryMode=0750
 ExecStart=/usr/sbin/grafinsight-server                                                  \
                             --config=${CONF_FILE}                                   \

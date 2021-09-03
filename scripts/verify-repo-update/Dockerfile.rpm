@@ -1,8 +1,8 @@
 FROM centos:8
 
-ARG REPO_CONFIG=grafana.repo.oss
-ARG PACKAGE=grafana
+ARG REPO_CONFIG=grafinsight.repo.oss
+ARG PACKAGE=grafinsight
 
-COPY "./$REPO_CONFIG" /etc/yum.repos.d/grafana.repo
+COPY "./$REPO_CONFIG" /etc/yum.repos.d/grafinsight.repo
 
 RUN yum install -y $PACKAGE

@@ -2,7 +2,7 @@ version: "{build}"
 
 os: Windows Server 2012 R2
 
-clone_folder: c:\gopath\src\github.com\grafana\grafana
+clone_folder: c:\gopath\src\github.com\grafinsight\grafinsight
 
 environment:
   nodejs_version: "12"
@@ -35,6 +35,6 @@ build_script:
   - go test -v ./pkg/...
 
 artifacts:
-  - path: grafana-*windows-*.*
+  - path: grafinsight-*windows-*.*
     name: binzip
     type: zip

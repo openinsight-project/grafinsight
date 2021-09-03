@@ -12,10 +12,10 @@
   "tracing": true,
 
   "info": {
-    "description": "High volume, minimal dependency trace storage.  OSS tracing solution from Grafana Labs.",
+    "description": "High volume, minimal dependency trace storage.  OSS tracing solution from GrafInsight Labs.",
     "author": {
-      "name": "Grafana Labs",
-      "url": "https://grafana.com"
+      "name": "GrafInsight Labs",
+      "url": "https://grafinsight.com"
     },
     "logos": {
       "small": "img/tempo_logo.svg",
@@ -24,7 +24,7 @@
     "links": [
       {
         "name": "GitHub Project",
-        "url": "https://github.com/grafana/tempo"
+        "url": "https://github.com/grafinsight/tempo"
       }
     ]
   }

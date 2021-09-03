@@ -13,7 +13,7 @@ const MAX_LABEL_COUNT = 100;
 const MAX_VALUE_COUNT = 10000;
 const MAX_AUTO_SELECT = 4;
 const EMPTY_SELECTOR = '{}';
-export const LAST_USED_LABELS_KEY = 'grafana.datasources.loki.browser.labels';
+export const LAST_USED_LABELS_KEY = 'grafinsight.datasources.loki.browser.labels';
 
 export interface BrowserProps {
   languageProvider: LokiLanguageProvider;

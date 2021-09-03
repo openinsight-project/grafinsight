@@ -7,7 +7,7 @@ import { useStyles } from '@grafinsight/ui';
 import { GrafInsightTheme } from '@grafinsight/data';
 import { css } from 'emotion';
 
-export const LEGACY_VARIABLE_QUERY_EDITOR_NAME = 'Grafana-LegacyVariableQueryEditor';
+export const LEGACY_VARIABLE_QUERY_EDITOR_NAME = 'GrafInsight-LegacyVariableQueryEditor';
 
 export const LegacyVariableQueryEditor: FC<VariableQueryProps> = ({ onChange, query }) => {
   const styles = useStyles(getStyles);

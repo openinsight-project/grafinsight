@@ -7,7 +7,7 @@ import {
   MutableDataFrame,
   PluginMeta,
   readCSV,
-} from '@grafana/data';
+} from '@grafinsight/data';
 
 import { getQueryOptions } from './testHelpers';
 

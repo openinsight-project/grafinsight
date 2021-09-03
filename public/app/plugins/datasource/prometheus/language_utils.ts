@@ -167,7 +167,7 @@ function addLabelsToExpression(expr: string, invalidLabelsRegexp: RegExp) {
 
 /**
  * Adds metadata for synthetic metrics for which the API does not provide metadata.
- * See https://github.com/grafana/grafana/issues/22337 for details.
+ * See https://github.com/grafinsight/grafinsight/issues/22337 for details.
  *
  * @param metadata HELP and TYPE metadata from /api/v1/metadata
  */

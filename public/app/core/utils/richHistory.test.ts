@@ -39,7 +39,7 @@ const mock: any = {
   testStarred: false,
 };
 
-const key = 'grafana.explore.richHistory';
+const key = 'grafinsight.explore.richHistory';
 
 describe('addToRichHistory', () => {
   beforeEach(() => {

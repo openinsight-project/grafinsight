@@ -29,9 +29,9 @@ export class SignUpCtrl {
 
     $scope.navModel = {
       main: {
-        icon: 'grafana',
+        icon: 'grafinsight',
         text: 'Sign Up',
-        subTitle: 'Register your Grafana account',
+        subTitle: 'Register your GrafInsight account',
         breadcrumbs: [{ title: 'Login', url: 'login' }],
       },
     };

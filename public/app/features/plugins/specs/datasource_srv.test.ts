@@ -45,10 +45,10 @@ describe('datasource_srv', () => {
       uid: 'uid-code-mmm',
       meta: { metrics: true, annotations: true } as any,
     },
-    '-- Grafana --': {
-      type: 'grafana',
-      name: '-- Grafana --',
-      meta: { builtIn: true, metrics: true, id: 'grafana' },
+    '-- GrafInsight --': {
+      type: 'grafinsight',
+      name: '-- GrafInsight --',
+      meta: { builtIn: true, metrics: true, id: 'grafinsight' },
     },
     '-- Dashboard --': {
       type: 'dashboard',
@@ -234,11 +234,11 @@ describe('datasource_srv', () => {
           Object {
             "meta": Object {
               "builtIn": true,
-              "id": "grafana",
+              "id": "grafinsight",
               "metrics": true,
             },
-            "name": "-- Grafana --",
-            "type": "grafana",
+            "name": "-- GrafInsight --",
+            "type": "grafinsight",
           },
         ]
       `);

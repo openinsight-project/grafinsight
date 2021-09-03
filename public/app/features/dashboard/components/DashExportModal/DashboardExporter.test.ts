@@ -209,10 +209,10 @@ describe('given dashboard with repeated panels', () => {
     expect(require.version).toBe('1.1.2');
   });
 
-  it('should add grafana version', () => {
-    const require: any = _.find(exported.__requires, { name: 'Grafana' });
-    expect(require.type).toBe('grafana');
-    expect(require.id).toBe('grafana');
+  it('should add grafinsight version', () => {
+    const require: any = _.find(exported.__requires, { name: 'GrafInsight' });
+    expect(require.type).toBe('grafinsight');
+    expect(require.id).toBe('grafinsight');
     expect(require.version).toBe('3.0.2');
   });
 
@@ -265,12 +265,12 @@ stubs['-- Mixed --'] = {
   },
 };
 
-stubs['-- Grafana --'] = {
-  name: '-- Grafana --',
+stubs['-- GrafInsight --'] = {
+  name: '-- GrafInsight --',
   meta: {
-    id: 'grafana',
+    id: 'grafinsight',
     info: { version: '1.2.1' },
-    name: 'grafana',
+    name: 'grafinsight',
     builtIn: true,
   },
 };

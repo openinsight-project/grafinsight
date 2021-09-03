@@ -1,1 +1,1 @@
-module: "github.com/grafana/grafana/dashboard-schemas"
+module: "github.com/grafinsight/grafinsight/dashboard-schemas"

@@ -1,9 +1,9 @@
 import { DataSourcePlugin } from '@grafinsight/data';
-import { GrafanaDatasource } from './datasource';
+import { GrafInsightDatasource } from './datasource';
 import { QueryEditor } from './components/QueryEditor';
-import { GrafanaQuery } from './types';
-import { GrafanaAnnotationsQueryCtrl } from './annotation_ctrl';
+import { GrafInsightQuery } from './types';
+import { GrafInsightAnnotationsQueryCtrl } from './annotation_ctrl';
 
-export const plugin = new DataSourcePlugin<GrafanaDatasource, GrafanaQuery>(GrafanaDatasource)
+export const plugin = new DataSourcePlugin<GrafInsightDatasource, GrafInsightQuery>(GrafInsightDatasource)
   .setQueryEditor(QueryEditor)
-  .setAnnotationQueryCtrl(GrafanaAnnotationsQueryCtrl);
+  .setAnnotationQueryCtrl(GrafInsightAnnotationsQueryCtrl);

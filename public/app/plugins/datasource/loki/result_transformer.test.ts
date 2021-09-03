@@ -145,13 +145,13 @@ describe('loki result transformer', () => {
         streams: [
           {
             stream: {
-              filename: '/var/log/grafana/grafana.log',
-              job: 'grafana',
+              filename: '/var/log/grafinsight/grafinsight.log',
+              job: 'grafinsight',
             },
             values: [
               [
                 '1581519914265798400',
-                't=2020-02-12T15:04:51+0000 lvl=info msg="Starting Grafana" logger=server version=6.7.0-pre commit=6f09bc9fb4 branch=issue-21929 compiled=2020-02-11T20:43:28+0000',
+                't=2020-02-12T15:04:51+0000 lvl=info msg="Starting GrafInsight" logger=server version=6.7.0-pre commit=6f09bc9fb4 branch=issue-21929 compiled=2020-02-11T20:43:28+0000',
               ],
             ],
           },
@@ -161,7 +161,7 @@ describe('loki result transformer', () => {
       const data = new CircularDataFrame({ capacity: 1 });
       data.addField({ name: 'ts', type: FieldType.time, config: { displayName: 'Time' } });
       data.addField({ name: 'tsNs', type: FieldType.time, config: { displayName: 'Time ns' } });
-      data.addField({ name: 'line', type: FieldType.string }).labels = { job: 'grafana' };
+      data.addField({ name: 'line', type: FieldType.string }).labels = { job: 'grafinsight' };
       data.addField({ name: 'labels', type: FieldType.other });
       data.addField({ name: 'id', type: FieldType.string });
 
@@ -170,8 +170,8 @@ describe('loki result transformer', () => {
         ts: '2020-02-12T15:05:14.265Z',
         tsNs: '1581519914265798400',
         line:
-          't=2020-02-12T15:04:51+0000 lvl=info msg="Starting Grafana" logger=server version=6.7.0-pre commit=6f09bc9fb4 branch=issue-21929 compiled=2020-02-11T20:43:28+0000',
-        labels: { filename: '/var/log/grafana/grafana.log' },
+          't=2020-02-12T15:04:51+0000 lvl=info msg="Starting GrafInsight" logger=server version=6.7.0-pre commit=6f09bc9fb4 branch=issue-21929 compiled=2020-02-11T20:43:28+0000',
+        labels: { filename: '/var/log/grafinsight/grafinsight.log' },
         id: '19e8e093d70122b3b53cb6e24efd6e2d',
       });
     });
@@ -181,8 +181,8 @@ describe('loki result transformer', () => {
         streams: [
           {
             stream: {
-              filename: '/var/log/grafana/grafana.log',
-              job: 'grafana',
+              filename: '/var/log/grafinsight/grafinsight.log',
+              job: 'grafinsight',
             },
             values: [
               ['1581519914265798400', 't=2020-02-12T15:04:51+0000 lvl=info msg="Dupplicated 1"'],
@@ -199,7 +199,7 @@ describe('loki result transformer', () => {
       const data = new CircularDataFrame({ capacity: 6 });
       data.addField({ name: 'ts', type: FieldType.time, config: { displayName: 'Time' } });
       data.addField({ name: 'tsNs', type: FieldType.time, config: { displayName: 'Time ns' } });
-      data.addField({ name: 'line', type: FieldType.string }).labels = { job: 'grafana' };
+      data.addField({ name: 'line', type: FieldType.string }).labels = { job: 'grafinsight' };
       data.addField({ name: 'labels', type: FieldType.other });
       data.addField({ name: 'id', type: FieldType.string });
       data.refId = 'C';

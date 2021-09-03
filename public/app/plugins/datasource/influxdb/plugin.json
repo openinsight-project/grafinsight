@@ -17,8 +17,8 @@
   "info": {
     "description": "Open source time series database",
     "author": {
-      "name": "Grafana Labs",
-      "url": "https://grafana.com"
+      "name": "GrafInsight Labs",
+      "url": "https://grafinsight.com"
     },
     "logos": {
       "small": "img/influxdb_logo.svg",

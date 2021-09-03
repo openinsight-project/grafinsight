@@ -7,8 +7,8 @@ jest.mock('@grafinsight/data', () => ({
 }));
 
 import { PanelQueryRunner } from './PanelQueryRunner';
-// Importing this way to be able to spy on grafana/data
-import * as grafanaData from '@grafinsight/data';
+// Importing this way to be able to spy on grafinsight/data
+import * as grafinsightData from '@grafinsight/data';
 import { DashboardModel } from '../../dashboard/state/index';
 import { setDataSourceSrv, setEchoSrv } from '@grafinsight/runtime/src';
 import { Echo } from '../../../core/services/echo/Echo';
@@ -40,12 +40,12 @@ interface ScenarioContext {
   maxDataPoints?: number | null;
   dsInterval?: string;
   minInterval?: string;
-  scopedVars: grafanaData.ScopedVars;
+  scopedVars: grafinsightData.ScopedVars;
 
   // Filled in by the Scenario runner
-  events?: grafanaData.PanelData[];
-  res?: grafanaData.PanelData;
-  queryCalledWith?: grafanaData.DataQueryRequest;
+  events?: grafinsightData.PanelData[];
+  res?: grafinsightData.PanelData;
+  queryCalledWith?: grafinsightData.DataQueryRequest;
   runner: PanelQueryRunner;
 }
 
@@ -54,11 +54,11 @@ type ScenarioFn = (ctx: ScenarioContext) => void;
 function describeQueryRunnerScenario(
   description: string,
   scenarioFn: ScenarioFn,
-  panelConfig?: grafanaData.DataConfigSource
+  panelConfig?: grafinsightData.DataConfigSource
 ) {
   describe(description, () => {
     let setupFn = () => {};
-    const defaultPanelConfig: grafanaData.DataConfigSource = {
+    const defaultPanelConfig: grafinsightData.DataConfigSource = {
       getFieldOverrideOptions: () => undefined,
       getTransformations: () => undefined,
     };
@@ -94,7 +94,7 @@ function describeQueryRunnerScenario(
       const datasource: any = {
         name: 'TestDB',
         interval: ctx.dsInterval,
-        query: (options: grafanaData.DataQueryRequest) => {
+        query: (options: grafinsightData.DataQueryRequest) => {
           ctx.queryCalledWith = options;
           return Promise.resolve(response);
         },
@@ -107,8 +107,8 @@ function describeQueryRunnerScenario(
         minInterval: ctx.minInterval,
         maxDataPoints: ctx.maxDataPoints,
         timeRange: {
-          from: grafanaData.dateTime().subtract(1, 'days'),
-          to: grafanaData.dateTime(),
+          from: grafinsightData.dateTime().subtract(1, 'days'),
+          to: grafinsightData.dateTime(),
           raw: { from: '1d', to: 'now' },
         },
         panelId: 1,
@@ -117,7 +117,7 @@ function describeQueryRunnerScenario(
 
       ctx.runner = new PanelQueryRunner(panelConfig || defaultPanelConfig);
       ctx.runner.getData({ withTransforms: true, withFieldConfig: true }).subscribe({
-        next: (data: grafanaData.PanelData) => {
+        next: (data: grafinsightData.PanelData) => {
           ctx.res = data;
           ctx.events?.push(data);
         },
@@ -217,7 +217,7 @@ describe('PanelQueryRunner', () => {
     (ctx) => {
       it('should apply when field override options are set', async () => {
         ctx.runner.getData({ withTransforms: true, withFieldConfig: true }).subscribe({
-          next: (data: grafanaData.PanelData) => {
+          next: (data: grafinsightData.PanelData) => {
             return data;
           },
         });
@@ -234,7 +234,7 @@ describe('PanelQueryRunner', () => {
           overrides: [],
         },
         replaceVariables: (v) => v,
-        theme: {} as grafanaData.GrafInsightTheme,
+        theme: {} as grafinsightData.GrafInsightTheme,
       }),
       getTransformations: () => undefined,
     }
@@ -244,11 +244,11 @@ describe('PanelQueryRunner', () => {
     'transformations',
     (ctx) => {
       it('should apply when transformations are set', async () => {
-        const spy = jest.spyOn(grafanaData, 'transformDataFrame');
+        const spy = jest.spyOn(grafinsightData, 'transformDataFrame');
         spy.mockClear();
 
         ctx.runner.getData({ withTransforms: true, withFieldConfig: true }).subscribe({
-          next: (data: grafanaData.PanelData) => {
+          next: (data: grafinsightData.PanelData) => {
             return data;
           },
         });
@@ -259,7 +259,7 @@ describe('PanelQueryRunner', () => {
     {
       getFieldOverrideOptions: () => undefined,
       // @ts-ignore
-      getTransformations: () => [({} as unknown) as grafanaData.DataTransformerConfig],
+      getTransformations: () => [({} as unknown) as grafinsightData.DataTransformerConfig],
     }
   );
 
@@ -267,10 +267,10 @@ describe('PanelQueryRunner', () => {
     'getData',
     (ctx) => {
       it('should not apply transformations when transform option is false', async () => {
-        const spy = jest.spyOn(grafanaData, 'transformDataFrame');
+        const spy = jest.spyOn(grafinsightData, 'transformDataFrame');
         spy.mockClear();
         ctx.runner.getData({ withTransforms: false, withFieldConfig: true }).subscribe({
-          next: (data: grafanaData.PanelData) => {
+          next: (data: grafinsightData.PanelData) => {
             return data;
           },
         });
@@ -280,7 +280,7 @@ describe('PanelQueryRunner', () => {
 
       it('should not apply field config when applyFieldConfig option is false', async () => {
         ctx.runner.getData({ withFieldConfig: false, withTransforms: true }).subscribe({
-          next: (data: grafanaData.PanelData) => {
+          next: (data: grafinsightData.PanelData) => {
             return data;
           },
         });
@@ -298,10 +298,10 @@ describe('PanelQueryRunner', () => {
           overrides: [],
         },
         replaceVariables: (v) => v,
-        theme: {} as grafanaData.GrafInsightTheme,
+        theme: {} as grafinsightData.GrafInsightTheme,
       }),
       // @ts-ignore
-      getTransformations: () => [({} as unknown) as grafanaData.DataTransformerConfig],
+      getTransformations: () => [({} as unknown) as grafinsightData.DataTransformerConfig],
     }
   );
 
@@ -309,10 +309,10 @@ describe('PanelQueryRunner', () => {
     'getData',
     (ctx) => {
       it('should not apply transformations when transform option is false', async () => {
-        const spy = jest.spyOn(grafanaData, 'transformDataFrame');
+        const spy = jest.spyOn(grafinsightData, 'transformDataFrame');
         spy.mockClear();
         ctx.runner.getData({ withTransforms: false, withFieldConfig: true }).subscribe({
-          next: (data: grafanaData.PanelData) => {
+          next: (data: grafinsightData.PanelData) => {
             return data;
           },
         });
@@ -322,7 +322,7 @@ describe('PanelQueryRunner', () => {
 
       it('should not apply field config when applyFieldConfig option is false', async () => {
         ctx.runner.getData({ withFieldConfig: false, withTransforms: true }).subscribe({
-          next: (data: grafanaData.PanelData) => {
+          next: (data: grafinsightData.PanelData) => {
             return data;
           },
         });
@@ -340,7 +340,7 @@ describe('PanelQueryRunner', () => {
           overrides: [],
         },
         replaceVariables: (v) => v,
-        theme: {} as grafanaData.GrafInsightTheme,
+        theme: {} as grafinsightData.GrafInsightTheme,
       }),
       // @ts-ignore
       getTransformations: () => [{}],

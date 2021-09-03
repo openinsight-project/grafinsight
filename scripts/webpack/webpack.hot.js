@@ -129,7 +129,7 @@ module.exports = merge(common, {
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
-      GRAFANA_THEME: JSON.stringify(process.env.GRAFANA_THEME || 'dark'),
+      GRAFINSIGHT_THEME: JSON.stringify(process.env.GRAFINSIGHT_THEME || 'dark'),
       'process.env': {
         NODE_ENV: JSON.stringify('development'),
       },

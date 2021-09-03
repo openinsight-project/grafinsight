@@ -11,13 +11,13 @@ import { RichHistoryQuery } from 'app/types/explore';
 import { serializeStateToUrlParam } from '@grafinsight/data/src/utils/url';
 import { getDataSourceSrv } from '@grafinsight/runtime/src';
 
-const RICH_HISTORY_KEY = 'grafana.explore.richHistory';
+const RICH_HISTORY_KEY = 'grafinsight.explore.richHistory';
 
 export const RICH_HISTORY_SETTING_KEYS = {
-  retentionPeriod: 'grafana.explore.richHistory.retentionPeriod',
-  starredTabAsFirstTab: 'grafana.explore.richHistory.starredTabAsFirstTab',
-  activeDatasourceOnly: 'grafana.explore.richHistory.activeDatasourceOnly',
-  datasourceFilters: 'grafana.explore.richHistory.datasourceFilters',
+  retentionPeriod: 'grafinsight.explore.richHistory.retentionPeriod',
+  starredTabAsFirstTab: 'grafinsight.explore.richHistory.starredTabAsFirstTab',
+  activeDatasourceOnly: 'grafinsight.explore.richHistory.activeDatasourceOnly',
+  datasourceFilters: 'grafinsight.explore.richHistory.datasourceFilters',
 };
 
 export enum SortOrder {

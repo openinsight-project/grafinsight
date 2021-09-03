@@ -18,8 +18,8 @@ exports[`Render should render component 1`] = `
           "id": "0",
           "info": Object {
             "author": Object {
-              "name": "Grafana Labs",
-              "url": "url/to/GrafanaLabs",
+              "name": "GrafInsight Labs",
+              "url": "url/to/GrafInsightLabs",
             },
             "description": "pretty decent plugin",
             "links": Array [
@@ -56,8 +56,8 @@ exports[`Render should render component 1`] = `
           "id": "1",
           "info": Object {
             "author": Object {
-              "name": "Grafana Labs",
-              "url": "url/to/GrafanaLabs",
+              "name": "GrafInsight Labs",
+              "url": "url/to/GrafInsightLabs",
             },
             "description": "pretty decent plugin",
             "links": Array [
@@ -94,8 +94,8 @@ exports[`Render should render component 1`] = `
           "id": "2",
           "info": Object {
             "author": Object {
-              "name": "Grafana Labs",
-              "url": "url/to/GrafanaLabs",
+              "name": "GrafInsight Labs",
+              "url": "url/to/GrafInsightLabs",
             },
             "description": "pretty decent plugin",
             "links": Array [
@@ -132,8 +132,8 @@ exports[`Render should render component 1`] = `
           "id": "3",
           "info": Object {
             "author": Object {
-              "name": "Grafana Labs",
-              "url": "url/to/GrafanaLabs",
+              "name": "GrafInsight Labs",
+              "url": "url/to/GrafInsightLabs",
             },
             "description": "pretty decent plugin",
             "links": Array [
@@ -170,8 +170,8 @@ exports[`Render should render component 1`] = `
           "id": "4",
           "info": Object {
             "author": Object {
-              "name": "Grafana Labs",
-              "url": "url/to/GrafanaLabs",
+              "name": "GrafInsight Labs",
+              "url": "url/to/GrafInsightLabs",
             },
             "description": "pretty decent plugin",
             "links": Array [
@@ -208,8 +208,8 @@ exports[`Render should render component 1`] = `
           "id": "5",
           "info": Object {
             "author": Object {
-              "name": "Grafana Labs",
-              "url": "url/to/GrafanaLabs",
+              "name": "GrafInsight Labs",
+              "url": "url/to/GrafInsightLabs",
             },
             "description": "pretty decent plugin",
             "links": Array [

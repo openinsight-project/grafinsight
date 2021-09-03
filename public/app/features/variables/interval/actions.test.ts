@@ -116,7 +116,7 @@ describe('interval actions', () => {
             } as unknown) as TimeSrv;
           },
           templateSrv: ({
-            setGrafanaVariable: jest.fn(),
+            setGrafInsightVariable: jest.fn(),
           } as unknown) as TemplateSrv,
         };
 
@@ -129,7 +129,7 @@ describe('interval actions', () => {
 
         expect(dependencies.calculateInterval).toHaveBeenCalledTimes(0);
         expect(dependencies.getTimeSrv().timeRange).toHaveBeenCalledTimes(0);
-        expect(dependencies.templateSrv.setGrafanaVariable).toHaveBeenCalledTimes(0);
+        expect(dependencies.templateSrv.setGrafInsightVariable).toHaveBeenCalledTimes(0);
       });
     });
 
@@ -151,7 +151,7 @@ describe('interval actions', () => {
             to: '2001-01-02',
           },
         });
-        const setGrafanaVariableMock = jest.fn();
+        const setGrafInsightVariableMock = jest.fn();
         const dependencies: UpdateAutoValueDependencies = {
           calculateInterval: jest.fn().mockReturnValue({ interval: '10s' }),
           getTimeSrv: () => {
@@ -160,7 +160,7 @@ describe('interval actions', () => {
             } as unknown) as TimeSrv;
           },
           templateSrv: ({
-            setGrafanaVariable: setGrafanaVariableMock,
+            setGrafInsightVariable: setGrafInsightVariableMock,
           } as unknown) as TemplateSrv,
         };
 
@@ -185,11 +185,11 @@ describe('interval actions', () => {
           '13s'
         );
         expect(timeRangeMock).toHaveBeenCalledTimes(1);
-        expect(setGrafanaVariableMock).toHaveBeenCalledTimes(2);
-        expect(setGrafanaVariableMock.mock.calls[0][0]).toBe('$__auto_interval_intervalName');
-        expect(setGrafanaVariableMock.mock.calls[0][1]).toBe('10s');
-        expect(setGrafanaVariableMock.mock.calls[1][0]).toBe('$__auto_interval');
-        expect(setGrafanaVariableMock.mock.calls[1][1]).toBe('10s');
+        expect(setGrafInsightVariableMock).toHaveBeenCalledTimes(2);
+        expect(setGrafInsightVariableMock.mock.calls[0][0]).toBe('$__auto_interval_intervalName');
+        expect(setGrafInsightVariableMock.mock.calls[0][1]).toBe('10s');
+        expect(setGrafInsightVariableMock.mock.calls[1][0]).toBe('$__auto_interval');
+        expect(setGrafInsightVariableMock.mock.calls[1][1]).toBe('10s');
       });
     });
   });

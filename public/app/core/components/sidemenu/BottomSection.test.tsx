@@ -22,7 +22,7 @@ jest.mock('../../config', () => ({
   },
   user: {
     orgCount: 5,
-    orgName: 'Grafana',
+    orgName: 'GrafInsight',
   },
 }));
 

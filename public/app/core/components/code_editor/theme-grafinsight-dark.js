@@ -1,5 +1,5 @@
 ace.define(
-  'ace/theme/grafana-dark',
+  'ace/theme/grafinsight-dark',
   ['require', 'exports', 'module', 'ace/lib/dom'],
   function (acequire, exports, module) {
     'use strict';

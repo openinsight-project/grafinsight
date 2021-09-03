@@ -1,28 +1,28 @@
 ARG BASE_IMAGE=alpine:3.13
 FROM ${BASE_IMAGE}
 
-ARG GRAFANA_TGZ="grafana-latest.linux-x64-musl.tar.gz"
+ARG GRAFINSIGHT_TGZ="grafinsight-latest.linux-x64-musl.tar.gz"
 
 # Make sure we have Gnu tar
 RUN apk add --no-cache tar
 
-COPY ${GRAFANA_TGZ} /tmp/grafana.tar.gz
+COPY ${GRAFINSIGHT_TGZ} /tmp/grafinsight.tar.gz
 
 # Change to tar xfzv to make tar print every file it extracts
-RUN mkdir /tmp/grafana && tar xzf /tmp/grafana.tar.gz --strip-components=1 -C /tmp/grafana
+RUN mkdir /tmp/grafinsight && tar xzf /tmp/grafinsight.tar.gz --strip-components=1 -C /tmp/grafinsight
 
 FROM ${BASE_IMAGE}
 
 ARG GF_UID="472"
 ARG GF_GID="0"
 
-ENV PATH=/usr/share/grafana/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
-    GF_PATHS_CONFIG="/etc/grafana/grafana.ini" \
-    GF_PATHS_DATA="/var/lib/grafana" \
-    GF_PATHS_HOME="/usr/share/grafana" \
-    GF_PATHS_LOGS="/var/log/grafana" \
-    GF_PATHS_PLUGINS="/var/lib/grafana/plugins" \
-    GF_PATHS_PROVISIONING="/etc/grafana/provisioning"
+ENV PATH=/usr/share/grafinsight/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
+    GF_PATHS_CONFIG="/etc/grafinsight/grafinsight.ini" \
+    GF_PATHS_DATA="/var/lib/grafinsight" \
+    GF_PATHS_HOME="/usr/share/grafinsight" \
+    GF_PATHS_LOGS="/var/log/grafinsight" \
+    GF_PATHS_PLUGINS="/var/lib/grafinsight/plugins" \
+    GF_PATHS_PROVISIONING="/etc/grafinsight/provisioning"
 
 WORKDIR $GF_PATHS_HOME
 
@@ -44,15 +44,15 @@ RUN if [ `arch` = "x86_64" ]; then \
       rm -f /etc/ld.so.cache; \
     fi
 
-COPY --from=0 /tmp/grafana "$GF_PATHS_HOME"
+COPY --from=0 /tmp/grafinsight "$GF_PATHS_HOME"
 
 RUN if [ ! $(getent group "$GF_GID") ]; then \
-      addgroup -S -g $GF_GID grafana; \
+      addgroup -S -g $GF_GID grafinsight; \
     fi
 
 RUN export GF_GID_NAME=$(getent group $GF_GID | cut -d':' -f1) && \
     mkdir -p "$GF_PATHS_HOME/.aws" && \
-    adduser -S -u $GF_UID -G "$GF_GID_NAME" grafana && \
+    adduser -S -u $GF_UID -G "$GF_GID_NAME" grafinsight && \
     mkdir -p "$GF_PATHS_PROVISIONING/datasources" \
              "$GF_PATHS_PROVISIONING/dashboards" \
              "$GF_PATHS_PROVISIONING/notifiers" \
@@ -61,8 +61,8 @@ RUN export GF_GID_NAME=$(getent group $GF_GID | cut -d':' -f1) && \
              "$GF_PATHS_PLUGINS" \
              "$GF_PATHS_DATA" && \
     cp "$GF_PATHS_HOME/conf/sample.ini" "$GF_PATHS_CONFIG" && \
-    cp "$GF_PATHS_HOME/conf/ldap.toml" /etc/grafana/ldap.toml && \
-    chown -R "grafana:$GF_GID_NAME" "$GF_PATHS_DATA" "$GF_PATHS_HOME/.aws" "$GF_PATHS_LOGS" "$GF_PATHS_PLUGINS" "$GF_PATHS_PROVISIONING" && \
+    cp "$GF_PATHS_HOME/conf/ldap.toml" /etc/grafinsight/ldap.toml && \
+    chown -R "grafinsight:$GF_GID_NAME" "$GF_PATHS_DATA" "$GF_PATHS_HOME/.aws" "$GF_PATHS_LOGS" "$GF_PATHS_PLUGINS" "$GF_PATHS_PROVISIONING" && \
     chmod -R 777 "$GF_PATHS_DATA" "$GF_PATHS_HOME/.aws" "$GF_PATHS_LOGS" "$GF_PATHS_PLUGINS" "$GF_PATHS_PROVISIONING"
 
 EXPOSE 3000

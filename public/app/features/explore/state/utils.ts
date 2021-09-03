@@ -73,7 +73,7 @@ export async function loadAndInitDatasource(
     }
   }
 
-  const historyKey = `grafana.explore.history.${instance.meta?.id}`;
+  const historyKey = `grafinsight.explore.history.${instance.meta?.id}`;
   const history = store.getObject(historyKey, []);
   // Save last-used datasource
 

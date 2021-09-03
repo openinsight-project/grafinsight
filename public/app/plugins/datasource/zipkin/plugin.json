@@ -14,8 +14,8 @@
   "info": {
     "description": "Placeholder for the distributed tracing system.",
     "author": {
-      "name": "Grafana Labs",
-      "url": "https://grafana.com"
+      "name": "GrafInsight Labs",
+      "url": "https://grafinsight.com"
     },
     "logos": {
       "small": "img/zipkin-logo.svg",

@@ -2,7 +2,7 @@ import coreModule from 'app/core/core_module';
 import { dispatch, store } from 'app/store/store';
 import { updateLocation } from 'app/core/actions';
 import { ILocationService, ITimeoutService } from 'angular';
-import { GrafanaRootScope } from 'app/routes/GrafanaCtrl';
+import { GrafInsightRootScope } from 'app/routes/GrafInsightCtrl';
 import { UrlQueryMap } from '@grafinsight/data';
 import { getDashboardSrv } from 'app/features/dashboard/services/DashboardSrv';
 import { templateVarsChangedInUrl } from 'app/features/variables/state/actions';
@@ -19,7 +19,7 @@ export class BridgeSrv {
   constructor(
     private $location: ILocationService,
     private $timeout: ITimeoutService,
-    private $rootScope: GrafanaRootScope,
+    private $rootScope: GrafInsightRootScope,
     private $route: any
   ) {
     this.angularUrl = $location.url();

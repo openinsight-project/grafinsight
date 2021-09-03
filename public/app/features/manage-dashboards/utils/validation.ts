@@ -14,7 +14,7 @@ export const validateGcomDashboard = (gcomDashboard: string) => {
   // From DashboardImportCtrl
   const match = /(^\d+$)|dashboards\/(\d+)/.exec(gcomDashboard);
 
-  return match && (match[1] || match[2]) ? true : 'Could not find a valid Grafana.com id';
+  return match && (match[1] || match[2]) ? true : 'Could not find a valid GrafInsight.com id';
 };
 
 export const validateTitle = (newTitle: string, folderId: number) => {

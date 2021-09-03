@@ -140,14 +140,14 @@ export class ShareLink extends PureComponent<Props, State> {
                 <p>
                   <>To render a panel image, you must install the </>
                   <a
-                    href="https://grafana.com/grafana/plugins/grafana-image-renderer"
+                    href="https://grafinsight.com/grafinsight/plugins/grafinsight-image-renderer"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="external-link"
                   >
-                    Grafana Image Renderer plugin
+                    GrafInsight Image Renderer plugin
                   </a>
-                  . Please contact your Grafana administrator to install the plugin.
+                  . Please contact your GrafInsight administrator to install the plugin.
                 </p>
               </InfoBox>
             )}

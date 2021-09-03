@@ -6,7 +6,7 @@ import debounce from 'lodash/debounce';
 import { DOMUtil } from '@grafinsight/ui';
 import { Editor as CoreEditor } from 'slate';
 
-import { KEYWORDS, functionTokens, operatorTokens, grafanaMacros } from './kusto/kusto';
+import { KEYWORDS, functionTokens, operatorTokens, grafinsightMacros } from './kusto/kusto';
 // import '../sass/editor.base.scss';
 
 const TYPEAHEAD_DELAY = 100;
@@ -315,7 +315,7 @@ export default class KustoQueryField extends QueryField {
       {
         prefixMatch: true,
         label: 'Macros',
-        items: grafanaMacros.map((s: any) => {
+        items: grafinsightMacros.map((s: any) => {
           s.type = 'function';
           return s;
         }),
@@ -341,7 +341,7 @@ export default class KustoQueryField extends QueryField {
       {
         prefixMatch: true,
         label: 'Macros',
-        items: grafanaMacros.map((s: any) => {
+        items: grafinsightMacros.map((s: any) => {
           s.type = 'function';
           return s;
         }),

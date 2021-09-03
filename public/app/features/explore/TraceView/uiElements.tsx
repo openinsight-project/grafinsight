@@ -5,7 +5,7 @@ import {
   Popover,
   PopoverController,
   stylesFactory,
-  Tooltip as GrafanaTooltip,
+  Tooltip as GrafInsightTooltip,
   useTheme,
 } from '@grafinsight/ui';
 import { ButtonProps, Elements, PopoverProps, TooltipProps } from '@jaegertracing/jaeger-ui-components';
@@ -50,7 +50,7 @@ export const UIElements: Elements = {
     );
   },
   Tooltip({ children, title }: TooltipProps) {
-    return <GrafanaTooltip content={title}>{children}</GrafanaTooltip>;
+    return <GrafInsightTooltip content={title}>{children}</GrafInsightTooltip>;
   },
   Icon: (() => null as any) as any,
   Dropdown: (() => null as any) as any,

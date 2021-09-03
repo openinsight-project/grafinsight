@@ -94,7 +94,7 @@ export const PageHeader: FC<Props> = ({ model }) => {
 };
 
 function renderHeaderTitle(main: NavModelItem) {
-  const marginTop = main.icon === 'grafana' ? 12 : 14;
+  const marginTop = main.icon === 'grafinsight' ? 12 : 14;
 
   return (
     <div className="page-header__inner">

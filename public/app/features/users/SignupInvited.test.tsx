@@ -68,7 +68,7 @@ describe('SignupInvitedPage', () => {
       await setupTestContext();
 
       const view = screen.getByText(
-        /has invited you to join grafana and the organization please complete the following and choose a password to accept your invitation and continue:/i
+        /has invited you to join grafinsight and the organization please complete the following and choose a password to accept your invitation and continue:/i
       );
 
       expect(within(view).getByText(/invited by user/i)).toBeInTheDocument();
@@ -78,7 +78,7 @@ describe('SignupInvitedPage', () => {
       await setupTestContext();
 
       const view = screen.getByText(
-        /has invited you to join grafana and the organization please complete the following and choose a password to accept your invitation and continue:/i
+        /has invited you to join grafinsight and the organization please complete the following and choose a password to accept your invitation and continue:/i
       );
 
       expect(within(view).getByText(/invited to org name/i)).toBeInTheDocument();

@@ -53,13 +53,13 @@ export class TestDataDataSource extends DataSourceWithBackend<TestDataQuery> {
 
       switch (target.scenarioId) {
         case 'live':
-          streams.push(runGrafanaLiveQuery(target, options));
+          streams.push(runGrafInsightLiveQuery(target, options));
           break;
         case 'streaming_client':
           streams.push(runStream(target, options));
           break;
-        case 'grafana_api':
-          streams.push(runGrafanaAPI(target, options));
+        case 'grafinsight_api':
+          streams.push(runGrafInsightAPI(target, options));
           break;
         case 'arrow':
           streams.push(runArrowFile(target, options));
@@ -110,7 +110,7 @@ export class TestDataDataSource extends DataSourceWithBackend<TestDataQuery> {
     for (let i = 0; i < count; i++) {
       events.push({
         time: timeWalker,
-        text: 'This is the text, <a href="https://grafana.com">Grafana.com</a>',
+        text: 'This is the text, <a href="https://grafinsight.com">GrafInsight.com</a>',
         tags: ['text', 'server'],
       });
       timeWalker += step;
@@ -194,7 +194,7 @@ function runArrowFile(target: TestDataQuery, req: DataQueryRequest<TestDataQuery
   return of({ state: LoadingState.Done, data, key: req.requestId + target.refId });
 }
 
-function runGrafanaAPI(target: TestDataQuery, req: DataQueryRequest<TestDataQuery>): Observable<DataQueryResponse> {
+function runGrafInsightAPI(target: TestDataQuery, req: DataQueryRequest<TestDataQuery>): Observable<DataQueryResponse> {
   const url = `/api/${target.stringInput}`;
   return from(
     getBackendSrv()
@@ -211,7 +211,7 @@ function runGrafanaAPI(target: TestDataQuery, req: DataQueryRequest<TestDataQuer
 
 let liveQueryCounter = 1000;
 
-function runGrafanaLiveQuery(
+function runGrafInsightLiveQuery(
   target: TestDataQuery,
   req: DataQueryRequest<TestDataQuery>
 ): Observable<DataQueryResponse> {

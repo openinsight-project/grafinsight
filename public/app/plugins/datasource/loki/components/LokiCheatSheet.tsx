@@ -114,7 +114,7 @@ export default class LokiCheatSheet extends PureComponent<QueryEditorHelpProps, 
           {this.renderExpression('{app="cassandra"} |= "exact match"')}
           {this.renderExpression('{app="cassandra"} != "do not match"')}
           <div className="cheat-sheet-item__label">
-            <a href="https://grafana.com/docs/loki/latest/logql/#log-pipeline" target="logql">
+            <a href="https://grafinsight.com/docs/loki/latest/logql/#log-pipeline" target="logql">
               LogQL
             </a>{' '}
             supports exact and regular expression filters.

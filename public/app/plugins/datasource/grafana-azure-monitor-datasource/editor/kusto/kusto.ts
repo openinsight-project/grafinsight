@@ -643,21 +643,21 @@ export const KEYWORDS = [
   'bool',
 ];
 
-export const grafanaMacros = [
+export const grafinsightMacros = [
   {
     text: '$__timeFilter',
     display: '$__timeFilter()',
-    hint: 'Macro that uses the selected timerange in Grafana to filter the query.',
+    hint: 'Macro that uses the selected timerange in GrafInsight to filter the query.',
   },
   {
     text: '$__timeTo',
     display: '$__timeTo()',
-    hint: 'Returns the From datetime from the Grafana picker. Example: datetime(2018-06-05T20:09:58.907Z).',
+    hint: 'Returns the From datetime from the GrafInsight picker. Example: datetime(2018-06-05T20:09:58.907Z).',
   },
   {
     text: '$__timeFrom',
     display: '$__timeFrom()',
-    hint: 'Returns the From datetime from the Grafana picker. Example: datetime(2018-06-05T18:09:58.907Z).',
+    hint: 'Returns the From datetime from the GrafInsight picker. Example: datetime(2018-06-05T18:09:58.907Z).',
   },
   {
     text: '$__escapeMulti',

@@ -2,7 +2,7 @@ import { LiveChannelConfig } from '@grafinsight/data';
 import { MeasurementCollector } from '@grafinsight/runtime/src';
 import { getDashboardChannelsFeature } from './dashboard/dashboardWatcher';
 import { LiveMeasurementsSupport } from './measurements/measurementsSupport';
-import { grafanaLiveCoreFeatures } from './scopes';
+import { grafinsightLiveCoreFeatures } from './scopes';
 
 export function registerLiveFeatures() {
   const random2s = new MeasurementCollector();
@@ -22,7 +22,7 @@ export function registerLiveFeatures() {
     },
   ];
 
-  grafanaLiveCoreFeatures.register({
+  grafinsightLiveCoreFeatures.register({
     name: 'testdata',
     support: {
       getChannelConfig: (path: string) => {
@@ -39,7 +39,7 @@ export function registerLiveFeatures() {
     canPublish: () => true,
   };
 
-  grafanaLiveCoreFeatures.register({
+  grafinsightLiveCoreFeatures.register({
     name: 'broadcast',
     support: {
       getChannelConfig: (path: string) => {
@@ -50,12 +50,12 @@ export function registerLiveFeatures() {
     description: 'Broadcast will send/receive any JSON object in a channel',
   });
 
-  grafanaLiveCoreFeatures.register({
+  grafinsightLiveCoreFeatures.register({
     name: 'measurements',
     support: new LiveMeasurementsSupport(),
     description: 'These channels listen for measurements and produce DataFrames',
   });
 
   // dashboard/*
-  grafanaLiveCoreFeatures.register(getDashboardChannelsFeature());
+  grafinsightLiveCoreFeatures.register(getDashboardChannelsFeature());
 }

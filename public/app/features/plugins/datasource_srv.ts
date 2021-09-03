@@ -11,7 +11,7 @@ import {
 // Types
 import { AppEvents, DataSourceApi, DataSourceInstanceSettings, DataSourceSelectItem, ScopedVars } from '@grafinsight/data';
 import { auto } from 'angular';
-import { GrafanaRootScope } from 'app/routes/GrafanaCtrl';
+import { GrafInsightRootScope } from 'app/routes/GrafInsightCtrl';
 // Pretend Datasource
 import { expressionDatasource } from 'app/features/expressions/ExpressionDatasource';
 import { DataSourceVariableModel } from '../variables/types';
@@ -26,7 +26,7 @@ export class DatasourceSrv implements DataSourceService {
   /** @ngInject */
   constructor(
     private $injector: auto.IInjectorService,
-    private $rootScope: GrafanaRootScope,
+    private $rootScope: GrafInsightRootScope,
     private templateSrv: TemplateSrv
   ) {}
 
@@ -153,7 +153,7 @@ export class DatasourceSrv implements DataSourceService {
 
   getList(filters: GetDataSourceListFilters = {}): DataSourceInstanceSettings[] {
     const base = Object.values(this.settingsMapByName).filter((x) => {
-      if (x.meta.id === 'grafana' || x.meta.id === 'mixed' || x.meta.id === 'dashboard') {
+      if (x.meta.id === 'grafinsight' || x.meta.id === 'mixed' || x.meta.id === 'dashboard') {
         return false;
       }
       if (filters.metrics && !x.meta.metrics) {
@@ -217,7 +217,7 @@ export class DatasourceSrv implements DataSourceService {
       }
 
       if (!filters.tracing) {
-        base.push(this.getInstanceSettings('-- Grafana --')!);
+        base.push(this.getInstanceSettings('-- GrafInsight --')!);
       }
     }
 

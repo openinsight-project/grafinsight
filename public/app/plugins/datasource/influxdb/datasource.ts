@@ -154,7 +154,7 @@ export default class InfluxDatasource extends DataSourceWithBackend<InfluxQuery,
       timeFilter += ' AND ' + tmpQuery.renderAdhocFilters(adhocFilters);
     }
 
-    // replace grafana variables
+    // replace grafinsight variables
     scopedVars.timeFilter = { value: timeFilter };
 
     // replace templated variables

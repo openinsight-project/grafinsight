@@ -9,25 +9,25 @@ import {
   LiveChannelScope,
 } from '@grafinsight/data';
 
-import { GrafanaQuery, GrafanaAnnotationQuery, GrafanaAnnotationType, GrafanaQueryType } from './types';
+import { GrafInsightQuery, GrafInsightAnnotationQuery, GrafInsightAnnotationType, GrafInsightQueryType } from './types';
 import { getBackendSrv, getTemplateSrv, toDataQueryResponse, getLiveMeasurementsObserver } from '@grafinsight/runtime/src';
 import { Observable, of, merge } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 
 let counter = 100;
 
-export class GrafanaDatasource extends DataSourceApi<GrafanaQuery> {
+export class GrafInsightDatasource extends DataSourceApi<GrafInsightQuery> {
   constructor(instanceSettings: DataSourceInstanceSettings) {
     super(instanceSettings);
   }
 
-  query(request: DataQueryRequest<GrafanaQuery>): Observable<DataQueryResponse> {
+  query(request: DataQueryRequest<GrafInsightQuery>): Observable<DataQueryResponse> {
     const queries: Array<Observable<DataQueryResponse>> = [];
     for (const target of request.targets) {
       if (target.hide) {
         continue;
       }
-      if (target.queryType === GrafanaQueryType.LiveMeasurements) {
+      if (target.queryType === GrafInsightQueryType.LiveMeasurements) {
         const { channel, measurements } = target;
         if (channel) {
           queries.push(
@@ -60,9 +60,9 @@ export class GrafanaDatasource extends DataSourceApi<GrafanaQuery> {
     return Promise.resolve([]);
   }
 
-  annotationQuery(options: AnnotationQueryRequest<GrafanaQuery>): Promise<AnnotationEvent[]> {
+  annotationQuery(options: AnnotationQueryRequest<GrafInsightQuery>): Promise<AnnotationEvent[]> {
     const templateSrv = getTemplateSrv();
-    const annotation = (options.annotation as unknown) as GrafanaAnnotationQuery;
+    const annotation = (options.annotation as unknown) as GrafInsightAnnotationQuery;
     const params: any = {
       from: options.range.from.valueOf(),
       to: options.range.to.valueOf(),
@@ -71,7 +71,7 @@ export class GrafanaDatasource extends DataSourceApi<GrafanaQuery> {
       matchAny: annotation.matchAny,
     };
 
-    if (annotation.type === GrafanaAnnotationType.Dashboard) {
+    if (annotation.type === GrafInsightAnnotationType.Dashboard) {
       // if no dashboard id yet return
       if (!options.dashboard.id) {
         return Promise.resolve([]);
@@ -105,7 +105,7 @@ export class GrafanaDatasource extends DataSourceApi<GrafanaQuery> {
     return getBackendSrv().get(
       '/api/annotations',
       params,
-      `grafana-data-source-annotations-${annotation.name}-${options.dashboard?.id}`
+      `grafinsight-data-source-annotations-${annotation.name}-${options.dashboard?.id}`
     );
   }
 

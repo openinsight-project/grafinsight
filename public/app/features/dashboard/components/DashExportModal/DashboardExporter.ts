@@ -160,11 +160,11 @@ export class DashboardExporter {
       templateizeDatasourceUsage(annotationDef);
     }
 
-    // add grafana version
-    requires['grafana'] = {
-      type: 'grafana',
-      id: 'grafana',
-      name: 'Grafana',
+    // add grafinsight version
+    requires['grafinsight'] = {
+      type: 'grafinsight',
+      id: 'grafinsight',
+      name: 'GrafInsight',
       version: config.buildInfo.version,
     };
 
