@@ -66,7 +66,7 @@ export class LoginCtrl extends PureComponent<Props, State> {
       getBackendSrv()
         .put('/api/user/password', pw)
         .then(() => {
-          this.toGrafana();
+          this.toGrafInsight();
         })
         .catch((err: any) => console.error(err));
     }
@@ -80,7 +80,7 @@ export class LoginCtrl extends PureComponent<Props, State> {
     getBackendSrv()
       .post('/api/user/password/reset', resetModel)
       .then(() => {
-        this.toGrafana();
+        this.toGrafInsight();
       })
       .catch((err: any) => console.error(err));;
   };
@@ -95,7 +95,7 @@ export class LoginCtrl extends PureComponent<Props, State> {
       .then((result: any) => {
         this.result = result;
         if (formModel.password !== 'admin' || config.ldapEnabled || config.authProxyEnabled) {
-          this.toGrafana();
+          this.toGrafInsight();
           return;
         } else {
           this.changeView();
@@ -114,7 +114,7 @@ export class LoginCtrl extends PureComponent<Props, State> {
     });
   };
 
-  toGrafana = () => {
+  toGrafInsight = () => {
     // Use window.location.href to force page reload
     if (this.result.redirectUrl) {
       if (config.appSubUrl !== '' && !this.result.redirectUrl.startsWith(config.appSubUrl)) {
@@ -130,7 +130,7 @@ export class LoginCtrl extends PureComponent<Props, State> {
   render() {
     const { children } = this.props;
     const { isLoggingIn, isChangingPassword } = this.state;
-    const { login, toGrafana, changePassword } = this;
+    const { login, toGrafInsight, changePassword } = this;
     const { loginHint, passwordHint, disableLoginForm, ldapEnabled, authProxyEnabled, disableUserSignUp } = config;
 
     return (
@@ -146,7 +146,7 @@ export class LoginCtrl extends PureComponent<Props, State> {
           login,
           isLoggingIn,
           changePassword,
-          skipPasswordChange: toGrafana,
+          skipPasswordChange: toGrafInsight,
           isChangingPassword,
         })}
       </>
